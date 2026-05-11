@@ -22,6 +22,14 @@ def get_reports_dir() -> Path:
   return REPORTS_DIR
 
 
+def ensure_reports_directory() -> None:
+  REPORTS_DIR.mkdir(parents=True, exist_ok=True)
+
+
+def get_report_path(filename: str) -> Path:
+  return REPORTS_DIR / filename
+
+
 def save_user_profile(profile: dict) -> None:
   DATA_DIR.mkdir(parents=True, exist_ok=True)
   with open(USER_PROFILE_PATH, "w", encoding="utf-8") as f:
