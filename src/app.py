@@ -54,7 +54,7 @@ class BuildSenseApp:
     self._clear_window()
     self.root.title(CONSENT_TITLE)
     self.root.resizable(False, False)
-    self._center_window(560, 400)
+    self._center_window(560, 430)
 
     frame = tk.Frame(self.root, padx=24, pady=20)
     frame.pack(fill=tk.BOTH, expand=True)
@@ -82,11 +82,29 @@ class BuildSenseApp:
 
     # 동의 체크박스
     agree_var = tk.BooleanVar(value=False)
-    bottom_frame = tk.Frame(frame)
-    bottom_frame.pack(fill=tk.X, pady=(12, 0))
+
+    checkbox_frame = tk.Frame(frame)
+    checkbox_frame.pack(fill=tk.X, pady=(12, 0))
+
+    def _on_checkbox_toggle():
+      continue_btn.config(
+        state=tk.NORMAL if agree_var.get() else tk.DISABLED
+      )
+
+    tk.Checkbutton(
+      checkbox_frame,
+      text="동의합니다",
+      variable=agree_var,
+      font=("Segoe UI", 10),
+      command=_on_checkbox_toggle,
+    ).pack(side=tk.LEFT)
+
+    # 버튼 줄 (체크박스 아래 별도 라인)
+    btn_frame = tk.Frame(frame)
+    btn_frame.pack(fill=tk.X, pady=(8, 0))
 
     continue_btn = tk.Button(
-      bottom_frame,
+      btn_frame,
       text="계속",
       width=12,
       state=tk.DISABLED,
@@ -95,24 +113,11 @@ class BuildSenseApp:
     continue_btn.pack(side=tk.RIGHT)
 
     tk.Button(
-      bottom_frame,
+      btn_frame,
       text="종료",
       width=12,
       command=self._on_decline,
     ).pack(side=tk.RIGHT, padx=(0, 8))
-
-    def _on_checkbox_toggle():
-      continue_btn.config(
-        state=tk.NORMAL if agree_var.get() else tk.DISABLED
-      )
-
-    tk.Checkbutton(
-      bottom_frame,
-      text="동의합니다",
-      variable=agree_var,
-      font=("Segoe UI", 10),
-      command=_on_checkbox_toggle,
-    ).pack(side=tk.LEFT)
 
   def _show_loading_screen(self):
     self._clear_window()
@@ -245,7 +250,7 @@ class BuildSenseApp:
 
     self._days_var = tk.IntVar(value=self.settings_state["analysis_days"])
     days_frame = tk.Frame(inner)
-    days_frame.pack(fill=tk.X, pady=(0, 16))
+    days_frame.pack(fill=tk.X, pady=(0, 4))
 
     tk.Label(days_frame, text="수집 기간:", font=("Segoe UI", 10)).pack(side=tk.LEFT)
     tk.Spinbox(
@@ -261,6 +266,14 @@ class BuildSenseApp:
       text=f"일  ({ANALYSIS_DAYS_MIN}~{ANALYSIS_DAYS_MAX}일)",
       font=("Segoe UI", 10),
     ).pack(side=tk.LEFT)
+
+    tk.Label(
+      inner,
+      text="※  정확한 분석을 위해 7일 이상을 권장합니다.",
+      font=("Segoe UI", 9),
+      fg="#888888",
+      anchor="w",
+    ).pack(fill=tk.X, pady=(0, 16))
 
     tk.Frame(inner, height=1, bg="#cccccc").pack(fill=tk.X, pady=(0, 16))
 
