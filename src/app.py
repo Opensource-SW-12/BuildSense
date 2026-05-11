@@ -1,3 +1,4 @@
+import threading
 import tkinter as tk
 from tkinter import messagebox
 
@@ -96,15 +97,44 @@ class BuildSenseApp:
       command=self._on_agree,
     ).pack(side=tk.RIGHT)
 
+  def _show_loading_screen(self):
+    self._clear_window()
+    self.root.title("BuildSense")
+    self.root.resizable(False, False)
+    self._center_window(320, 160)
+
+    frame = tk.Frame(self.root, padx=24, pady=20)
+    frame.pack(fill=tk.BOTH, expand=True)
+
+    tk.Label(
+      frame,
+      text="잠시만 기다려 주세요",
+      font=("Segoe UI", 12, "bold"),
+      anchor="center",
+    ).pack(expand=True)
+
+    tk.Label(
+      frame,
+      text="하드웨어 정보를 확인하는 중입니다...",
+      font=("Segoe UI", 9),
+      fg="#666666",
+      anchor="center",
+    ).pack(expand=True)
+
+    self.root.update()
+
+    def _load():
+      self._hardware_info = get_hardware_info()
+      if self.root.winfo_exists():
+        self.root.after(0, self._show_settings_screen)
+
+    threading.Thread(target=_load, daemon=True).start()
+
   def _show_settings_screen(self):
     self._clear_window()
     self.root.title(SETTINGS_TITLE)
     self.root.resizable(False, False)
     self._center_window(580, 580)
-
-    # 하드웨어 정보 최초 1회 로드
-    if not self._hardware_info:
-      self._hardware_info = get_hardware_info()
 
     self._part_vars = {}
     self._part_entries = {}
@@ -149,7 +179,9 @@ class BuildSenseApp:
 
     inner.bind(
       "<Configure>",
-      lambda e: canvas.configure(scrollregion=canvas.bbox("all")),
+      lambda e: inner.after_idle(
+        lambda: canvas.configure(scrollregion=canvas.bbox("all"))
+      ),
     )
     canvas.bind(
       "<Configure>",
@@ -417,7 +449,7 @@ class BuildSenseApp:
 
   def _on_agree(self):
     record_agreement(self.consent_state)
-    self._show_settings_screen()
+    self._show_loading_screen()
 
   def _on_decline(self):
     record_decline(self.consent_state)
