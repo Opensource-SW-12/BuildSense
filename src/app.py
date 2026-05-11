@@ -22,6 +22,7 @@ from src.settings import (
   build_settings_state,
 )
 from src.hardware import get_hardware_info
+from src.storage import save_user_profile
 from src.validators import validate_analysis_days, validate_parts_not_all_keep
 
 SETTINGS_TITLE = "BuildSense - 사용자 설정"
@@ -471,6 +472,27 @@ class BuildSenseApp:
       if not result.valid:
         messagebox.showwarning(title="BuildSense", message=result.message)
         return
+
+      profile = {
+        "consent": self.consent_state,
+        "knowledge_level": self.settings_state["knowledge_level"],
+        "analysis_days": self.settings_state["analysis_days"],
+        "parts": self.settings_state["parts"],
+      }
+
+      try:
+        save_user_profile(profile)
+        messagebox.showinfo(
+          title="BuildSense",
+          message="설정이 저장되었습니다.\n분석을 시작합니다.",
+        )
+      except Exception as e:
+        messagebox.showerror(
+          title="저장 오류",
+          message=f"프로필 저장에 실패했습니다.\n{e}",
+        )
+        return
+
       dialog.destroy()
       self._show_analysis_placeholder()
 
