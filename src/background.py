@@ -1,9 +1,14 @@
+import atexit
+import ctypes
 import threading
 from collections.abc import Callable
 
 _lock = threading.Lock()
 _active_thread: threading.Thread | None = None
 _stop_event = threading.Event()
+
+_MUTEX_NAME = "BuildSense_SingleInstance_Mutex"
+_mutex_handle = None
 
 
 def is_background_running() -> bool:
@@ -40,6 +45,43 @@ def stop_background_task() -> None:
 def get_stop_event() -> threading.Event:
   """모니터링 루프가 종료 신호를 확인하는 데 사용하는 Event 반환."""
   return _stop_event
+
+
+def acquire_single_instance_lock() -> bool:
+  """Named mutex로 단일 인스턴스를 보장한다. 이미 실행 중이면 False 반환."""
+  global _mutex_handle
+  try:
+    kernel32 = ctypes.windll.kernel32
+    _mutex_handle = kernel32.CreateMutexW(None, True, _MUTEX_NAME)
+    if kernel32.GetLastError() == 183:  # ERROR_ALREADY_EXISTS
+      kernel32.CloseHandle(_mutex_handle)
+      _mutex_handle = None
+      return False
+    atexit.register(release_single_instance_lock)
+    return True
+  except Exception:
+    return True
+
+
+def release_single_instance_lock() -> None:
+  global _mutex_handle
+  if _mutex_handle:
+    try:
+      ctypes.windll.kernel32.CloseHandle(_mutex_handle)
+    except Exception:
+      pass
+    _mutex_handle = None
+
+
+def is_another_instance_running() -> bool:
+  try:
+    handle = ctypes.windll.kernel32.OpenMutexW(0x00100000, False, _MUTEX_NAME)
+    if handle:
+      ctypes.windll.kernel32.CloseHandle(handle)
+      return True
+    return False
+  except Exception:
+    return False
 
 
 def _guarded(target: Callable) -> Callable:
