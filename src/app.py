@@ -15,7 +15,6 @@ from src.settings import (
   KNOWLEDGE_LEVEL_LABELS,
   ANALYSIS_DAYS_MIN,
   ANALYSIS_DAYS_MAX,
-  ANALYSIS_DAYS_DEFAULT,
   PARTS,
   PART_OPTIONS,
   PART_OPTION_LABELS,
@@ -23,6 +22,7 @@ from src.settings import (
   build_settings_state,
 )
 from src.hardware import get_hardware_info
+from src.validators import validate_analysis_days, validate_parts_not_all_keep
 
 SETTINGS_TITLE = "BuildSense - 사용자 설정"
 
@@ -437,15 +437,9 @@ class BuildSenseApp:
     ).pack(side=tk.RIGHT, padx=(8, 0))
 
     def _on_start():
-      all_keep = all(
-        self.settings_state["parts"][part]["option"] == "keep"
-        for part in PARTS
-      )
-      if all_keep:
-        messagebox.showwarning(
-          title="BuildSense",
-          message="분석 항목이 없습니다.\n추천받을 부품을 하나 이상 선택해 주세요.",
-        )
+      valid, message = validate_parts_not_all_keep(self.settings_state["parts"])
+      if not valid:
+        messagebox.showwarning(title="BuildSense", message=message)
         return
       dialog.destroy()
       self._show_analysis_placeholder()
@@ -515,38 +509,14 @@ class BuildSenseApp:
 
   def _validate_days(self) -> bool:
     try:
-      days = int(self._days_var.get())
-    except (ValueError, tk.TclError):
-      messagebox.showwarning(
-        title="입력 오류",
-        message=(
-          "분석 기간은 숫자로 입력해야 합니다.\n"
-          f"기본값({ANALYSIS_DAYS_DEFAULT}일)으로 재설정합니다."
-        ),
-      )
-      self._days_var.set(ANALYSIS_DAYS_DEFAULT)
-      return False
+      raw = self._days_var.get()
+    except tk.TclError:
+      raw = None
 
-    if days < ANALYSIS_DAYS_MIN:
-      messagebox.showwarning(
-        title="입력 오류",
-        message=(
-          f"분석 기간은 최소 {ANALYSIS_DAYS_MIN}일 이상이어야 합니다.\n"
-          f"{ANALYSIS_DAYS_MIN}일로 재설정합니다."
-        ),
-      )
-      self._days_var.set(ANALYSIS_DAYS_MIN)
-      return False
-
-    if days > ANALYSIS_DAYS_MAX:
-      messagebox.showwarning(
-        title="입력 오류",
-        message=(
-          f"분석 기간은 최대 {ANALYSIS_DAYS_MAX}일까지 가능합니다.\n"
-          f"{ANALYSIS_DAYS_MAX}일로 재설정합니다."
-        ),
-      )
-      self._days_var.set(ANALYSIS_DAYS_MAX)
+    valid, message, corrected = validate_analysis_days(raw)
+    if not valid:
+      messagebox.showwarning(title="입력 오류", message=message)
+      self._days_var.set(corrected)
       return False
 
     return True
