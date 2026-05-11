@@ -80,22 +80,39 @@ class BuildSenseApp:
     body.config(state=tk.DISABLED)
     body.pack(fill=tk.BOTH, expand=True)
 
-    btn_frame = tk.Frame(frame)
-    btn_frame.pack(fill=tk.X, pady=(16, 0))
+    # 동의 체크박스
+    agree_var = tk.BooleanVar(value=False)
+    bottom_frame = tk.Frame(frame)
+    bottom_frame.pack(fill=tk.X, pady=(12, 0))
+
+    continue_btn = tk.Button(
+      bottom_frame,
+      text="계속",
+      width=12,
+      state=tk.DISABLED,
+      command=self._on_agree,
+    )
+    continue_btn.pack(side=tk.RIGHT)
 
     tk.Button(
-      btn_frame,
-      text="거부",
+      bottom_frame,
+      text="종료",
       width=12,
       command=self._on_decline,
-    ).pack(side=tk.RIGHT, padx=(8, 0))
+    ).pack(side=tk.RIGHT, padx=(0, 8))
 
-    tk.Button(
-      btn_frame,
-      text="동의",
-      width=12,
-      command=self._on_agree,
-    ).pack(side=tk.RIGHT)
+    def _on_checkbox_toggle():
+      continue_btn.config(
+        state=tk.NORMAL if agree_var.get() else tk.DISABLED
+      )
+
+    tk.Checkbutton(
+      bottom_frame,
+      text="동의합니다",
+      variable=agree_var,
+      font=("Segoe UI", 10),
+      command=_on_checkbox_toggle,
+    ).pack(side=tk.LEFT)
 
   def _show_loading_screen(self):
     self._clear_window()
