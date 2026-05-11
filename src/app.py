@@ -463,18 +463,11 @@ class BuildSenseApp:
       stop_monitoring_loop()
       delete_all_monitoring_data()
       self._clear_window()
-      proc = tk.Frame(self.root, padx=24, pady=60)
-      proc.pack(fill=tk.BOTH, expand=True)
-      tk.Label(proc, text="처리 중...", font=("Segoe UI", 14, "bold"), anchor="center").pack(expand=True)
-      tk.Label(
-        proc,
-        text="저장된 데이터를 삭제하고 프로그램을 종료합니다.",
-        font=("Segoe UI", 10),
-        fg="#555555",
-        anchor="center",
-      ).pack(expand=True)
-      self.root.update()
-      self.root.after(1500, self.root.destroy)
+      self._center_window(360, 180)
+      done = tk.Frame(self.root, padx=24, pady=30)
+      done.pack(fill=tk.BOTH, expand=True)
+      tk.Label(done, text="분석이 종료되었습니다.", font=("Segoe UI", 13, "bold"), anchor="center").pack(expand=True)
+      tk.Button(done, text="확인", width=12, command=self.root.destroy).pack(pady=(12, 0))
 
     stop_btn.config(command=_on_stop)
     stop_btn.pack(anchor="w")

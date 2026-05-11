@@ -155,18 +155,11 @@ def _section_abort(parent: tk.Frame, root: tk.Tk) -> None:
     write_abort_signal()
     for w in root.winfo_children():
       w.destroy()
-    proc = tk.Frame(root, padx=24, pady=60)
-    proc.pack(fill=tk.BOTH, expand=True)
-    tk.Label(proc, text="처리 중...", font=("Segoe UI", 14, "bold"), anchor="center").pack(expand=True)
-    tk.Label(
-      proc,
-      text="저장된 데이터를 삭제하고 프로그램을 종료합니다.",
-      font=("Segoe UI", 10),
-      fg="#555555",
-      anchor="center",
-    ).pack(expand=True)
-    root.update()
-    root.after(1500, root.destroy)
+    root.geometry("360x180")
+    done = tk.Frame(root, padx=24, pady=30)
+    done.pack(fill=tk.BOTH, expand=True)
+    tk.Label(done, text="분석이 종료되었습니다.", font=("Segoe UI", 13, "bold"), anchor="center").pack(expand=True)
+    tk.Button(done, text="확인", width=12, command=root.destroy).pack(pady=(12, 0))
 
   abort_btn.config(command=_on_abort)
   abort_btn.pack(anchor="w")
