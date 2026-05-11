@@ -5,7 +5,7 @@ import psutil
 from src.gpu import collect_gpu_snapshot
 from src.process_tracker import get_running_processes, get_system_boot_time, get_system_uptime_seconds
 from src.background import start_background_task, stop_background_task, is_background_running, get_stop_event
-from src.storage import append_usage_log
+from src.storage import append_usage_log, check_and_clear_abort_signal
 
 MONITOR_INTERVAL_SECONDS = 60
 
@@ -53,6 +53,9 @@ def collect_monitoring_snapshot() -> dict:
 def _monitoring_loop(interval_seconds: int) -> None:
   stop_event = get_stop_event()
   while not stop_event.is_set():
+    if check_and_clear_abort_signal():
+      stop_background_task()
+      break
     try:
       snapshot = collect_monitoring_snapshot()
       append_usage_log(snapshot)
