@@ -34,7 +34,7 @@ class BuildSenseApp:
 
     tk.Label(
       frame,
-      text="Data Collection Consent",
+      text="데이터 수집 동의",
       font=("Segoe UI", 14, "bold"),
       anchor="w",
     ).pack(fill=tk.X, pady=(0, 12))
@@ -58,14 +58,14 @@ class BuildSenseApp:
 
     tk.Button(
       btn_frame,
-      text="Decline",
+      text="거부",
       width=12,
       command=self._on_decline,
     ).pack(side=tk.RIGHT, padx=(8, 0))
 
     tk.Button(
       btn_frame,
-      text="Agree",
+      text="동의",
       width=12,
       command=self._on_agree,
     ).pack(side=tk.RIGHT)
@@ -74,7 +74,7 @@ class BuildSenseApp:
     for widget in self.root.winfo_children():
       widget.destroy()
 
-    self.root.title("BuildSense - Setup")
+    self.root.title("BuildSense - 설정")
     self._center_window(480, 240)
 
     frame = tk.Frame(self.root, padx=24, pady=20)
@@ -82,14 +82,14 @@ class BuildSenseApp:
 
     tk.Label(
       frame,
-      text="Setup",
+      text="설정",
       font=("Segoe UI", 14, "bold"),
       anchor="w",
     ).pack(fill=tk.X, pady=(0, 12))
 
     tk.Label(
       frame,
-      text="Consent recorded. Setup screen coming soon.",
+      text="동의가 완료되었습니다. 설정 화면은 추후 구현 예정입니다.",
       font=("Segoe UI", 10),
       anchor="w",
     ).pack(fill=tk.X)
