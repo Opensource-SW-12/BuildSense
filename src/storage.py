@@ -1,13 +1,15 @@
 import json
 from pathlib import Path
 
-from src.config import DATA_DIR, LOGS_DIR, REPORTS_DIR, USER_PROFILE_PATH, USAGE_LOG_PATH
+from src.config import DATA_DIR, LOGS_DIR, REPORTS_DIR, ANALYSIS_DIR, EXPORTS_DIR, USER_PROFILE_PATH, USAGE_LOG_PATH
 
 
 def ensure_app_directories() -> None:
   DATA_DIR.mkdir(parents=True, exist_ok=True)
   LOGS_DIR.mkdir(parents=True, exist_ok=True)
   REPORTS_DIR.mkdir(parents=True, exist_ok=True)
+  ANALYSIS_DIR.mkdir(parents=True, exist_ok=True)
+  EXPORTS_DIR.mkdir(parents=True, exist_ok=True)
 
 
 def get_user_profile_path() -> Path:
