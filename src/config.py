@@ -7,6 +7,8 @@ LOGS_DIR = BASE_DIR / "logs"
 REPORTS_DIR = BASE_DIR / "reports"
 ANALYSIS_DIR = BASE_DIR / "analysis"
 EXPORTS_DIR = BASE_DIR / "exports"
+SPECS_DIR = DATA_DIR / "specs"
+PRICES_DIR = DATA_DIR / "prices"
 
 USER_PROFILE_PATH = DATA_DIR / "user_profile.json"
 USAGE_LOG_PATH = LOGS_DIR / "usage.jsonl"
