@@ -1,7 +1,7 @@
 KNOWLEDGE_LEVELS = [
-  ("초보자", "beginner"),
-  ("중급자", "intermediate"),
-  ("고급자", "advanced"),
+  ("전혀 모름", "beginner"),
+  ("어느 정도 알고 있음", "intermediate"),
+  ("잘 알고 있음", "advanced"),
 ]
 
 ANALYSIS_DAYS_MIN = 3
@@ -13,9 +13,13 @@ PARTS = ["CPU", "GPU", "RAM", "SSD/HDD", "파워"]
 PART_OPTIONS = [
   ("추천", "recommend"),
   ("제외", "exclude"),
-  ("현재 유지", "keep"),
+  ("유지", "keep"),
   ("이미 결정", "decided"),
 ]
+
+
+KNOWLEDGE_LEVEL_LABELS = {value: label for label, value in KNOWLEDGE_LEVELS}
+PART_OPTION_LABELS = {value: label for label, value in PART_OPTIONS}
 
 
 def build_settings_state() -> dict:
