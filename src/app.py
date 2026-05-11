@@ -380,7 +380,7 @@ class BuildSenseApp:
   def _show_monitoring_screen(self):
     self._clear_window()
     self.root.title("BuildSense - 모니터링 중")
-    self._center_window(480, 400)
+    self._center_window(480, 260)
 
     frame = tk.Frame(self.root, padx=24, pady=20)
     frame.pack(fill=tk.BOTH, expand=True)
@@ -390,7 +390,7 @@ class BuildSenseApp:
       text="모니터링 실행 중",
       font=("Segoe UI", 14, "bold"),
       anchor="w",
-    ).pack(fill=tk.X, pady=(0, 16))
+    ).pack(fill=tk.X, pady=(0, 12))
 
     tk.Label(
       frame,
@@ -407,10 +407,35 @@ class BuildSenseApp:
       text=f"분석 기간:  {self.settings_state['analysis_days']}일",
       font=("Segoe UI", 10),
       anchor="w",
-    ).pack(fill=tk.X, pady=(0, 20))
+    ).pack(fill=tk.X, pady=(0, 4))
+
+    size_label = tk.Label(frame, text="수집된 데이터:  측정 중...", font=("Segoe UI", 10), anchor="w")
+    size_label.pack(fill=tk.X, pady=(0, 16))
+
+    def _update_size():
+      if not self.root.winfo_exists():
+        return
+      try:
+        if USAGE_LOG_PATH.exists():
+          size = USAGE_LOG_PATH.stat().st_size
+          if size < 1024:
+            size_str = f"{size} B"
+          elif size < 1024 * 1024:
+            size_str = f"{size / 1024:.1f} KB"
+          else:
+            size_str = f"{size / (1024 * 1024):.2f} MB"
+          with open(USAGE_LOG_PATH, "r", encoding="utf-8") as f:
+            lines = sum(1 for _ in f)
+          size_label.config(text=f"수집된 데이터:  {size_str}  ({lines:,}개 스냅샷)")
+        else:
+          size_label.config(text="수집된 데이터:  0 B  (0개 스냅샷)")
+      except Exception:
+        pass
+      self.root.after(5000, _update_size)
+
+    _update_size()
 
     abort_frame = tk.LabelFrame(frame, text="중도 종료", font=("Segoe UI", 10, "bold"), padx=12, pady=8)
-    abort_frame.pack(fill=tk.X)
 
     tk.Label(
       abort_frame,
@@ -453,6 +478,16 @@ class BuildSenseApp:
 
     stop_btn.config(command=_on_stop)
     stop_btn.pack(anchor="w")
+
+    toggle_btn = tk.Button(frame, text="중도 종료", width=14)
+
+    def _toggle_abort():
+      toggle_btn.pack_forget()
+      abort_frame.pack(fill=tk.X)
+      self._center_window(480, 420)
+
+    toggle_btn.config(command=_toggle_abort)
+    toggle_btn.pack(anchor="w")
 
   def _show_review_dialog(self):
     dialog = tk.Toplevel(self.root)
