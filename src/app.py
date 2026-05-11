@@ -380,7 +380,7 @@ class BuildSenseApp:
   def _show_monitoring_screen(self):
     self._clear_window()
     self.root.title("BuildSense - 모니터링 중")
-    self._center_window(480, 260)
+    self._center_window(480, 400)
 
     frame = tk.Frame(self.root, padx=24, pady=20)
     frame.pack(fill=tk.BOTH, expand=True)
@@ -409,11 +409,46 @@ class BuildSenseApp:
       anchor="w",
     ).pack(fill=tk.X, pady=(0, 20))
 
-    stop_btn = tk.Button(frame, text="모니터링 중지", width=16)
+    abort_frame = tk.LabelFrame(frame, text="중도 종료", font=("Segoe UI", 10, "bold"), padx=12, pady=8)
+    abort_frame.pack(fill=tk.X)
+
+    tk.Label(
+      abort_frame,
+      text="지금까지 저장된 데이터가 모두 삭제되며 분석을 포기합니다.",
+      font=("Segoe UI", 9),
+      fg="#cc3300",
+      anchor="w",
+      wraplength=410,
+      justify=tk.LEFT,
+    ).pack(fill=tk.X, pady=(0, 10))
+
+    confirm_var = tk.StringVar(value="no")
+    stop_btn = tk.Button(abort_frame, text="종료", width=10, state=tk.DISABLED)
+
+    def _on_choice():
+      stop_btn.config(state=tk.NORMAL if confirm_var.get() == "yes" else tk.DISABLED)
+
+    radio_frame = tk.Frame(abort_frame)
+    radio_frame.pack(anchor="w", pady=(0, 8))
+    tk.Label(radio_frame, text="정말로 종료할까요?  ", font=("Segoe UI", 10)).pack(side=tk.LEFT)
+    tk.Radiobutton(radio_frame, text="아니오", variable=confirm_var, value="no",  font=("Segoe UI", 10), command=_on_choice).pack(side=tk.LEFT)
+    tk.Radiobutton(radio_frame, text="네",    variable=confirm_var, value="yes", font=("Segoe UI", 10), command=_on_choice).pack(side=tk.LEFT, padx=(8, 0))
 
     def _on_stop():
       stop_monitoring_loop()
-      stop_btn.config(state=tk.DISABLED, text="모니터링 중지됨")
+      self._clear_window()
+      proc = tk.Frame(self.root, padx=24, pady=60)
+      proc.pack(fill=tk.BOTH, expand=True)
+      tk.Label(proc, text="처리 중...", font=("Segoe UI", 14, "bold"), anchor="center").pack(expand=True)
+      tk.Label(
+        proc,
+        text="저장된 데이터를 삭제하고 프로그램을 종료합니다.",
+        font=("Segoe UI", 10),
+        fg="#555555",
+        anchor="center",
+      ).pack(expand=True)
+      self.root.update()
+      self.root.after(1500, self.root.destroy)
 
     stop_btn.config(command=_on_stop)
     stop_btn.pack(anchor="w")
