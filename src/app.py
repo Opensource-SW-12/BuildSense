@@ -11,10 +11,13 @@ from src.consent import (
 )
 from src.settings import (
   KNOWLEDGE_LEVELS,
+  KNOWLEDGE_LEVEL_LABELS,
   ANALYSIS_DAYS_MIN,
   ANALYSIS_DAYS_MAX,
+  ANALYSIS_DAYS_DEFAULT,
   PARTS,
   PART_OPTIONS,
+  PART_OPTION_LABELS,
   build_settings_state,
 )
 
@@ -31,6 +34,7 @@ class BuildSenseApp:
     self._part_vars = {}
     self._part_entries = {}
     self._part_entry_frames = {}
+    self._part_radio_widgets = {}
     self._show_consent_screen()
 
   def run(self):
@@ -92,6 +96,11 @@ class BuildSenseApp:
     self.root.title(SETTINGS_TITLE)
     self.root.resizable(False, False)
     self._center_window(580, 580)
+
+    self._part_vars = {}
+    self._part_entries = {}
+    self._part_entry_frames = {}
+    self._part_radio_widgets = {}
 
     # 하단 고정 내비게이션
     nav_frame = tk.Frame(self.root, padx=24, pady=10)
@@ -161,6 +170,7 @@ class BuildSenseApp:
         variable=self._knowledge_var,
         value=value,
         font=("Segoe UI", 10),
+        command=self._on_knowledge_change,
       ).pack(side=tk.LEFT, padx=(0, 16))
 
     tk.Frame(inner, height=1, bg="#cccccc").pack(fill=tk.X, pady=(0, 16))
@@ -202,10 +212,6 @@ class BuildSenseApp:
       anchor="w",
     ).pack(fill=tk.X, pady=(0, 10))
 
-    self._part_vars = {}
-    self._part_entries = {}
-    self._part_entry_frames = {}
-
     for i, part in enumerate(PARTS):
       part_state = self.settings_state["parts"][part]
 
@@ -225,15 +231,19 @@ class BuildSenseApp:
       radio_frame = tk.Frame(container)
       radio_frame.pack(fill=tk.X, pady=(4, 0))
 
+      radio_widgets = []
       for label, value in PART_OPTIONS:
-        tk.Radiobutton(
+        rb = tk.Radiobutton(
           radio_frame,
           text=label,
           variable=var,
           value=value,
           font=("Segoe UI", 10),
           command=lambda p=part: self._on_part_option_change(p),
-        ).pack(side=tk.LEFT, padx=(0, 8))
+        )
+        rb.pack(side=tk.LEFT, padx=(0, 8))
+        radio_widgets.append(rb)
+      self._part_radio_widgets[part] = radio_widgets
 
       # "이미 결정" 선택 시에만 표시되는 직접 입력 필드
       entry_frame = tk.Frame(container)
@@ -254,6 +264,9 @@ class BuildSenseApp:
 
       if i < len(PARTS) - 1:
         tk.Frame(inner, height=1, bg="#eeeeee").pack(fill=tk.X, pady=(8, 4))
+
+    # 초기 지식 수준에 따른 부품 섹션 상태 반영
+    self._on_knowledge_change()
 
   def _show_analysis_placeholder(self):
     self._clear_window()
@@ -277,6 +290,79 @@ class BuildSenseApp:
       anchor="w",
     ).pack(fill=tk.X)
 
+  def _show_review_dialog(self):
+    dialog = tk.Toplevel(self.root)
+    dialog.title("설정 재점검")
+    dialog.resizable(False, False)
+    dialog.grab_set()
+    self._center_toplevel(dialog, 400, 340)
+
+    frame = tk.Frame(dialog, padx=24, pady=20)
+    frame.pack(fill=tk.BOTH, expand=True)
+
+    tk.Label(
+      frame,
+      text="설정 요약",
+      font=("Segoe UI", 12, "bold"),
+      anchor="w",
+    ).pack(fill=tk.X, pady=(0, 12))
+
+    state = self.settings_state
+    kl_label = KNOWLEDGE_LEVEL_LABELS.get(
+      state["knowledge_level"], state["knowledge_level"]
+    )
+
+    tk.Label(
+      frame,
+      text=f"컴퓨터 지식 수준:  {kl_label}",
+      font=("Segoe UI", 10),
+      anchor="w",
+    ).pack(fill=tk.X)
+
+    tk.Label(
+      frame,
+      text=f"분석 기간:  {state['analysis_days']}일",
+      font=("Segoe UI", 10),
+      anchor="w",
+    ).pack(fill=tk.X, pady=(4, 12))
+
+    tk.Label(
+      frame,
+      text="추천 부품 선택:",
+      font=("Segoe UI", 10, "bold"),
+      anchor="w",
+    ).pack(fill=tk.X, pady=(0, 4))
+
+    for part in PARTS:
+      part_state = state["parts"][part]
+      option_label = PART_OPTION_LABELS.get(part_state["option"], part_state["option"])
+      text = f"  {part}:  {option_label}"
+      if part_state["option"] == "decided" and part_state["manual_input"]:
+        text += f"  ({part_state['manual_input']})"
+      tk.Label(
+        frame,
+        text=text,
+        font=("Segoe UI", 10),
+        anchor="w",
+      ).pack(fill=tk.X)
+
+    btn_frame = tk.Frame(frame)
+    btn_frame.pack(fill=tk.X, pady=(16, 0))
+
+    tk.Button(
+      btn_frame,
+      text="수정하기",
+      width=12,
+      command=dialog.destroy,
+    ).pack(side=tk.RIGHT, padx=(8, 0))
+
+    tk.Button(
+      btn_frame,
+      text="분석 시작",
+      width=12,
+      command=lambda: [dialog.destroy(), self._show_analysis_placeholder()],
+    ).pack(side=tk.RIGHT)
+
   # ------------------------------------------------------------------
   # 버튼 핸들러
   # ------------------------------------------------------------------
@@ -291,8 +377,20 @@ class BuildSenseApp:
     self.root.destroy()
 
   def _on_settings_continue(self):
+    if not self._validate_days():
+      return
     self._sync_settings_state()
-    self._show_analysis_placeholder()
+    self._show_review_dialog()
+
+  def _on_knowledge_change(self):
+    is_beginner = self._knowledge_var.get() == "beginner"
+    widget_state = tk.DISABLED if is_beginner else tk.NORMAL
+    for part in PARTS:
+      for rb in self._part_radio_widgets[part]:
+        rb.config(state=widget_state)
+      if is_beginner:
+        self._part_vars[part].set("recommend")
+        self._part_entry_frames[part].pack_forget()
 
   def _on_part_option_change(self, part: str):
     value = self._part_vars[part].get()
@@ -303,8 +401,46 @@ class BuildSenseApp:
       entry_frame.pack_forget()
 
   # ------------------------------------------------------------------
-  # 상태 동기화
+  # 검증 및 상태 동기화
   # ------------------------------------------------------------------
+
+  def _validate_days(self) -> bool:
+    try:
+      days = int(self._days_var.get())
+    except (ValueError, tk.TclError):
+      messagebox.showwarning(
+        title="입력 오류",
+        message=(
+          "분석 기간은 숫자로 입력해야 합니다.\n"
+          f"기본값({ANALYSIS_DAYS_DEFAULT}일)으로 재설정합니다."
+        ),
+      )
+      self._days_var.set(ANALYSIS_DAYS_DEFAULT)
+      return False
+
+    if days < ANALYSIS_DAYS_MIN:
+      messagebox.showwarning(
+        title="입력 오류",
+        message=(
+          f"분석 기간은 최소 {ANALYSIS_DAYS_MIN}일 이상이어야 합니다.\n"
+          f"{ANALYSIS_DAYS_MIN}일로 재설정합니다."
+        ),
+      )
+      self._days_var.set(ANALYSIS_DAYS_MIN)
+      return False
+
+    if days > ANALYSIS_DAYS_MAX:
+      messagebox.showwarning(
+        title="입력 오류",
+        message=(
+          f"분석 기간은 최대 {ANALYSIS_DAYS_MAX}일까지 가능합니다.\n"
+          f"{ANALYSIS_DAYS_MAX}일로 재설정합니다."
+        ),
+      )
+      self._days_var.set(ANALYSIS_DAYS_MAX)
+      return False
+
+    return True
 
   def _sync_settings_state(self):
     self.settings_state["knowledge_level"] = self._knowledge_var.get()
@@ -328,3 +464,13 @@ class BuildSenseApp:
     x = (sw - width) // 2
     y = (sh - height) // 2
     self.root.geometry(f"{width}x{height}+{x}+{y}")
+
+  def _center_toplevel(self, dialog: tk.Toplevel, width: int, height: int):
+    self.root.update_idletasks()
+    rx = self.root.winfo_x()
+    ry = self.root.winfo_y()
+    rw = self.root.winfo_width()
+    rh = self.root.winfo_height()
+    x = rx + (rw - width) // 2
+    y = ry + (rh - height) // 2
+    dialog.geometry(f"{width}x{height}+{x}+{y}")
