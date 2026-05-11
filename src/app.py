@@ -22,7 +22,7 @@ from src.settings import (
   build_settings_state,
 )
 from src.hardware import get_hardware_info
-from src.storage import save_user_profile
+from src.storage import save_user_profile, delete_all_monitoring_data
 from src.validators import validate_analysis_days, validate_parts_not_all_keep
 from src.monitor import start_monitoring_loop, stop_monitoring_loop, is_monitoring_running
 from src.config import USAGE_LOG_PATH
@@ -436,6 +436,7 @@ class BuildSenseApp:
 
     def _on_stop():
       stop_monitoring_loop()
+      delete_all_monitoring_data()
       self._clear_window()
       proc = tk.Frame(self.root, padx=24, pady=60)
       proc.pack(fill=tk.BOTH, expand=True)
