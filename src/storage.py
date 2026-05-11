@@ -30,6 +30,15 @@ def get_report_path(filename: str) -> Path:
   return REPORTS_DIR / filename
 
 
+def append_usage_log(snapshot: dict) -> None:
+  try:
+    LOGS_DIR.mkdir(parents=True, exist_ok=True)
+    with open(USAGE_LOG_PATH, "a", encoding="utf-8") as f:
+      f.write(json.dumps(snapshot, ensure_ascii=False) + "\n")
+  except Exception:
+    pass
+
+
 def save_user_profile(profile: dict) -> None:
   DATA_DIR.mkdir(parents=True, exist_ok=True)
   with open(USER_PROFILE_PATH, "w", encoding="utf-8") as f:
