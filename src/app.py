@@ -15,7 +15,6 @@ from src.settings import (
   KNOWLEDGE_LEVEL_LABELS,
   ANALYSIS_DAYS_MIN,
   ANALYSIS_DAYS_MAX,
-  ANALYSIS_DAYS_DEFAULT,
   PARTS,
   PART_OPTIONS,
   PART_OPTION_LABELS,
@@ -23,6 +22,8 @@ from src.settings import (
   build_settings_state,
 )
 from src.hardware import get_hardware_info
+from src.storage import save_user_profile
+from src.validators import validate_analysis_days, validate_parts_not_all_keep
 
 SETTINGS_TITLE = "BuildSense - 사용자 설정"
 
@@ -54,7 +55,7 @@ class BuildSenseApp:
     self._clear_window()
     self.root.title(CONSENT_TITLE)
     self.root.resizable(False, False)
-    self._center_window(560, 400)
+    self._center_window(560, 430)
 
     frame = tk.Frame(self.root, padx=24, pady=20)
     frame.pack(fill=tk.BOTH, expand=True)
@@ -80,22 +81,44 @@ class BuildSenseApp:
     body.config(state=tk.DISABLED)
     body.pack(fill=tk.BOTH, expand=True)
 
+    # 동의 체크박스
+    agree_var = tk.BooleanVar(value=False)
+
+    checkbox_frame = tk.Frame(frame)
+    checkbox_frame.pack(fill=tk.X, pady=(12, 0))
+
+    def _on_checkbox_toggle():
+      continue_btn.config(
+        state=tk.NORMAL if agree_var.get() else tk.DISABLED
+      )
+
+    tk.Checkbutton(
+      checkbox_frame,
+      text="동의합니다",
+      variable=agree_var,
+      font=("Segoe UI", 10),
+      command=_on_checkbox_toggle,
+    ).pack(side=tk.LEFT)
+
+    # 버튼 줄 (체크박스 아래 별도 라인)
     btn_frame = tk.Frame(frame)
-    btn_frame.pack(fill=tk.X, pady=(16, 0))
+    btn_frame.pack(fill=tk.X, pady=(8, 0))
+
+    continue_btn = tk.Button(
+      btn_frame,
+      text="계속",
+      width=12,
+      state=tk.DISABLED,
+      command=self._on_agree,
+    )
+    continue_btn.pack(side=tk.RIGHT)
 
     tk.Button(
       btn_frame,
-      text="거부",
+      text="종료",
       width=12,
       command=self._on_decline,
-    ).pack(side=tk.RIGHT, padx=(8, 0))
-
-    tk.Button(
-      btn_frame,
-      text="동의",
-      width=12,
-      command=self._on_agree,
-    ).pack(side=tk.RIGHT)
+    ).pack(side=tk.RIGHT, padx=(0, 8))
 
   def _show_loading_screen(self):
     self._clear_window()
@@ -228,7 +251,7 @@ class BuildSenseApp:
 
     self._days_var = tk.IntVar(value=self.settings_state["analysis_days"])
     days_frame = tk.Frame(inner)
-    days_frame.pack(fill=tk.X, pady=(0, 16))
+    days_frame.pack(fill=tk.X, pady=(0, 4))
 
     tk.Label(days_frame, text="수집 기간:", font=("Segoe UI", 10)).pack(side=tk.LEFT)
     tk.Spinbox(
@@ -244,6 +267,14 @@ class BuildSenseApp:
       text=f"일  ({ANALYSIS_DAYS_MIN}~{ANALYSIS_DAYS_MAX}일)",
       font=("Segoe UI", 10),
     ).pack(side=tk.LEFT)
+
+    tk.Label(
+      inner,
+      text="※  정확한 분석을 위해 7일 이상을 권장합니다.",
+      font=("Segoe UI", 9),
+      fg="#888888",
+      anchor="w",
+    ).pack(fill=tk.X, pady=(0, 16))
 
     tk.Frame(inner, height=1, bg="#cccccc").pack(fill=tk.X, pady=(0, 16))
 
@@ -436,11 +467,40 @@ class BuildSenseApp:
       command=dialog.destroy,
     ).pack(side=tk.RIGHT, padx=(8, 0))
 
+    def _on_start():
+      result = validate_parts_not_all_keep(self.settings_state["parts"])
+      if not result.valid:
+        messagebox.showwarning(title="BuildSense", message=result.message)
+        return
+
+      profile = {
+        "consent": self.consent_state,
+        "knowledge_level": self.settings_state["knowledge_level"],
+        "analysis_days": self.settings_state["analysis_days"],
+        "parts": self.settings_state["parts"],
+      }
+
+      try:
+        save_user_profile(profile)
+        messagebox.showinfo(
+          title="BuildSense",
+          message="설정이 저장되었습니다.\n분석을 시작합니다.",
+        )
+      except Exception as e:
+        messagebox.showerror(
+          title="저장 오류",
+          message=f"프로필 저장에 실패했습니다.\n{e}",
+        )
+        return
+
+      dialog.destroy()
+      self._show_analysis_placeholder()
+
     tk.Button(
       btn_frame,
       text="분석 시작",
       width=12,
-      command=lambda: [dialog.destroy(), self._show_analysis_placeholder()],
+      command=_on_start,
     ).pack(side=tk.RIGHT)
 
   # ------------------------------------------------------------------
@@ -501,38 +561,14 @@ class BuildSenseApp:
 
   def _validate_days(self) -> bool:
     try:
-      days = int(self._days_var.get())
-    except (ValueError, tk.TclError):
-      messagebox.showwarning(
-        title="입력 오류",
-        message=(
-          "분석 기간은 숫자로 입력해야 합니다.\n"
-          f"기본값({ANALYSIS_DAYS_DEFAULT}일)으로 재설정합니다."
-        ),
-      )
-      self._days_var.set(ANALYSIS_DAYS_DEFAULT)
-      return False
+      raw = self._days_var.get()
+    except tk.TclError:
+      raw = None
 
-    if days < ANALYSIS_DAYS_MIN:
-      messagebox.showwarning(
-        title="입력 오류",
-        message=(
-          f"분석 기간은 최소 {ANALYSIS_DAYS_MIN}일 이상이어야 합니다.\n"
-          f"{ANALYSIS_DAYS_MIN}일로 재설정합니다."
-        ),
-      )
-      self._days_var.set(ANALYSIS_DAYS_MIN)
-      return False
-
-    if days > ANALYSIS_DAYS_MAX:
-      messagebox.showwarning(
-        title="입력 오류",
-        message=(
-          f"분석 기간은 최대 {ANALYSIS_DAYS_MAX}일까지 가능합니다.\n"
-          f"{ANALYSIS_DAYS_MAX}일로 재설정합니다."
-        ),
-      )
-      self._days_var.set(ANALYSIS_DAYS_MAX)
+    result = validate_analysis_days(raw)
+    if not result.valid:
+      messagebox.showwarning(title="입력 오류", message=result.message)
+      self._days_var.set(result.corrected)
       return False
 
     return True

@@ -56,7 +56,7 @@ PART_DESCRIPTIONS = {
 
 def build_settings_state() -> dict:
   return {
-    "knowledge_level": "beginner",
+    "knowledge_level": "intermediate",
     "analysis_days": ANALYSIS_DAYS_DEFAULT,
     "parts": {
       part: {"option": "recommend", "manual_input": ""}
