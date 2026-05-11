@@ -1,10 +1,9 @@
 import threading
-import time
 from datetime import datetime, timezone
 
 import psutil
 
-from src.process_tracker import get_running_processes
+from src.process_tracker import get_running_processes, get_system_uptime_seconds
 
 MONITOR_INTERVAL_SECONDS = 60
 
@@ -17,16 +16,12 @@ def get_ram_usage() -> float:
   return psutil.virtual_memory().percent
 
 
-def get_system_uptime() -> float:
-  return time.time() - psutil.boot_time()
-
-
 def collect_monitoring_snapshot() -> dict:
   return {
     "timestamp": datetime.now(timezone.utc).isoformat(),
     "cpu_percent": get_cpu_usage(),
     "ram_percent": get_ram_usage(),
-    "uptime_seconds": round(get_system_uptime(), 1),
+    "uptime_seconds": get_system_uptime_seconds(),
     "processes": get_running_processes(),
   }
 
