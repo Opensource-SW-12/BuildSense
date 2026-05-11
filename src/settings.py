@@ -5,10 +5,10 @@ KNOWLEDGE_LEVELS = [
 ]
 
 ANALYSIS_DAYS_MIN = 3
-ANALYSIS_DAYS_MAX = 28
+ANALYSIS_DAYS_MAX = 30
 ANALYSIS_DAYS_DEFAULT = 7
 
-PARTS = ["CPU", "GPU", "RAM", "SSD/HDD", "파워"]
+PARTS = ["CPU", "GPU", "RAM", "SSD", "HDD", "파워"]
 
 PART_OPTIONS = [
   ("추천", "recommend"),
@@ -16,7 +16,6 @@ PART_OPTIONS = [
   ("유지", "keep"),
   ("이미 결정", "decided"),
 ]
-
 
 KNOWLEDGE_LEVEL_LABELS = {value: label for label, value in KNOWLEDGE_LEVELS}
 PART_OPTION_LABELS = {value: label for label, value in PART_OPTIONS}
@@ -37,10 +36,15 @@ PART_DESCRIPTIONS = {
     "intermediate": "용량과 속도(MHz)가 멀티태스킹 성능에 영향을 줍니다.",
     "advanced":     "용량·클록·CAS 레이턴시가 대역폭과 응답성을 결정합니다.",
   },
-  "SSD/HDD": {
-    "beginner":     "파일과 프로그램이 저장되는 공간입니다.",
-    "intermediate": "SSD는 속도, HDD는 용량 대비 가격이 장점입니다.",
-    "advanced":     "NVMe PCIe Gen4/5 vs SATA 순차 읽기·쓰기 속도가 체감 성능을 좌우합니다.",
+  "SSD": {
+    "beginner":     "운영체제와 프로그램이 빠르게 실행되도록 저장합니다.",
+    "intermediate": "빠른 읽기·쓰기 속도로 부팅과 로딩을 단축합니다.",
+    "advanced":     "NVMe PCIe Gen4/5 순차 읽기·쓰기 속도가 체감 성능을 좌우합니다.",
+  },
+  "HDD": {
+    "beginner":     "사진, 영상 등 대용량 파일을 저장하는 공간입니다.",
+    "intermediate": "대용량 저장에 적합하며 SSD보다 가격 대비 용량이 큽니다.",
+    "advanced":     "RPM·캐시 크기·플래터 밀도가 순차 처리량을 결정합니다.",
   },
   "파워": {
     "beginner":     "컴퓨터에 전기를 공급하는 부품입니다.",
