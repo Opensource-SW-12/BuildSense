@@ -436,11 +436,25 @@ class BuildSenseApp:
       command=dialog.destroy,
     ).pack(side=tk.RIGHT, padx=(8, 0))
 
+    def _on_start():
+      all_keep = all(
+        self.settings_state["parts"][part]["option"] == "keep"
+        for part in PARTS
+      )
+      if all_keep:
+        messagebox.showwarning(
+          title="BuildSense",
+          message="분석 항목이 없습니다.\n추천받을 부품을 하나 이상 선택해 주세요.",
+        )
+        return
+      dialog.destroy()
+      self._show_analysis_placeholder()
+
     tk.Button(
       btn_frame,
       text="분석 시작",
       width=12,
-      command=lambda: [dialog.destroy(), self._show_analysis_placeholder()],
+      command=_on_start,
     ).pack(side=tk.RIGHT)
 
   # ------------------------------------------------------------------
