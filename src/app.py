@@ -24,6 +24,8 @@ from src.settings import (
 from src.hardware import get_hardware_info
 from src.storage import save_user_profile
 from src.validators import validate_analysis_days, validate_parts_not_all_keep
+from src.monitor import start_monitoring_loop, stop_monitoring_loop, is_monitoring_running
+from src.config import USAGE_LOG_PATH
 
 SETTINGS_TITLE = "BuildSense - 사용자 설정"
 
@@ -375,27 +377,46 @@ class BuildSenseApp:
     # 초기 지식 수준에 따른 부품 섹션 상태 반영
     self._on_knowledge_change()
 
-  def _show_analysis_placeholder(self):
+  def _show_monitoring_screen(self):
     self._clear_window()
-    self.root.title("BuildSense - 분석 준비")
-    self._center_window(480, 240)
+    self.root.title("BuildSense - 모니터링 중")
+    self._center_window(480, 260)
 
     frame = tk.Frame(self.root, padx=24, pady=20)
     frame.pack(fill=tk.BOTH, expand=True)
 
     tk.Label(
       frame,
-      text="분석 준비",
+      text="모니터링 실행 중",
       font=("Segoe UI", 14, "bold"),
       anchor="w",
-    ).pack(fill=tk.X, pady=(0, 12))
+    ).pack(fill=tk.X, pady=(0, 16))
 
     tk.Label(
       frame,
-      text="설정이 완료되었습니다. 분석 화면은 추후 구현 예정입니다.",
+      text=f"로그 경로:  {USAGE_LOG_PATH}",
+      font=("Segoe UI", 9),
+      fg="#555555",
+      anchor="w",
+      wraplength=440,
+      justify=tk.LEFT,
+    ).pack(fill=tk.X, pady=(0, 6))
+
+    tk.Label(
+      frame,
+      text=f"분석 기간:  {self.settings_state['analysis_days']}일",
       font=("Segoe UI", 10),
       anchor="w",
-    ).pack(fill=tk.X)
+    ).pack(fill=tk.X, pady=(0, 20))
+
+    stop_btn = tk.Button(frame, text="모니터링 중지", width=16)
+
+    def _on_stop():
+      stop_monitoring_loop()
+      stop_btn.config(state=tk.DISABLED, text="모니터링 중지됨")
+
+    stop_btn.config(command=_on_stop)
+    stop_btn.pack(anchor="w")
 
   def _show_review_dialog(self):
     dialog = tk.Toplevel(self.root)
@@ -494,7 +515,8 @@ class BuildSenseApp:
         return
 
       dialog.destroy()
-      self._show_analysis_placeholder()
+      start_monitoring_loop()
+      self._show_monitoring_screen()
 
     tk.Button(
       btn_frame,

@@ -1,9 +1,11 @@
-import threading
 from datetime import datetime, timezone
 
 import psutil
 
-from src.process_tracker import get_running_processes, get_system_uptime_seconds
+from src.gpu import collect_gpu_snapshot
+from src.process_tracker import get_running_processes, get_system_boot_time, get_system_uptime_seconds
+from src.background import start_background_task, stop_background_task, is_background_running, get_stop_event
+from src.storage import append_usage_log
 
 MONITOR_INTERVAL_SECONDS = 60
 
@@ -17,39 +19,55 @@ def get_ram_usage() -> float:
 
 
 def collect_monitoring_snapshot() -> dict:
+  try:
+    gpu = collect_gpu_snapshot()
+  except Exception:
+    gpu = {"gpu_name": None, "gpu_percent": None, "vram_used_mb": None, "vram_total_mb": None}
+
+  try:
+    processes = get_running_processes()
+  except Exception:
+    processes = []
+
+  try:
+    boot_time = get_system_boot_time()
+    uptime_seconds = get_system_uptime_seconds()
+  except Exception:
+    boot_time = None
+    uptime_seconds = None
+
   return {
     "timestamp": datetime.now(timezone.utc).isoformat(),
     "cpu_percent": get_cpu_usage(),
     "ram_percent": get_ram_usage(),
-    "uptime_seconds": get_system_uptime_seconds(),
-    "processes": get_running_processes(),
+    "gpu_name": gpu.get("gpu_name"),
+    "gpu_percent": gpu.get("gpu_percent"),
+    "vram_used_mb": gpu.get("vram_used_mb"),
+    "vram_total_mb": gpu.get("vram_total_mb"),
+    "boot_time": boot_time,
+    "uptime_seconds": uptime_seconds,
+    "processes": processes,
   }
 
 
-class UsageMonitor:
-  def __init__(self) -> None:
-    self._snapshots: list[dict] = []
-    self._thread: threading.Thread | None = None
-    self._stop_event = threading.Event()
+def _monitoring_loop(interval_seconds: int) -> None:
+  stop_event = get_stop_event()
+  while not stop_event.is_set():
+    try:
+      snapshot = collect_monitoring_snapshot()
+      append_usage_log(snapshot)
+    except Exception:
+      pass
+    stop_event.wait(timeout=interval_seconds)
 
-  def start(self) -> None:
-    if self._thread and self._thread.is_alive():
-      return
-    self._stop_event.clear()
-    self._thread = threading.Thread(target=self._run, daemon=True)
-    self._thread.start()
 
-  def stop(self) -> None:
-    self._stop_event.set()
+def start_monitoring_loop(interval_seconds: int = MONITOR_INTERVAL_SECONDS) -> bool:
+  return start_background_task(_monitoring_loop, interval_seconds)
 
-  def get_snapshots(self) -> list[dict]:
-    return list(self._snapshots)
 
-  def _run(self) -> None:
-    while not self._stop_event.is_set():
-      try:
-        snapshot = collect_monitoring_snapshot()
-        self._snapshots.append(snapshot)
-      except Exception:
-        pass
-      self._stop_event.wait(timeout=MONITOR_INTERVAL_SECONDS)
+def stop_monitoring_loop() -> None:
+  stop_background_task()
+
+
+def is_monitoring_running() -> bool:
+  return is_background_running()
