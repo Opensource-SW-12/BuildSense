@@ -18,10 +18,12 @@ from src.settings import (
   PARTS,
   PART_OPTIONS,
   PART_OPTION_LABELS,
+  PART_DESCRIPTIONS,
   build_settings_state,
 )
 
 SETTINGS_TITLE = "BuildSense - 사용자 설정"
+PARTS_TITLE = "BuildSense - 추천 부품 선택"
 
 
 class BuildSenseApp:
@@ -95,12 +97,7 @@ class BuildSenseApp:
     self._clear_window()
     self.root.title(SETTINGS_TITLE)
     self.root.resizable(False, False)
-    self._center_window(580, 580)
-
-    self._part_vars = {}
-    self._part_entries = {}
-    self._part_entry_frames = {}
-    self._part_radio_widgets = {}
+    self._center_window(540, 300)
 
     # 하단 고정 내비게이션
     nav_frame = tk.Frame(self.root, padx=24, pady=10)
@@ -120,6 +117,90 @@ class BuildSenseApp:
       text="뒤로",
       width=12,
       command=self._show_consent_screen,
+    ).pack(side=tk.RIGHT, padx=(0, 8))
+
+    frame = tk.Frame(self.root, padx=24, pady=16)
+    frame.pack(fill=tk.BOTH, expand=True)
+
+    # ── 섹션 1: 컴퓨터 지식 수준 ──────────────────────────────────────
+    tk.Label(
+      frame,
+      text="컴퓨터 지식 수준",
+      font=("Segoe UI", 11, "bold"),
+      anchor="w",
+    ).pack(fill=tk.X, pady=(0, 6))
+
+    self._knowledge_var = tk.StringVar(value=self.settings_state["knowledge_level"])
+    kl_frame = tk.Frame(frame)
+    kl_frame.pack(fill=tk.X, pady=(0, 16))
+
+    for label, value in KNOWLEDGE_LEVELS:
+      tk.Radiobutton(
+        kl_frame,
+        text=label,
+        variable=self._knowledge_var,
+        value=value,
+        font=("Segoe UI", 10),
+      ).pack(side=tk.LEFT, padx=(0, 16))
+
+    tk.Frame(frame, height=1, bg="#cccccc").pack(fill=tk.X, pady=(0, 16))
+
+    # ── 섹션 2: 분석 기간 ─────────────────────────────────────────────
+    tk.Label(
+      frame,
+      text="분석 기간",
+      font=("Segoe UI", 11, "bold"),
+      anchor="w",
+    ).pack(fill=tk.X, pady=(0, 6))
+
+    self._days_var = tk.IntVar(value=self.settings_state["analysis_days"])
+    days_frame = tk.Frame(frame)
+    days_frame.pack(fill=tk.X)
+
+    tk.Label(days_frame, text="수집 기간:", font=("Segoe UI", 10)).pack(side=tk.LEFT)
+    tk.Spinbox(
+      days_frame,
+      from_=ANALYSIS_DAYS_MIN,
+      to=ANALYSIS_DAYS_MAX,
+      textvariable=self._days_var,
+      width=4,
+      font=("Segoe UI", 10),
+    ).pack(side=tk.LEFT, padx=(6, 4))
+    tk.Label(
+      days_frame,
+      text=f"일  ({ANALYSIS_DAYS_MIN}~{ANALYSIS_DAYS_MAX}일)",
+      font=("Segoe UI", 10),
+    ).pack(side=tk.LEFT)
+
+  def _show_parts_screen(self):
+    self._clear_window()
+    self.root.title(PARTS_TITLE)
+    self.root.resizable(False, False)
+    self._center_window(580, 560)
+
+    self._part_vars = {}
+    self._part_entries = {}
+    self._part_entry_frames = {}
+    self._part_radio_widgets = {}
+
+    # 하단 고정 내비게이션
+    nav_frame = tk.Frame(self.root, padx=24, pady=10)
+    nav_frame.pack(side=tk.BOTTOM, fill=tk.X)
+
+    tk.Frame(nav_frame, height=1, bg="#cccccc").pack(fill=tk.X, pady=(0, 8))
+
+    tk.Button(
+      nav_frame,
+      text="계속",
+      width=12,
+      command=self._on_parts_continue,
+    ).pack(side=tk.RIGHT)
+
+    tk.Button(
+      nav_frame,
+      text="뒤로",
+      width=12,
+      command=self._on_parts_back,
     ).pack(side=tk.RIGHT, padx=(0, 8))
 
     # 스크롤 가능한 콘텐츠 영역
@@ -151,66 +232,26 @@ class BuildSenseApp:
     canvas.bind("<Enter>", lambda e: canvas.bind_all("<MouseWheel>", _on_mousewheel))
     canvas.bind("<Leave>", lambda e: canvas.unbind_all("<MouseWheel>"))
 
-    # ── 섹션 1: 컴퓨터 지식 수준 ──────────────────────────────────────
-    tk.Label(
-      inner,
-      text="컴퓨터 지식 수준",
-      font=("Segoe UI", 11, "bold"),
-      anchor="w",
-    ).pack(fill=tk.X, pady=(0, 6))
-
-    self._knowledge_var = tk.StringVar(value=self.settings_state["knowledge_level"])
-    kl_frame = tk.Frame(inner)
-    kl_frame.pack(fill=tk.X, pady=(0, 16))
-
-    for label, value in KNOWLEDGE_LEVELS:
-      tk.Radiobutton(
-        kl_frame,
-        text=label,
-        variable=self._knowledge_var,
-        value=value,
-        font=("Segoe UI", 10),
-        command=self._on_knowledge_change,
-      ).pack(side=tk.LEFT, padx=(0, 16))
-
-    tk.Frame(inner, height=1, bg="#cccccc").pack(fill=tk.X, pady=(0, 16))
-
-    # ── 섹션 2: 분석 기간 ─────────────────────────────────────────────
-    tk.Label(
-      inner,
-      text="분석 기간",
-      font=("Segoe UI", 11, "bold"),
-      anchor="w",
-    ).pack(fill=tk.X, pady=(0, 6))
-
-    self._days_var = tk.IntVar(value=self.settings_state["analysis_days"])
-    days_frame = tk.Frame(inner)
-    days_frame.pack(fill=tk.X, pady=(0, 16))
-
-    tk.Label(days_frame, text="수집 기간:", font=("Segoe UI", 10)).pack(side=tk.LEFT)
-    tk.Spinbox(
-      days_frame,
-      from_=ANALYSIS_DAYS_MIN,
-      to=ANALYSIS_DAYS_MAX,
-      textvariable=self._days_var,
-      width=4,
-      font=("Segoe UI", 10),
-    ).pack(side=tk.LEFT, padx=(6, 4))
-    tk.Label(
-      days_frame,
-      text=f"일  ({ANALYSIS_DAYS_MIN}~{ANALYSIS_DAYS_MAX}일)",
-      font=("Segoe UI", 10),
-    ).pack(side=tk.LEFT)
-
-    tk.Frame(inner, height=1, bg="#cccccc").pack(fill=tk.X, pady=(0, 16))
-
-    # ── 섹션 3: 추천 부품 선택 ────────────────────────────────────────
+    # ── 헤더 ──────────────────────────────────────────────────────────
     tk.Label(
       inner,
       text="추천 부품 선택",
       font=("Segoe UI", 11, "bold"),
       anchor="w",
-    ).pack(fill=tk.X, pady=(0, 10))
+    ).pack(fill=tk.X, pady=(0, 4))
+
+    tk.Label(
+      inner,
+      text="각 부품에 대한 추천 방식을 선택하세요.",
+      font=("Segoe UI", 9),
+      fg="#666666",
+      anchor="w",
+    ).pack(fill=tk.X, pady=(0, 12))
+
+    tk.Frame(inner, height=1, bg="#cccccc").pack(fill=tk.X, pady=(0, 12))
+
+    # ── 부품 목록 ─────────────────────────────────────────────────────
+    level = self.settings_state["knowledge_level"]
 
     for i, part in enumerate(PARTS):
       part_state = self.settings_state["parts"][part]
@@ -218,6 +259,7 @@ class BuildSenseApp:
       container = tk.Frame(inner)
       container.pack(fill=tk.X, pady=(0, 4))
 
+      # 부품명
       tk.Label(
         container,
         text=part,
@@ -225,11 +267,24 @@ class BuildSenseApp:
         anchor="w",
       ).pack(fill=tk.X)
 
+      # 지식 수준별 설명
+      desc = PART_DESCRIPTIONS[part][level]
+      tk.Label(
+        container,
+        text=desc,
+        font=("Segoe UI", 9),
+        fg="#555555",
+        anchor="w",
+        wraplength=500,
+        justify=tk.LEFT,
+      ).pack(fill=tk.X, pady=(2, 4))
+
+      # 옵션 라디오버튼
       var = tk.StringVar(value=part_state["option"])
       self._part_vars[part] = var
 
       radio_frame = tk.Frame(container)
-      radio_frame.pack(fill=tk.X, pady=(4, 0))
+      radio_frame.pack(fill=tk.X, pady=(2, 0))
 
       radio_widgets = []
       for label, value in PART_OPTIONS:
@@ -255,7 +310,7 @@ class BuildSenseApp:
         entry_frame,
         textvariable=entry_var,
         font=("Segoe UI", 10),
-        width=36,
+        width=34,
       ).pack(side=tk.LEFT, padx=(6, 0))
       self._part_entries[part] = entry_var
 
@@ -263,10 +318,10 @@ class BuildSenseApp:
         entry_frame.pack(fill=tk.X, pady=(6, 0))
 
       if i < len(PARTS) - 1:
-        tk.Frame(inner, height=1, bg="#eeeeee").pack(fill=tk.X, pady=(8, 4))
+        tk.Frame(inner, height=1, bg="#eeeeee").pack(fill=tk.X, pady=(10, 6))
 
-    # 초기 지식 수준에 따른 부품 섹션 상태 반영
-    self._on_knowledge_change()
+    # 지식 수준이 "전혀 모름"이면 부품 선택 비활성화
+    self._apply_knowledge_to_parts()
 
   def _show_analysis_placeholder(self):
     self._clear_window()
@@ -380,17 +435,15 @@ class BuildSenseApp:
     if not self._validate_days():
       return
     self._sync_settings_state()
-    self._show_review_dialog()
+    self._show_parts_screen()
 
-  def _on_knowledge_change(self):
-    is_beginner = self._knowledge_var.get() == "beginner"
-    widget_state = tk.DISABLED if is_beginner else tk.NORMAL
-    for part in PARTS:
-      for rb in self._part_radio_widgets[part]:
-        rb.config(state=widget_state)
-      if is_beginner:
-        self._part_vars[part].set("recommend")
-        self._part_entry_frames[part].pack_forget()
+  def _on_parts_back(self):
+    self._sync_parts_state()
+    self._show_settings_screen()
+
+  def _on_parts_continue(self):
+    self._sync_parts_state()
+    self._show_review_dialog()
 
   def _on_part_option_change(self, part: str):
     value = self._part_vars[part].get()
@@ -401,7 +454,30 @@ class BuildSenseApp:
       entry_frame.pack_forget()
 
   # ------------------------------------------------------------------
-  # 검증 및 상태 동기화
+  # 상태 적용 및 동기화
+  # ------------------------------------------------------------------
+
+  def _apply_knowledge_to_parts(self):
+    is_beginner = self.settings_state["knowledge_level"] == "beginner"
+    widget_state = tk.DISABLED if is_beginner else tk.NORMAL
+    for part in PARTS:
+      for rb in self._part_radio_widgets[part]:
+        rb.config(state=widget_state)
+      if is_beginner:
+        self._part_vars[part].set("recommend")
+        self._part_entry_frames[part].pack_forget()
+
+  def _sync_settings_state(self):
+    self.settings_state["knowledge_level"] = self._knowledge_var.get()
+    self.settings_state["analysis_days"] = self._days_var.get()
+
+  def _sync_parts_state(self):
+    for part in PARTS:
+      self.settings_state["parts"][part]["option"] = self._part_vars[part].get()
+      self.settings_state["parts"][part]["manual_input"] = self._part_entries[part].get()
+
+  # ------------------------------------------------------------------
+  # 검증
   # ------------------------------------------------------------------
 
   def _validate_days(self) -> bool:
@@ -441,13 +517,6 @@ class BuildSenseApp:
       return False
 
     return True
-
-  def _sync_settings_state(self):
-    self.settings_state["knowledge_level"] = self._knowledge_var.get()
-    self.settings_state["analysis_days"] = self._days_var.get()
-    for part in PARTS:
-      self.settings_state["parts"][part]["option"] = self._part_vars[part].get()
-      self.settings_state["parts"][part]["manual_input"] = self._part_entries[part].get()
 
   # ------------------------------------------------------------------
   # 유틸리티
