@@ -437,9 +437,9 @@ class BuildSenseApp:
     ).pack(side=tk.RIGHT, padx=(8, 0))
 
     def _on_start():
-      valid, message = validate_parts_not_all_keep(self.settings_state["parts"])
-      if not valid:
-        messagebox.showwarning(title="BuildSense", message=message)
+      result = validate_parts_not_all_keep(self.settings_state["parts"])
+      if not result.valid:
+        messagebox.showwarning(title="BuildSense", message=result.message)
         return
       dialog.destroy()
       self._show_analysis_placeholder()
@@ -513,10 +513,10 @@ class BuildSenseApp:
     except tk.TclError:
       raw = None
 
-    valid, message, corrected = validate_analysis_days(raw)
-    if not valid:
-      messagebox.showwarning(title="입력 오류", message=message)
-      self._days_var.set(corrected)
+    result = validate_analysis_days(raw)
+    if not result.valid:
+      messagebox.showwarning(title="입력 오류", message=result.message)
+      self._days_var.set(result.corrected)
       return False
 
     return True
