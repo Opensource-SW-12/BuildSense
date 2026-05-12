@@ -1,1 +1,3 @@
 psutil>=5.9.0
+tkdesigner
+Pillow>=11,<13
