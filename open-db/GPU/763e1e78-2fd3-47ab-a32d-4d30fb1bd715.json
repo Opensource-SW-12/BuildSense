@@ -1,0 +1,53 @@
+{
+  "opendb_id": "763e1e78-2fd3-47ab-a32d-4d30fb1bd715",
+  "power_connectors": {
+    "pcie_6_pin": 0,
+    "pcie_8_pin": 0,
+    "pcie_12VHPWR": 0,
+    "pcie_12V_2x6": 0
+  },
+  "video_outputs": {
+    "hdmi_2_1": 1,
+    "hdmi_2_0": 0,
+    "displayport_2_1": 0,
+    "displayport_2_1a": 0,
+    "displayport_1_4a": 1,
+    "dvi_d": 0,
+    "vga": 0,
+    "hdmi_2_2": 0,
+    "hdmi_2_1a": 0,
+    "hdmi_2_1b": 0,
+    "displayport_2_1_b": 0,
+    "usb_c": 0
+  },
+  "metadata": {
+    "name": "ASRock AMD Radeon RX 6400 Challenger ITX 4GB GDDR6",
+    "manufacturer": "ASRock",
+    "part_numbers": ["RX6400 CLI 4G", "90-GA3CZZ-00UANF"],
+    "series": "Challenger ITX",
+    "manufacturer_color": "Black",
+    "releaseYear": 2022
+  },
+  "chipset_manufacturer": "AMD",
+  "memory": 4,
+  "memory_type": "GDDR6",
+  "core_base_clock": 1923,
+  "core_boost_clock": 2321,
+  "effective_memory_clock": 2000,
+  "memory_bus": 64,
+  "interface": "PCIe 4.0 x4",
+  "frame_sync": "FreeSync",
+  "length": 162,
+  "tdp": 53,
+  "case_expansion_slot_width": 2,
+  "total_slot_width": 2,
+  "cooling": "1 Fan",
+  "color": ["BLACK", "GREY"],
+  "core_count": 768,
+  "chipset": "Radeon RX 6400",
+  "lighting": [],
+  "general_product_information": {
+    "amazon_sku": "B09YRXYDTT",
+    "manufacturer_url": "https://www.asrock.com/Graphics-Card/AMD/Radeon%20RX%206400%20Challenger%20ITX%204GB/#Specification"
+  }
+}
