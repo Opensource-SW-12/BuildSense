@@ -1,0 +1,56 @@
+{
+  "opendb_id": "3570e718-7040-478b-b45f-dc7a3f30a349",
+  "power_connectors": {
+    "pcie_6_pin": 0,
+    "pcie_8_pin": 0,
+    "pcie_12VHPWR": 1,
+    "pcie_12V_2x6": 0
+  },
+  "video_outputs": {
+    "hdmi_2_1": 1,
+    "hdmi_2_0": 0,
+    "displayport_2_1": 0,
+    "displayport_2_1a": 0,
+    "displayport_1_4a": 3,
+    "dvi_d": 0,
+    "vga": 0,
+    "hdmi_2_2": 0,
+    "hdmi_2_1a": 0,
+    "hdmi_2_1b": 0,
+    "displayport_2_1_b": 0,
+    "usb_c": 0
+  },
+  "metadata": {
+    "name": "PNY GeForce RTX 4080 16GB XLR8 Gaming VERTO EPIC-X RGB Overclocked Triple Fan DLSS 3",
+    "manufacturer": "PNY",
+    "part_numbers": ["VCG408016TFXXPB1-O"],
+    "series": "XLR8 Gaming VERTO",
+    "variant": "Overclocked",
+    "releaseYear": 2022,
+    "manufacturer_color": "Black"
+  },
+  "chipset_manufacturer": "NVIDIA",
+  "chipset": "GeForce RTX 4080",
+  "memory": 16,
+  "memory_type": "GDDR6X",
+  "core_base_clock": 2205,
+  "core_boost_clock": 2550,
+  "effective_memory_clock": 1400,
+  "memory_bus": 256,
+  "interface": "PCIe 4.0 x16",
+  "color": ["BLACK", "RGB"],
+  "length": 332,
+  "tdp": 320,
+  "total_slot_width": 3.5,
+  "cooling": "3 Fans",
+  "core_count": 9728,
+  "frame_sync": "G-Sync",
+  "case_expansion_slot_width": 3,
+  "lighting": [],
+  "general_product_information": {
+    "amazon_sku": "B0BKGXLB13",
+    "bestbuy_sku": 6528737,
+    "walmart_sku": 1522770816,
+    "manufacturer_url": "https://www.pny.com/pny-geforce-rtx-4080-16gb-epic-x-argb-triple-fan-oc"
+  }
+}
