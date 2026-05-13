@@ -12,6 +12,12 @@ logs/*
 reports/*
 
 !data/.gitkeep
+!data/specs/
+!data/specs/*.json
+
+!data/prices/
+!data/prices/*.json
+
 !logs/.gitkeep
 !reports/.gitkeep
 
