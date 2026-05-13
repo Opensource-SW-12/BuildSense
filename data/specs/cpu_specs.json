@@ -16,7 +16,7 @@
     "name": "Intel Xeon E5 1650 V3 OEM/Tray 3.5 GHz 6-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -26,7 +26,7 @@
     "name": "Intel Xeon E3 1245 V5 OEM/Tray 3.5 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -36,7 +36,7 @@
     "name": "Intel Xeon E5 2660 V4 2 GHz 14-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -46,7 +46,7 @@
     "name": "Intel Core i5 6400T 2.2 GHz 4-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -56,7 +56,7 @@
     "name": "Intel Core i9 13900T 1.1 GHz 24-Core LGA1700 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -66,7 +66,7 @@
     "name": "Intel Core i5 7600T 2.8 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -86,7 +86,7 @@
     "name": "Intel Core i7 7700K 4.2 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -96,7 +96,7 @@
     "name": "AMD Threadripper 1900X 3.8 GHz 8-Core sTR4",
     "manufacturer": "AMD",
     "series": "AMD Threadripper",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -106,7 +106,7 @@
     "name": "Intel Core i7 Extreme 6950X 3 GHz 10-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Core i7 Extreme",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -116,7 +116,7 @@
     "name": "Intel Xeon E 2136 3.3 GHz 6-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Xeon E",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -126,7 +126,7 @@
     "name": "AMD A6 7470K 3.7 GHz 2-Core FM2+ OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD A6",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -136,7 +136,7 @@
     "name": "AMD Opteron 6344 2.6 GHz 12-Core G34 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Opteron",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -146,7 +146,7 @@
     "name": "AMD A8 7670K 3.6 GHz 4-Core FM2+",
     "manufacturer": "AMD",
     "series": "AMD A8",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -156,7 +156,7 @@
     "name": "Intel Core i5 4460S 2.9 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -166,7 +166,7 @@
     "name": "Intel Core i9 13900K 3.0 GHz 24-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -176,7 +176,7 @@
     "name": "Intel Core i5 3570S 3.1 GHz 4-Core LGA1155 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -186,7 +186,7 @@
     "name": "AMD Ryzen 5 5600 3.5 GHz 6-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -196,7 +196,7 @@
     "name": "Intel Core i5 8400 2.8 GHz 6-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -206,7 +206,7 @@
     "name": "Intel Core i7 4930K 3.4 GHz 6-Core LGA2011",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -216,7 +216,7 @@
     "name": "Intel Core i7 Extreme 6950X 3 GHz 10-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Core i7 Extreme",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -226,7 +226,7 @@
     "name": "Intel Xeon E3 1275 V5 3.6 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -236,7 +236,7 @@
     "name": "Intel Xeon E5 2623 V3 3 GHz 4-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -246,7 +246,7 @@
     "name": "AMD Ryzen 5 3400G 3.7 GHz 4-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -256,7 +256,7 @@
     "name": "Intel Xeon E5 2630 V3 2.4 GHz 8-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -266,7 +266,7 @@
     "name": "Intel Xeon E3 1220 V5 3 GHz 4-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -276,7 +276,7 @@
     "name": "Intel Xeon E3 1270 V3 3.5 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -286,7 +286,7 @@
     "name": "Intel Core i5 12600KF 3.7 GHz 10-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -296,7 +296,7 @@
     "name": "AMD A4 6300 3.7 GHz 2-Core FM2 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD A4",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -306,7 +306,7 @@
     "name": "Intel Xeon E3 1271 V3 3.6 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -316,7 +316,7 @@
     "name": "Intel Core i7 5930K 3.5 GHz 6-Core LGA2011-3 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -326,7 +326,7 @@
     "name": "Intel Core i3 9100 3.6 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -336,7 +336,7 @@
     "name": "AMD Threadripper 2920X 3.5 GHz 12-Core sTR4",
     "manufacturer": "AMD",
     "series": "AMD Threadripper",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -346,7 +346,7 @@
     "name": "Intel Xeon E5 2683 V4 2.1 GHz 16-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -356,7 +356,7 @@
     "name": "Intel Core i3 9320 3.7 GHz 4-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -386,7 +386,7 @@
     "name": "Intel Xeon E5 2660 2.2 GHz 8-Core LGA2011 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -396,7 +396,7 @@
     "name": "Intel Core i7 7820X 3.6 GHz 8-Core LGA2066",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -406,7 +406,7 @@
     "name": "Intel Core i7 4790K 4 GHz 4-Core LGA1150 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -416,7 +416,7 @@
     "name": "AMD EPYC EPYC 4344P 3.8 GHz 8-Core AM5",
     "manufacturer": "AMD",
     "series": "AMD EPYC",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -426,7 +426,7 @@
     "name": "Intel Xeon E 2126G 3.3 GHz 6-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -436,7 +436,7 @@
     "name": "Intel Core i7 6850K 3.6 GHz 6-Core LGA2011-3 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -446,7 +446,7 @@
     "name": "Intel Xeon E5 2620 V3 2.4 GHz 6-Core LGA2011-3 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -456,7 +456,7 @@
     "name": "Intel Xeon E5 2680 2.7 GHz 8-Core LGA2011",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -466,7 +466,7 @@
     "name": "AMD A-Series A12 9800E 3.1 GHz 4-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD A12",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -476,7 +476,7 @@
     "name": "Intel Core i7 Extreme 5960X 3 GHz 8-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Core i7 Extreme",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -486,7 +486,7 @@
     "name": "AMD A10 A10-7700K 3.4 GHz 4-Core FM2+",
     "manufacturer": "AMD",
     "series": "AMD A10",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -496,7 +496,7 @@
     "name": "Intel Core i5 14500T 1.7 GHz 14-Core LGA1700 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -504,9 +504,9 @@
     "opendb_id": "0cf9aff1-4f08-4f12-8557-ebbc10083495",
     "category": "cpu",
     "name": "Intel Core i9-9920X",
-    "manufacturer": null,
-    "series": null,
-    "variant": null,
+    "manufacturer": "",
+    "series": "",
+    "variant": "",
     "release_year": 2018
   },
   {
@@ -514,9 +514,9 @@
     "opendb_id": "0d19c5b2-c8fc-432b-a4d4-aa31365c5261",
     "category": "cpu",
     "name": "Intel Celeron Processor G5920",
-    "manufacturer": null,
-    "series": null,
-    "variant": null,
+    "manufacturer": "",
+    "series": "",
+    "variant": "",
     "release_year": 2020
   },
   {
@@ -526,7 +526,7 @@
     "name": "AMD A6 A6 6420K 4 GHz 2-Core FM2 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD A6",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -536,7 +536,7 @@
     "name": "Intel Core i9 10850K 3.6 GHz 10-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -546,7 +546,7 @@
     "name": "Intel Core i7 9800X 3.8 GHz 8-Core LGA2066",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -556,7 +556,7 @@
     "name": "AMD A-Series A10 9700E 3 GHz 4-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD A10",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -566,7 +566,7 @@
     "name": "Intel Core i7 Extreme 6950X 3.0 GHz 10-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Core i7 Extreme",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -576,7 +576,7 @@
     "name": "Intel Core i7 4771 3.5 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -586,7 +586,7 @@
     "name": "Intel Core i9 7940X 3.1 GHz 14-Core LGA2066",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -596,7 +596,7 @@
     "name": "AMD Ryzen 5 3600X 3.8 GHz 6-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -606,7 +606,7 @@
     "name": "Intel Core i9 10900F 2.8 GHz 10-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -616,7 +616,7 @@
     "name": "Intel Xeon E5 1660 V3 3 GHz 8-Core LGA2011-3 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -626,7 +626,7 @@
     "name": "AMD Ryzen 5 9600 3.8 GHz 6-Core AM5",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -636,7 +636,7 @@
     "name": "AMD Athlon X4 880K 4 GHz 4-Core FM2+",
     "manufacturer": "AMD",
     "series": "AMD Athlon X4",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -646,7 +646,7 @@
     "name": "Intel Core i5 9500 3.0 GHz 6-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -656,7 +656,7 @@
     "name": "AMD A 10 7860k 3.6 GHz 4-Core FM2+ OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD A10",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -666,7 +666,7 @@
     "name": "Intel Xeon E5 2650 2 GHz 8-Core LGA2011",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -676,7 +676,7 @@
     "name": "AMD FX FX-6120 3.5 GHz 6-Core AM3+ OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD FX",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -686,7 +686,7 @@
     "name": "AMD Ryzen 5 7500F 3.7 GHz 6-Core AM5 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -696,7 +696,7 @@
     "name": "Intel Core i3 12100F 3.3 GHz 4-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -706,7 +706,7 @@
     "name": "Intel Core i9 14900F 2.0 GHz 24-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -716,7 +716,7 @@
     "name": "AMD Ryzen 9 3900XT 3.8 GHz 12-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -726,7 +726,7 @@
     "name": "Intel Core i5 7640X 4 GHz 4-Core LGA2066 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -735,8 +735,8 @@
     "category": "cpu",
     "name": "AMD Ryzen Threadripper 2990WX",
     "manufacturer": "AMD",
-    "series": null,
-    "variant": null,
+    "series": "",
+    "variant": "",
     "release_year": 2018
   },
   {
@@ -746,7 +746,7 @@
     "name": "Intel Core i9 11900 2.5 GHz 8-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -756,7 +756,7 @@
     "name": "AMD Ryzen 5 4600G 3.7 GHz 6-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -766,7 +766,7 @@
     "name": "AMD FX FX FX-8370 4 GHz 8-Core AM3+",
     "manufacturer": "AMD",
     "series": "AMD FX",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -776,7 +776,7 @@
     "name": "AMD EPYC 4584PX 4.2 GHz 16-Core AM5",
     "manufacturer": "AMD",
     "series": "AMD EPYC",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -786,7 +786,7 @@
     "name": "Intel Core i9 11900KF 3.5 GHz 8-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -796,7 +796,7 @@
     "name": "Intel Core i7 6700K 4 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -806,7 +806,7 @@
     "name": "Intel Core i9 14900 2 GHz 24-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -816,7 +816,7 @@
     "name": "Intel Xeon E5 1650 V4 3.6 GHz 6-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -825,8 +825,8 @@
     "category": "cpu",
     "name": "Intel Pentium Gold G5500",
     "manufacturer": "Intel",
-    "series": null,
-    "variant": null,
+    "series": "",
+    "variant": "",
     "release_year": 2018
   },
   {
@@ -836,7 +836,7 @@
     "name": "Intel Xeon E 2134 3.5 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Xeon E",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -846,7 +846,7 @@
     "name": "Intel Xeon E5-2697 V2 2.7 GHz 12-Core LGA2011",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -856,7 +856,7 @@
     "name": "Intel Core i5 9500F 3 GHz 6-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -866,7 +866,7 @@
     "name": "AMD Ryzen 3 1300X 3.5 GHz 4-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -876,7 +876,7 @@
     "name": "AMD A10 A10-7870K 3.9 GHz 4-Core FM2+",
     "manufacturer": "AMD",
     "series": "AMD A10",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -886,7 +886,7 @@
     "name": "AMD Ryzen 5 2400G 3.6 GHz 4-Core AM4 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -896,7 +896,7 @@
     "name": "Intel Xeon E3 1260L V5 OEM/Tray 2.9 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -904,9 +904,9 @@
     "opendb_id": "1917223b-ee1e-4643-b0ef-e250bca0abf8",
     "category": "cpu",
     "name": "Intel Core i9-9820X X-series Processor (16.5M Cache, up to 4.20 GHz)",
-    "manufacturer": null,
-    "series": null,
-    "variant": null,
+    "manufacturer": "",
+    "series": "",
+    "variant": "",
     "release_year": 2018
   },
   {
@@ -916,7 +916,7 @@
     "name": "Intel Core i7 6900K 3.2 GHz 8-Core OEM/Tray LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -926,7 +926,7 @@
     "name": "Intel Core i7 4790T 2.7 GHz 4-Core LGA1150 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -946,7 +946,7 @@
     "name": "Intel Xeon E3 1245 V6 3.7 GHz 4-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -956,7 +956,7 @@
     "name": "Intel Core i9 7900X 3.3 GHz 10-Core LGA2066 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -966,7 +966,7 @@
     "name": "Intel Core i9 9900T 2.1 GHz 8-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -976,7 +976,7 @@
     "name": "Intel Core i9 10900KF 3.7 GHz 10-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -986,7 +986,7 @@
     "name": "AMD A-Series A12 9800 3.8 GHz 4-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD A12",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -996,7 +996,7 @@
     "name": "AMD A6 A6-9550 3.8 GHz 2-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD A6",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1006,7 +1006,7 @@
     "name": "Intel Core i5 7500 OEM/Tray 3.4 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1016,7 +1016,7 @@
     "name": "Intel Core i5 4690K 3.5 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1026,7 +1026,7 @@
     "name": "AMD FX FX-8310 3.4 GHz 8-Core AM3+ OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD FX",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1036,7 +1036,7 @@
     "name": "Intel Core i7 7700T 2.9 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1046,7 +1046,7 @@
     "name": "Intel Core i3 9100F 3.6 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1066,7 +1066,7 @@
     "name": "Intel Core i5 9400T 1.8 GHz 6-Core LGA1151 (OEM/Tray)",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1076,7 +1076,7 @@
     "name": "Intel Core i9 10900 2.8 GHz 10-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1086,7 +1086,7 @@
     "name": "AMD Pro A6 7400B 3.5 GHz 2-Core FM2+ OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD A6",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1096,7 +1096,7 @@
     "name": "Intel Xeon E 2274G 4 GHz 4-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1106,7 +1106,7 @@
     "name": "Intel Core i7 7700T 2.9 GHz 4-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1116,7 +1116,7 @@
     "name": "AMD Ryzen 9 PRO 7945 3.7 GHz 12-Core AM5 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 9 PRO",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1126,7 +1126,7 @@
     "name": "AMD A-Series A10 Pro 7800B 3.5 GHz 4-Core FM2+",
     "manufacturer": "AMD",
     "series": "AMD A10",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1136,7 +1136,7 @@
     "name": "Intel Core i9 9980XE 3 GHz 18-Core LGA2066",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1146,7 +1146,7 @@
     "name": "Intel Xeon E5 2620 V3 2.4 GHz 6-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1156,7 +1156,7 @@
     "name": "Intel Core i7 4790K 4 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1166,7 +1166,7 @@
     "name": "Intel Core i3 10300 3.7 GHz 4-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1176,7 +1176,7 @@
     "name": "Intel Core i5 7400 3 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1186,7 +1186,7 @@
     "name": "Intel Core i5 13400F 2.5 GHz 10-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1196,7 +1196,7 @@
     "name": "Intel Core i7 6850K 3.6 GHz 6-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1206,7 +1206,7 @@
     "name": "AMD Ryzen 7 1700X 3.4 GHz 8-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1216,7 +1216,7 @@
     "name": "Intel Xeon E5 1650 V2 OEM/Tray 3.5 GHz 6-Core LGA2011",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1226,7 +1226,7 @@
     "name": "Intel Xeon E5 2470V2 2.4 GHz 10-Core LGA1356",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1236,7 +1236,7 @@
     "name": "Intel Xeon E5 2450V2 2.5 GHz 8-Core LGA1356",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1246,7 +1246,7 @@
     "name": "AMD Athlon X4 845 3.5 GHz 4-Core FM2+ OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Athlon X4",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1256,7 +1256,7 @@
     "name": "Intel Xeon E5 1630 V4 3.7 GHz 4-Core LGA2011-3 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1276,7 +1276,7 @@
     "name": "Intel Core i7 10700KF 3.8 GHz 8-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1286,7 +1286,7 @@
     "name": "Intel Core i7 6850K 3.6 GHz 6-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1296,7 +1296,7 @@
     "name": "AMD A-Series A4 7300 3.8 GHz 2-Core FM2",
     "manufacturer": "AMD",
     "series": "AMD A4",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1304,9 +1304,9 @@
     "opendb_id": "26958ace-558b-4181-ba1a-82a0fbc8a132",
     "category": "cpu",
     "name": "Intel® Pentium® Gold G6400 Processor (4M Cache, 4.00 GHz)",
-    "manufacturer": null,
-    "series": null,
-    "variant": null,
+    "manufacturer": "",
+    "series": "",
+    "variant": "",
     "release_year": 2020
   },
   {
@@ -1316,7 +1316,7 @@
     "name": "Intel Core i5 11600 2.8 GHz 6-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1326,7 +1326,7 @@
     "name": "Intel Core i5 9600K 3.7 GHz 6-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1336,7 +1336,7 @@
     "name": "Intel Xeon E5 2660 V2 2.2 GHz 10-Core LGA2011",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1346,7 +1346,7 @@
     "name": "Intel Xeon E3 1225 V5 3.3 GHz 4-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1356,7 +1356,7 @@
     "name": "AMD A6 A6-7400K 3.5 GHz 2-Core FM2+",
     "manufacturer": "AMD",
     "series": "AMD A6",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1366,7 +1366,7 @@
     "name": "Intel Core i9 9820X 3.3 GHz 10-Core LGA2066",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1376,7 +1376,7 @@
     "name": "Intel Core i9 11900K 3.5 GHz 8-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1386,7 +1386,7 @@
     "name": "Intel Xeon E5 1620 V3 OEM/Tray 3.5 GHz 4-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1406,7 +1406,7 @@
     "name": "Intel Core i5 4690K 3.5 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1416,7 +1416,7 @@
     "name": "Intel Core i5 4690S 3.2 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1426,7 +1426,7 @@
     "name": "AMD A8 Pro 7600B 3.1 GHz 4-Core FM2+ OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD A8",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1436,7 +1436,7 @@
     "name": "Intel Core i5 7640X 4 GHz 4-Core LGA2066",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1446,7 +1446,7 @@
     "name": "Intel Core i5 9400 2.9 GHz 6-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1456,7 +1456,7 @@
     "name": "Intel Xeon E3 1231 V3 3.4 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1466,7 +1466,7 @@
     "name": "Intel Xeon E5 1650 V3 3.5 GHz 6-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1476,7 +1476,7 @@
     "name": "Intel Core Ultra 5 225F 3.3 GHz 10-Core LGA1851",
     "manufacturer": "Intel",
     "series": "Intel Core Ultra 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1486,7 +1486,7 @@
     "name": "AMD Ryzen 9 7900 3.6 GHz 12-Core AM5",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1496,7 +1496,7 @@
     "name": "Intel Xeon E5 E5-2643 V2 3.5 GHz 6-Core LGA2011 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1506,7 +1506,7 @@
     "name": "AMD A 6 7400K 3.5 GHz 2-Core FM2+ OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD A6",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1516,7 +1516,7 @@
     "name": "AMD Ryzen 5 2600X 3.6 GHz 6-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1526,7 +1526,7 @@
     "name": "Intel Core i5 9500T 2.2 GHz 6-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1536,7 +1536,7 @@
     "name": "AMD Ryzen 9 3950X 3.5 GHz 16-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1546,7 +1546,7 @@
     "name": "Intel Core i7 6700 3.4 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1566,7 +1566,7 @@
     "name": "Intel Core i7 13700T OEM/Tray 1.4 GHz 16-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1576,7 +1576,7 @@
     "name": "Intel Xeon E 2174G 3.8 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Xeon E",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1586,7 +1586,7 @@
     "name": "Intel Xeon E5 2660 V3 2.6 GHz 10-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1596,7 +1596,7 @@
     "name": "Intel Core i7 10700F 2.9 GHz 8-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1606,7 +1606,7 @@
     "name": "Intel Xeon E3 1280 V6 3.9 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1616,7 +1616,7 @@
     "name": "Intel Xeon E3 1285 V6 4.1 GHz 4-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1626,7 +1626,7 @@
     "name": "Intel Xeon E3 1270 V6 3.8 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1636,7 +1636,7 @@
     "name": "AMD Ryzen 7 1700X 3.4 GHz 8-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1646,7 +1646,7 @@
     "name": "Intel Core i5 6500T 2.5 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1656,7 +1656,7 @@
     "name": "Intel Core i9 13900KF 3.0 GHz 24-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1666,7 +1666,7 @@
     "name": "Intel Core i5 11400 2.6 GHz 6-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1676,7 +1676,7 @@
     "name": "Intel Core i7 7700 3.6 GHz 4-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1686,7 +1686,7 @@
     "name": "Intel Core i7 8700 3.2 GHz 6-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1696,7 +1696,7 @@
     "name": "Intel Core i7 7700K 4.2 GHz 4-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1706,7 +1706,7 @@
     "name": "Intel Core i9 10900X 3.7 GHz 10-Core",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1716,7 +1716,7 @@
     "name": "AMD Threadripper 3960X 3.8 GHz 24-Core sTRX4",
     "manufacturer": "AMD",
     "series": "AMD Threadripper",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1724,9 +1724,9 @@
     "opendb_id": "33fd5275-e263-40ed-9c8a-345ef9d5b7e7",
     "category": "cpu",
     "name": "Intel Core i9-9900X",
-    "manufacturer": null,
-    "series": null,
-    "variant": null,
+    "manufacturer": "",
+    "series": "",
+    "variant": "",
     "release_year": 2018
   },
   {
@@ -1736,7 +1736,7 @@
     "name": "AMD A10 A10-7860k 3.6 GHz 4-Core FM2+",
     "manufacturer": "AMD",
     "series": "AMD A10",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1746,7 +1746,7 @@
     "name": "Intel Core i5 12500 3.0 GHz 6-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1756,7 +1756,7 @@
     "name": "AMD FX FX 8370 4 GHz 8-Core AM3+",
     "manufacturer": "AMD",
     "series": "AMD FX",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1766,7 +1766,7 @@
     "name": "Intel Core i5 7600T 2.8 GHz 4-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1776,7 +1776,7 @@
     "name": "AMD Ryzen 3 2200G 3.5 GHz 4-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1786,7 +1786,7 @@
     "name": "Intel Xeon E3 1230 V6 3.5 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1796,7 +1796,7 @@
     "name": "Intel Core i5 9400 2.9 GHz 6-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1806,7 +1806,7 @@
     "name": "AMD Ryzen 5 5600X 3.7 GHz 6-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1814,9 +1814,9 @@
     "opendb_id": "3805a074-834c-4673-9485-4ea1d306a008",
     "category": "cpu",
     "name": "Intel Core i7-9800X Skylake X 8-Core 3.8 GHz (4.4 GHz Turbo) LGA 2066 165W BX80673I79800X Desktop Processor",
-    "manufacturer": null,
-    "series": null,
-    "variant": null,
+    "manufacturer": "",
+    "series": "",
+    "variant": "",
     "release_year": 2018
   },
   {
@@ -1826,7 +1826,7 @@
     "name": "Intel Xeon E3 1280 V5 3.7 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1836,7 +1836,7 @@
     "name": "AMD FX 9590 4.7 GHz 8-Core AM3+ OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD FX",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1846,7 +1846,7 @@
     "name": "Intel Xeon E5 2687W 3.1 GHz 8-Core LGA2011",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1856,7 +1856,7 @@
     "name": "Intel Core i7 4790 3.6 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1866,7 +1866,7 @@
     "name": "Intel Core i9 7960X 2.8 GHz 16-Core LGA2066 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1876,7 +1876,7 @@
     "name": "AMD Ryzen 7 8700F 4.1 GHz 8-Core AM5",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1884,9 +1884,9 @@
     "opendb_id": "39c1bfe9-565b-44eb-b940-8eec3b68d969",
     "category": "cpu",
     "name": "AMD Athlon 200GE",
-    "manufacturer": null,
-    "series": null,
-    "variant": null,
+    "manufacturer": "",
+    "series": "",
+    "variant": "",
     "release_year": 2018
   },
   {
@@ -1896,7 +1896,7 @@
     "name": "Intel Core i7 Extreme 4960X 3.6 GHz 6-Core LGA2011",
     "manufacturer": "Intel",
     "series": "Intel Core i7 Extreme",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1906,7 +1906,7 @@
     "name": "Intel Core i5 8500 3 GHz 6-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1916,7 +1916,7 @@
     "name": "AMD Ryzen 5 7500X3D 4 GHz 6-Core AM5",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": 2025
   },
   {
@@ -1926,7 +1926,7 @@
     "name": "AMD A4 Pro 7300B 3.8 GHz 2-Core FM2 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD A4",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1936,7 +1936,7 @@
     "name": "Intel Core i9 9900X 3.5 GHz 10-Core LGA2066",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1946,7 +1946,7 @@
     "name": "AMD Threadripper Threadripper 2990WX 3 GHz 32-Core sTR4 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Threadripper",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1956,7 +1956,7 @@
     "name": "Intel Core i5 8600 3.1 GHz 6-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1966,7 +1966,7 @@
     "name": "Intel Core i5 6500T 2.5 GHz 4-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1976,7 +1976,7 @@
     "name": "Intel Xeon E5 2697 V3 2.6 GHz 14-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1986,7 +1986,7 @@
     "name": "Intel Xeon E3 1225 V6 3.3 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -1996,7 +1996,7 @@
     "name": "Intel Xeon E5 2660 V3 2.6 GHz 10-Core LGA2011-3 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2006,7 +2006,7 @@
     "name": "Intel Core i7 8700T 2.4 GHz 6-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2016,7 +2016,7 @@
     "name": "Intel Core i7 9700K 3.6 GHz 8-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2026,7 +2026,7 @@
     "name": "AMD Ryzen 7 3800X 3.9 GHz 8-Core AM4 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2034,9 +2034,9 @@
     "opendb_id": "3e8b5db8-eaf0-4627-b6c6-22342f5515c3",
     "category": "cpu",
     "name": "Intel Core i7-7820X",
-    "manufacturer": null,
-    "series": null,
-    "variant": null,
+    "manufacturer": "",
+    "series": "",
+    "variant": "",
     "release_year": 2017
   },
   {
@@ -2045,8 +2045,8 @@
     "category": "cpu",
     "name": "Athlon 220GE",
     "manufacturer": "AMD",
-    "series": null,
-    "variant": null,
+    "series": "",
+    "variant": "",
     "release_year": 2018
   },
   {
@@ -2056,7 +2056,7 @@
     "name": "AMD Opteron 6320 2.8 GHz 8-Core G34",
     "manufacturer": "AMD",
     "series": "AMD Opteron",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2066,7 +2066,7 @@
     "name": "AMD FX 9370 4.4 GHz 8-Core AM3+",
     "manufacturer": "AMD",
     "series": "AMD FX",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2086,7 +2086,7 @@
     "name": "AMD Ryzen 5 3600 3.6 GHz 6-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2096,7 +2096,7 @@
     "name": "Intel Core i5 9400 2.9 GHz 6-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2106,7 +2106,7 @@
     "name": "Intel Xeon E5 2670 2.6 GHz 8-Core LGA2011 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2136,7 +2136,7 @@
     "name": "Intel Xeon E5 2660 2.2 GHz 8-Core LGA2011",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2156,7 +2156,7 @@
     "name": "AMD FX FX-9590 4.7 GHz 8-Core AM3+ OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD FX",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2166,7 +2166,7 @@
     "name": "AMD Ryzen 7 3800X 3.9 GHz 8-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2176,7 +2176,7 @@
     "name": "Intel Xeon E5 2687W V3 3.1 GHz 10-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2186,7 +2186,7 @@
     "name": "AMD Ryzen 5 1600X 3.6 GHz 6-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2196,7 +2196,7 @@
     "name": "Intel Core i9 7900X 3.3 GHz 10-Core LGA2066",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2206,7 +2206,7 @@
     "name": "AMD Athlon X4 840 3.1 GHz 4-Core FM2+ OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Athlon X4",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2216,7 +2216,7 @@
     "name": "Intel Core i5 10600KF 4.1 GHz 6-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2226,7 +2226,7 @@
     "name": "AMD Athlon X4 860K 3.7 GHz 4-Core FM2+",
     "manufacturer": "AMD",
     "series": "AMD Athlon X4",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2236,7 +2236,7 @@
     "name": "AMD Ryzen 5 2600X 3.6 GHz 6-Core AM4 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2246,7 +2246,7 @@
     "name": "AMD Ryzen 7 5700 3.7 GHz 8-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2256,7 +2256,7 @@
     "name": "Intel Core i3 12100T 2.2 GHz 4-Core LGA1700 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2266,7 +2266,7 @@
     "name": "AMD A-Series A4 6300B 3.7 GHz 2-Core FM2",
     "manufacturer": "AMD",
     "series": "AMD A4",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2276,7 +2276,7 @@
     "name": "Intel Core i5 10500 3.1 GHz 6-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2286,7 +2286,7 @@
     "name": "AMD A6 AMD A6 A6-9550 3.8 GHz 2-Core AM4 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD A6",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2296,7 +2296,7 @@
     "name": "AMD EPYC 4564P 4.5 GHz 16-Core AM5",
     "manufacturer": "AMD",
     "series": "AMD EPYC",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2306,7 +2306,7 @@
     "name": "AMD A8 7600 3.1 GHz 4-Core FM2+",
     "manufacturer": "AMD",
     "series": "AMD A8",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2316,7 +2316,7 @@
     "name": "AMD Athlon X4 880K 4 GHz 4-Core FM2+ OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Athlon X4",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2326,7 +2326,7 @@
     "name": "Intel Core i7 7800X 3.5 GHz 6-Core LGA2066 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2336,7 +2336,7 @@
     "name": "Intel Xeon E5 2699 V3 2.3 GHz 18-Core LGA2011-3 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2346,7 +2346,7 @@
     "name": "AMD Ryzen 5 4500 3.6 GHz 6-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2356,7 +2356,7 @@
     "name": "Intel Xeon E5 2630 V3 2.4 GHz 8-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2366,7 +2366,7 @@
     "name": "Intel Core i7 14700 2.1 GHz 20-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2376,7 +2376,7 @@
     "name": "Intel Xeon E5 4650 2.7 GHz 8-Core LGA2011",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2406,7 +2406,7 @@
     "name": "Intel Xeon E3 1270 V5 3.6 GHz 4-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2416,7 +2416,7 @@
     "name": "AMD Athlon X4 760K 3.8 GHz 4-Core FM2",
     "manufacturer": "AMD",
     "series": "AMD Athlon X4",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2426,7 +2426,7 @@
     "name": "Intel Core i9 7920X 2.9 GHz 12-Core LGA2066",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2434,9 +2434,9 @@
     "opendb_id": "4e595e68-eb83-4cc3-9118-653b05747d5a",
     "category": "cpu",
     "name": "Intel Core i3-8100",
-    "manufacturer": null,
-    "series": null,
-    "variant": null,
+    "manufacturer": "",
+    "series": "",
+    "variant": "",
     "release_year": 2017
   },
   {
@@ -2446,7 +2446,7 @@
     "name": "Intel Xeon E5 2680 V4 2.4 GHz 14-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2456,7 +2456,7 @@
     "name": "Intel Core i7 7700 3.6 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2466,7 +2466,7 @@
     "name": "Intel Core i9 9900 3.1 GHz 8-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2476,7 +2476,7 @@
     "name": "Intel Xeon E5 2658 V3 2.2 GHz 12-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2496,7 +2496,7 @@
     "name": "Intel Core i5 8600K 3.6 GHz 6-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2506,7 +2506,7 @@
     "name": "Intel Xeon E5 1620 3.6 GHz 4-Core LGA2011 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2516,7 +2516,7 @@
     "name": "AMD Ryzen 7 1800X 3.6 GHz 8-Core AM4 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2526,7 +2526,7 @@
     "name": "Intel Xeon E 2124 3.3 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Xeon E",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2536,7 +2536,7 @@
     "name": "Intel Xeon E5 2695 V3 2.3 GHz 14-Core LGA2011-3 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2544,9 +2544,9 @@
     "opendb_id": "51d94d56-b80d-4ea9-9653-f3588535f558",
     "category": "cpu",
     "name": "Intel Core i3-7100T Processor",
-    "manufacturer": null,
-    "series": null,
-    "variant": null,
+    "manufacturer": "",
+    "series": "",
+    "variant": "",
     "release_year": 2017
   },
   {
@@ -2556,7 +2556,7 @@
     "name": "AMD A-Series A8 7670K 3.6 GHz 4-Core FM2+",
     "manufacturer": "AMD",
     "series": "AMD A8",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2566,7 +2566,7 @@
     "name": "Intel Core i9 7980XE 2.6 GHz 18-Core LGA2066 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2576,7 +2576,7 @@
     "name": "Intel Core i9 9900KS 4 GHz 8-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2586,7 +2586,7 @@
     "name": "Intel Core i7 6900K 3.2 GHz 8-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2596,7 +2596,7 @@
     "name": "Intel Core i7 7700T 2.9 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2606,7 +2606,7 @@
     "name": "Intel Core i9 14900KF 3.2 GHz 24-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2616,7 +2616,7 @@
     "name": "Intel Core i5 4670S 3.1 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2626,7 +2626,7 @@
     "name": "Intel Core i5 14600KF 3.5 GHz 14-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2636,7 +2636,7 @@
     "name": "AMD Opteron 6344 2.6 GHz 12-Core G34",
     "manufacturer": "AMD",
     "series": "AMD Opteron",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2646,7 +2646,7 @@
     "name": "Intel Core i9 7960X 2.8 GHz 16-Core LGA2066",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2656,7 +2656,7 @@
     "name": "AMD Ryzen 3 4100 3.8 GHz 4-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2666,7 +2666,7 @@
     "name": "Intel Xeon E3 1265L V3 2.5 GHz 4-Core LGA1150 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2676,7 +2676,7 @@
     "name": "Intel Core i7 9700 3.0 GHz 8-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2686,7 +2686,7 @@
     "name": "Intel Core i7 4770K 3.5 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2696,7 +2696,7 @@
     "name": "AMD Ryzen 5 5600T 3.5 GHz 6-Core AM4 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2706,7 +2706,7 @@
     "name": "AMD FX 8 8320E 3.2 GHz 8-Core AM3+ OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD FX",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2716,7 +2716,7 @@
     "name": "Intel Core i7 6700T 2.8 GHz 4-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2726,7 +2726,7 @@
     "name": "Intel Xeon E5 2640 2.5 GHz 6-Core LGA2011",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2736,7 +2736,7 @@
     "name": "Intel Xeon E5 2687W 3.1 GHz 8-Core LGA2011 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2746,7 +2746,7 @@
     "name": "Intel Xeon E5 2650L V3 1.8 GHz 12-Core LGA2011-3 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2756,7 +2756,7 @@
     "name": "Intel Core i9 9960X 3.1 GHz 16-Core LGA2066",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2766,7 +2766,7 @@
     "name": "Intel Core i9 12900F 2.4 GHz 16-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2776,7 +2776,7 @@
     "name": "Intel Xeon E3 E3-1220 V6 OEM/Tray 3 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2786,7 +2786,7 @@
     "name": "AMD Athlon X2 350 3.5 GHz 2-Core FM2 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Athlon X2",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2796,7 +2796,7 @@
     "name": "Intel Xeon E5 2680 V3 2.5 GHz 12-Core LGA2011-3 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2816,7 +2816,7 @@
     "name": "AMD A8 A8-7650K 3.3 GHz 4-Core FM2+",
     "manufacturer": "AMD",
     "series": "AMD A8",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2826,7 +2826,7 @@
     "name": "AMD A 8 A8-7650K 3.3 GHz 4-Core FM2+",
     "manufacturer": "AMD",
     "series": "AMD A8",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2834,9 +2834,9 @@
     "opendb_id": "5cb67090-1414-4608-b202-f2ceccb99d3a",
     "category": "cpu",
     "name": "Intel Core i7-11700",
-    "manufacturer": null,
-    "series": null,
-    "variant": null,
+    "manufacturer": "",
+    "series": "",
+    "variant": "",
     "release_year": 2021
   },
   {
@@ -2846,7 +2846,7 @@
     "name": "AMD A-Series A6-6420K 4 GHz 2-Core FM2",
     "manufacturer": "AMD",
     "series": "AMD A6",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2856,7 +2856,7 @@
     "name": "Intel Xeon E5 2640 V3 2.6 GHz 8-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2866,7 +2866,7 @@
     "name": "Intel Core i7 6800K 3.4 GHz 6-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2876,7 +2876,7 @@
     "name": "AMD Threadripper Threadripper 1920X 3.5 GHz 12-Core sTR4",
     "manufacturer": "AMD",
     "series": "AMD Threadripper",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2886,7 +2886,7 @@
     "name": "Intel Core i3 9300 3.7 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2896,7 +2896,7 @@
     "name": "Intel Core i5 7500T 2.7 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2906,7 +2906,7 @@
     "name": "Intel Core i3 9300 3.7 GHz 4-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2916,7 +2916,7 @@
     "name": "Intel Xeon E 2146G 3.5 GHz 6-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2926,7 +2926,7 @@
     "name": "Intel Core i9 10900K 3.7 GHz 10-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2936,7 +2936,7 @@
     "name": "Intel Core i5 8600T 2.3 GHz 6-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2946,7 +2946,7 @@
     "name": "Intel Xeon E5 2640 V4 2.4 GHz 10-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2956,7 +2956,7 @@
     "name": "Intel Core i3 14100 3.5 GHz 4-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2966,7 +2966,7 @@
     "name": "Intel Core i7 6900K 3.2 GHz 8-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -2996,7 +2996,7 @@
     "name": "AMD Athlon X4 970 3.8 GHz 4-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Athlon X4",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3006,7 +3006,7 @@
     "name": "Intel Core i5 14600K 3.5 GHz 14-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3016,7 +3016,7 @@
     "name": "AMD EPYC 4464P 3.7 GHz 12-Core AM5",
     "manufacturer": "AMD",
     "series": "AMD EPYC",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3026,7 +3026,7 @@
     "name": "AMD A8 7670K 3.6 GHz 4-Core FM2+",
     "manufacturer": "AMD",
     "series": "AMD A8",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3034,9 +3034,9 @@
     "opendb_id": "61ccec51-9636-400c-b879-2ac9dcea439f",
     "category": "cpu",
     "name": "Intel Core i9-9960X",
-    "manufacturer": null,
-    "series": null,
-    "variant": null,
+    "manufacturer": "",
+    "series": "",
+    "variant": "",
     "release_year": 2018
   },
   {
@@ -3046,7 +3046,7 @@
     "name": "AMD A 8 A8-7680 3.5 GHz 4-Core FM2+",
     "manufacturer": "AMD",
     "series": "AMD A8",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3066,7 +3066,7 @@
     "name": "Intel Core i7 10700K Avengers Collector's Edition 3.8 GHz 8-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3076,7 +3076,7 @@
     "name": "Intel Core i7 11700F 2.5 GHz 8-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3086,7 +3086,7 @@
     "name": "Intel Xeon E3 1240 V6 3.7 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3096,7 +3096,7 @@
     "name": "AMD Ryzen 7 PRO 7745 3.8 GHz 8-Core AM5",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 7 PRO",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3106,7 +3106,7 @@
     "name": "Intel Core i3 12100 3.3 GHz 4-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3116,7 +3116,7 @@
     "name": "AMD Ryzen 9 7950X 4.5 GHz 16-Core AM5",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3126,7 +3126,7 @@
     "name": "Intel Xeon E3 1240 V6 3.7 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3136,7 +3136,7 @@
     "name": "AMD FX FX FX-6130 3.6 GHz 6-Core AM3+ OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD FX",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3146,7 +3146,7 @@
     "name": "Intel Xeon E3 1276 V3 3.6 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3156,7 +3156,7 @@
     "name": "Intel Core i5 7600K 3.8 GHz 4-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3176,7 +3176,7 @@
     "name": "Intel Core i3 9320 3.7 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3186,7 +3186,7 @@
     "name": "AMD A4 A4-4020 3.2 GHz 2-Core FM2 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD A4",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3196,7 +3196,7 @@
     "name": "Intel Core i5 6600K 3.5 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3206,7 +3206,7 @@
     "name": "Intel Xeon E3 1230 V6 3.5 GHz 4-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3216,7 +3216,7 @@
     "name": "Intel Core i9 9900K 3.6 GHz 8-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3226,7 +3226,7 @@
     "name": "Intel Core i7 5820K 3.3 GHz 6-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3236,7 +3236,7 @@
     "name": "AMD FX FX FX-8370 4 GHz 8-Core AM3+",
     "manufacturer": "AMD",
     "series": "AMD FX",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3246,7 +3246,7 @@
     "name": "AMD Ryzen 7 2700 3.2 GHz 8-Core AM4 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3256,7 +3256,7 @@
     "name": "AMD Ryzen 5 PRO 7645 3.8 GHz 6-Core AM5 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5 PRO",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3266,7 +3266,7 @@
     "name": "Intel Core Ultra 5 245KF 4.2 GHz 14-Core LGA1851",
     "manufacturer": "Intel",
     "series": "Intel Core Ultra 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3276,7 +3276,7 @@
     "name": "Intel Core i9 9940X 3.3 GHz 14-Core LGA2066",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3296,7 +3296,7 @@
     "name": "Intel Xeon E 2236 3.4 GHz 6-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Xeon E",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3306,7 +3306,7 @@
     "name": "AMD A10 A10 A10-6790K 4 GHz 4-Core FM2",
     "manufacturer": "AMD",
     "series": "AMD A10",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3316,7 +3316,7 @@
     "name": "AMD Ryzen 7 5800X3D 3.4 GHz 8-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3326,7 +3326,7 @@
     "name": "Intel Core i9 13900KS 3.0 GHz 24-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3336,7 +3336,7 @@
     "name": "Intel Core i9 10980XE 3 GHz 18-Core LGA2066",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3346,7 +3346,7 @@
     "name": "Intel Xeon E5 1660 V2 3.7 GHz 6-Core LGA2011 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3356,7 +3356,7 @@
     "name": "AMD A10 Pro 7850B 3.7 GHz 4-Core FM2+",
     "manufacturer": "AMD",
     "series": "AMD A10",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3364,9 +3364,9 @@
     "opendb_id": "6cac8d9c-b7e4-4ad4-a06d-ecb5c06220a4",
     "category": "cpu",
     "name": "AMD Ryzen Threadripper 7960X",
-    "manufacturer": null,
-    "series": null,
-    "variant": null,
+    "manufacturer": "",
+    "series": "",
+    "variant": "",
     "release_year": 2023
   },
   {
@@ -3376,7 +3376,7 @@
     "name": "AMD Ryzen 5 3500 3.6 GHz 6-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3385,8 +3385,8 @@
     "category": "cpu",
     "name": "Intel Core i9-10980XE Extreme Edition",
     "manufacturer": "Intel",
-    "series": null,
-    "variant": null,
+    "series": "",
+    "variant": "",
     "release_year": 2019
   },
   {
@@ -3396,7 +3396,7 @@
     "name": "Intel Core Ultra 5 235 3.4 GHz 14-Core LGA1851",
     "manufacturer": "Intel",
     "series": "Intel Core Ultra 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3406,7 +3406,7 @@
     "name": "Intel Xeon E 2124G 3.4 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Xeon E",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3416,7 +3416,7 @@
     "name": "Intel Xeon E5 2643 V3 3.4 GHz 6-Core LGA2011-3 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3426,7 +3426,7 @@
     "name": "Intel Core i7 8086K 4 GHz 6-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3436,7 +3436,7 @@
     "name": "Intel Xeon E5 1620 V4 3.5 GHz 4-Core LGA2011-3 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3446,7 +3446,7 @@
     "name": "AMD Ryzen 5 5600XT 3.7 GHz 6-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3456,7 +3456,7 @@
     "name": "AMD A4 6320 3.8 GHz 2-Core FM2",
     "manufacturer": "AMD",
     "series": "AMD A4",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3466,7 +3466,7 @@
     "name": "Intel Core i9 9920X 3.5 GHz 12-Core LGA2066",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3476,7 +3476,7 @@
     "name": "Intel Core i9 10940X 3.3 GHz 14-Core LGA2066",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3486,7 +3486,7 @@
     "name": "Intel Xeon E5 2637 V2 3.5 GHz 4-Core LGA2011 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3496,7 +3496,7 @@
     "name": "AMD Ryzen 9 3900X 3.8 GHz 12-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3506,7 +3506,7 @@
     "name": "AMD Ryzen 5 5600T 3.5 GHz 6-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3516,7 +3516,7 @@
     "name": "Intel Core i7 4770K 3.5 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3526,7 +3526,7 @@
     "name": "Intel Xeon E5 2630 V2 2.6 GHz 6-Core LGA2011 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3536,7 +3536,7 @@
     "name": "Intel Core i5 9500F 3.0 GHz 6-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3546,7 +3546,7 @@
     "name": "AMD Ryzen 7 2700X 3.7 GHz 8-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3556,7 +3556,7 @@
     "name": "AMD Ryzen 5 5600G 3.9 GHz 6-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3566,7 +3566,7 @@
     "name": "AMD A 4 A4-4020 3.2 GHz 2-Core FM2",
     "manufacturer": "AMD",
     "series": "AMD A4",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3576,7 +3576,7 @@
     "name": "Intel Core i5 10400F 2.9 GHz 6-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3586,7 +3586,7 @@
     "name": "Intel Core i9 11900F 2.5 GHz 8-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3596,7 +3596,7 @@
     "name": "Intel Core i9 9900K (Standard Folding Box) 3.6 GHz 8-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3604,9 +3604,9 @@
     "opendb_id": "77d5724f-dbd3-463f-aa65-055860a2810d",
     "category": "cpu",
     "name": "Intel Celeron G6900",
-    "manufacturer": null,
-    "series": null,
-    "variant": null,
+    "manufacturer": "",
+    "series": "",
+    "variant": "",
     "release_year": 2022
   },
   {
@@ -3616,7 +3616,7 @@
     "name": "AMD Ryzen 9 7900X3D 4.4 GHz 12-Core AM5",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3626,7 +3626,7 @@
     "name": "Intel Xeon E5 2440V2 1.9 GHz 8-Core LGA1356",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3636,7 +3636,7 @@
     "name": "Intel Xeon E5 2650L 1.8 GHz 8-Core LGA2011 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3646,7 +3646,7 @@
     "name": "Intel Core i7 4770 3.4 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3656,7 +3656,7 @@
     "name": "Intel Core i7 9800X 3.8 GHz 8-Core LGA2066 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3666,7 +3666,7 @@
     "name": "Intel Core i7 7740X 4.3 GHz 4-Core LGA2066",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3676,7 +3676,7 @@
     "name": "Intel Core i3 9350K 4 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3686,7 +3686,7 @@
     "name": "Intel Xeon E5 2670 V3 2.3 GHz 12-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3696,7 +3696,7 @@
     "name": "AMD Ryzen 3 3100 3.6 GHz 4-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3706,7 +3706,7 @@
     "name": "AMD Ryzen 7 9800X3D 4.7 GHz 8-Core AM5",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 7",
-    "variant": null,
+    "variant": "",
     "release_year": 2024
   },
   {
@@ -3726,7 +3726,7 @@
     "name": "Intel Core i5 6600T 2.7 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3746,7 +3746,7 @@
     "name": "Intel Core Ultra 5 245K 4.2 GHz 14-Core LGA1851",
     "manufacturer": "Intel",
     "series": "Intel Core Ultra 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3756,7 +3756,7 @@
     "name": "Intel Xeon E5 2680 V3 2.5 GHz 12-Core LGA2011-3 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3766,7 +3766,7 @@
     "name": "Intel Core i5 10600 3.3 GHz 6-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3775,8 +3775,8 @@
     "category": "cpu",
     "name": "AMD Ryzen™ 5 7500F",
     "manufacturer": "AMD",
-    "series": null,
-    "variant": null,
+    "series": "",
+    "variant": "",
     "release_year": 2023
   },
   {
@@ -3786,7 +3786,7 @@
     "name": "Intel Core i5 3550S 3 GHz 4-Core LGA1155 (OEM/Tray)",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3796,7 +3796,7 @@
     "name": "Intel Core i9 13900 2 GHz 24-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3806,7 +3806,7 @@
     "name": "Intel Core i5 9500 3 GHz 6-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3816,7 +3816,7 @@
     "name": "Intel Core i7 13700 2.1 GHz 16-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3826,7 +3826,7 @@
     "name": "AMD Ryzen 5 3500X 3.6 GHz 6-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3836,7 +3836,7 @@
     "name": "Intel Xeon E5 2683 V4 2.1 GHz 16-Core LGA2011-3 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3846,7 +3846,7 @@
     "name": "Intel Core i9 10900K 3.7 GHz 10-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3856,7 +3856,7 @@
     "name": "Intel Xeon E3 1246 V3 3.5 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3866,7 +3866,7 @@
     "name": "Intel Core i5 6500 3.2 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3876,7 +3876,7 @@
     "name": "Intel Core i5 4590S 3.0 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3896,7 +3896,7 @@
     "name": "Intel Core i7 12700F 2.1 GHz 12-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3906,7 +3906,7 @@
     "name": "Intel Xeon E5 2630 V2 2.6 GHz 6-Core LGA2011",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3916,7 +3916,7 @@
     "name": "Intel Core i5 9600KF 3.7 GHz 6-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3926,7 +3926,7 @@
     "name": "AMD Athlon X4 860K 3.7 GHz 4-Core FM2+ OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Athlon X4",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3936,7 +3936,7 @@
     "name": "AMD A-Series A10 7700K 3.4 GHz 4-Core FM2+",
     "manufacturer": "AMD",
     "series": "AMD A10",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3946,7 +3946,7 @@
     "name": "AMD Athlon X4 940 3.2 GHz 4-Core AM4 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Athlon X4",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3956,7 +3956,7 @@
     "name": "AMD A 8 A8-9600 3.1 GHz 4-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD A8",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3966,7 +3966,7 @@
     "name": "AMD Ryzen 5 7600X3D 4.1 GHz 6-Core AM5 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3976,7 +3976,7 @@
     "name": "Intel Xeon E5 2620 V4 2.1 GHz 8-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3986,7 +3986,7 @@
     "name": "Intel Core i7 12700 2.1 GHz 12-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -3996,7 +3996,7 @@
     "name": "Intel Xeon E5 2690 V2 3 GHz 10-Core LGA2011",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4006,7 +4006,7 @@
     "name": "Intel Core i5 6600T 2.7 GHz 4-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4016,7 +4016,7 @@
     "name": "Intel Xeon E3 1241 V3 3.5 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4026,7 +4026,7 @@
     "name": "AMD FX 9370 4.4 GHz 8-Core AM3+ OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD FX",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4036,7 +4036,7 @@
     "name": "AMD Ryzen 9 5900X 3.7 GHz 12-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4046,7 +4046,7 @@
     "name": "Intel Xeon E3 1240 V5 3.5 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4056,7 +4056,7 @@
     "name": "Intel Xeon E5 2698 V4 2.2 GHz 20-Core LGA2011-3 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4064,9 +4064,9 @@
     "opendb_id": "8937791f-331b-4887-9847-82f6b047c59b",
     "category": "cpu",
     "name": "AMD Athlon X4 950",
-    "manufacturer": null,
-    "series": null,
-    "variant": null,
+    "manufacturer": "",
+    "series": "",
+    "variant": "",
     "release_year": 2017
   },
   {
@@ -4076,7 +4076,7 @@
     "name": "Intel Core Ultra 7 265F 2.4 GHz 20-Core LGA1851",
     "manufacturer": "Intel",
     "series": "Intel Core Ultra 7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4086,7 +4086,7 @@
     "name": "Intel Core i5 9600K 3.7 GHz 6-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4096,7 +4096,7 @@
     "name": "AMD Ryzen 7 3700X 3.6 GHz 8-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4106,7 +4106,7 @@
     "name": "Intel Core i7 13700KF 3.4 GHz 16-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4116,7 +4116,7 @@
     "name": "Intel Core i9 12900KS 3.4 GHz 16-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4126,7 +4126,7 @@
     "name": "Intel Core i9 12900KF 3.2 GHz 16-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4136,7 +4136,7 @@
     "name": "Intel Xeon E3 1275 V6 3.8 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4146,7 +4146,7 @@
     "name": "AMD Athlon X4 970 3.8 GHz 4-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Athlon X4",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4156,7 +4156,7 @@
     "name": "Intel Core i5 6400 2.7 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4166,7 +4166,7 @@
     "name": "Intel Xeon E5 2620 V2 2.1 GHz 6-Core LGA2011",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4176,7 +4176,7 @@
     "name": "Intel Xeon E5 2683 V3 2 GHz 14-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4186,7 +4186,7 @@
     "name": "Intel Xeon E3 1235L V5 2 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4196,7 +4196,7 @@
     "name": "AMD Athlon X4 860K 3.7 GHz 4-Core FM2+",
     "manufacturer": "AMD",
     "series": "AMD Athlon X4",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4206,7 +4206,7 @@
     "name": "Intel Xeon E5-1660 3.3 GHz 6-Core LGA2011",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4216,7 +4216,7 @@
     "name": "Intel Xeon E 2278G 3.4 GHz 8-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Xeon E",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4226,7 +4226,7 @@
     "name": "AMD Ryzen 5 3600 3.6 GHz 6-Core AM4 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4236,7 +4236,7 @@
     "name": "Intel Xeon E5 2690 2.9 GHz 8-Core LGA2011",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4246,7 +4246,7 @@
     "name": "Intel Core i3 9350K 4 GHz 4-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4256,7 +4256,7 @@
     "name": "Intel Xeon E5 1680 V3 OEM/Tray 3.2 GHz 8-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4266,7 +4266,7 @@
     "name": "Intel Core i7 11700K 3.6 GHz 8-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4276,7 +4276,7 @@
     "name": "Intel Core i5 10400 2.9 GHz 6-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4286,7 +4286,7 @@
     "name": "Intel Xeon E 2146G 3.5 GHz 6-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Xeon E",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4296,7 +4296,7 @@
     "name": "AMD Ryzen 7 5800X 3.8 GHz 8-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4306,7 +4306,7 @@
     "name": "Intel Core i5 5675C 3.1 GHz 4-Core LGA1150 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4316,7 +4316,7 @@
     "name": "Intel Xeon E5 2695 V3 2.3 GHz 14-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4326,7 +4326,7 @@
     "name": "Intel Core i7 8700K 3.7 GHz 6-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4336,7 +4336,7 @@
     "name": "AMD Ryzen 3 3200G 3.6 GHz 4-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4346,7 +4346,7 @@
     "name": "AMD Ryzen 7 5700G 3.8 GHz 8-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4356,7 +4356,7 @@
     "name": "AMD Ryzen 9 9900X3D 4.4 GHz 12-Core AM5",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4366,7 +4366,7 @@
     "name": "Intel Xeon E3 1220 V3 3.1 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4376,7 +4376,7 @@
     "name": "Intel Xeon E5 2695 V2 2.4 GHz 12-Core LGA2011",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4396,7 +4396,7 @@
     "name": "AMD A10 9700 3.5 GHz 4-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD A10",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4404,9 +4404,9 @@
     "opendb_id": "93785a7d-3236-4698-8780-0a7451871913",
     "category": "cpu",
     "name": "Intel Core i9-13900F",
-    "manufacturer": null,
-    "series": null,
-    "variant": null,
+    "manufacturer": "",
+    "series": "",
+    "variant": "",
     "release_year": 2023
   },
   {
@@ -4416,7 +4416,7 @@
     "name": "Intel Core i3 10105 3.7 GHz 4-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4426,7 +4426,7 @@
     "name": "Intel Core i7 9700F 3 GHz 8-Core LGA1151 (OEM/Tray)",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4436,7 +4436,7 @@
     "name": "Intel Xeon E3-1230 V3 3.3 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4446,7 +4446,7 @@
     "name": "Intel Core i5 4690K 3.5 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4456,7 +4456,7 @@
     "name": "Intel Core Ultra 7 265 2.4 GHz 20-Core LGA1851",
     "manufacturer": "Intel",
     "series": "Intel Core Ultra 7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4466,7 +4466,7 @@
     "name": "Intel Xeon E5 1620 V2 3.7 GHz 4-Core LGA2011",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4476,7 +4476,7 @@
     "name": "Intel Xeon E5 2665 2.4 GHz 8-Core LGA2011 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4496,7 +4496,7 @@
     "name": "Intel Xeon E5 2643 V4 3.4 GHz 6-Core LGA2011-3 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4506,7 +4506,7 @@
     "name": "AMD A4 A4-6320 3.8 GHz 2-Core FM2",
     "manufacturer": "AMD",
     "series": "AMD A4",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4516,7 +4516,7 @@
     "name": "Intel Core i7 9700KF 3.6 GHz 8-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4526,7 +4526,7 @@
     "name": "Intel Xeon E5 2430V2 2.5 GHz 6-Core LGA1356",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4536,7 +4536,7 @@
     "name": "Intel Core i9 9920X 3.5 GHz 12-Core LGA2066 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4546,7 +4546,7 @@
     "name": "Intel Xeon E 2144G 3.6 GHz 4-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4556,7 +4556,7 @@
     "name": "AMD Ryzen 9 5900XT 3.3 GHz 16-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4564,9 +4564,9 @@
     "opendb_id": "9a7ca5bd-0c01-4f16-ae1f-f2b5f50d2021",
     "category": "cpu",
     "name": "Intel Pentium Gold G5400 Processor",
-    "manufacturer": null,
-    "series": null,
-    "variant": null,
+    "manufacturer": "",
+    "series": "",
+    "variant": "",
     "release_year": 2018
   },
   {
@@ -4576,7 +4576,7 @@
     "name": "Intel Xeon E5 2640 V3 2.6 GHz 8-Core LGA2011-3 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4596,7 +4596,7 @@
     "name": "AMD FX 8310 FX-8310 3.4 GHz 8-Core AM3+",
     "manufacturer": "AMD",
     "series": "AMD FX",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4606,7 +4606,7 @@
     "name": "Intel Core i7 7800X 3.5 GHz 6-Core LGA2066",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4616,7 +4616,7 @@
     "name": "AMD Athlon X2 450 3.5 GHz 2-Core FM2+ OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Athlon X2",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4626,7 +4626,7 @@
     "name": "Intel Core i3 10100T 3 GHz 4-Core LGA1200 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4636,7 +4636,7 @@
     "name": "Intel Xeon E 2176G 3.7 GHz 6-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Xeon E",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4646,7 +4646,7 @@
     "name": "AMD Threadripper 2920X 3.5 GHz 12-Core sTR4 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Threadripper",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4656,7 +4656,7 @@
     "name": "Intel Core i7 6700T 2.8 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4666,7 +4666,7 @@
     "name": "Intel Core i3 13100T 2.5 GHz 4-Core LGA1700 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4676,7 +4676,7 @@
     "name": "Intel Core i9 7980XE 2.6 GHz 18-Core LGA2066",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4686,7 +4686,7 @@
     "name": "Intel Core i7 7820X 3.6 GHz 8-Core LGA2066 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4696,7 +4696,7 @@
     "name": "Intel Core i5 9500F 3.0 GHz 6-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4706,7 +4706,7 @@
     "name": "AMD Ryzen 5 3600XT 3.8 GHz 6-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4716,7 +4716,7 @@
     "name": "Intel Core i3 14100F 3.5 GHz 4-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4726,7 +4726,7 @@
     "name": "Intel Core i3 9350KF 4 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4746,7 +4746,7 @@
     "name": "Intel Core i9 12900K 3.2 GHz 16-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4756,7 +4756,7 @@
     "name": "Intel Xeon E5 2687W V3 3.1 GHz 10-Core LGA2011-3 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4766,7 +4766,7 @@
     "name": "AMD FX FX FX-4320 4 GHz 4-Core AM3+ OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD FX",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4774,9 +4774,9 @@
     "opendb_id": "a1272cd8-f01a-47d7-b41b-0381c2fd4ece",
     "category": "cpu",
     "name": "AMD FX-8350",
-    "manufacturer": null,
-    "series": null,
-    "variant": null,
+    "manufacturer": "",
+    "series": "",
+    "variant": "",
     "release_year": 2012
   },
   {
@@ -4796,7 +4796,7 @@
     "name": "Intel Core i9 7900X 3.3 GHz 10-Core LGA2066",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4806,7 +4806,7 @@
     "name": "Intel Xeon E5 1620 V3 3.5 GHz 4-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4816,7 +4816,7 @@
     "name": "AMD A-Series A6 9500E 3.0 GHz 2-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD A6",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4826,7 +4826,7 @@
     "name": "Intel Core i5 4590 3.3 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4836,7 +4836,7 @@
     "name": "Intel Core i9 9900KF 3.6 GHz 8-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4856,7 +4856,7 @@
     "name": "Intel Core i7 Extreme 5960X 3 GHz 8-Core LGA2011-3 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i7 Extreme",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4865,8 +4865,8 @@
     "category": "cpu",
     "name": "AMD Athlon 240GE",
     "manufacturer": "AMD",
-    "series": null,
-    "variant": null,
+    "series": "",
+    "variant": "",
     "release_year": 2018
   },
   {
@@ -4876,7 +4876,7 @@
     "name": "Intel Xeon E 2274G 4 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Xeon E",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4886,7 +4886,7 @@
     "name": "Intel Xeon E3 1245 V6 3.7 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4896,7 +4896,7 @@
     "name": "Intel Xeon E3 1240 V3 3.4 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4906,7 +4906,7 @@
     "name": "Intel Core i5 13600KF 3.5 GHz 14-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4916,7 +4916,7 @@
     "name": "AMD Athlon X4 870K 3.9 GHz 4-Core FM2+",
     "manufacturer": "AMD",
     "series": "AMD Athlon X4",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4926,7 +4926,7 @@
     "name": "Intel Xeon E5 2650 V3 2.3 GHz 10-Core LGA2011-3 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4936,7 +4936,7 @@
     "name": "Intel Core i9 12900 2.4 GHz 16-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4946,7 +4946,7 @@
     "name": "Intel Core i5 11600K 3.9 GHz 6-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4956,7 +4956,7 @@
     "name": "Intel Core i5 6400T 2.2 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4964,9 +4964,9 @@
     "opendb_id": "a7dbea73-5f60-47a4-abc7-1195c54d62a5",
     "category": "cpu",
     "name": "Intel Core i9-7960X X-series Processor",
-    "manufacturer": null,
-    "series": null,
-    "variant": null,
+    "manufacturer": "",
+    "series": "",
+    "variant": "",
     "release_year": 2017
   },
   {
@@ -4976,7 +4976,7 @@
     "name": "AMD Ryzen 5 5600X3D 3.3 GHz 6-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4986,7 +4986,7 @@
     "name": "Intel Core i9 9960X 3.1 GHz 16-Core LGA2066 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -4994,9 +4994,9 @@
     "opendb_id": "a98f71a3-5470-4333-b8f9-8bbfe03536b7",
     "category": "cpu",
     "name": "Intel Core i3-8350K",
-    "manufacturer": null,
-    "series": null,
-    "variant": null,
+    "manufacturer": "",
+    "series": "",
+    "variant": "",
     "release_year": 2017
   },
   {
@@ -5006,7 +5006,7 @@
     "name": "AMD Ryzen 5 1500X 3.5 GHz 4-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5016,7 +5016,7 @@
     "name": "Intel Core i7 4790K 4 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5026,7 +5026,7 @@
     "name": "Intel Xeon E3 1225 V6 3.3 GHz 4-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5036,7 +5036,7 @@
     "name": "AMD A10 A10-7800 3.5 GHz 4-Core FM2+",
     "manufacturer": "AMD",
     "series": "AMD A10",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5046,7 +5046,7 @@
     "name": "Intel Core i5 7500 3.4 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5056,7 +5056,7 @@
     "name": "AMD Ryzen 7 7700 3.6 GHz 8-Core AM5 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5066,7 +5066,7 @@
     "name": "AMD Ryzen 7 7700 3.6 GHz 8-Core AM5",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5076,7 +5076,7 @@
     "name": "Intel Xeon E3 1270 V3 3.5 GHz 4-Core LGA1150 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5084,9 +5084,9 @@
     "opendb_id": "ab6f4801-06f7-4d96-a9f4-0a84de527f54",
     "category": "cpu",
     "name": "AMD Ryzen 7 3800XT",
-    "manufacturer": null,
-    "series": null,
-    "variant": null,
+    "manufacturer": "",
+    "series": "",
+    "variant": "",
     "release_year": 2020
   },
   {
@@ -5106,7 +5106,7 @@
     "name": "Intel Core i7 6800K Core 3.4 GHz 6-Core LGA2011-3 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5116,7 +5116,7 @@
     "name": "Intel Core i5 9400F 2.9 GHz 6-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5126,7 +5126,7 @@
     "name": "AMD Ryzen 5 8600G 4.3 GHz 6-Core AM5",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5136,7 +5136,7 @@
     "name": "AMD FX 9590 4.7 GHz 8-Core AM3+",
     "manufacturer": "AMD",
     "series": "AMD FX",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5146,7 +5146,7 @@
     "name": "AMD Threadripper 2990 WX 3.0 GHz 32-Core sTR4",
     "manufacturer": "AMD",
     "series": "AMD Threadripper",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5156,7 +5156,7 @@
     "name": "Intel Core i5 8500 3 GHz 6-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5166,7 +5166,7 @@
     "name": "Intel Core i3 10305 3.8 GHz 4-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5176,7 +5176,7 @@
     "name": "AMD Threadripper 1950X 3.4 GHz 16-Core sTR4",
     "manufacturer": "AMD",
     "series": "AMD Threadripper",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5186,7 +5186,7 @@
     "name": "Intel Xeon E 2246G 3.6 GHz 6-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5196,7 +5196,7 @@
     "name": "Intel Core i7 9700F 3.0 GHz 8-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5206,7 +5206,7 @@
     "name": "Intel Core i7 8700 3.2 GHz 6-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5216,7 +5216,7 @@
     "name": "AMD FX 8140 3.2 GHz 8-Core AM3+ OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD FX",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5226,7 +5226,7 @@
     "name": "Intel Xeon E 2136 3.3 GHz 6-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5235,8 +5235,8 @@
     "category": "cpu",
     "name": "Intel Pentium Gold G5600",
     "manufacturer": "Intel",
-    "series": null,
-    "variant": null,
+    "series": "",
+    "variant": "",
     "release_year": 2018
   },
   {
@@ -5246,7 +5246,7 @@
     "name": "Intel Xeon E5 4620 2.2 GHz 8-Core LGA2011",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5256,7 +5256,7 @@
     "name": "Intel Core i5 7400T 2.4 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5266,7 +5266,7 @@
     "name": "Intel Core i5 8600K 3.6 GHz 6-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5276,7 +5276,7 @@
     "name": "Intel Core i5 6400 2.7 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5286,7 +5286,7 @@
     "name": "Intel Xeon E5 2630 V4 2.2 GHz 10-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5296,7 +5296,7 @@
     "name": "Intel Core i5 14400 2.5 GHz 10-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5306,7 +5306,7 @@
     "name": "AMD Ryzen 7 5800XT 3.8 GHz 8-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5316,7 +5316,7 @@
     "name": "Intel Xeon E5 2637 V3 OEM/Tray 3.5 GHz 4-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5326,7 +5326,7 @@
     "name": "Intel Core i7 4790S 3.2 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5336,7 +5336,7 @@
     "name": "Intel Core i5 7600 3.5 GHz 4-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5346,7 +5346,7 @@
     "name": "Intel Core i5 6600 3.3 GHz Quad-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5356,7 +5356,7 @@
     "name": "Intel Core i3 10105F 3.7 GHz 4-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5366,7 +5366,7 @@
     "name": "Intel Core i7 4790 3.6 GHz 4-Core LGA1150 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5376,7 +5376,7 @@
     "name": "Intel Core i5 13400 2.5 GHz 10-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5386,7 +5386,7 @@
     "name": "Intel Xeon E5 2680 V2 2.8 GHz 10-Core LGA2011",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5396,7 +5396,7 @@
     "name": "AMD Ryzen 3 3200G 3.6 GHz 4-Core AM4 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5406,7 +5406,7 @@
     "name": "Intel Xeon E 2288G 3.7 GHz 8-Core LGA1151 (OEM/Tray)",
     "manufacturer": "Intel",
     "series": "Intel Xeon E",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5416,7 +5416,7 @@
     "name": "Intel Xeon E5 2697 V4 2.3 GHz 18-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5436,7 +5436,7 @@
     "name": "Intel Core i9 9940X 3.3 GHz 14-Core LGA2066 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5446,7 +5446,7 @@
     "name": "AMD FX FX 8370E 3.3 GHz 8-Core AM3+ OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD FX",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5456,7 +5456,7 @@
     "name": "AMD Threadripper 2950X 3.5 GHz 16-Core sTR4",
     "manufacturer": "AMD",
     "series": "AMD Threadripper",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5466,7 +5466,7 @@
     "name": "Intel Xeon E 2174G 3.8 GHz 4-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5476,7 +5476,7 @@
     "name": "Intel Xeon E3 1220 V5 3 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5486,7 +5486,7 @@
     "name": "AMD Ryzen 5 1400 3.2 GHz 4-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5506,7 +5506,7 @@
     "name": "AMD A10 A10-7850K 3.7 GHz 4-Core FM2+",
     "manufacturer": "AMD",
     "series": "AMD A10",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5516,7 +5516,7 @@
     "name": "AMD FX 8320E 3.2 GHz 8-Core AM3+",
     "manufacturer": "AMD",
     "series": "AMD FX",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5526,7 +5526,7 @@
     "name": "Intel Xeon E5 2687W V4 3 GHz 12-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5536,7 +5536,7 @@
     "name": "Intel Core i5 13600 2.7 GHz 14-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5556,7 +5556,7 @@
     "name": "AMD A 6 7470K 3.7 GHz 2-Core FM2+",
     "manufacturer": "AMD",
     "series": "AMD A6",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5566,7 +5566,7 @@
     "name": "Intel Core i5 7400T 2.4 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5586,7 +5586,7 @@
     "name": "Intel Core i3 9100T OEM/Tray 3.1 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5606,7 +5606,7 @@
     "name": "Intel Core i3 10320 3.8 GHz 4-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5616,7 +5616,7 @@
     "name": "Intel Xeon E5 2650L V2 1.7 GHz 10-Core LGA2011 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5626,7 +5626,7 @@
     "name": "Intel Core i9 10850K 3.6 GHz 10-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5636,7 +5636,7 @@
     "name": "Intel Core i5 3340S 2.8 GHz 4-Core LGA1155",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5646,7 +5646,7 @@
     "name": "AMD Ryzen 5 5600GT 3.6 GHz 6-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5656,7 +5656,7 @@
     "name": "Intel Core i7 7740X 4.3 GHz 4-Core LGA2066",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5666,7 +5666,7 @@
     "name": "AMD Ryzen 5 7600X3D 4.1 GHz 6-Core AM5",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5676,7 +5676,7 @@
     "name": "Intel Xeon E5 2667 V3 3.2 GHz 8-Core LGA2011-3 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5686,7 +5686,7 @@
     "name": "Intel Core i5 7640X 4 GHz 4-Core LGA2066",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5696,7 +5696,7 @@
     "name": "Intel Core i5 7600 3.5 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5706,7 +5706,7 @@
     "name": "Intel Xeon E5 2685 V3 2.6 GHz 12-Core LGA2011-3 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5716,7 +5716,7 @@
     "name": "Intel Xeon E 2176G 3.7 GHz 6-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Xeon E",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5726,7 +5726,7 @@
     "name": "Intel Core i5 7500T 2.7 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5736,7 +5736,7 @@
     "name": "Intel Core i7 10700K 3.8 GHz 8-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5746,7 +5746,7 @@
     "name": "Intel Xeon E5 2630L V3 OEM/Tray 1.8 GHz 8-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5755,8 +5755,8 @@
     "category": "cpu",
     "name": "AMD Athlon 3000G",
     "manufacturer": "AMD",
-    "series": null,
-    "variant": null,
+    "series": "",
+    "variant": "",
     "release_year": 2019
   },
   {
@@ -5766,7 +5766,7 @@
     "name": "AMD FX 9370 4.4 GHz 8-Core AM3+ OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD FX",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5776,7 +5776,7 @@
     "name": "AMD Ryzen 7 1800X 3.6 GHz 8-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5786,7 +5786,7 @@
     "name": "Intel Core i7 5930K 3.5 GHz 6-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5796,7 +5796,7 @@
     "name": "AMD Ryzen 7 3800XT 3.9 GHz 8-Core",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5806,7 +5806,7 @@
     "name": "AMD Ryzen 5 5500 3.6 GHz 6-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5816,7 +5816,7 @@
     "name": "Intel Core i5 9400 2.9 GHz 6-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5826,7 +5826,7 @@
     "name": "Intel Core i9 9900 3.1 GHz 8-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5836,7 +5836,7 @@
     "name": "AMD A-Series A4 6300 3.7 GHz 2-Core FM2",
     "manufacturer": "AMD",
     "series": "AMD A4",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5846,7 +5846,7 @@
     "name": "Intel Xeon E3 1245 V5 3.5 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5856,7 +5856,7 @@
     "name": "Intel Core i5 3340 3.1 GHz 4-Core LGA1155",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5866,7 +5866,7 @@
     "name": "AMD Ryzen 3 2200G 3.5 GHz 4-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5876,7 +5876,7 @@
     "name": "Intel Core i9 13900F 2.0 GHz 24-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5886,7 +5886,7 @@
     "name": "AMD EPYC 4484PX 4.4 GHz 12-Core AM5",
     "manufacturer": "AMD",
     "series": "AMD EPYC",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5896,7 +5896,7 @@
     "name": "Intel Core i5 4690 3.5 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5906,7 +5906,7 @@
     "name": "Intel Core i5 12600K 3.7 GHz 10-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5916,7 +5916,7 @@
     "name": "Intel Xeon E3 1225 V5 3.3 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5926,7 +5926,7 @@
     "name": "AMD A6 7480 3.5 GHz 2-Core FM2+",
     "manufacturer": "AMD",
     "series": "AMD A6",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5936,7 +5936,7 @@
     "name": "Intel Core i7 14700F 2.1 GHz 20-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5946,7 +5946,7 @@
     "name": "Intel Core i7 6700 3.4 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5956,7 +5956,7 @@
     "name": "Intel Core i5 4440S 2.8 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5966,7 +5966,7 @@
     "name": "AMD EPYC EPYC 4244P 3.8 GHz 6-Core AM5",
     "manufacturer": "AMD",
     "series": "AMD EPYC",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5976,7 +5976,7 @@
     "name": "AMD EPYC EPYC 4364P 4.5 GHz 8-Core AM5",
     "manufacturer": "AMD",
     "series": "AMD EPYC",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5986,7 +5986,7 @@
     "name": "Intel Core i9 7940X 3.1 GHz 14-Core LGA2066 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -5996,7 +5996,7 @@
     "name": "AMD A 8 7600 3.1 GHz 4-Core FM2+ OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD A8",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6006,7 +6006,7 @@
     "name": "Intel Core i5 8400T 1.7 GHz 6-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6016,7 +6016,7 @@
     "name": "Intel Xeon E3 1230 V5 3.4 GHz 4-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6026,7 +6026,7 @@
     "name": "Intel Xeon E3 1275 V5 3.6 GHz 4-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6036,7 +6036,7 @@
     "name": "Intel Xeon E5 2670 2.6 GHz 8-Core LGA2011",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6046,7 +6046,7 @@
     "name": "Intel Core i5 7600K 3.8 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6056,7 +6056,7 @@
     "name": "Intel Xeon E5 2670 V3 2.3 GHz 12-Core LGA2011-3 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6066,7 +6066,7 @@
     "name": "Intel Core i7 9700 3 GHz 8-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6076,7 +6076,7 @@
     "name": "Intel Xeon E5 2660 2.2 GHz 8-Core LGA2011 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6086,7 +6086,7 @@
     "name": "AMD Threadripper 2970WX 3 GHz 24-Core sTR4",
     "manufacturer": "AMD",
     "series": "AMD Threadripper",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6094,9 +6094,9 @@
     "opendb_id": "c8610822-8988-491e-9ecc-28aeb55987f1",
     "category": "cpu",
     "name": "Ryzen Threadripper 2950X",
-    "manufacturer": null,
-    "series": null,
-    "variant": null,
+    "manufacturer": "",
+    "series": "",
+    "variant": "",
     "release_year": 2018
   },
   {
@@ -6106,7 +6106,7 @@
     "name": "Intel Xeon E5 1660 V2 3.7 GHz 6-Core LGA2011",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6116,7 +6116,7 @@
     "name": "Intel Core i5 8400 2.8 GHz 6-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6126,7 +6126,7 @@
     "name": "Intel Core Ultra 5 225 3.3 GHz 10-Core LGA1851",
     "manufacturer": "Intel",
     "series": "Intel Core Ultra 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6146,7 +6146,7 @@
     "name": "Intel Xeon E3 1275 V6 3.8 GHz 4-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6154,9 +6154,9 @@
     "opendb_id": "cc3a29bc-0e7a-4351-9a87-f56eba3a0d75",
     "category": "cpu",
     "name": "AMD Ryzen 7 1700",
-    "manufacturer": null,
-    "series": null,
-    "variant": null,
+    "manufacturer": "",
+    "series": "",
+    "variant": "",
     "release_year": 2017
   },
   {
@@ -6166,7 +6166,7 @@
     "name": "AMD FX FX-4150 4 GHz 4-Core AM3+ OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD FX",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6174,9 +6174,9 @@
     "opendb_id": "cd030ee7-8539-4b8a-8fa8-1738ad51e50b",
     "category": "cpu",
     "name": "AMD Ryzen Threadripper 7970X",
-    "manufacturer": null,
-    "series": null,
-    "variant": null,
+    "manufacturer": "",
+    "series": "",
+    "variant": "",
     "release_year": 0
   },
   {
@@ -6186,7 +6186,7 @@
     "name": "Intel Core i3 10325 3.9 GHz 4-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6196,7 +6196,7 @@
     "name": "Intel Core i5 11500 2.7 GHz 6-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6206,7 +6206,7 @@
     "name": "Intel Core i5 9600K 3.7 GHz 6-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6226,7 +6226,7 @@
     "name": "AMD Threadripper 3990X 2.9 GHz 64-Core sTRX4",
     "manufacturer": "AMD",
     "series": "AMD Threadripper",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6236,7 +6236,7 @@
     "name": "Intel Core i5 9600 3.1 GHz 6-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6246,7 +6246,7 @@
     "name": "AMD Ryzen 3 1200 3.1 GHz 4-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6256,7 +6256,7 @@
     "name": "AMD Ryzen 5 5500GT 3.6 GHz 6-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6266,7 +6266,7 @@
     "name": "Intel Xeon E5 2640 V2 2.0 GHz 8-Core LGA2011",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6276,7 +6276,7 @@
     "name": "Intel Xeon E5 1630 V3 3.7 GHz 4-Core LGA2011-3 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6286,7 +6286,7 @@
     "name": "AMD Opteron 6328 3.2 GHz 8-Core G34",
     "manufacturer": "AMD",
     "series": "AMD Opteron",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6296,7 +6296,7 @@
     "name": "Intel Core i3 10100F 3.6 GHz 4-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6306,7 +6306,7 @@
     "name": "AMD Ryzen 7 7800X3D 4.2 GHz 8-Core AM5 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6316,7 +6316,7 @@
     "name": "Intel Core i7-7820X 3.6 GHz 8-Core",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6326,7 +6326,7 @@
     "name": "Intel Core i9 10850KA Avengers Limited Edition 3.6 GHz 10-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6336,7 +6336,7 @@
     "name": "Intel Core i5 9600 3.1 GHz 6-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6346,7 +6346,7 @@
     "name": "Intel Core i9 10920X 3.5 GHz 12-Core LGA2066",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6356,7 +6356,7 @@
     "name": "AMD Opteron 6378 2.4 GHz 16-Core G34 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Opteron",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6366,7 +6366,7 @@
     "name": "AMD A 10 A10-7800 3.5 GHz 4-Core FM2+ OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD A10",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6375,8 +6375,8 @@
     "category": "cpu",
     "name": "AMD Ryzen 3 1300X",
     "manufacturer": "AMD",
-    "series": null,
-    "variant": null,
+    "series": "",
+    "variant": "",
     "release_year": 2017
   },
   {
@@ -6386,7 +6386,7 @@
     "name": "AMD Ryzen 9 5950X 3.4 GHz 16-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6396,7 +6396,7 @@
     "name": "AMD Ryzen 5 2600 3.4 GHz 6-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6406,7 +6406,7 @@
     "name": "Intel Xeon E3 1230 V3 3.3 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6414,9 +6414,9 @@
     "opendb_id": "d59fa7b6-066f-42cb-b1dd-d7a6b8b758fc",
     "category": "cpu",
     "name": "Intel Core i9-9940X X-series Processor",
-    "manufacturer": null,
-    "series": null,
-    "variant": null,
+    "manufacturer": "",
+    "series": "",
+    "variant": "",
     "release_year": 2018
   },
   {
@@ -6426,7 +6426,7 @@
     "name": "AMD A6 A6 9500 3.5 GHz 2-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD A6",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6436,7 +6436,7 @@
     "name": "AMD Threadripper 2970WX 3 GHz 24-Core sTR4",
     "manufacturer": "AMD",
     "series": "AMD Threadripper",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6456,7 +6456,7 @@
     "name": "Intel Core i7 9700T 2 GHz 8-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6466,7 +6466,7 @@
     "name": "Intel Xeon E5 2698 V3 2.3 GHz 16-Core LGA2011-3 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6476,7 +6476,7 @@
     "name": "AMD A-Series A10 7890K 4.1 GHz 4-Core FM2+",
     "manufacturer": "AMD",
     "series": "AMD A10",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6486,7 +6486,7 @@
     "name": "Intel Core Ultra 9 285 2.5 GHz 24-Core LGA1851",
     "manufacturer": "Intel",
     "series": "Intel Core Ultra 9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6496,7 +6496,7 @@
     "name": "AMD Ryzen 9 3950X 3.5 GHz 16-Core AM4 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6506,7 +6506,7 @@
     "name": "AMD Opteron 6378 2.4 GHz 16-Core G34",
     "manufacturer": "AMD",
     "series": "AMD Opteron",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6515,8 +6515,8 @@
     "category": "cpu",
     "name": "AMD Ryzen 7 1700",
     "manufacturer": "AMD",
-    "series": null,
-    "variant": null,
+    "series": "",
+    "variant": "",
     "release_year": 2017
   },
   {
@@ -6526,7 +6526,7 @@
     "name": "AMD FX-8370E 3.3 GHz 8-Core AM3+",
     "manufacturer": "AMD",
     "series": "AMD FX",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6536,7 +6536,7 @@
     "name": "AMD Ryzen 7 2700 3.2 GHz 8-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6546,7 +6546,7 @@
     "name": "Intel Core i9 9900X 3.5 GHz 10-Core LGA2066",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6556,7 +6556,7 @@
     "name": "AMD Ryzen 3 1200 (12nm) 3.1 GHz 4-Core AM4 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6566,7 +6566,7 @@
     "name": "Intel Core i7 6700K 4 GHz 4-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6576,7 +6576,7 @@
     "name": "Intel Core i7 3770T 2.5 GHz 4-Core LGA1155",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6586,7 +6586,7 @@
     "name": "AMD Ryzen 7 1800X 3.6 GHz 8-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6596,7 +6596,7 @@
     "name": "Intel Core i7 9700K 3.6 GHz 8-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6606,7 +6606,7 @@
     "name": "AMD Ryzen 5 1600 (12nm) 3.2 GHz 6-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6616,7 +6616,7 @@
     "name": "Intel Xeon E 2134 3.5 GHz 4-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6626,7 +6626,7 @@
     "name": "Intel Xeon E5 2420V2 2.2 GHz 6-Core LGA1356",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6636,7 +6636,7 @@
     "name": "AMD A10 7890K 4.1 GHz 4-Core FM2+ OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD A10",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6646,7 +6646,7 @@
     "name": "Intel Core i7 4770K 3.5 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6656,7 +6656,7 @@
     "name": "Intel Xeon E5 2697 V3 2.6 GHz 14-Core LGA2011-3 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6666,7 +6666,7 @@
     "name": "AMD Ryzen 7 3700X 3.6 GHz 8-Core AM4 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6676,7 +6676,7 @@
     "name": "Intel Xeon E5 2687W V2 3.4 GHz 8-Core LGA2011",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6686,7 +6686,7 @@
     "name": "Intel Xeon E3-1245 V3 3.4 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6696,7 +6696,7 @@
     "name": "AMD Threadripper 2950X 3.5 GHz 16-Core sTR4 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Threadripper",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6706,7 +6706,7 @@
     "name": "Intel Xeon E5 2650 V2 2.6 GHz 8-Core LGA2011",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6716,7 +6716,7 @@
     "name": "AMD Ryzen 3 3300X 3.8 GHz 4-Core",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6726,7 +6726,7 @@
     "name": "Intel Core i5 8500T 2.1 GHz 6-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6736,7 +6736,7 @@
     "name": "Intel Xeon E5 1650 V4 3.6 GHz 6-Core LGA2011-3 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6746,7 +6746,7 @@
     "name": "Intel Core i7 5775C 3.3 GHz 4-Core LGA1150 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6756,7 +6756,7 @@
     "name": "Intel Core i3 13100 3.4 GHz 4-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6766,7 +6766,7 @@
     "name": "Intel Core i7 5775C 3.3 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6776,7 +6776,7 @@
     "name": "Intel Xeon E3 1240 V5 3.5 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6786,7 +6786,7 @@
     "name": "AMD Ryzen 7 5700X3D 3.0 GHz 8-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6796,7 +6796,7 @@
     "name": "Intel Core i5 4460 3.2 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6806,7 +6806,7 @@
     "name": "AMD Threadripper 3970X 3.7 GHz 32-Core sTRX4",
     "manufacturer": "AMD",
     "series": "AMD Threadripper",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6816,7 +6816,7 @@
     "name": "Intel Core i3 13100F 3.4 GHz 4-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6836,7 +6836,7 @@
     "name": "AMD Opteron Opteron 6328 3.2 GHz 8-Core G34 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Opteron",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6846,7 +6846,7 @@
     "name": "Intel Core i5 7400T 2.4 GHz 4-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6856,7 +6856,7 @@
     "name": "AMD A10 6790K 4 GHz 4-Core FM2 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD A10",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6864,9 +6864,9 @@
     "opendb_id": "e2b2709c-9788-4eb9-a25f-9092cb59f3d9",
     "category": "cpu",
     "name": "Intel Core i5-10500 Processor",
-    "manufacturer": null,
-    "series": null,
-    "variant": null,
+    "manufacturer": "",
+    "series": "",
+    "variant": "",
     "release_year": 2020
   },
   {
@@ -6876,7 +6876,7 @@
     "name": "AMD Ryzen 5 2400G 3.6 GHz Quad-Core",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6906,7 +6906,7 @@
     "name": "Intel Xeon E5 2665 2.4 GHz 8-Core LGA2011",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6916,7 +6916,7 @@
     "name": "Intel Xeon E3 1226 V3 3.3 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6926,7 +6926,7 @@
     "name": "Intel Core i7 8700K 3.7 GHz 6-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6936,7 +6936,7 @@
     "name": "Intel Core i5 7400 3 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6946,7 +6946,7 @@
     "name": "Intel Xeon E3 1275 V3 3.5 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6966,7 +6966,7 @@
     "name": "Intel Xeon E 2124 3.3 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Xeon E",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6976,7 +6976,7 @@
     "name": "Intel Core i5 14500 2.6 GHz 14-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6986,7 +6986,7 @@
     "name": "Intel Core i9 9820X 3.3 GHz 10-Core LGA2066",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -6996,7 +6996,7 @@
     "name": "Intel Core i7 11700KF 3.6 GHz 8-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7006,7 +7006,7 @@
     "name": "Intel Core i5 10600K 4.1 GHz 6-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7016,7 +7016,7 @@
     "name": "Intel Core i5 9600T 2.3 GHz 6-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7026,7 +7026,7 @@
     "name": "AMD Athlon X4 940 3.2 GHz 4-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Athlon X4",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7036,7 +7036,7 @@
     "name": "Intel Xeon E5 1620 V4 3.5 GHz 4-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7046,7 +7046,7 @@
     "name": "Intel Core i5 11600KF 3.9 GHz 6-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7056,7 +7056,7 @@
     "name": "Intel Core i5 3330S 2.7 GHz 4-Core LGA1155 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7076,7 +7076,7 @@
     "name": "Intel Core i7-11700 2.5 GHz 8-Core",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7086,7 +7086,7 @@
     "name": "Intel Xeon E3 1220 V6 3 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7096,7 +7096,7 @@
     "name": "AMD Opteron 6320 2.8 GHz 8-Core G34 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Opteron",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7106,7 +7106,7 @@
     "name": "AMD Ryzen 7 5700X 3.4 GHz 8-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7126,7 +7126,7 @@
     "name": "AMD Ryzen 7 PRO 7745 3.8 GHz 8-Core AM5",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 7 PRO",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7134,9 +7134,9 @@
     "opendb_id": "e965f4ea-3d0e-4804-9364-309370fbb503",
     "category": "cpu",
     "name": "Intel Core i5-10600 Processor",
-    "manufacturer": null,
-    "series": null,
-    "variant": null,
+    "manufacturer": "",
+    "series": "",
+    "variant": "",
     "release_year": 2020
   },
   {
@@ -7146,7 +7146,7 @@
     "name": "Intel Core i9 9980XE 3 GHz 18-Core LGA2066 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7156,7 +7156,7 @@
     "name": "Intel Xeon E3 1270 V6 3.8 GHz 4-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7166,7 +7166,7 @@
     "name": "Intel Core i5 7500T 2.7 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7186,7 +7186,7 @@
     "name": "Intel Xeon E 2236 3.4 GHz 6-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7196,7 +7196,7 @@
     "name": "Intel Xeon E5 2690 V4 2.6 GHz 14-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7206,7 +7206,7 @@
     "name": "AMD Ryzen 5 1600 (14nm) 3.2 GHz 6-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7216,7 +7216,7 @@
     "name": "Intel Xeon E 2276G 3.8 GHz 6-Core LGA1151 (OEM/Tray)",
     "manufacturer": "Intel",
     "series": "Intel Xeon E",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7226,7 +7226,7 @@
     "name": "Intel Core i5 6402P 2.8 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7236,7 +7236,7 @@
     "name": "Intel Core i7 5820K 3.3 GHz 6-Core LGA2011-3 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7246,7 +7246,7 @@
     "name": "Intel Core i7 13700F 2.1 GHz 16-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7256,7 +7256,7 @@
     "name": "AMD Ryzen 5 3600X 3.8 GHz 6-Core AM4 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7266,7 +7266,7 @@
     "name": "Intel Core i7 7800X 3.5 GHz 6-Core LGA2066",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7276,7 +7276,7 @@
     "name": "Intel Core i7 10700 2.9 GHz 8-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7286,7 +7286,7 @@
     "name": "Intel Core i5 8600 3.1 GHz 6-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7296,7 +7296,7 @@
     "name": "Intel Core i5 12600 3.3 GHz 6-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7306,7 +7306,7 @@
     "name": "Intel Core i5 13600K 3.5 GHz 14-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7316,7 +7316,7 @@
     "name": "AMD Ryzen 9 7900X 4.7 GHz 12-Core AM5",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7324,9 +7324,9 @@
     "opendb_id": "ee10268f-5b1a-4d1b-b4de-0ff59423fea9",
     "category": "cpu",
     "name": "Intel Core i9-7940X X-series Processor",
-    "manufacturer": null,
-    "series": null,
-    "variant": null,
+    "manufacturer": "",
+    "series": "",
+    "variant": "",
     "release_year": 2017
   },
   {
@@ -7346,7 +7346,7 @@
     "name": "Intel Core i5 4440 3.1 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7356,7 +7356,7 @@
     "name": "Intel Core i7 12700KF 3.6 GHz 12-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7366,7 +7366,7 @@
     "name": "AMD A10 7870K 3.9 GHz 4-Core FM2+ OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD A10",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7376,7 +7376,7 @@
     "name": "AMD Ryzen 5 5600XT 3.7 GHz 6-Core AM4 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7386,7 +7386,7 @@
     "name": "Intel Core i7 7740X 4.3 GHz 4-Core LGA2066",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7396,7 +7396,7 @@
     "name": "Intel Xeon E5 2650 V3 2.3 GHz 10-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7406,7 +7406,7 @@
     "name": "Intel Core i5 11400F 2.6 GHz 6-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7416,7 +7416,7 @@
     "name": "Intel Xeon E3 1225 V3 3.2 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7426,7 +7426,7 @@
     "name": "Intel Xeon E3 1245 V3 3.4 GHz 4-Core LGA1150 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7436,7 +7436,7 @@
     "name": "AMD A-Series A10 6800B 4.1 GHz 4-Core FM2",
     "manufacturer": "AMD",
     "series": "AMD A10",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7446,7 +7446,7 @@
     "name": "AMD Athlon X4 845 3.5 GHz 4-Core FM2+",
     "manufacturer": "AMD",
     "series": "AMD Athlon X4",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7456,7 +7456,7 @@
     "name": "Intel Core i3 10100 3.6 GHz 4-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7466,7 +7466,7 @@
     "name": "Intel Core i5 6600 3.3 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7476,7 +7476,7 @@
     "name": "Intel Core i5 9600KF 3.7 GHz 6-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7486,7 +7486,7 @@
     "name": "AMD Ryzen 9 3900X 3.8 GHz 12-Core AM4 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 9",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7496,7 +7496,7 @@
     "name": "Intel Core i5 6500 3.2 GHz 4-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7506,7 +7506,7 @@
     "name": "AMD Ryzen 5 3600 3.6 GHz 6-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7516,7 +7516,7 @@
     "name": "AMD Sempron X2 250 3.2 GHz 2-Core FM2 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Sempron X2",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7526,7 +7526,7 @@
     "name": "AMD A10 6700T 2.5 GHz 4-Core FM2 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD A10",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7536,7 +7536,7 @@
     "name": "Intel Xeon E5 2667 V2 OEM/Tray 3.3 GHz 8-Core LGA2011",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7546,7 +7546,7 @@
     "name": "Intel Xeon E5 2650L V4 1.7 GHz 14-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7554,9 +7554,9 @@
     "opendb_id": "f4fcdf17-ee89-4728-a37f-3bb8350cc118",
     "category": "cpu",
     "name": "Intel Celeron G5900",
-    "manufacturer": null,
-    "series": null,
-    "variant": null,
+    "manufacturer": "",
+    "series": "",
+    "variant": "",
     "release_year": 2020
   },
   {
@@ -7566,7 +7566,7 @@
     "name": "Intel Xeon E3 1270 V5 3.6 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7576,7 +7576,7 @@
     "name": "Intel Core Ultra 7 265KF 3.9 GHz 20-Core LGA1851",
     "manufacturer": "Intel",
     "series": "Intel Core Ultra 7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7586,7 +7586,7 @@
     "name": "Intel Core i5 13500 2.5 GHz 14-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7596,7 +7596,7 @@
     "name": "AMD A10 7850K 3.7 GHz 4-Core FM2+ OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD A10",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7606,7 +7606,7 @@
     "name": "Intel Core i7 6800K 3.4 GHz 6-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7616,7 +7616,7 @@
     "name": "Intel Core i5 9400F 2.9 GHz 6-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7626,7 +7626,7 @@
     "name": "Intel Xeon E5 2695 V4 2.1 GHz 18-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7636,7 +7636,7 @@
     "name": "Intel Core i5 7600T 2.8 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7646,7 +7646,7 @@
     "name": "Intel Core i5 10600K 4.1 GHz 6-Core LGA1200",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7656,7 +7656,7 @@
     "name": "Intel Xeon E3 1230 V5 3.4 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Xeon E3",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7666,7 +7666,7 @@
     "name": "Intel Xeon E 2124G 3.4 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Xeon E",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7674,9 +7674,9 @@
     "opendb_id": "f8dce6ce-17aa-426d-a513-3d4c0136f180",
     "category": "cpu",
     "name": "Intel Core i9-9900K",
-    "manufacturer": null,
-    "series": null,
-    "variant": null,
+    "manufacturer": "",
+    "series": "",
+    "variant": "",
     "release_year": 2018
   },
   {
@@ -7686,7 +7686,7 @@
     "name": "Intel Core i5 13500T 1.6 GHz 14-Core LGA1700 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7696,7 +7696,7 @@
     "name": "Intel Xeon E5 2650 V4 2.2 GHz 12-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7706,7 +7706,7 @@
     "name": "Intel Core i5 5675C 3.1 GHz 4-Core LGA1150",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7716,7 +7716,7 @@
     "name": "Intel Xeon E5 2690 V3 2.6 GHz 12-Core LGA2011-3",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7726,7 +7726,7 @@
     "name": "AMD Athlon X4 950 3.5 GHz 4-Core AM4",
     "manufacturer": "AMD",
     "series": "AMD Athlon X4",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7736,7 +7736,7 @@
     "name": "Intel Xeon E 2244G 3.8 GHz 4-Core LGA1151",
     "manufacturer": "Intel",
     "series": "Intel Xeon E",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7746,7 +7746,7 @@
     "name": "Intel Core i5 4690 3.5 GHz 4-Core LGA1150 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7756,7 +7756,7 @@
     "name": "Intel Xeon E 2286G 4 GHz 6-Core LGA1151 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7766,7 +7766,7 @@
     "name": "AMD Ryzen 5 3600 3.6 GHz 6-Core AM4 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7776,7 +7776,7 @@
     "name": "Intel Xeon E5 2660 2.2 GHz 8-Core LGA2011 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7786,7 +7786,7 @@
     "name": "AMD Ryzen 5 2600 3.4 GHz 6-Core AM4 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7796,7 +7796,7 @@
     "name": "Intel Core i7 4820K 3.7 GHz 4-Core LGA2011",
     "manufacturer": "Intel",
     "series": "Intel Core i7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7806,7 +7806,7 @@
     "name": "Intel Xeon E5 2670 V2 2.5 GHz 10-Core LGA2011",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7816,7 +7816,7 @@
     "name": "AMD Ryzen 5 3400G 3.7 GHz 4-Core AM4 OEM/Tray",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7826,7 +7826,7 @@
     "name": "Intel Xeon E5 1650 3.2 GHz 6-Core LGA2011 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7846,7 +7846,7 @@
     "name": "AMD Ryzen 7 8700G 4.2 GHz 8-Core AM5",
     "manufacturer": "AMD",
     "series": "AMD Ryzen 7",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7856,7 +7856,7 @@
     "name": "Intel Xeon E5-2690 2.9 GHz 8-Core LGA2011 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7866,7 +7866,7 @@
     "name": "Intel Core i5 12400 2.5 GHz 6-Core LGA1700",
     "manufacturer": "Intel",
     "series": "Intel Core i5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   },
   {
@@ -7876,7 +7876,7 @@
     "name": "Intel Xeon E5 2699 V4 2.2 GHz 22-Core LGA2011-3 OEM/Tray",
     "manufacturer": "Intel",
     "series": "Intel Xeon E5",
-    "variant": null,
+    "variant": "",
     "release_year": null
   }
 ]
