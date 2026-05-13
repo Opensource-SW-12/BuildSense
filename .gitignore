@@ -18,6 +18,8 @@ reports/*
 !data/prices/
 !data/prices/*.json
 
+open-db/
+
 !logs/.gitkeep
 !reports/.gitkeep
 
