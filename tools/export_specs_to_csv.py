@@ -7,6 +7,15 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 SPECS_DIR = PROJECT_ROOT / "data" / "specs"
 EXPORTS_DIR = PROJECT_ROOT / "exports"
 
+SPEC_FILES = [
+    "cpu_specs.json",
+    "gpu_specs.json",
+    "ram_specs.json",
+    "psu_specs.json",
+    "ssd_specs.json",
+    "hdd_specs.json",
+]
+
 
 def flatten_dict(data, parent_key="", sep="_"):
     result = {}
@@ -52,9 +61,13 @@ def export_json_to_csv(json_path):
 def main():
     EXPORTS_DIR.mkdir(parents=True, exist_ok=True)
 
-    json_files = sorted(SPECS_DIR.glob("*.json"))
+    for file_name in SPEC_FILES:
+        json_path = SPECS_DIR / file_name
 
-    for json_path in json_files:
+        if not json_path.exists():
+            print(f"skip missing file: {json_path.name}")
+            continue
+
         export_json_to_csv(json_path)
 
 
