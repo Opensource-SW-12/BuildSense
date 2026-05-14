@@ -18,6 +18,25 @@ def get_ram_usage() -> float:
   return psutil.virtual_memory().percent
 
 
+def get_disk_usage() -> list[dict]:
+  result = []
+  for part in psutil.disk_partitions(all=False):
+    try:
+      usage = psutil.disk_usage(part.mountpoint)
+      result.append({
+        "mountpoint": part.mountpoint,
+        "device": part.device,
+        "fstype": part.fstype,
+        "total_gb": round(usage.total / (1024 ** 3), 1),
+        "used_gb": round(usage.used / (1024 ** 3), 1),
+        "free_gb": round(usage.free / (1024 ** 3), 1),
+        "percent": usage.percent,
+      })
+    except Exception:
+      continue
+  return result
+
+
 def collect_monitoring_snapshot() -> dict:
   try:
     gpu = collect_gpu_snapshot()
@@ -36,6 +55,11 @@ def collect_monitoring_snapshot() -> dict:
     boot_time = None
     uptime_seconds = None
 
+  try:
+    disks = get_disk_usage()
+  except Exception:
+    disks = []
+
   return {
     "timestamp": datetime.now(timezone.utc).isoformat(),
     "cpu_percent": get_cpu_usage(),
@@ -46,6 +70,7 @@ def collect_monitoring_snapshot() -> dict:
     "vram_total_mb": gpu.get("vram_total_mb"),
     "boot_time": boot_time,
     "uptime_seconds": uptime_seconds,
+    "disks": disks,
     "processes": processes,
   }
 
