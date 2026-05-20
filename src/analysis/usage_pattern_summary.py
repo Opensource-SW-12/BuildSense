@@ -1,10 +1,23 @@
 import json
 from datetime import datetime, timedelta
-
+from pathlib import Path
+from src.config import ANALYSIS_DIR
 
 def parse_utc_to_kst(timestamp):
-    utc_time = datetime.fromisoformat(timestamp.replace("Z", "+00:00"))
-    return utc_time + timedelta(hours=9)
+    try:
+        if not timestamp:
+            return None
+
+        utc_time = datetime.fromisoformat(timestamp.replace("Z", "+00:00"))
+        return utc_time + timedelta(hours=9)
+
+    except ValueError as error:
+        print(f"[timestamp 오류] 올바르지 않은 timestamp 형식입니다: {timestamp}, {error}")
+        return None
+
+    except TypeError as error:
+        print(f"[timestamp 오류] timestamp 값 타입이 올바르지 않습니다: {timestamp}, {error}")
+        return None
 
 
 def classify_time_period(kst_time):
@@ -47,6 +60,10 @@ def analyze_time_patterns(logs):
             continue
 
         kst_time = parse_utc_to_kst(timestamp)
+
+        if kst_time is None:
+            continue
+
         parsed_times.append(kst_time)
 
         time_period = classify_time_period(kst_time)
@@ -159,6 +176,10 @@ def create_usage_pattern_summary(logs):
     }
 
 
-def save_normalized_usage(result, output_path="output/normalized_usage.json"):
+def save_normalized_usage(result, output_filename="normalized_usage.json"):
+    output_path = Path(ANALYSIS_DIR) / output_filename
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
     with open(output_path, "w", encoding="utf-8") as file:
         json.dump(result, file, ensure_ascii=False, indent=2)
