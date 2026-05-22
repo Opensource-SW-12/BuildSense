@@ -1,11 +1,6 @@
+from src.analysis.score_disk_base import capacity_score
+
 _SSD_TYPES = {"SSD", "NVMe"}
-
-_W_PERCENT_P80  = 0.5
-_W_DANGER       = 0.3
-_W_FREE_PENALTY = 0.2
-
-_FREE_PENALTY_MIN_GB = 10.0
-_FREE_PENALTY_MAX_GB = 50.0
 
 # 규칙 기반 grade 임계값
 # SSD 85%+ = 성능 저하 시작 (낸드 플래시 특성상 여유 공간 확보 필요)
@@ -27,26 +22,8 @@ def _grade(percent_p80: float, danger_ratio: float, free_min_gb: float | None) -
     return "low"
 
 
-def _free_penalty(free_min_gb: float | None) -> float:
-    if free_min_gb is None:
-        return 0.0
-    if free_min_gb <= _FREE_PENALTY_MIN_GB:
-        return 1.0
-    if free_min_gb >= _FREE_PENALTY_MAX_GB:
-        return 0.0
-    return (_FREE_PENALTY_MAX_GB - free_min_gb) / (_FREE_PENALTY_MAX_GB - _FREE_PENALTY_MIN_GB)
-
-
 def _score_drive(drive: dict) -> float:
-    percent_p80  = (drive.get("percent_stats") or {}).get("percentile_80") or 0.0
-    danger_ratio = drive.get("danger_ratio") or 0.0
-    free_min     = (drive.get("free_gb_stats") or {}).get("min")
-    return round(min(
-        (percent_p80 / 100.0) * _W_PERCENT_P80
-        + danger_ratio          * _W_DANGER
-        + _free_penalty(free_min) * _W_FREE_PENALTY,
-        1.0,
-    ), 4)
+    return round(min(capacity_score(drive), 1.0), 4)
 
 
 def _grade_drive(drive: dict) -> str:
