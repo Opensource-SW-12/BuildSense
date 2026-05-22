@@ -30,6 +30,7 @@ from src.startup_state import StartupState
 from src.normalization.core import read_jsonl
 from src.analysis.resource_usage import analyze_resource_usage
 from src.analysis.usage_pattern_summary import create_usage_pattern_summary, save_normalized_usage
+from src.startup_registry import register_startup, unregister_startup
 
 SETTINGS_TITLE = "BuildSense - 사용자 설정"
 
@@ -70,6 +71,7 @@ class BuildSenseApp:
     self.settings_state["parts"]           = profile.get("parts", self.settings_state["parts"])
 
     start_monitoring_loop()
+    register_startup()
     self._show_monitoring_screen()
 
   def _on_analyze(self):
@@ -109,7 +111,8 @@ class BuildSenseApp:
           "usage_pattern":  create_usage_pattern_summary(logs),
         }
         save_normalized_usage(result)
-        delete_all_monitoring_data()  # KAN-64에서 시작프로그램 해제 추가
+        delete_all_monitoring_data()
+        unregister_startup()
         if self.root.winfo_exists():
           self.root.after(0, self._show_analysis_complete_screen)
       except Exception as e:
@@ -596,6 +599,7 @@ class BuildSenseApp:
     def _on_stop():
       stop_monitoring_loop()
       delete_all_monitoring_data()
+      unregister_startup()
       self._clear_window()
       self._center_window(360, 180)
       done = tk.Frame(self.root, padx=24, pady=30)
@@ -714,6 +718,7 @@ class BuildSenseApp:
 
       dialog.destroy()
       start_monitoring_loop()
+      register_startup()
       self._show_monitoring_screen()
 
     tk.Button(
