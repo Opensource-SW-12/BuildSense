@@ -2,8 +2,11 @@ _W_PERCENT_P80   = 0.5
 _W_DANGER        = 0.3
 _W_FREE_PENALTY  = 0.2
 
-_FREE_PENALTY_MIN_GB  = 10.0   # 이하면 페널티 1.0
-_FREE_PENALTY_MAX_GB  = 50.0   # 이상이면 페널티 0.0
+_FREE_PENALTY_MIN_GB  = 10.0
+_FREE_PENALTY_MAX_GB  = 50.0
+
+# HDD는 SSD 대비 성능이 낮으므로 업그레이드 추천을 유도하는 기본 패널티
+_HDD_BASE_PENALTY = 0.3
 
 
 def _grade(score: float) -> str:
@@ -28,13 +31,17 @@ def _score_drive(drive: dict) -> float:
     percent_p80  = (drive.get("percent_stats") or {}).get("percentile_80") or 0.0
     danger_ratio = drive.get("danger_ratio") or 0.0
     free_min     = (drive.get("free_gb_stats") or {}).get("min")
+    drive_type   = drive.get("drive_type", "Unknown")
 
-    return min(
+    capacity_score = (
         (percent_p80 / 100.0) * _W_PERCENT_P80
         + danger_ratio         * _W_DANGER
-        + _free_penalty(free_min) * _W_FREE_PENALTY,
-        1.0,
+        + _free_penalty(free_min) * _W_FREE_PENALTY
     )
+
+    if drive_type == "HDD":
+        return min(capacity_score + _HDD_BASE_PENALTY, 1.0)
+    return min(capacity_score, 1.0)
 
 
 def score_disk(disk_usage: dict) -> dict:
@@ -45,15 +52,17 @@ def score_disk(disk_usage: dict) -> dict:
     if not disk_usage:
         return {"score": 0.0, "grade": "low", "drive_scores": {}}
 
-    drive_scores = {
-        mountpoint: round(_score_drive(drive), 4)
-        for mountpoint, drive in disk_usage.items()
-    }
+    drive_scores = {}
+    for mountpoint, drive in disk_usage.items():
+        drive_scores[mountpoint] = {
+            "score":      round(_score_drive(drive), 4),
+            "drive_type": drive.get("drive_type", "Unknown"),
+        }
 
-    score = round(max(drive_scores.values()), 4)
+    score = round(max(d["score"] for d in drive_scores.values()), 4)
 
     return {
-        "score": score,
-        "grade": _grade(score),
+        "score":        score,
+        "grade":        _grade(score),
         "drive_scores": drive_scores,
     }
