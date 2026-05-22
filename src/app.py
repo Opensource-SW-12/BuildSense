@@ -22,7 +22,7 @@ from src.settings import (
   build_settings_state,
 )
 from src.hardware import get_hardware_info
-from src.storage import save_user_profile, delete_all_monitoring_data
+from src.storage import save_user_profile, delete_all_monitoring_data, read_user_profile
 from src.validators import validate_analysis_days, validate_parts_not_all_keep
 from src.monitor import start_monitoring_loop, stop_monitoring_loop, is_monitoring_running
 from src.config import USAGE_LOG_PATH
@@ -57,8 +57,17 @@ class BuildSenseApp:
     self.root.mainloop()
 
   def _on_resume(self):
-    # KAN-62: feature-resume-monitoring-after-reboot
-    raise NotImplementedError
+    profile = read_user_profile()
+    if profile is None:
+      self._show_consent_screen()
+      return
+
+    self.settings_state["knowledge_level"] = profile.get("knowledge_level", "intermediate")
+    self.settings_state["analysis_days"]   = profile.get("analysis_days", 7)
+    self.settings_state["parts"]           = profile.get("parts", self.settings_state["parts"])
+
+    start_monitoring_loop()
+    self._show_monitoring_screen()
 
   def _on_analyze(self):
     # KAN-63: feature-trigger-analysis-pipeline
