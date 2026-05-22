@@ -3,7 +3,7 @@ from datetime import datetime, timezone
 import psutil
 
 from src.gpu import collect_gpu_snapshot
-from src.process_tracker import get_running_processes, get_system_boot_time, get_system_uptime_seconds
+from src.process_tracker import get_running_processes, get_boot_and_uptime
 from src.background import start_background_task, stop_background_task, is_background_running, get_stop_event
 from src.storage import append_usage_log, check_and_clear_abort_signal
 
@@ -49,8 +49,7 @@ def collect_monitoring_snapshot() -> dict:
     processes = []
 
   try:
-    boot_time = get_system_boot_time()
-    uptime_seconds = get_system_uptime_seconds()
+    boot_time, uptime_seconds = get_boot_and_uptime()
   except Exception:
     boot_time = None
     uptime_seconds = None

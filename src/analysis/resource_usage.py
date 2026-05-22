@@ -3,7 +3,6 @@ from collections import Counter
 from src.normalization.core import (
     calculate_basic_stats,
     min_max_normalize,
-    remove_none,
     remove_outliers,
 )
 
@@ -12,7 +11,7 @@ _MONITOR_INTERVAL_SECONDS = 60
 
 
 def _stats_with_normalized(values: list) -> dict:
-    clean = remove_outliers(remove_none(values))
+    clean = remove_outliers(values)
     raw = calculate_basic_stats(values)
 
     if not clean:
