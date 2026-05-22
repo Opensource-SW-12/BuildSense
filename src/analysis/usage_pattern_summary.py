@@ -117,6 +117,26 @@ def calculate_continuous_usage_segments(parsed_times):
     return segments
 
 
+def calculate_inactive_segments(parsed_times):
+    if len(parsed_times) < 2:
+        return []
+
+    sorted_times = sorted(parsed_times)
+    inactive = []
+
+    for index in range(1, len(sorted_times)):
+        gap_seconds = (sorted_times[index] - sorted_times[index - 1]).total_seconds()
+
+        if gap_seconds >= 7200:
+            inactive.append({
+                "start": sorted_times[index - 1].isoformat(),
+                "end":   sorted_times[index].isoformat(),
+                "duration_hours": round(gap_seconds / 3600, 2),
+            })
+
+    return inactive
+
+
 def calculate_average_continuous_usage_hours(parsed_times):
     segments = calculate_continuous_usage_segments(parsed_times)
 
@@ -172,7 +192,8 @@ def create_usage_pattern_summary(logs):
         "weekday_count": time_analysis["weekday_count"],
         "active_snapshot_ratio": calculate_active_snapshot_ratio(parsed_times),
         "average_continuous_usage_hours": calculate_average_continuous_usage_hours(parsed_times),
-        "uptime": analyze_uptime(logs)
+        "inactive_segments": calculate_inactive_segments(parsed_times),
+        "uptime": analyze_uptime(logs),
     }
 
 
