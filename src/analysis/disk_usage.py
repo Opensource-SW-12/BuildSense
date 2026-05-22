@@ -44,7 +44,7 @@ def _get_drive_type_map() -> dict[str, str]:
             "Get-WmiObject Win32_LogicalDiskToPartition | "
             "ForEach-Object { "
             "  ($_.Antecedent -replace '.*Disk #(\\d+).*','$1') + ',' + "
-            "  ($_.Dependent  -replace '.*DeviceID=\"\"(.+)\"\".*','$1') "
+            "  ($_.Dependent  -replace '.*DeviceID=\"([A-Z]):.*','$1') "
             "}"
         )
 
@@ -54,8 +54,8 @@ def _get_drive_type_map() -> dict[str, str]:
             if "," not in line:
                 continue
             disk_idx, drive_raw = line.split(",", 1)
-            drive_letter = drive_raw.strip().strip('"').rstrip(":").upper()
-            if drive_letter:
+            drive_letter = drive_raw.strip().upper()
+            if len(drive_letter) == 1 and drive_letter.isalpha():
                 disk_to_drives.setdefault(disk_idx.strip(), []).append(drive_letter)
 
         # 물리 디스크 인덱스 -> 미디어 타입
