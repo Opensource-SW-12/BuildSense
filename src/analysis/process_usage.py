@@ -19,8 +19,18 @@ def _load_categories() -> dict[str, str]:
         return {}
 
 
+_CATEGORIES: dict[str, str] | None = None
+
+
+def _get_categories() -> dict[str, str]:
+    global _CATEGORIES
+    if _CATEGORIES is None:
+        _CATEGORIES = _load_categories()
+    return _CATEGORIES
+
+
 def analyze_process_usage(logs, top_n: int = _TOP_N) -> dict:
-    name_to_category = _load_categories()
+    name_to_category = _get_categories()
     total_snapshots = len(logs)
 
     appearance: dict[str, int]    = defaultdict(int)
