@@ -35,6 +35,7 @@ from src.analysis.disk_usage import analyze_disk_usage
 from src.analysis.process_usage import analyze_process_usage
 from src.analysis.user_type import classify_user_type
 from src.analysis.score_cpu import score_cpu
+from src.analysis.score_ram import score_ram
 from src.startup_registry import register_startup, unregister_startup
 
 SETTINGS_TITLE = "BuildSense - 사용자 설정"
@@ -120,6 +121,7 @@ class BuildSenseApp:
         result["scores"] = {
           "user_classification": classify_user_type(result, len(logs)),
           "cpu": score_cpu(result["resource_usage"]["cpu"]),
+          "ram": score_ram(result["resource_usage"]["ram"]),
         }
         save_normalized_usage(result)
         delete_all_monitoring_data()
