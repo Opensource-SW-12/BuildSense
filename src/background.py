@@ -42,6 +42,11 @@ def stop_background_task() -> None:
   _stop_event.set()
 
 
+def join_background_task(timeout: float = 5.0) -> None:
+  if _active_thread is not None and _active_thread.is_alive():
+    _active_thread.join(timeout=timeout)
+
+
 def get_stop_event() -> threading.Event:
   """모니터링 루프가 종료 신호를 확인하는 데 사용하는 Event 반환."""
   return _stop_event

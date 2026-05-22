@@ -25,6 +25,7 @@ from src.hardware import get_hardware_info
 from src.storage import save_user_profile, delete_all_monitoring_data, read_user_profile
 from src.validators import validate_analysis_days, validate_parts_not_all_keep
 from src.monitor import start_monitoring_loop, stop_monitoring_loop, is_monitoring_running
+from src.background import join_background_task
 from src.config import USAGE_LOG_PATH, ANALYSIS_DIR
 from src.startup_state import StartupState
 from src.normalization.core import read_jsonl
@@ -598,6 +599,7 @@ class BuildSenseApp:
 
     def _on_stop():
       stop_monitoring_loop()
+      join_background_task()
       delete_all_monitoring_data()
       unregister_startup()
       self._clear_window()
