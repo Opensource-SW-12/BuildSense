@@ -1,8 +1,9 @@
 import json
 from collections import defaultdict
-from pathlib import Path
 
-_CATEGORIES_PATH = Path(__file__).resolve().parent / "process_categories.json"
+from src.config import PROCESS_CATEGORIES_PATH
+
+_CATEGORIES_PATH = PROCESS_CATEGORIES_PATH
 _TOP_N = 10
 
 
