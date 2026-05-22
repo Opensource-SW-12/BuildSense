@@ -34,6 +34,14 @@ def get_system_uptime_seconds() -> float:
   return round(time.time() - psutil.boot_time(), 1)
 
 
+def get_boot_and_uptime() -> tuple[str, float]:
+  """boot_time과 uptime_seconds를 psutil.boot_time() 1회 호출로 반환."""
+  boot_ts = psutil.boot_time()
+  boot_time = datetime.fromtimestamp(boot_ts, tz=timezone.utc).isoformat()
+  uptime_seconds = round(time.time() - boot_ts, 1)
+  return boot_time, uptime_seconds
+
+
 def collect_process_uptime_snapshot() -> dict:
   return {
     "boot_time": get_system_boot_time(),

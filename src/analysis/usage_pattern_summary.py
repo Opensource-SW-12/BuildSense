@@ -83,34 +83,30 @@ def calculate_active_snapshot_ratio(parsed_times, interval_seconds=60):
     if len(parsed_times) < 2:
         return 0
 
-    sorted_times = sorted(parsed_times)
-
-    total_seconds = (sorted_times[-1] - sorted_times[0]).total_seconds()
+    total_seconds = (parsed_times[-1] - parsed_times[0]).total_seconds()
     expected_snapshot_count = int(total_seconds / interval_seconds) + 1
 
     if expected_snapshot_count <= 0:
         return 0
 
-    return len(sorted_times) / expected_snapshot_count
+    return len(parsed_times) / expected_snapshot_count
 
 
 def calculate_continuous_usage_segments(parsed_times):
     if not parsed_times:
         return []
 
-    sorted_times = sorted(parsed_times)
-
     segments = []
-    current_segment = [sorted_times[0]]
+    current_segment = [parsed_times[0]]
 
-    for index in range(1, len(sorted_times)):
-        gap_seconds = (sorted_times[index] - sorted_times[index - 1]).total_seconds()
+    for index in range(1, len(parsed_times)):
+        gap_seconds = (parsed_times[index] - parsed_times[index - 1]).total_seconds()
 
         if gap_seconds >= 7200:
             segments.append(current_segment)
-            current_segment = [sorted_times[index]]
+            current_segment = [parsed_times[index]]
         else:
-            current_segment.append(sorted_times[index])
+            current_segment.append(parsed_times[index])
 
     segments.append(current_segment)
 
@@ -121,16 +117,15 @@ def calculate_inactive_segments(parsed_times):
     if len(parsed_times) < 2:
         return []
 
-    sorted_times = sorted(parsed_times)
     inactive = []
 
-    for index in range(1, len(sorted_times)):
-        gap_seconds = (sorted_times[index] - sorted_times[index - 1]).total_seconds()
+    for index in range(1, len(parsed_times)):
+        gap_seconds = (parsed_times[index] - parsed_times[index - 1]).total_seconds()
 
         if gap_seconds >= 7200:
             inactive.append({
-                "start": sorted_times[index - 1].isoformat(),
-                "end":   sorted_times[index].isoformat(),
+                "start": parsed_times[index - 1].isoformat(),
+                "end":   parsed_times[index].isoformat(),
                 "duration_hours": round(gap_seconds / 3600, 2),
             })
 
@@ -185,14 +180,14 @@ def analyze_uptime(logs):
 
 def create_usage_pattern_summary(logs):
     time_analysis = analyze_time_patterns(logs)
-    parsed_times = time_analysis["parsed_times"]
+    sorted_times = sorted(time_analysis["parsed_times"])
 
     return {
         "time_period_count": time_analysis["time_period_count"],
         "weekday_count": time_analysis["weekday_count"],
-        "active_snapshot_ratio": calculate_active_snapshot_ratio(parsed_times),
-        "average_continuous_usage_hours": calculate_average_continuous_usage_hours(parsed_times),
-        "inactive_segments": calculate_inactive_segments(parsed_times),
+        "active_snapshot_ratio": calculate_active_snapshot_ratio(sorted_times),
+        "average_continuous_usage_hours": calculate_average_continuous_usage_hours(sorted_times),
+        "inactive_segments": calculate_inactive_segments(sorted_times),
         "uptime": analyze_uptime(logs),
     }
 

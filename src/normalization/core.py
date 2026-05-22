@@ -59,7 +59,7 @@ def min_max_normalize(values):
     max_value = max(values)
 
     if min_value == max_value:
-        return {"normalized": [0 for _ in values], "is_constant": True}
+        return {"normalized": [0] * len(values), "is_constant": True}
 
     normalized = [(value - min_value) / (max_value - min_value) for value in values]
 
