@@ -3,12 +3,13 @@ import psutil
 
 
 def get_hardware_info() -> dict:
+  ssd, hdd = _get_disks_by_type()
   return {
     "CPU":  _get_cpu(),
     "GPU":  _get_gpu(),
     "RAM":  _get_ram(),
-    "SSD":  _get_disk_by_type("SSD"),
-    "HDD":  _get_disk_by_type("HDD"),
+    "SSD":  ssd,
+    "HDD":  hdd,
     "파워": "확인할 수 없음",
   }
 
@@ -55,7 +56,8 @@ def _get_ram() -> str:
     return "확인할 수 없음"
 
 
-def _get_disk_by_type(media_type: str) -> str:
+def _get_disks_by_type() -> tuple[str, str]:
+  """(ssd_result, hdd_result) — PowerShell 1회 실행으로 SSD/HDD 동시 탐지."""
   cmd = (
     "Get-PhysicalDisk | "
     "Select-Object FriendlyName,MediaType | "
@@ -63,14 +65,22 @@ def _get_disk_by_type(media_type: str) -> str:
   )
   out = _run_ps(cmd)
   if not out:
-    return "확인할 수 없음"
+    return "확인할 수 없음", "확인할 수 없음"
 
-  matches = []
+  ssd_matches: list[str] = []
+  hdd_matches: list[str] = []
   for line in out.splitlines()[1:]:  # 헤더 제외
     cols = [c.strip('"') for c in line.split('","')]
-    if len(cols) == 2 and cols[1].strip() == media_type:
+    if len(cols) == 2:
       name = cols[0].strip()
+      media_type = cols[1].strip()
       if name:
-        matches.append(name)
+        if media_type == "SSD":
+          ssd_matches.append(name)
+        elif media_type == "HDD":
+          hdd_matches.append(name)
 
-  return ", ".join(matches) if matches else "없음"
+  return (
+    ", ".join(ssd_matches) if ssd_matches else "없음",
+    ", ".join(hdd_matches) if hdd_matches else "없음",
+  )
