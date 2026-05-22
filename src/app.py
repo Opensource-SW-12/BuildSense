@@ -22,7 +22,7 @@ from src.settings import (
   build_settings_state,
 )
 from src.hardware import get_hardware_info
-from src.storage import save_user_profile, delete_all_monitoring_data, read_user_profile
+from src.storage import save_user_profile, delete_all_monitoring_data, read_user_profile, init_log_line_count, get_log_line_count
 from src.validators import validate_analysis_days, validate_parts_not_all_keep
 from src.monitor import start_monitoring_loop, stop_monitoring_loop, is_monitoring_running
 from src.background import join_background_task
@@ -80,6 +80,7 @@ class BuildSenseApp:
     self.settings_state["analysis_days"]   = profile.get("analysis_days", 7)
     self.settings_state["parts"]           = profile.get("parts", self.settings_state["parts"])
 
+    init_log_line_count()
     start_monitoring_loop()
     register_startup()
     self._show_monitoring_screen()
@@ -582,8 +583,7 @@ class BuildSenseApp:
             size_str = f"{size / 1024:.1f} KB"
           else:
             size_str = f"{size / (1024 * 1024):.2f} MB"
-          with open(USAGE_LOG_PATH, "r", encoding="utf-8") as f:
-            lines = sum(1 for _ in f)
+          lines = get_log_line_count()
           size_label.config(text=f"수집된 데이터:  {size_str}  ({lines:,}개 스냅샷)")
         else:
           size_label.config(text="수집된 데이터:  0 B  (0개 스냅샷)")
