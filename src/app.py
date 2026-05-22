@@ -25,8 +25,11 @@ from src.hardware import get_hardware_info
 from src.storage import save_user_profile, delete_all_monitoring_data, read_user_profile
 from src.validators import validate_analysis_days, validate_parts_not_all_keep
 from src.monitor import start_monitoring_loop, stop_monitoring_loop, is_monitoring_running
-from src.config import USAGE_LOG_PATH
+from src.config import USAGE_LOG_PATH, ANALYSIS_DIR
 from src.startup_state import StartupState
+from src.normalization.core import read_jsonl
+from src.analysis.resource_usage import analyze_resource_usage
+from src.analysis.usage_pattern_summary import create_usage_pattern_summary, save_normalized_usage
 
 SETTINGS_TITLE = "BuildSense - 사용자 설정"
 
@@ -70,8 +73,115 @@ class BuildSenseApp:
     self._show_monitoring_screen()
 
   def _on_analyze(self):
-    # KAN-63: feature-trigger-analysis-pipeline
-    raise NotImplementedError
+    self._show_analyzing_screen()
+
+  def _show_analyzing_screen(self):
+    self._clear_window()
+    self.root.title("BuildSense - 분석 중")
+    self.root.resizable(False, False)
+    self._center_window(360, 180)
+
+    frame = tk.Frame(self.root, padx=24, pady=30)
+    frame.pack(fill=tk.BOTH, expand=True)
+
+    tk.Label(
+      frame,
+      text="사용 데이터를 분석하고 있습니다",
+      font=("Segoe UI", 12, "bold"),
+      anchor="center",
+    ).pack(expand=True)
+
+    tk.Label(
+      frame,
+      text="잠시만 기다려 주세요...",
+      font=("Segoe UI", 9),
+      fg="#666666",
+      anchor="center",
+    ).pack(expand=True)
+
+    self.root.update()
+
+    def _run():
+      try:
+        logs = read_jsonl(USAGE_LOG_PATH)
+        result = {
+          "resource_usage": analyze_resource_usage(logs),
+          "usage_pattern":  create_usage_pattern_summary(logs),
+        }
+        save_normalized_usage(result)
+        delete_all_monitoring_data()  # KAN-64에서 시작프로그램 해제 추가
+        if self.root.winfo_exists():
+          self.root.after(0, self._show_analysis_complete_screen)
+      except Exception as e:
+        if self.root.winfo_exists():
+          self.root.after(0, lambda err=str(e): self._show_analysis_error_screen(err))
+
+    threading.Thread(target=_run, daemon=True).start()
+
+  def _show_analysis_complete_screen(self):
+    self._clear_window()
+    self.root.title("BuildSense - 분석 완료")
+    self._center_window(420, 220)
+
+    frame = tk.Frame(self.root, padx=24, pady=30)
+    frame.pack(fill=tk.BOTH, expand=True)
+
+    tk.Label(
+      frame,
+      text="분석이 완료되었습니다",
+      font=("Segoe UI", 13, "bold"),
+      anchor="center",
+    ).pack(expand=True)
+
+    tk.Label(
+      frame,
+      text=f"결과 저장 경로:\n{ANALYSIS_DIR / 'normalized_usage.json'}",
+      font=("Segoe UI", 9),
+      fg="#555555",
+      anchor="center",
+      wraplength=380,
+      justify=tk.CENTER,
+    ).pack(expand=True)
+
+    tk.Button(
+      frame,
+      text="확인",
+      width=12,
+      command=self.root.destroy,
+    ).pack(pady=(12, 0))
+
+  def _show_analysis_error_screen(self, error_message: str):
+    self._clear_window()
+    self.root.title("BuildSense - 분석 오류")
+    self._center_window(420, 220)
+
+    frame = tk.Frame(self.root, padx=24, pady=30)
+    frame.pack(fill=tk.BOTH, expand=True)
+
+    tk.Label(
+      frame,
+      text="분석 중 오류가 발생했습니다",
+      font=("Segoe UI", 13, "bold"),
+      fg="#cc3300",
+      anchor="center",
+    ).pack(expand=True)
+
+    tk.Label(
+      frame,
+      text=error_message,
+      font=("Segoe UI", 9),
+      fg="#555555",
+      anchor="center",
+      wraplength=380,
+      justify=tk.CENTER,
+    ).pack(expand=True)
+
+    tk.Button(
+      frame,
+      text="확인",
+      width=12,
+      command=self.root.destroy,
+    ).pack(pady=(12, 0))
 
   # ------------------------------------------------------------------
   # 화면 전환
