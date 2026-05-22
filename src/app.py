@@ -26,12 +26,13 @@ from src.storage import save_user_profile, delete_all_monitoring_data
 from src.validators import validate_analysis_days, validate_parts_not_all_keep
 from src.monitor import start_monitoring_loop, stop_monitoring_loop, is_monitoring_running
 from src.config import USAGE_LOG_PATH
+from src.startup_state import StartupState
 
 SETTINGS_TITLE = "BuildSense - 사용자 설정"
 
 
 class BuildSenseApp:
-  def __init__(self):
+  def __init__(self, startup_state: StartupState = StartupState.FRESH):
     self.root = tk.Tk()
     self.consent_state = build_consent_state()
     self.settings_state = build_settings_state()
@@ -44,10 +45,24 @@ class BuildSenseApp:
     self._part_hw_frames = {}
     self._part_radio_widgets = {}
     self._part_desc_labels = {}
-    self._show_consent_screen()
+
+    if startup_state == StartupState.RESUME:
+      self._on_resume()   # KAN-62: feature-resume-monitoring-after-reboot
+    elif startup_state == StartupState.ANALYZE:
+      self._on_analyze()  # KAN-63: feature-trigger-analysis-pipeline
+    else:
+      self._show_consent_screen()
 
   def run(self):
     self.root.mainloop()
+
+  def _on_resume(self):
+    # KAN-62: feature-resume-monitoring-after-reboot
+    raise NotImplementedError
+
+  def _on_analyze(self):
+    # KAN-63: feature-trigger-analysis-pipeline
+    raise NotImplementedError
 
   # ------------------------------------------------------------------
   # 화면 전환

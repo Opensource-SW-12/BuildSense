@@ -2,6 +2,7 @@ from src.app import BuildSenseApp
 from src.storage import ensure_app_directories
 from src.background import acquire_single_instance_lock
 from src.instance_status import show_instance_status_window
+from src.startup_state import detect_startup_state
 
 
 def main():
@@ -10,7 +11,8 @@ def main():
     return
 
   ensure_app_directories()
-  app = BuildSenseApp()
+  state = detect_startup_state()
+  app = BuildSenseApp(startup_state=state)
   app.run()
 
 
