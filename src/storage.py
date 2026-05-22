@@ -34,11 +34,26 @@ def get_report_path(filename: str) -> Path:
   return REPORTS_DIR / filename
 
 
+_log_line_count: int = 0
+
+
+def init_log_line_count() -> None:
+  """RESUME 상태 진입 시 파일에서 초기값을 읽어 카운터를 설정한다."""
+  global _log_line_count
+  _log_line_count = get_usage_log_line_count()
+
+
+def get_log_line_count() -> int:
+  return _log_line_count
+
+
 def append_usage_log(snapshot: dict) -> None:
+  global _log_line_count
   try:
     LOGS_DIR.mkdir(parents=True, exist_ok=True)
     with open(USAGE_LOG_PATH, "a", encoding="utf-8") as f:
       f.write(json.dumps(snapshot, ensure_ascii=False) + "\n")
+    _log_line_count += 1
   except Exception:
     pass
 
@@ -83,12 +98,14 @@ def get_usage_log_first_timestamp() -> str | None:
 
 
 def delete_all_monitoring_data() -> None:
+  global _log_line_count
   for path in (USAGE_LOG_PATH, USER_PROFILE_PATH):
     try:
       if path.exists():
         path.unlink()
     except Exception:
       pass
+  _log_line_count = 0
 
 
 _ABORT_SIGNAL_PATH = DATA_DIR / "buildsense_abort.signal"
