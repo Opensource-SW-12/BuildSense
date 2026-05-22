@@ -31,6 +31,8 @@ from src.startup_state import StartupState
 from src.normalization.core import read_jsonl
 from src.analysis.resource_usage import analyze_resource_usage
 from src.analysis.usage_pattern_summary import create_usage_pattern_summary, save_normalized_usage
+from src.analysis.disk_usage import analyze_disk_usage
+from src.analysis.process_usage import analyze_process_usage
 from src.startup_registry import register_startup, unregister_startup
 
 SETTINGS_TITLE = "BuildSense - 사용자 설정"
@@ -110,6 +112,8 @@ class BuildSenseApp:
         result = {
           "resource_usage": analyze_resource_usage(logs),
           "usage_pattern":  create_usage_pattern_summary(logs),
+          "disk_usage":     analyze_disk_usage(logs),
+          "process_usage":  analyze_process_usage(logs),
         }
         save_normalized_usage(result)
         delete_all_monitoring_data()
