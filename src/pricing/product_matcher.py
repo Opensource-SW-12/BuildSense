@@ -18,7 +18,14 @@ def contains_keyword(text, keyword):
     keyword = normalize_text(keyword)
 
     return keyword in text if keyword else True
+    
+def contains_normalized_keyword(normalized_text, keyword):
+    normalized_keyword = normalize_text(keyword)
 
+    if not normalized_keyword:
+        return True
+
+    return normalized_keyword in normalized_text
 
 def is_matching_product(product_title, part):
     title = normalize_text(product_title)
@@ -27,7 +34,7 @@ def is_matching_product(product_title, part):
     name = part.get("name", "")
     category = part.get("category", "")
 
-    if manufacturer and not contains_keyword(title, manufacturer):
+    if manufacturer and not contains_normalized_keyword(title, manufacturer):
         return False
 
     name_tokens = normalize_text(name).split()
@@ -39,7 +46,7 @@ def is_matching_product(product_title, part):
 
     matched_count = sum(
         1 for token in important_tokens
-        if contains_keyword(title, token)
+        if contains_normalized_keyword(title, token)
     )
 
     if important_tokens and matched_count < max(1, len(important_tokens) // 2):
@@ -49,7 +56,7 @@ def is_matching_product(product_title, part):
         chipset = part.get("chipset")
         memory = part.get("memory", {})
 
-        if chipset and not contains_keyword(title, chipset):
+        if contains_normalized_keyword(title, chipset):
             return False
 
         if memory.get("capacity_gb"):
@@ -62,17 +69,17 @@ def is_matching_product(product_title, part):
         series = part.get("series")
         variant = part.get("variant")
 
-        if series and not contains_keyword(title, series):
+        if series and not contains_normalized_keyword(title, series):
             return False
 
-        if variant and not contains_keyword(title, variant):
+        if variant and not contains_normalized_keyword(title, variant):
             return False
 
     if category in ["ssd", "hdd"]:
         capacity_gb = part.get("capacity_gb")
         storage_type = part.get("storage_type")
 
-        if storage_type and not contains_keyword(title, storage_type):
+        if storage_type and not contains_normalized_keyword(title, storage_type):
             return False
 
         if capacity_gb:
