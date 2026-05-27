@@ -61,12 +61,12 @@ def search_naver_shopping(query, display=10):
 
     except urllib.error.HTTPError as error:
         raise RuntimeError(
-            f"네이버 쇼핑 API 요청 실패: {error.code}"
+            f"네이버 쇼핑 API 요청 실패: HTTP 상태 코드 {error.code}"
         ) from error
 
     except urllib.error.URLError as error:
         raise RuntimeError(
-            f"네이버 쇼핑 API 연결 실패: {error}"
+            f"네이버 쇼핑 API 연결 실패: 네트워크 또는 주소 문제 - {error}"
         ) from error
 
     except json.JSONDecodeError as error:
