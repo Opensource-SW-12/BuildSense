@@ -13,12 +13,6 @@ def normalize_text(text):
     return text.strip()
 
 
-def contains_keyword(text, keyword):
-    text = normalize_text(text)
-    keyword = normalize_text(keyword)
-
-    return keyword in text if keyword else True
-    
 def contains_normalized_keyword(normalized_text, keyword):
     normalized_keyword = normalize_text(keyword)
 
@@ -56,7 +50,7 @@ def is_matching_product(product_title, part):
         chipset = part.get("chipset")
         memory = part.get("memory", {})
 
-        if contains_normalized_keyword(title, chipset):
+        if chipset and not contains_normalized_keyword(title, chipset):
             return False
 
         if memory.get("capacity_gb"):
