@@ -32,6 +32,15 @@ def load_usage_logs() -> list[dict]:
     return logs
 
 
+def _extract_raw_series(logs: list[dict]) -> dict:
+    return {
+        "cpu":         [log.get("cpu_percent") for log in logs],
+        "ram":         [log.get("ram_percent") for log in logs],
+        "gpu":         [log.get("gpu_percent") for log in logs],
+        "vram_used_mb": [log.get("vram_used_mb") for log in logs],
+    }
+
+
 def collect_report_data(logs: list[dict], profile: dict | None = None) -> dict:
     if not logs:
         return {}
@@ -57,6 +66,7 @@ def collect_report_data(logs: list[dict], profile: dict | None = None) -> dict:
 
     return {
         "resource":        resource,
+        "raw_series":      _extract_raw_series(logs),
         "pattern":         pattern,
         "disk":            disk,
         "process":         process,
