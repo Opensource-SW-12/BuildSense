@@ -61,12 +61,12 @@ def search_naver_shopping(query, display=10):
 
     except urllib.error.HTTPError as error:
         raise RuntimeError(
-            f"네이버 쇼핑 API 요청 실패: {error.code}"
+            f"네이버 쇼핑 API 요청 실패: HTTP 상태 코드 {error.code}"
         ) from error
 
     except urllib.error.URLError as error:
         raise RuntimeError(
-            f"네이버 쇼핑 API 연결 실패: {error}"
+            f"네이버 쇼핑 API 연결 실패: 네트워크 또는 주소 문제 - {error}"
         ) from error
 
     except json.JSONDecodeError as error:
@@ -100,7 +100,9 @@ def search_ebay(query, limit=10):
     ebay_token = os.getenv("EBAY_ACCESS_TOKEN")
 
     if not ebay_token:
-        raise ValueError("EBAY_ACCESS_TOKEN 환경변수가 없습니다.")
+        raise ValueError(
+            "eBay API 키가 설정되지 않았습니다. EBAY_ACCESS_TOKEN 환경변수를 확인하세요."
+        )
 
     encoded_query = urllib.parse.quote(query)
 
@@ -122,12 +124,12 @@ def search_ebay(query, limit=10):
 
     except urllib.error.HTTPError as error:
         raise RuntimeError(
-            f"eBay API 요청 실패: {error.code}"
+            f"eBay API 요청 실패: HTTP 상태 코드 {error.code}"
         ) from error
 
     except urllib.error.URLError as error:
         raise RuntimeError(
-            f"eBay API 연결 실패: {error}"
+            f"eBay API 연결 실패: 네트워크 또는 주소 문제 - {error}"
         ) from error
 
     except json.JSONDecodeError as error:
