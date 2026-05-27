@@ -3,7 +3,7 @@ import os
 import urllib.parse
 import urllib.request
 
-from src.pricing.exchange_rate import convert_usd_to_krw
+from src.pricing.exchange_rate import get_usd_to_krw_rate, convert_usd_to_krw
 
 
 NAVER_SHOPPING_API_URL = "https://openapi.naver.com/v1/search/shop.json"
@@ -139,13 +139,20 @@ def search_ebay(query, limit=10):
 def extract_ebay_candidates(api_result):
     candidates = []
 
+    exchange_rate = get_usd_to_krw_rate()
+
     for item in api_result.get("itemSummaries", []):
         price_info = item.get("price", {})
         value = price_info.get("value")
         currency = price_info.get("currency")
 
         price_usd = safe_float(value) if currency == "USD" else None
-        price_krw = convert_usd_to_krw(price_usd) if price_usd is not None else None
+
+        price_krw = (
+            convert_usd_to_krw(price_usd, exchange_rate)
+            if price_usd is not None
+            else None
+        )
 
         candidates.append({
             "source": "ebay",
