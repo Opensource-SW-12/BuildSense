@@ -2,7 +2,7 @@ import json
 
 from src.config import USAGE_LOG_PATH
 from src.analysis.resource_usage import analyze_resource_usage
-from src.analysis.usage_pattern_summary import create_usage_pattern_summary
+from src.analysis.usage_pattern_summary import create_usage_pattern_summary, parse_utc_to_kst
 from src.analysis.disk_usage import analyze_disk_usage
 from src.analysis.process_usage import analyze_process_usage
 from src.analysis.user_type import classify_user_type
@@ -41,6 +41,26 @@ def _extract_raw_series(logs: list[dict]) -> dict:
     }
 
 
+def _extract_pattern_series(logs: list[dict]) -> dict:
+    hourly = [0] * 24
+    daily  = [0] * 7
+    hourly_by_day = [[0] * 24 for _ in range(7)]
+
+    for log in logs:
+        kst = parse_utc_to_kst(log.get("timestamp"))
+        if kst is None:
+            continue
+        hourly[kst.hour] += 1
+        daily[kst.weekday()] += 1
+        hourly_by_day[kst.weekday()][kst.hour] += 1
+
+    return {
+        "hourly":        hourly,
+        "daily":         daily,
+        "hourly_by_day": hourly_by_day,
+    }
+
+
 def collect_report_data(logs: list[dict], profile: dict | None = None) -> dict:
     if not logs:
         return {}
@@ -67,6 +87,7 @@ def collect_report_data(logs: list[dict], profile: dict | None = None) -> dict:
     return {
         "resource":        resource,
         "raw_series":      _extract_raw_series(logs),
+        "pattern_series":  _extract_pattern_series(logs),
         "pattern":         pattern,
         "disk":            disk,
         "process":         process,

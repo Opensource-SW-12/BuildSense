@@ -3,6 +3,7 @@ import io
 
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
+import numpy as np
 
 from src.report.font_config import setup_korean_font
 
@@ -200,5 +201,110 @@ def build_vram_chart(vram: dict, raw_series: list) -> str:
                    transform=ax_ts.transAxes, fontsize=11, color=_C_GRAY)
         ax_ts.axis("off")
     ax_ts.set_title("시계열", fontsize=11)
+
+    return _fig_to_base64(fig)
+
+
+# ── KAN-97: 사용 패턴 차트 ────────────────────────────────────────────────────
+
+_DAY_LABELS = ["월", "화", "수", "목", "금", "토", "일"]
+
+
+def build_time_pattern_chart(pattern_series: dict) -> str:
+    hourly = pattern_series.get("hourly", [0] * 24)
+    daily  = pattern_series.get("daily",  [0] * 7)
+
+    fig = plt.figure(figsize=(12, 4))
+    fig.suptitle("사용 시간 분포", fontsize=14, fontweight="bold", y=1.01)
+    gs = gridspec.GridSpec(1, 2, figure=fig, wspace=0.45)
+
+    ax_h = fig.add_subplot(gs[0])
+    xs = list(range(24))
+    bars = ax_h.bar(xs, hourly, color=_C_BLUE, width=0.7, edgecolor="white")
+    peak_h = hourly.index(max(hourly)) if hourly else 0
+    bars[peak_h].set_color(_C_ORANGE)
+    ax_h.set_xticks(xs)
+    ax_h.set_xticklabels([f"{h}" for h in xs], fontsize=7.5)
+    ax_h.set_xlabel("시 (KST)", fontsize=9)
+    ax_h.set_ylabel("스냅샷 수", fontsize=9)
+    ax_h.set_title("시간대별", fontsize=11)
+    ax_h.spines["top"].set_visible(False)
+    ax_h.spines["right"].set_visible(False)
+
+    ax_d = fig.add_subplot(gs[1])
+    d_colors = [_C_ORANGE if i >= 5 else _C_BLUE for i in range(7)]
+    ax_d.bar(_DAY_LABELS, daily, color=d_colors, width=0.6, edgecolor="white")
+    ax_d.set_xlabel("요일", fontsize=9)
+    ax_d.set_ylabel("스냅샷 수", fontsize=9)
+    ax_d.set_title("요일별", fontsize=11)
+    ax_d.spines["top"].set_visible(False)
+    ax_d.spines["right"].set_visible(False)
+
+    return _fig_to_base64(fig)
+
+
+def build_usage_heatmap(pattern_series: dict) -> str:
+    data = np.array(pattern_series.get("hourly_by_day", [[0] * 24] * 7), dtype=float)
+
+    fig, ax = plt.subplots(figsize=(13, 3.5))
+    fig.suptitle("요일 × 시간대 사용 히트맵", fontsize=14, fontweight="bold", y=1.04)
+
+    im = ax.imshow(data, cmap="YlOrRd", aspect="auto", interpolation="nearest")
+
+    ax.set_xticks(range(24))
+    ax.set_xticklabels([f"{h}시" for h in range(24)], fontsize=7.5)
+    ax.set_yticks(range(7))
+    ax.set_yticklabels(_DAY_LABELS, fontsize=9)
+
+    cbar = plt.colorbar(im, ax=ax, fraction=0.03, pad=0.02)
+    cbar.set_label("스냅샷 수", fontsize=9)
+
+    ax.spines[:].set_visible(False)
+    ax.tick_params(length=0)
+
+    return _fig_to_base64(fig)
+
+
+def build_segment_summary_chart(pattern: dict) -> str:
+    avg_hours  = pattern.get("average_continuous_usage_hours", 0.0)
+    inactive   = pattern.get("inactive_segments", [])
+    active_r   = pattern.get("active_snapshot_ratio", 0.0) * 100
+    uptime     = pattern.get("uptime", {})
+    avg_uptime = uptime.get("average_uptime_hours", 0.0)
+    long_r     = uptime.get("long_usage_ratio", 0.0) * 100
+
+    inactive_hours = [s.get("duration_hours", 0) for s in inactive]
+
+    fig = plt.figure(figsize=(11, 4))
+    fig.suptitle("사용 세그먼트 요약", fontsize=14, fontweight="bold", y=1.01)
+    gs = gridspec.GridSpec(1, 2, figure=fig, wspace=0.45)
+
+    ax_stat = fig.add_subplot(gs[0])
+    labels = ["활성 비율 (%)", "평균 연속\n사용 (시간)", "평균 부팅\n유지 (시간)", "장시간 사용\n비율 (%)"]
+    values = [active_r, avg_hours, avg_uptime, long_r]
+    colors = [_C_BLUE, _C_GREEN, _C_BLUE, _C_ORANGE if long_r >= 30 else _C_GREEN]
+    bars = ax_stat.barh(labels, values, color=colors, height=0.5, edgecolor="white")
+    ax_stat.set_xlim(0, max(max(values) * 1.25, 1))
+    for bar, val in zip(bars, values):
+        ax_stat.text(bar.get_width() + 0.3, bar.get_y() + bar.get_height() / 2,
+                     f"{val:.1f}", va="center", fontsize=9)
+    ax_stat.spines["top"].set_visible(False)
+    ax_stat.spines["right"].set_visible(False)
+    ax_stat.set_title("사용 패턴 지표", fontsize=11)
+
+    ax_gap = fig.add_subplot(gs[1])
+    if inactive_hours:
+        ax_gap.hist(inactive_hours, bins=min(10, len(inactive_hours)),
+                    color=_C_GRAY, edgecolor="white")
+        ax_gap.set_xlabel("비활성 구간 길이 (시간)", fontsize=9)
+        ax_gap.set_ylabel("횟수", fontsize=9)
+        ax_gap.set_title(f"비활성 구간 분포 (총 {len(inactive_hours)}회)", fontsize=11)
+    else:
+        ax_gap.text(0.5, 0.5, "비활성 구간 없음", ha="center", va="center",
+                    transform=ax_gap.transAxes, fontsize=12, color=_C_GRAY)
+        ax_gap.axis("off")
+        ax_gap.set_title("비활성 구간 분포", fontsize=11)
+    ax_gap.spines["top"].set_visible(False)
+    ax_gap.spines["right"].set_visible(False)
 
     return _fig_to_base64(fig)
