@@ -308,3 +308,147 @@ def build_segment_summary_chart(pattern: dict) -> str:
     ax_gap.spines["right"].set_visible(False)
 
     return _fig_to_base64(fig)
+
+
+# ── KAN-98: 디스크 / 프로세스 차트 ──────────────────────────────────────────────
+
+_CATEGORY_COLORS = {
+    "game":        "#7B68EE",
+    "development": "#4472C4",
+    "browser":     "#70AD47",
+    "office":      "#ED7D31",
+    "media":       "#FFC000",
+    "system":      "#A6A6A6",
+    "etc":         "#D9D9D9",
+}
+
+
+def build_disk_chart(disk: dict) -> str:
+    drives = list(disk.items())
+    if not drives:
+        fig, ax = plt.subplots(figsize=(5, 3))
+        ax.text(0.5, 0.5, "디스크 정보 없음", ha="center", va="center",
+                transform=ax.transAxes, fontsize=12, color=_C_GRAY)
+        ax.axis("off")
+        return _fig_to_base64(fig)
+
+    n = len(drives)
+    fig, axes = plt.subplots(1, n, figsize=(max(4.5 * n, 5), 4.5))
+    fig.suptitle("드라이브 사용 현황", fontsize=14, fontweight="bold", y=1.02)
+    if n == 1:
+        axes = [axes]
+
+    for ax, (mountpoint, info) in zip(axes, drives):
+        total_gb  = info.get("total_gb") or 0
+        pct_avg   = (info.get("percent_stats") or {}).get("average") or 0
+        used_avg  = total_gb * pct_avg / 100 if total_gb else 0
+        free_avg  = total_gb - used_avg
+        drive_type = info.get("drive_type", "Unknown")
+        danger    = info.get("danger_ratio", 0.0) * 100
+
+        used_color = _C_RED if pct_avg >= 90 else (_C_ORANGE if pct_avg >= 70 else _C_GREEN)
+
+        wedges, _ = ax.pie(
+            [max(used_avg, 0), max(free_avg, 0)],
+            colors=[used_color, "#E8E8E8"],
+            startangle=90,
+            wedgeprops={"width": 0.55, "edgecolor": "white", "linewidth": 1.5},
+        )
+
+        label = mountpoint.rstrip("\\").rstrip("/") or mountpoint
+        ax.text(0, 0.08, f"{pct_avg:.1f}%", ha="center", va="center",
+                fontsize=18, fontweight="bold", color=used_color)
+        ax.text(0, -0.22, f"{used_avg:.0f} / {total_gb:.0f} GB", ha="center", va="center",
+                fontsize=8.5, color="#555555")
+
+        ax.set_title(f"{label}  ({drive_type})", fontsize=10, fontweight="bold", pad=10)
+        if danger > 0:
+            ax.text(0, -1.55, f"위험 비율 {danger:.0f}%", ha="center", fontsize=8,
+                    color=_C_RED)
+
+    plt.tight_layout()
+    return _fig_to_base64(fig)
+
+
+def _draw_process_bars(ax, items: list[dict], value_key: str, unit: str, title: str) -> None:
+    if not items:
+        ax.text(0.5, 0.5, "데이터 없음", ha="center", va="center",
+                transform=ax.transAxes, fontsize=11, color=_C_GRAY)
+        ax.axis("off")
+        ax.set_title(title, fontsize=11)
+        return
+
+    names  = [p["name"][:20] for p in reversed(items)]
+    values = [p.get(value_key) or 0.0 for p in reversed(items)]
+    cats   = [p.get("category", "etc") for p in reversed(items)]
+    colors = [_CATEGORY_COLORS.get(c, _CATEGORY_COLORS["etc"]) for c in cats]
+
+    bars = ax.barh(names, values, color=colors, height=0.6, edgecolor="white")
+    ax.set_xlabel(unit, fontsize=9)
+    ax.set_title(title, fontsize=11)
+    ax.spines["top"].set_visible(False)
+    ax.spines["right"].set_visible(False)
+    ax.tick_params(axis="y", labelsize=8)
+
+    for bar, val in zip(bars, values):
+        ax.text(bar.get_width() + max(values) * 0.01,
+                bar.get_y() + bar.get_height() / 2,
+                f"{val:.1f}", va="center", fontsize=7.5)
+
+
+def build_process_chart(process: dict) -> str:
+    top_freq = process.get("top_by_frequency", [])
+    top_cpu  = process.get("top_by_cpu", [])
+    top_mem  = process.get("top_by_memory", [])
+
+    fig = plt.figure(figsize=(15, 5.5))
+    fig.suptitle("주요 프로세스", fontsize=14, fontweight="bold", y=1.02)
+    gs = gridspec.GridSpec(1, 3, figure=fig, wspace=0.55)
+
+    _draw_process_bars(fig.add_subplot(gs[0]), top_freq[:10],
+                       "appearance_ratio", "출현 비율", "출현 빈도 Top 10")
+    _draw_process_bars(fig.add_subplot(gs[1]), top_cpu[:10],
+                       "avg_cpu_percent", "CPU (%)", "CPU 사용 Top 10")
+    _draw_process_bars(fig.add_subplot(gs[2]), top_mem[:10],
+                       "avg_memory_mb", "메모리 (MB)", "메모리 사용 Top 10")
+
+    legend_patches = [
+        plt.Rectangle((0, 0), 1, 1, color=color, label=cat)
+        for cat, color in _CATEGORY_COLORS.items()
+    ]
+    fig.legend(handles=legend_patches, loc="lower center", ncol=len(_CATEGORY_COLORS),
+               fontsize=8, frameon=False, bbox_to_anchor=(0.5, -0.04))
+
+    return _fig_to_base64(fig)
+
+
+def build_category_chart(process: dict) -> str:
+    summary = process.get("category_summary", {})
+    filtered = {k: v for k, v in summary.items() if k not in ("etc",) and v > 0}
+    if not filtered:
+        filtered = {k: v for k, v in summary.items() if v > 0}
+
+    fig, ax = plt.subplots(figsize=(7, 4.5))
+    fig.suptitle("프로세스 카테고리 분포", fontsize=14, fontweight="bold", y=1.02)
+
+    if not filtered:
+        ax.text(0.5, 0.5, "데이터 없음", ha="center", va="center",
+                transform=ax.transAxes, fontsize=12, color=_C_GRAY)
+        ax.axis("off")
+        return _fig_to_base64(fig)
+
+    labels = list(filtered.keys())
+    values = list(filtered.values())
+    colors = [_CATEGORY_COLORS.get(k, _CATEGORY_COLORS["etc"]) for k in labels]
+    explode = [0.04] * len(labels)
+
+    wedges, texts, autotexts = ax.pie(
+        values, labels=labels, colors=colors, explode=explode,
+        autopct="%1.1f%%", startangle=90,
+        wedgeprops={"edgecolor": "white", "linewidth": 1.5},
+        textprops={"fontsize": 9},
+    )
+    for at in autotexts:
+        at.set_fontsize(8)
+
+    return _fig_to_base64(fig)
