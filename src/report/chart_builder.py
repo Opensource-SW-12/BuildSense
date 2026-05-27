@@ -461,9 +461,9 @@ _GRADE_COLOR = {
     "medium":   _C_ORANGE,
     "high":     _C_RED,
     "unknown":  _C_GRAY,
-    "gold":     "#4472C4",
-    "platinum": "#7B68EE",
-    "titanium": "#9B59B6",
+    "gold":     _C_GREEN,
+    "platinum": _C_ORANGE,
+    "titanium": _C_RED,
 }
 
 _GRADE_KO = {
@@ -471,9 +471,9 @@ _GRADE_KO = {
     "medium":   "보통",
     "high":     "높음",
     "unknown":  "미감지",
-    "gold":     "Gold",
-    "platinum": "Platinum",
-    "titanium": "Titanium",
+    "gold":     "낮음",
+    "platinum": "보통",
+    "titanium": "높음",
 }
 
 _PART_LABELS = ["CPU", "RAM", "GPU", "스토리지", "PSU"]
@@ -555,8 +555,10 @@ def build_score_summary_chart(scores: dict) -> str:
     ax.set_xlabel("점수 (0 ~ 1)", fontsize=9)
     ax.axvline(0.35, color=_C_ORANGE, linewidth=1.0, linestyle="--", alpha=0.6)
     ax.axvline(0.60, color=_C_RED,    linewidth=1.0, linestyle="--", alpha=0.6)
-    ax.text(0.35, -0.7, "보통", fontsize=7.5, color=_C_ORANGE, ha="center")
-    ax.text(0.60, -0.7, "높음", fontsize=7.5, color=_C_RED,    ha="center")
+    ax.text(0.35 / 1.25, 1.02, "보통", fontsize=7.5, color=_C_ORANGE,
+            ha="center", va="bottom", transform=ax.transAxes)
+    ax.text(0.60 / 1.25, 1.02, "높음", fontsize=7.5, color=_C_RED,
+            ha="center", va="bottom", transform=ax.transAxes)
 
     for bar, val, grade in zip(bars, values, grades):
         grade_label = _GRADE_KO.get(grade, grade)

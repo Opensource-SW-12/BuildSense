@@ -16,9 +16,9 @@ _GRADE_KO = {
     "medium":   ("보통",    "#E65100", "#FFF3E0"),
     "high":     ("높음",    "#C62828", "#FFEBEE"),
     "unknown":  ("미감지",  "#666666", "#F5F5F5"),
-    "gold":     ("Gold",    "#1565C0", "#E3F2FD"),
-    "platinum": ("Platinum","#6A1B9A", "#F3E5F5"),
-    "titanium": ("Titanium","#4A148C", "#EDE7F6"),
+    "gold":     ("낮음",    "#2E7D32", "#E8F5E9"),
+    "platinum": ("보통",    "#E65100", "#FFF3E0"),
+    "titanium": ("높음",    "#C62828", "#FFEBEE"),
 }
 
 _CSS = """
@@ -193,7 +193,7 @@ def _section_scores(data: dict, charts: dict) -> str:
         ("gpu_vram", "GPU / VRAM"),
         ("ssd",      "SSD"),
         ("hdd",      "HDD"),
-        ("psu",      "파워서플라이"),
+        ("psu",      "PSU"),
     ]
 
     rows = ""
