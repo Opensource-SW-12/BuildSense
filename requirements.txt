@@ -1,3 +1,5 @@
 psutil>=5.9.0
 tkdesigner
 Pillow>=11,<13
+matplotlib>=3.7.0
+python-dotenv>=1.0.0
