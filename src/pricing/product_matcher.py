@@ -56,7 +56,7 @@ def is_matching_product(product_title, part):
         chipset = part.get("chipset")
         memory = part.get("memory", {})
 
-        if contains_normalized_keyword(title, chipset):
+        if chipset and not contains_normalized_keyword(title, chipset):
             return False
 
         if memory.get("capacity_gb"):
