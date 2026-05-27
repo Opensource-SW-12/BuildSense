@@ -1,3 +1,6 @@
+from dotenv import load_dotenv
+load_dotenv()
+
 from src.app import BuildSenseApp
 from src.storage import ensure_app_directories
 from src.background import acquire_single_instance_lock
