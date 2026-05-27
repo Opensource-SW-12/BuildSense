@@ -3,8 +3,11 @@ import os
 import urllib.parse
 import urllib.request
 
+from src.pricing.exchange_rate import convert_usd_to_krw
+
 
 NAVER_SHOPPING_API_URL = "https://openapi.naver.com/v1/search/shop.json"
+EBAY_SEARCH_API_URL = "https://api.ebay.com/buy/browse/v1/item_summary/search"
 
 
 def build_search_query(part):
@@ -12,6 +15,20 @@ def build_search_query(part):
     name = part.get("name", "")
 
     return f"{manufacturer} {name}".strip()
+
+
+def safe_int(value):
+    try:
+        return int(value) if value is not None else None
+    except (ValueError, TypeError):
+        return None
+
+
+def safe_float(value):
+    try:
+        return float(value) if value is not None else None
+    except (ValueError, TypeError):
+        return None
 
 
 def search_naver_shopping(query, display=10):
@@ -33,7 +50,6 @@ def search_naver_shopping(query, display=10):
     )
 
     request = urllib.request.Request(url)
-
     request.add_header("X-Naver-Client-Id", client_id)
     request.add_header("X-Naver-Client-Secret", client_secret)
 
@@ -63,16 +79,82 @@ def extract_naver_candidates(api_result):
     candidates = []
 
     for item in api_result.get("items", []):
-        price = item.get("lprice")
+        price = safe_int(item.get("lprice"))
 
         candidates.append({
             "source": "naver",
             "title": item.get("title"),
             "link": item.get("link"),
-            "price_krw": int(price) if price else None,
+            "price_krw": price,
+            "price_usd": None,
+            "currency": "KRW",
             "mall_name": item.get("mallName"),
             "brand": item.get("brand"),
             "maker": item.get("maker")
+        })
+
+    return candidates
+
+
+def search_ebay(query, limit=10):
+    ebay_token = os.getenv("EBAY_ACCESS_TOKEN")
+
+    if not ebay_token:
+        raise ValueError("EBAY_ACCESS_TOKEN 환경변수가 없습니다.")
+
+    encoded_query = urllib.parse.quote(query)
+
+    url = (
+        f"{EBAY_SEARCH_API_URL}"
+        f"?q={encoded_query}"
+        f"&limit={limit}"
+    )
+
+    request = urllib.request.Request(url)
+    request.add_header("Authorization", f"Bearer {ebay_token}")
+    request.add_header("X-EBAY-C-MARKETPLACE-ID", "EBAY_US")
+
+    try:
+        with urllib.request.urlopen(request, timeout=10) as response:
+            response_body = response.read().decode("utf-8")
+
+        return json.loads(response_body)
+
+    except urllib.error.HTTPError as error:
+        raise RuntimeError(
+            f"eBay API 요청 실패: {error.code}"
+        ) from error
+
+    except urllib.error.URLError as error:
+        raise RuntimeError(
+            f"eBay API 연결 실패: {error}"
+        ) from error
+
+    except json.JSONDecodeError as error:
+        raise RuntimeError(
+            f"eBay API 응답 JSON 해석 실패: {error}"
+        ) from error
+
+
+def extract_ebay_candidates(api_result):
+    candidates = []
+
+    for item in api_result.get("itemSummaries", []):
+        price_info = item.get("price", {})
+        value = price_info.get("value")
+        currency = price_info.get("currency")
+
+        price_usd = safe_float(value) if currency == "USD" else None
+        price_krw = convert_usd_to_krw(price_usd) if price_usd is not None else None
+
+        candidates.append({
+            "source": "ebay",
+            "title": item.get("title"),
+            "link": item.get("itemWebUrl"),
+            "price_usd": price_usd,
+            "price_krw": price_krw,
+            "currency": currency,
+            "seller": item.get("seller", {}).get("username")
         })
 
     return candidates
