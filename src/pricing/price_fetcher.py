@@ -3,6 +3,8 @@ import os
 import urllib.parse
 import urllib.request
 
+from src.pricing.exchange_rate import convert_usd_to_krw
+
 
 NAVER_SHOPPING_API_URL = "https://openapi.naver.com/v1/search/shop.json"
 EBAY_SEARCH_API_URL = "https://api.ebay.com/buy/browse/v1/item_summary/search"
@@ -13,6 +15,20 @@ def build_search_query(part):
     name = part.get("name", "")
 
     return f"{manufacturer} {name}".strip()
+
+
+def safe_int(value):
+    try:
+        return int(value) if value is not None else None
+    except (ValueError, TypeError):
+        return None
+
+
+def safe_float(value):
+    try:
+        return float(value) if value is not None else None
+    except (ValueError, TypeError):
+        return None
 
 
 def search_naver_shopping(query, display=10):
@@ -63,13 +79,15 @@ def extract_naver_candidates(api_result):
     candidates = []
 
     for item in api_result.get("items", []):
-        price = item.get("lprice")
+        price = safe_int(item.get("lprice"))
 
         candidates.append({
             "source": "naver",
             "title": item.get("title"),
             "link": item.get("link"),
-            "price_krw": int(price) if price else None,
+            "price_krw": price,
+            "price_usd": None,
+            "currency": "KRW",
             "mall_name": item.get("mallName"),
             "brand": item.get("brand"),
             "maker": item.get("maker")
@@ -126,13 +144,15 @@ def extract_ebay_candidates(api_result):
         value = price_info.get("value")
         currency = price_info.get("currency")
 
-        price_usd = float(value) if value and currency == "USD" else None
+        price_usd = safe_float(value) if currency == "USD" else None
+        price_krw = convert_usd_to_krw(price_usd) if price_usd is not None else None
 
         candidates.append({
             "source": "ebay",
             "title": item.get("title"),
             "link": item.get("itemWebUrl"),
             "price_usd": price_usd,
+            "price_krw": price_krw,
             "currency": currency,
             "seller": item.get("seller", {}).get("username")
         })
