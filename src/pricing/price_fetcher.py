@@ -5,8 +5,8 @@ import urllib.request
 
 
 NAVER_SHOPPING_API_URL = "https://openapi.naver.com/v1/search/shop.json"
-
 EBAY_SEARCH_API_URL = "https://api.ebay.com/buy/browse/v1/item_summary/search"
+
 
 def build_search_query(part):
     manufacturer = part.get("manufacturer", "")
@@ -34,7 +34,6 @@ def search_naver_shopping(query, display=10):
     )
 
     request = urllib.request.Request(url)
-
     request.add_header("X-Naver-Client-Id", client_id)
     request.add_header("X-Naver-Client-Secret", client_secret)
 
@@ -76,6 +75,9 @@ def extract_naver_candidates(api_result):
             "maker": item.get("maker")
         })
 
+    return candidates
+
+
 def search_ebay(query, limit=10):
     ebay_token = os.getenv("EBAY_ACCESS_TOKEN")
 
@@ -114,5 +116,25 @@ def search_ebay(query, limit=10):
         raise RuntimeError(
             f"eBay API 응답 JSON 해석 실패: {error}"
         ) from error
-    
+
+
+def extract_ebay_candidates(api_result):
+    candidates = []
+
+    for item in api_result.get("itemSummaries", []):
+        price_info = item.get("price", {})
+        value = price_info.get("value")
+        currency = price_info.get("currency")
+
+        price_usd = float(value) if value and currency == "USD" else None
+
+        candidates.append({
+            "source": "ebay",
+            "title": item.get("title"),
+            "link": item.get("itemWebUrl"),
+            "price_usd": price_usd,
+            "currency": currency,
+            "seller": item.get("seller", {}).get("username")
+        })
+
     return candidates
