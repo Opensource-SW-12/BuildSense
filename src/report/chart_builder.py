@@ -452,3 +452,122 @@ def build_category_chart(process: dict) -> str:
         at.set_fontsize(8)
 
     return _fig_to_base64(fig)
+
+
+# ── KAN-99: 업그레이드 점수 차트 ──────────────────────────────────────────────
+
+_GRADE_COLOR = {
+    "low":      _C_GREEN,
+    "medium":   _C_ORANGE,
+    "high":     _C_RED,
+    "unknown":  _C_GRAY,
+    "gold":     "#4472C4",
+    "platinum": "#7B68EE",
+    "titanium": "#9B59B6",
+}
+
+_GRADE_KO = {
+    "low":      "낮음",
+    "medium":   "보통",
+    "high":     "높음",
+    "unknown":  "미감지",
+    "gold":     "Gold",
+    "platinum": "Platinum",
+    "titanium": "Titanium",
+}
+
+_PART_LABELS = ["CPU", "RAM", "GPU", "스토리지", "PSU"]
+
+
+def _score_row(scores: dict) -> tuple[list[float], list[str], list[str]]:
+    ssd_score = (scores.get("ssd") or {}).get("score", 0.0)
+    hdd_score = (scores.get("hdd") or {}).get("score", 0.0)
+    storage_score = max(ssd_score, hdd_score)
+    storage_grade = (
+        (scores.get("hdd") or scores.get("ssd") or {}).get("grade", "unknown")
+        if storage_score > 0 else "unknown"
+    )
+
+    rows = [
+        (scores.get("cpu")      or {}, "cpu"),
+        (scores.get("ram")      or {}, "ram"),
+        (scores.get("gpu_vram") or {}, "gpu_vram"),
+        ({"score": storage_score, "grade": storage_grade}, "storage"),
+        (scores.get("psu")      or {}, "psu"),
+    ]
+
+    values = [r.get("score", 0.0) or 0.0 for r, _ in rows]
+    grades = [r.get("grade", "unknown") or "unknown" for r, _ in rows]
+    colors = [_GRADE_COLOR.get(g, _C_GRAY) for g in grades]
+    return values, grades, colors
+
+
+def build_score_radar_chart(scores: dict) -> str:
+    values, grades, _ = _score_row(scores)
+
+    n      = len(_PART_LABELS)
+    angles = [i / n * 2 * np.pi for i in range(n)]
+    angles_closed  = angles + angles[:1]
+    values_closed  = values + values[:1]
+
+    overall = sum(values) / n
+    fill_color = _C_RED if overall >= 0.6 else (_C_ORANGE if overall >= 0.35 else _C_GREEN)
+
+    fig, ax = plt.subplots(figsize=(6, 6), subplot_kw={"polar": True})
+    fig.suptitle("부품별 업그레이드 필요도", fontsize=14, fontweight="bold", y=1.02)
+
+    ax.plot(angles_closed, values_closed, color=fill_color, linewidth=2.2)
+    ax.fill(angles_closed, values_closed, color=fill_color, alpha=0.22)
+
+    ax.set_xticks(angles)
+    ax.set_xticklabels(_PART_LABELS, fontsize=11)
+    ax.set_ylim(0, 1)
+    ax.set_yticks([0.25, 0.5, 0.75, 1.0])
+    ax.set_yticklabels(["0.25", "0.50", "0.75", "1.00"], fontsize=7, color="#888888")
+    ax.tick_params(pad=8)
+
+    for angle, val, grade in zip(angles, values, grades):
+        ax.text(angle, val + 0.09,
+                _GRADE_KO.get(grade, grade),
+                ha="center", va="center", fontsize=8.5,
+                color=_GRADE_COLOR.get(grade, _C_GRAY),
+                fontweight="bold")
+
+    ax.text(0, 0, f"{overall:.2f}", ha="center", va="center",
+            fontsize=16, fontweight="bold", color=fill_color,
+            transform=ax.transData)
+
+    ax.grid(color="#CCCCCC", linewidth=0.7)
+    ax.spines["polar"].set_visible(False)
+
+    return _fig_to_base64(fig)
+
+
+def build_score_summary_chart(scores: dict) -> str:
+    values, grades, colors = _score_row(scores)
+
+    fig, ax = plt.subplots(figsize=(8, 4))
+    fig.suptitle("업그레이드 점수 요약", fontsize=14, fontweight="bold", y=1.02)
+
+    bars = ax.barh(_PART_LABELS, values, color=colors, height=0.55, edgecolor="white")
+
+    ax.set_xlim(0, 1.25)
+    ax.set_xlabel("점수 (0 ~ 1)", fontsize=9)
+    ax.axvline(0.35, color=_C_ORANGE, linewidth=1.0, linestyle="--", alpha=0.6)
+    ax.axvline(0.60, color=_C_RED,    linewidth=1.0, linestyle="--", alpha=0.6)
+    ax.text(0.35, -0.7, "보통", fontsize=7.5, color=_C_ORANGE, ha="center")
+    ax.text(0.60, -0.7, "높음", fontsize=7.5, color=_C_RED,    ha="center")
+
+    for bar, val, grade in zip(bars, values, grades):
+        grade_label = _GRADE_KO.get(grade, grade)
+        ax.text(bar.get_width() + 0.02,
+                bar.get_y() + bar.get_height() / 2,
+                f"{val:.3f}  ({grade_label})",
+                va="center", fontsize=9,
+                color=_GRADE_COLOR.get(grade, _C_GRAY))
+
+    ax.spines["top"].set_visible(False)
+    ax.spines["right"].set_visible(False)
+    ax.tick_params(axis="y", labelsize=10)
+
+    return _fig_to_base64(fig)
