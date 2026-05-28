@@ -1,5 +1,9 @@
+import sys
+from pathlib import Path
 from dotenv import load_dotenv
-load_dotenv()
+
+_base = Path(sys.executable).parent if getattr(sys, "frozen", False) else Path(__file__).parent
+load_dotenv(_base / ".env")
 
 from src.app import BuildSenseApp
 from src.storage import ensure_app_directories
