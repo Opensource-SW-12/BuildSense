@@ -1,5 +1,7 @@
 import re
 
+_GPU_VARIANT_SUFFIXES = {"super", "ti", "xt", "xtx", "ultra", "gre"}
+
 _MANUFACTURER_ALIASES = {
     "samsung":        ["삼성", "삼성전자"],
     "lg":             ["엘지", "엘지전자"],
@@ -37,6 +39,18 @@ def contains_normalized_keyword(normalized_text, keyword):
         return True
 
     return normalized_keyword in normalized_text
+
+def _chipset_matches(title_norm: str, chipset: str) -> bool:
+    chipset_norm = normalize_text(chipset)
+    if not chipset_norm:
+        return True
+    if chipset_norm not in title_norm:
+        return False
+    idx = title_norm.find(chipset_norm)
+    after = title_norm[idx + len(chipset_norm):].strip()
+    next_word = after.split()[0] if after.split() else ""
+    return next_word not in _GPU_VARIANT_SUFFIXES
+
 
 def _manufacturer_matches(title_norm: str, manufacturer: str) -> bool:
     mfr_norm = normalize_text(manufacturer)
@@ -79,7 +93,7 @@ def is_matching_product(product_title, part):
         chipset = part.get("chipset")
         memory = part.get("memory", {})
 
-        if chipset and not contains_normalized_keyword(title, chipset):
+        if chipset and not _chipset_matches(title, chipset):
             return False
 
         if memory.get("capacity_gb"):
