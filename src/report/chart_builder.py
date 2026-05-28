@@ -9,19 +9,39 @@ from src.report.font_config import setup_korean_font
 
 setup_korean_font()
 
-_C_BLUE   = "#4472C4"
-_C_GREEN  = "#70AD47"
-_C_ORANGE = "#ED7D31"
-_C_RED    = "#FF0000"
-_C_GRAY   = "#A6A6A6"
+_C_BLUE   = "#00D4AA"
+_C_GREEN  = "#00D4AA"
+_C_ORANGE = "#FF8C42"
+_C_RED    = "#FF5252"
+_C_GRAY   = "#8892A4"
+
+_BG       = "#161B2E"
+_AX_BG    = "#0F1420"
+_TEXT     = "#E2E8F0"
+_GRID     = "#2D3748"
+_BORDER   = "#2D3748"
 
 _STAT_LABELS = ["최솟값", "평균", "중앙값", "P80", "최댓값"]
 _STAT_KEYS   = ["min", "average", "median", "percentile_80", "max"]
 
 
+def _apply_dark_style(fig, axes=None) -> None:
+    fig.patch.set_facecolor(_BG)
+    targets = axes if axes else fig.get_axes()
+    for ax in (targets if hasattr(targets, "__iter__") else [targets]):
+        ax.set_facecolor(_AX_BG)
+        ax.tick_params(colors=_TEXT, labelsize=8)
+        ax.xaxis.label.set_color(_TEXT)
+        ax.yaxis.label.set_color(_TEXT)
+        ax.title.set_color(_TEXT)
+        for spine in ax.spines.values():
+            spine.set_edgecolor(_BORDER)
+        ax.grid(color=_GRID, linewidth=0.5, alpha=0.6)
+
+
 def _fig_to_base64(fig) -> str:
     buf = io.BytesIO()
-    fig.savefig(buf, format="png", bbox_inches="tight", dpi=110)
+    fig.savefig(buf, format="png", bbox_inches="tight", dpi=110, facecolor=fig.get_facecolor())
     plt.close(fig)
     buf.seek(0)
     return base64.b64encode(buf.read()).decode("utf-8")
@@ -46,11 +66,12 @@ def _bar_colors(values: list[float], threshold: float) -> list[str]:
 def _draw_stat_bars(ax, raw: dict, threshold: float, unit: str = "%") -> None:
     values = _stat_values(raw)
     colors = _bar_colors(values, threshold)
-    bars = ax.barh(_STAT_LABELS, values, color=colors, height=0.55, edgecolor="white")
+    bars = ax.barh(_STAT_LABELS, values, color=colors, height=0.55, edgecolor=_AX_BG)
 
     ax.set_xlim(0, 105 if unit == "%" else max(values) * 1.25 or 1)
-    ax.set_xlabel(unit, fontsize=9)
-    ax.tick_params(axis="y", labelsize=9)
+    ax.set_xlabel(unit, fontsize=9, color=_TEXT)
+    ax.tick_params(axis="y", labelsize=9, colors=_TEXT)
+    ax.tick_params(axis="x", colors=_TEXT)
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)
 
@@ -59,7 +80,7 @@ def _draw_stat_bars(ax, raw: dict, threshold: float, unit: str = "%") -> None:
             bar.get_width() + 1.5,
             bar.get_y() + bar.get_height() / 2,
             f"{val:.1f}{unit}",
-            va="center", fontsize=8.5,
+            va="center", fontsize=8.5, color=_TEXT,
         )
 
 
@@ -67,27 +88,27 @@ def _draw_time_series(ax, values: list, threshold: float, label: str, unit: str 
     clean = [v if v is not None else float("nan") for v in values]
     xs = list(range(len(clean)))
 
-    ax.plot(xs, clean, color=_C_BLUE, linewidth=1.2, alpha=0.85)
+    ax.plot(xs, clean, color=_C_BLUE, linewidth=1.4, alpha=0.9)
     ax.axhline(threshold, color=_C_RED, linewidth=0.9, linestyle="--", alpha=0.7)
-    ax.fill_between(xs, clean, alpha=0.15, color=_C_BLUE)
+    ax.fill_between(xs, clean, alpha=0.12, color=_C_BLUE)
 
     ax.set_xlim(0, max(len(xs) - 1, 1))
     ax.set_ylim(0, 105 if unit == "%" else None)
-    ax.set_xlabel("스냅샷 순서", fontsize=9)
-    ax.set_ylabel(unit, fontsize=9)
-    ax.tick_params(labelsize=8)
+    ax.set_xlabel("스냅샷 순서", fontsize=9, color=_TEXT)
+    ax.set_ylabel(unit, fontsize=9, color=_TEXT)
+    ax.tick_params(labelsize=8, colors=_TEXT)
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)
 
 
 def build_cpu_chart(cpu: dict, raw_series: list) -> str:
     fig = plt.figure(figsize=(10, 4))
-    fig.suptitle("CPU 사용량", fontsize=14, fontweight="bold", y=1.01)
+    fig.suptitle("CPU 사용량", fontsize=14, fontweight="bold", y=1.01, color=_TEXT)
     gs = gridspec.GridSpec(1, 2, figure=fig, wspace=0.4)
 
     ax_bar = fig.add_subplot(gs[0])
     _draw_stat_bars(ax_bar, cpu.get("raw", {}), threshold=75)
-    ax_bar.set_title("통계 요약", fontsize=11)
+    ax_bar.set_title("통계 요약", fontsize=11, color=_TEXT)
 
     high_ratio = cpu.get("high_load_ratio", 0.0) * 100
     episodes   = (cpu.get("sustained_high_load") or {}).get("episode_count", 0)
@@ -99,19 +120,20 @@ def build_cpu_chart(cpu: dict, raw_series: list) -> str:
 
     ax_ts = fig.add_subplot(gs[1])
     _draw_time_series(ax_ts, raw_series, threshold=75, label="CPU")
-    ax_ts.set_title("시계열", fontsize=11)
+    ax_ts.set_title("시계열", fontsize=11, color=_TEXT)
 
+    _apply_dark_style(fig)
     return _fig_to_base64(fig)
 
 
 def build_ram_chart(ram: dict, raw_series: list) -> str:
     fig = plt.figure(figsize=(10, 4))
-    fig.suptitle("RAM 사용량", fontsize=14, fontweight="bold", y=1.01)
+    fig.suptitle("RAM 사용량", fontsize=14, fontweight="bold", y=1.01, color=_TEXT)
     gs = gridspec.GridSpec(1, 2, figure=fig, wspace=0.4)
 
     ax_bar = fig.add_subplot(gs[0])
     _draw_stat_bars(ax_bar, ram.get("raw", {}), threshold=85)
-    ax_bar.set_title("통계 요약", fontsize=11)
+    ax_bar.set_title("통계 요약", fontsize=11, color=_TEXT)
 
     high_ratio     = ram.get("high_load_ratio", 0.0) * 100
     sustained_min  = ram.get("max_sustained_high_load_minutes", 0.0)
@@ -123,8 +145,9 @@ def build_ram_chart(ram: dict, raw_series: list) -> str:
 
     ax_ts = fig.add_subplot(gs[1])
     _draw_time_series(ax_ts, raw_series, threshold=85, label="RAM")
-    ax_ts.set_title("시계열", fontsize=11)
+    ax_ts.set_title("시계열", fontsize=11, color=_TEXT)
 
+    _apply_dark_style(fig)
     return _fig_to_base64(fig)
 
 
@@ -132,7 +155,7 @@ def build_gpu_chart(gpu: dict, raw_series: list) -> str:
     not_detected = gpu.get("gpu_not_detected_ratio", 0.0)
 
     fig = plt.figure(figsize=(10, 4))
-    fig.suptitle("GPU 사용량", fontsize=14, fontweight="bold", y=1.01)
+    fig.suptitle("GPU 사용량", fontsize=14, fontweight="bold", y=1.01, color=_TEXT)
     gs = gridspec.GridSpec(1, 2, figure=fig, wspace=0.4)
 
     ax_bar = fig.add_subplot(gs[0])
@@ -159,8 +182,9 @@ def build_gpu_chart(gpu: dict, raw_series: list) -> str:
         ax_ts.text(0.5, 0.5, "데이터 없음", ha="center", va="center",
                    transform=ax_ts.transAxes, fontsize=11, color=_C_GRAY)
         ax_ts.axis("off")
-    ax_ts.set_title("시계열", fontsize=11)
+    ax_ts.set_title("시계열", fontsize=11, color=_TEXT)
 
+    _apply_dark_style(fig)
     return _fig_to_base64(fig)
 
 
@@ -173,7 +197,7 @@ def build_vram_chart(vram: dict, raw_series: list) -> str:
 
     fig = plt.figure(figsize=(10, 4))
     title = f"VRAM 사용량 (총 {total_gb:.1f} GB)" if total_gb else "VRAM 사용량"
-    fig.suptitle(title, fontsize=14, fontweight="bold", y=1.01)
+    fig.suptitle(title, fontsize=14, fontweight="bold", y=1.01, color=_TEXT)
     gs = gridspec.GridSpec(1, 2, figure=fig, wspace=0.4)
 
     ax_bar = fig.add_subplot(gs[0])
@@ -200,8 +224,9 @@ def build_vram_chart(vram: dict, raw_series: list) -> str:
         ax_ts.text(0.5, 0.5, "데이터 없음", ha="center", va="center",
                    transform=ax_ts.transAxes, fontsize=11, color=_C_GRAY)
         ax_ts.axis("off")
-    ax_ts.set_title("시계열", fontsize=11)
+    ax_ts.set_title("시계열", fontsize=11, color=_TEXT)
 
+    _apply_dark_style(fig)
     return _fig_to_base64(fig)
 
 
@@ -215,12 +240,12 @@ def build_time_pattern_chart(pattern_series: dict) -> str:
     daily  = pattern_series.get("daily",  [0] * 7)
 
     fig = plt.figure(figsize=(12, 4))
-    fig.suptitle("사용 시간 분포", fontsize=14, fontweight="bold", y=1.01)
+    fig.suptitle("사용 시간 분포", fontsize=14, fontweight="bold", y=1.01, color=_TEXT)
     gs = gridspec.GridSpec(1, 2, figure=fig, wspace=0.45)
 
     ax_h = fig.add_subplot(gs[0])
     xs = list(range(24))
-    bars = ax_h.bar(xs, hourly, color=_C_BLUE, width=0.7, edgecolor="white")
+    bars = ax_h.bar(xs, hourly, color=_C_BLUE, width=0.7, edgecolor=_AX_BG, alpha=0.85)
     peak_h = hourly.index(max(hourly)) if hourly else 0
     bars[peak_h].set_color(_C_ORANGE)
     ax_h.set_xticks(xs)
@@ -233,13 +258,14 @@ def build_time_pattern_chart(pattern_series: dict) -> str:
 
     ax_d = fig.add_subplot(gs[1])
     d_colors = [_C_ORANGE if i >= 5 else _C_BLUE for i in range(7)]
-    ax_d.bar(_DAY_LABELS, daily, color=d_colors, width=0.6, edgecolor="white")
+    ax_d.bar(_DAY_LABELS, daily, color=d_colors, width=0.6, edgecolor=_AX_BG, alpha=0.85)
     ax_d.set_xlabel("요일", fontsize=9)
     ax_d.set_ylabel("스냅샷 수", fontsize=9)
     ax_d.set_title("요일별", fontsize=11)
     ax_d.spines["top"].set_visible(False)
     ax_d.spines["right"].set_visible(False)
 
+    _apply_dark_style(fig)
     return _fig_to_base64(fig)
 
 
@@ -247,7 +273,7 @@ def build_usage_heatmap(pattern_series: dict) -> str:
     data = np.array(pattern_series.get("hourly_by_day", [[0] * 24] * 7), dtype=float)
 
     fig, ax = plt.subplots(figsize=(13, 3.5))
-    fig.suptitle("요일 × 시간대 사용 히트맵", fontsize=14, fontweight="bold", y=1.04)
+    fig.suptitle("요일 × 시간대 사용 히트맵", fontsize=14, fontweight="bold", y=1.04, color=_TEXT)
 
     im = ax.imshow(data, cmap="YlOrRd", aspect="auto", interpolation="nearest")
 
@@ -257,11 +283,16 @@ def build_usage_heatmap(pattern_series: dict) -> str:
     ax.set_yticklabels(_DAY_LABELS, fontsize=9)
 
     cbar = plt.colorbar(im, ax=ax, fraction=0.03, pad=0.02)
-    cbar.set_label("스냅샷 수", fontsize=9)
+    cbar.set_label("스냅샷 수", fontsize=9, color=_TEXT)
+    cbar.ax.yaxis.set_tick_params(color=_TEXT)
+    plt.setp(cbar.ax.yaxis.get_ticklabels(), color=_TEXT)
 
     ax.spines[:].set_visible(False)
     ax.tick_params(length=0)
 
+    _apply_dark_style(fig, [ax])
+    fig.patch.set_facecolor(_BG)
+    cbar.ax.set_facecolor(_BG)
     return _fig_to_base64(fig)
 
 
@@ -276,21 +307,21 @@ def build_segment_summary_chart(pattern: dict) -> str:
     inactive_hours = [s.get("duration_hours", 0) for s in inactive]
 
     fig = plt.figure(figsize=(11, 4))
-    fig.suptitle("사용 세그먼트 요약", fontsize=14, fontweight="bold", y=1.01)
+    fig.suptitle("사용 세그먼트 요약", fontsize=14, fontweight="bold", y=1.01, color=_TEXT)
     gs = gridspec.GridSpec(1, 2, figure=fig, wspace=0.45)
 
     ax_stat = fig.add_subplot(gs[0])
     labels = ["활성 비율 (%)", "평균 연속\n사용 (시간)", "평균 부팅\n유지 (시간)", "장시간 사용\n비율 (%)"]
     values = [active_r, avg_hours, avg_uptime, long_r]
     colors = [_C_BLUE, _C_GREEN, _C_BLUE, _C_ORANGE if long_r >= 30 else _C_GREEN]
-    bars = ax_stat.barh(labels, values, color=colors, height=0.5, edgecolor="white")
+    bars = ax_stat.barh(labels, values, color=colors, height=0.5, edgecolor=_AX_BG, alpha=0.85)
     ax_stat.set_xlim(0, max(max(values) * 1.25, 1))
     for bar, val in zip(bars, values):
         ax_stat.text(bar.get_width() + 0.3, bar.get_y() + bar.get_height() / 2,
-                     f"{val:.1f}", va="center", fontsize=9)
+                     f"{val:.1f}", va="center", fontsize=9, color=_TEXT)
     ax_stat.spines["top"].set_visible(False)
     ax_stat.spines["right"].set_visible(False)
-    ax_stat.set_title("사용 패턴 지표", fontsize=11)
+    ax_stat.set_title("사용 패턴 지표", fontsize=11, color=_TEXT)
 
     ax_gap = fig.add_subplot(gs[1])
     if inactive_hours:
@@ -298,15 +329,16 @@ def build_segment_summary_chart(pattern: dict) -> str:
                     color=_C_GRAY, edgecolor="white")
         ax_gap.set_xlabel("비활성 구간 길이 (시간)", fontsize=9)
         ax_gap.set_ylabel("횟수", fontsize=9)
-        ax_gap.set_title(f"비활성 구간 분포 (총 {len(inactive_hours)}회)", fontsize=11)
+        ax_gap.set_title(f"비활성 구간 분포 (총 {len(inactive_hours)}회)", fontsize=11, color=_TEXT)
     else:
         ax_gap.text(0.5, 0.5, "비활성 구간 없음", ha="center", va="center",
                     transform=ax_gap.transAxes, fontsize=12, color=_C_GRAY)
         ax_gap.axis("off")
-        ax_gap.set_title("비활성 구간 분포", fontsize=11)
+        ax_gap.set_title("비활성 구간 분포", fontsize=11, color=_TEXT)
     ax_gap.spines["top"].set_visible(False)
     ax_gap.spines["right"].set_visible(False)
 
+    _apply_dark_style(fig)
     return _fig_to_base64(fig)
 
 
@@ -334,7 +366,7 @@ def build_disk_chart(disk: dict) -> str:
 
     n = len(drives)
     fig, axes = plt.subplots(1, n, figsize=(max(4.5 * n, 5), 4.5))
-    fig.suptitle("드라이브 사용 현황", fontsize=14, fontweight="bold", y=1.02)
+    fig.suptitle("드라이브 사용 현황", fontsize=14, fontweight="bold", y=1.02, color=_TEXT)
     if n == 1:
         axes = [axes]
 
@@ -350,23 +382,24 @@ def build_disk_chart(disk: dict) -> str:
 
         wedges, _ = ax.pie(
             [max(used_avg, 0), max(free_avg, 0)],
-            colors=[used_color, "#E8E8E8"],
+            colors=[used_color, "#2D3748"],
             startangle=90,
-            wedgeprops={"width": 0.55, "edgecolor": "white", "linewidth": 1.5},
+            wedgeprops={"width": 0.55, "edgecolor": _AX_BG, "linewidth": 2},
         )
 
         label = mountpoint.rstrip("\\").rstrip("/") or mountpoint
         ax.text(0, 0.08, f"{pct_avg:.1f}%", ha="center", va="center",
                 fontsize=18, fontweight="bold", color=used_color)
         ax.text(0, -0.22, f"{used_avg:.0f} / {total_gb:.0f} GB", ha="center", va="center",
-                fontsize=8.5, color="#555555")
+                fontsize=8.5, color=_C_GRAY)
 
-        ax.set_title(f"{label}  ({drive_type})", fontsize=10, fontweight="bold", pad=10)
+        ax.set_title(f"{label}  ({drive_type})", fontsize=10, fontweight="bold", pad=10, color=_TEXT)
         if danger > 0:
             ax.text(0, -1.55, f"위험 비율 {danger:.0f}%", ha="center", fontsize=8,
                     color=_C_RED)
 
     plt.tight_layout()
+    _apply_dark_style(fig)
     return _fig_to_base64(fig)
 
 
@@ -383,17 +416,18 @@ def _draw_process_bars(ax, items: list[dict], value_key: str, unit: str, title: 
     cats   = [p.get("category", "etc") for p in reversed(items)]
     colors = [_CATEGORY_COLORS.get(c, _CATEGORY_COLORS["etc"]) for c in cats]
 
-    bars = ax.barh(names, values, color=colors, height=0.6, edgecolor="white")
-    ax.set_xlabel(unit, fontsize=9)
-    ax.set_title(title, fontsize=11)
+    bars = ax.barh(names, values, color=colors, height=0.6, edgecolor=_AX_BG, alpha=0.9)
+    ax.set_xlabel(unit, fontsize=9, color=_TEXT)
+    ax.set_title(title, fontsize=11, color=_TEXT)
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)
-    ax.tick_params(axis="y", labelsize=8)
+    ax.tick_params(axis="y", labelsize=8, colors=_TEXT)
+    ax.tick_params(axis="x", colors=_TEXT)
 
     for bar, val in zip(bars, values):
         ax.text(bar.get_width() + max(values) * 0.01,
                 bar.get_y() + bar.get_height() / 2,
-                f"{val:.1f}", va="center", fontsize=7.5)
+                f"{val:.1f}", va="center", fontsize=7.5, color=_TEXT)
 
 
 def build_process_chart(process: dict) -> str:
@@ -402,7 +436,7 @@ def build_process_chart(process: dict) -> str:
     top_mem  = process.get("top_by_memory", [])
 
     fig = plt.figure(figsize=(15, 5.5))
-    fig.suptitle("주요 프로세스", fontsize=14, fontweight="bold", y=1.02)
+    fig.suptitle("주요 프로세스", fontsize=14, fontweight="bold", y=1.02, color=_TEXT)
     gs = gridspec.GridSpec(1, 3, figure=fig, wspace=0.55)
 
     _draw_process_bars(fig.add_subplot(gs[0]), top_freq[:10],
@@ -416,9 +450,12 @@ def build_process_chart(process: dict) -> str:
         plt.Rectangle((0, 0), 1, 1, color=color, label=cat)
         for cat, color in _CATEGORY_COLORS.items()
     ]
-    fig.legend(handles=legend_patches, loc="lower center", ncol=len(_CATEGORY_COLORS),
+    leg = fig.legend(handles=legend_patches, loc="lower center", ncol=len(_CATEGORY_COLORS),
                fontsize=8, frameon=False, bbox_to_anchor=(0.5, -0.04))
+    for text in leg.get_texts():
+        text.set_color(_TEXT)
 
+    _apply_dark_style(fig)
     return _fig_to_base64(fig)
 
 
@@ -429,7 +466,7 @@ def build_category_chart(process: dict) -> str:
         filtered = {k: v for k, v in summary.items() if v > 0}
 
     fig, ax = plt.subplots(figsize=(7, 4.5))
-    fig.suptitle("프로세스 카테고리 분포", fontsize=14, fontweight="bold", y=1.02)
+    fig.suptitle("프로세스 카테고리 분포", fontsize=14, fontweight="bold", y=1.02, color=_TEXT)
 
     if not filtered:
         ax.text(0.5, 0.5, "데이터 없음", ha="center", va="center",
@@ -445,12 +482,14 @@ def build_category_chart(process: dict) -> str:
     wedges, texts, autotexts = ax.pie(
         values, labels=labels, colors=colors, explode=explode,
         autopct="%1.1f%%", startangle=90,
-        wedgeprops={"edgecolor": "white", "linewidth": 1.5},
-        textprops={"fontsize": 9},
+        wedgeprops={"edgecolor": _AX_BG, "linewidth": 2},
+        textprops={"fontsize": 9, "color": _TEXT},
     )
     for at in autotexts:
         at.set_fontsize(8)
+        at.set_color(_TEXT)
 
+    _apply_dark_style(fig, [ax])
     return _fig_to_base64(fig)
 
 
@@ -514,16 +553,16 @@ def build_score_radar_chart(scores: dict) -> str:
     fill_color = _C_RED if overall >= 0.6 else (_C_ORANGE if overall >= 0.35 else _C_GREEN)
 
     fig, ax = plt.subplots(figsize=(6, 6), subplot_kw={"polar": True})
-    fig.suptitle("부품별 업그레이드 필요도", fontsize=14, fontweight="bold", y=1.02)
+    fig.suptitle("부품별 업그레이드 필요도", fontsize=14, fontweight="bold", y=1.02, color=_TEXT)
 
     ax.plot(angles_closed, values_closed, color=fill_color, linewidth=2.2)
-    ax.fill(angles_closed, values_closed, color=fill_color, alpha=0.22)
+    ax.fill(angles_closed, values_closed, color=fill_color, alpha=0.18)
 
     ax.set_xticks(angles)
-    ax.set_xticklabels(_PART_LABELS, fontsize=11)
+    ax.set_xticklabels(_PART_LABELS, fontsize=11, color=_TEXT)
     ax.set_ylim(0, 1)
     ax.set_yticks([0.25, 0.5, 0.75, 1.0])
-    ax.set_yticklabels(["0.25", "0.50", "0.75", "1.00"], fontsize=7, color="#888888")
+    ax.set_yticklabels(["0.25", "0.50", "0.75", "1.00"], fontsize=7, color=_C_GRAY)
     ax.tick_params(pad=8)
 
     for angle, val, grade in zip(angles, values, grades):
@@ -537,8 +576,10 @@ def build_score_radar_chart(scores: dict) -> str:
             fontsize=16, fontweight="bold", color=fill_color,
             transform=ax.transData)
 
-    ax.grid(color="#CCCCCC", linewidth=0.7)
-    ax.spines["polar"].set_visible(False)
+    ax.set_facecolor(_AX_BG)
+    fig.patch.set_facecolor(_BG)
+    ax.grid(color=_GRID, linewidth=0.7)
+    ax.spines["polar"].set_color(_BORDER)
 
     return _fig_to_base64(fig)
 
@@ -547,12 +588,12 @@ def build_score_summary_chart(scores: dict) -> str:
     values, grades, colors = _score_row(scores)
 
     fig, ax = plt.subplots(figsize=(8, 4))
-    fig.suptitle("업그레이드 점수 요약", fontsize=14, fontweight="bold", y=1.02)
+    fig.suptitle("업그레이드 점수 요약", fontsize=14, fontweight="bold", y=1.02, color=_TEXT)
 
-    bars = ax.barh(_PART_LABELS, values, color=colors, height=0.55, edgecolor="white")
+    bars = ax.barh(_PART_LABELS, values, color=colors, height=0.55, edgecolor=_AX_BG, alpha=0.9)
 
     ax.set_xlim(0, 1.25)
-    ax.set_xlabel("점수 (0 ~ 1)", fontsize=9)
+    ax.set_xlabel("점수 (0 ~ 1)", fontsize=9, color=_TEXT)
     ax.axvline(0.35, color=_C_ORANGE, linewidth=1.0, linestyle="--", alpha=0.6)
     ax.axvline(0.60, color=_C_RED,    linewidth=1.0, linestyle="--", alpha=0.6)
     ax.text(0.35 / 1.25, 1.02, "보통", fontsize=7.5, color=_C_ORANGE,
@@ -570,6 +611,8 @@ def build_score_summary_chart(scores: dict) -> str:
 
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)
-    ax.tick_params(axis="y", labelsize=10)
+    ax.tick_params(axis="y", labelsize=10, colors=_TEXT)
+    ax.tick_params(axis="x", colors=_TEXT)
 
+    _apply_dark_style(fig, [ax])
     return _fig_to_base64(fig)

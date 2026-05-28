@@ -12,59 +12,96 @@ _USER_TYPE_KO = {
 }
 
 _GRADE_KO = {
-    "low":      ("낮음",    "#2E7D32", "#E8F5E9"),
-    "medium":   ("보통",    "#E65100", "#FFF3E0"),
-    "high":     ("높음",    "#C62828", "#FFEBEE"),
-    "unknown":  ("미감지",  "#666666", "#F5F5F5"),
-    "gold":     ("낮음",    "#2E7D32", "#E8F5E9"),
-    "platinum": ("보통",    "#E65100", "#FFF3E0"),
-    "titanium": ("높음",    "#C62828", "#FFEBEE"),
+    "low":      ("낮음",    "#00D4AA", "#0D2B24"),
+    "medium":   ("보통",    "#FF8C42", "#2B1A0D"),
+    "high":     ("높음",    "#FF5252", "#2B0D0D"),
+    "unknown":  ("미감지",  "#8892A4", "#1E2433"),
+    "gold":     ("낮음",    "#00D4AA", "#0D2B24"),
+    "platinum": ("보통",    "#FF8C42", "#2B1A0D"),
+    "titanium": ("높음",    "#FF5252", "#2B0D0D"),
 }
 
 _CSS = """
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
     font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-    background: #F0F2F5; color: #333; line-height: 1.6;
+    background: #0F1117; color: #E2E8F0; line-height: 1.6;
 }
-.container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+.container { max-width: 1200px; margin: 0 auto; padding: 28px 24px; }
 .header {
-    background: linear-gradient(135deg, #1A3A5C 0%, #2D6A9F 100%);
-    color: white; padding: 36px 32px; border-radius: 14px; margin-bottom: 28px;
+    background: linear-gradient(135deg, #0D1B2E 0%, #1A2F4A 100%);
+    border: 1px solid #2D3F5A;
+    color: white; padding: 36px 32px; border-radius: 14px; margin-bottom: 24px;
+    position: relative; overflow: hidden;
 }
-.header h1 { font-size: 26px; margin-bottom: 6px; letter-spacing: -0.5px; }
-.header .sub { opacity: 0.75; font-size: 14px; }
+.header::before {
+    content: ''; position: absolute; top: -40px; right: -40px;
+    width: 200px; height: 200px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,212,170,0.08) 0%, transparent 70%);
+}
+.header-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(0,212,170,0.12); border: 1px solid rgba(0,212,170,0.3);
+    color: #00D4AA; padding: 4px 14px; border-radius: 20px;
+    font-size: 11px; font-weight: 700; letter-spacing: 1px; margin-bottom: 14px;
+    text-transform: uppercase;
+}
+.header h1 { font-size: 24px; font-weight: 700; margin-bottom: 6px; color: #F0F4F8; }
+.header .sub { color: #8892A4; font-size: 13px; }
 .card {
-    background: white; border-radius: 12px; padding: 28px;
-    margin-bottom: 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+    background: #161B2E; border: 1px solid #2D3748;
+    border-radius: 12px; padding: 28px;
+    margin-bottom: 20px;
 }
 .card h2 {
-    font-size: 17px; color: #1A3A5C;
-    border-left: 4px solid #4472C4; padding-left: 12px; margin-bottom: 22px;
+    font-size: 15px; color: #F0F4F8; font-weight: 700;
+    border-left: 3px solid #00D4AA; padding-left: 12px; margin-bottom: 22px;
+    letter-spacing: -0.3px;
 }
 .meta-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px;
 }
-.meta-item { background: #F8F9FA; border-radius: 8px; padding: 14px 16px; }
-.meta-item .label { font-size: 11px; color: #999; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
-.meta-item .value { font-size: 18px; font-weight: 700; color: #1A3A5C; }
-.meta-item .value.small { font-size: 14px; }
+.meta-item {
+    background: #0F1420; border: 1px solid #2D3748;
+    border-radius: 8px; padding: 14px 16px;
+}
+.meta-item .label {
+    font-size: 10px; color: #8892A4; margin-bottom: 6px;
+    text-transform: uppercase; letter-spacing: 0.8px;
+}
+.meta-item .value { font-size: 20px; font-weight: 700; color: #00D4AA; }
+.meta-item .value.small { font-size: 14px; color: #F0F4F8; }
 .tag {
-    display: inline-block; padding: 4px 12px; border-radius: 20px;
-    font-size: 12px; font-weight: 700; margin-right: 6px; margin-bottom: 4px;
+    display: inline-block; padding: 3px 12px; border-radius: 20px;
+    font-size: 11px; font-weight: 700; margin-right: 6px; margin-bottom: 4px;
+    border: 1px solid transparent;
 }
-.chart-img { width: 100%; height: auto; display: block; border-radius: 6px; }
-.chart-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 16px; }
+.chart-img { width: 100%; height: auto; display: block; border-radius: 8px; }
+.chart-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
 .chart-row.single { grid-template-columns: 1fr; }
 .chart-row.three { grid-template-columns: 1fr 1fr 1fr; }
-.chart-wrap { }
-.chart-wrap h3 { font-size: 13px; color: #666; margin-bottom: 8px; font-weight: 600; }
+.chart-wrap h3 { font-size: 12px; color: #8892A4; margin-bottom: 8px; font-weight: 600; }
 .score-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+.info-banner {
+    display: flex; align-items: center; gap: 10px;
+    background: rgba(0,212,170,0.08); border: 1px solid rgba(0,212,170,0.25);
+    border-radius: 8px; padding: 12px 16px; margin-bottom: 18px;
+    color: #00D4AA; font-size: 13px; font-weight: 600;
+}
+.info-banner::before { content: '●'; font-size: 8px; }
+table { border-collapse: collapse; }
+table thead tr { background: #0F1420; }
+table thead th { color: #8892A4; font-size: 10px; text-transform: uppercase; letter-spacing: 0.6px; }
+table tbody tr { border-bottom: 1px solid #1E2740; }
+table tbody tr:hover { background: #1A2035; }
 @media (max-width: 768px) {
     .chart-row, .score-grid { grid-template-columns: 1fr; }
 }
-footer { text-align: center; padding: 28px; color: #BBB; font-size: 12px; }
-footer span { color: #888; }
+footer {
+    text-align: center; padding: 32px; color: #4A5568; font-size: 12px;
+    border-top: 1px solid #1E2740; margin-top: 8px;
+}
+footer span { color: #00D4AA; font-weight: 700; }
 """
 
 
@@ -73,8 +110,8 @@ def _img(b64: str, alt: str = "") -> str:
 
 
 def _tag(grade: str) -> str:
-    label, fg, bg = _GRADE_KO.get(grade, ("?", "#666", "#EEE"))
-    return f'<span class="tag" style="color:{fg};background:{bg}">{label}</span>'
+    label, fg, bg = _GRADE_KO.get(grade, ("?", "#8892A4", "#1E2433"))
+    return f'<span class="tag" style="color:{fg};background:{bg};border-color:{fg}40">{label}</span>'
 
 
 def _meta(label: str, value: str, small: bool = False) -> str:
@@ -98,10 +135,10 @@ def _section_summary(data: dict) -> str:
     analysis_days = profile.get("analysis_days", "-")
 
     type_tags = "".join(
-        f'<span class="tag" style="color:#1565C0;background:#E3F2FD">'
+        f'<span class="tag" style="color:#00D4AA;background:rgba(0,212,170,0.1);border-color:rgba(0,212,170,0.3)">'
         f'{_USER_TYPE_KO.get(t, t)}</span>'
         for t in user_types
-    ) or '<span class="tag" style="color:#666;background:#F5F5F5">분류 없음</span>'
+    ) or '<span class="tag" style="color:#8892A4;background:#1E2433;border-color:#2D3748">분류 없음</span>'
 
     metas = "".join([
         _meta("총 스냅샷", f"{total:,} 회"),
@@ -113,8 +150,9 @@ def _section_summary(data: dict) -> str:
     return f"""
 <div class="card">
   <h2>분석 요약</h2>
-  <div style="margin-bottom:16px">
-    <div class="label" style="font-size:12px;color:#999;margin-bottom:8px">사용자 유형</div>
+  <div class="info-banner">모든 데이터는 이 기기에만 저장됩니다. 외부 서버로 전송되는 정보는 없습니다.</div>
+  <div style="margin-bottom:18px">
+    <div style="font-size:11px;color:#8892A4;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.8px">사용자 유형</div>
     {type_tags}
   </div>
   <div class="meta-grid">{metas}</div>
@@ -143,10 +181,10 @@ def _section_pattern(charts: dict) -> str:
     return f"""
 <div class="card">
   <h2>사용 패턴</h2>
-  <div class="chart-row single" style="margin-bottom:20px">
+  <div class="chart-row single" style="margin-bottom:16px">
     {_img(time_b64, "사용 시간 분포")}
   </div>
-  <div class="chart-row single" style="margin-bottom:20px">
+  <div class="chart-row single" style="margin-bottom:16px">
     {_img(heatmap_b64, "히트맵")}
   </div>
   <div class="chart-row single">
@@ -167,15 +205,15 @@ def _section_disk_process(charts: dict) -> str:
 </div>
 <div class="card">
   <h2>프로세스 분석</h2>
-  <div class="chart-row single" style="margin-bottom:20px">
+  <div class="chart-row single" style="margin-bottom:16px">
     {_img(process_b64, "프로세스")}
   </div>
   <div class="chart-row" style="grid-template-columns:1fr 2fr">
     <div>{_img(category_b64, "카테고리")}</div>
-    <div style="display:flex;align-items:center;padding:16px;background:#F8F9FA;border-radius:8px">
-      <p style="color:#666;font-size:13px;line-height:1.9">
+    <div style="display:flex;align-items:center;padding:20px;background:#0F1420;border-radius:8px;border:1px solid #2D3748">
+      <p style="color:#8892A4;font-size:13px;line-height:2.0">
         카테고리 분포는 각 프로세스의 출현 빈도를 기반으로 집계됩니다.<br>
-        <b>게임</b>·<b>개발</b> 비중이 높을수록 GPU·CPU 부하와 연관성이 높습니다.
+        <span style="color:#00D4AA;font-weight:600">게임</span>·<span style="color:#00D4AA;font-weight:600">개발</span> 비중이 높을수록 GPU·CPU 부하와 연관성이 높습니다.
       </p>
     </div>
   </div>
@@ -183,8 +221,8 @@ def _section_disk_process(charts: dict) -> str:
 
 
 def _section_scores(data: dict, charts: dict) -> str:
-    scores     = data.get("scores") or {}
-    radar_b64  = charts.get("score_radar", "")
+    scores      = data.get("scores") or {}
+    radar_b64   = charts.get("score_radar", "")
     summary_b64 = charts.get("score_summary", "")
 
     part_map = [
@@ -204,20 +242,20 @@ def _section_scores(data: dict, charts: dict) -> str:
         grade = s.get("grade", "unknown")
         score = s.get("score", 0.0)
         rows += (
-            f'<tr style="border-bottom:1px solid #F0F0F0">'
-            f'<td style="padding:10px 8px;font-weight:600">{label}</td>'
-            f'<td style="padding:10px 8px">{_tag(grade)}</td>'
-            f'<td style="padding:10px 8px;color:#888;font-size:13px">{score:.3f}</td>'
+            f'<tr>'
+            f'<td style="padding:11px 10px;font-weight:600;color:#F0F4F8">{label}</td>'
+            f'<td style="padding:11px 10px">{_tag(grade)}</td>'
+            f'<td style="padding:11px 10px;color:#8892A4;font-size:13px;font-family:monospace">{score:.3f}</td>'
             f'</tr>'
         )
 
     table = f"""
-<table style="width:100%;border-collapse:collapse;font-size:14px">
+<table style="width:100%;font-size:14px">
   <thead>
-    <tr style="background:#F8F9FA;color:#999;font-size:11px;text-transform:uppercase">
-      <th style="padding:10px 8px;text-align:left">부품</th>
-      <th style="padding:10px 8px;text-align:left">등급</th>
-      <th style="padding:10px 8px;text-align:left">점수</th>
+    <tr>
+      <th style="padding:10px 10px;text-align:left">부품</th>
+      <th style="padding:10px 10px;text-align:left">등급</th>
+      <th style="padding:10px 10px;text-align:left">점수</th>
     </tr>
   </thead>
   <tbody>{rows}</tbody>
@@ -258,7 +296,8 @@ def build_html(report_data: dict, charts: dict) -> str:
 <body>
   <div class="container">
     <div class="header">
-      <h1>BuildSense 분석 보고서</h1>
+      <div class="header-badge">BuildSense · 분석 보고서</div>
+      <h1>맞춤형 하드웨어 업그레이드 보고서</h1>
       <div class="sub">생성 일시: {html.escape(now_str)}</div>
     </div>
     {body}
