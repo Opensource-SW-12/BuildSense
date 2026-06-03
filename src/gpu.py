@@ -8,19 +8,6 @@ _NVIDIA_SMI_QUERY = [
 _CREATE_NO_WINDOW = 0x08000000
 
 
-def is_nvidia_gpu_available() -> bool:
-  try:
-    result = subprocess.run(
-      ["nvidia-smi"],
-      capture_output=True,
-      timeout=5,
-      creationflags=_CREATE_NO_WINDOW,
-    )
-    return result.returncode == 0
-  except Exception:
-    return False
-
-
 def _query_nvidia_smi() -> list[str] | None:
   try:
     result = subprocess.run(
@@ -38,40 +25,27 @@ def _query_nvidia_smi() -> list[str] | None:
     return None
 
 
-def get_gpu_usage() -> float | None:
-  parts = _query_nvidia_smi()
-  if parts is None or len(parts) < 1:
-    return None
-  try:
-    return float(parts[0])
-  except ValueError:
-    return None
-
-
-def get_vram_usage() -> tuple[float | None, float | None]:
-  """(vram_used_mb, vram_total_mb) 반환. 실패 시 (None, None)."""
-  parts = _query_nvidia_smi()
-  if parts is None or len(parts) < 3:
-    return None, None
-  try:
-    return float(parts[1]), float(parts[2])
-  except ValueError:
-    return None, None
-
-
-def get_gpu_name() -> str | None:
+def collect_gpu_snapshot() -> dict:
   parts = _query_nvidia_smi()
   if parts is None or len(parts) < 4:
-    return None
-  name = parts[3].strip()
-  return name if name else None
+    return {"gpu_name": None, "gpu_percent": None, "vram_used_mb": None, "vram_total_mb": None}
 
+  try:
+    gpu_percent = float(parts[0])
+  except ValueError:
+    gpu_percent = None
 
-def collect_gpu_snapshot() -> dict:
-  vram_used, vram_total = get_vram_usage()
+  try:
+    vram_used  = float(parts[1])
+    vram_total = float(parts[2])
+  except ValueError:
+    vram_used, vram_total = None, None
+
+  gpu_name = parts[3].strip() or None
+
   return {
-    "gpu_name": get_gpu_name(),
-    "gpu_percent": get_gpu_usage(),
+    "gpu_name":     gpu_name,
+    "gpu_percent":  gpu_percent,
     "vram_used_mb": vram_used,
     "vram_total_mb": vram_total,
   }

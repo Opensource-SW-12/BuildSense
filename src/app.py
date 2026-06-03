@@ -22,16 +22,31 @@ from src.settings import (
   build_settings_state,
 )
 from src.hardware import get_hardware_info
-from src.storage import save_user_profile, delete_all_monitoring_data
+from src.storage import save_user_profile, delete_all_monitoring_data, read_user_profile, init_log_line_count, get_log_line_count
 from src.validators import validate_analysis_days, validate_parts_not_all_keep
 from src.monitor import start_monitoring_loop, stop_monitoring_loop, is_monitoring_running
-from src.config import USAGE_LOG_PATH
+from src.background import join_background_task
+from src.config import USAGE_LOG_PATH, ANALYSIS_DIR
+from src.startup_state import StartupState
+from src.normalization.core import read_jsonl
+from src.analysis.resource_usage import analyze_resource_usage
+from src.analysis.usage_pattern_summary import create_usage_pattern_summary, save_normalized_usage
+from src.analysis.disk_usage import analyze_disk_usage
+from src.analysis.process_usage import analyze_process_usage
+from src.analysis.user_type import classify_user_type
+from src.analysis.score_cpu import score_cpu
+from src.analysis.score_ram import score_ram
+from src.analysis.score_gpu_vram import score_gpu_vram
+from src.analysis.score_ssd import score_ssd
+from src.analysis.score_hdd import score_hdd
+from src.analysis.score_psu import score_psu
+from src.startup_registry import register_startup, unregister_startup
 
 SETTINGS_TITLE = "BuildSense - 사용자 설정"
 
 
 class BuildSenseApp:
-  def __init__(self):
+  def __init__(self, startup_state: StartupState = StartupState.FRESH):
     self.root = tk.Tk()
     self.consent_state = build_consent_state()
     self.settings_state = build_settings_state()
@@ -44,10 +59,154 @@ class BuildSenseApp:
     self._part_hw_frames = {}
     self._part_radio_widgets = {}
     self._part_desc_labels = {}
-    self._show_consent_screen()
+
+    if startup_state == StartupState.RESUME:
+      self._on_resume()   # KAN-62: feature-resume-monitoring-after-reboot
+    elif startup_state == StartupState.ANALYZE:
+      self._on_analyze()  # KAN-63: feature-trigger-analysis-pipeline
+    else:
+      self._show_consent_screen()
 
   def run(self):
     self.root.mainloop()
+
+  def _on_resume(self):
+    profile = read_user_profile()
+    if profile is None:
+      self._show_consent_screen()
+      return
+
+    self.settings_state["knowledge_level"] = profile.get("knowledge_level", "intermediate")
+    self.settings_state["analysis_days"]   = profile.get("analysis_days", 7)
+    self.settings_state["parts"]           = profile.get("parts", self.settings_state["parts"])
+
+    init_log_line_count()
+    start_monitoring_loop()
+    register_startup()
+    self._show_monitoring_screen()
+
+  def _on_analyze(self):
+    self._show_analyzing_screen()
+
+  def _show_analyzing_screen(self):
+    self._clear_window()
+    self.root.title("BuildSense - 분석 중")
+    self.root.resizable(False, False)
+    self._center_window(360, 180)
+
+    frame = tk.Frame(self.root, padx=24, pady=30)
+    frame.pack(fill=tk.BOTH, expand=True)
+
+    tk.Label(
+      frame,
+      text="사용 데이터를 분석하고 있습니다",
+      font=("Segoe UI", 12, "bold"),
+      anchor="center",
+    ).pack(expand=True)
+
+    tk.Label(
+      frame,
+      text="잠시만 기다려 주세요...",
+      font=("Segoe UI", 9),
+      fg="#666666",
+      anchor="center",
+    ).pack(expand=True)
+
+    self.root.update()
+
+    def _run():
+      try:
+        logs = read_jsonl(USAGE_LOG_PATH)
+        result = {
+          "resource_usage": analyze_resource_usage(logs),
+          "usage_pattern":  create_usage_pattern_summary(logs),
+          "disk_usage":     analyze_disk_usage(logs),
+          "process_usage":  analyze_process_usage(logs),
+        }
+        result["scores"] = {
+          "user_classification": classify_user_type(result, len(logs)),
+          "cpu": score_cpu(result["resource_usage"]["cpu"]),
+          "ram": score_ram(result["resource_usage"]["ram"]),
+          "gpu_vram": score_gpu_vram(result["resource_usage"]["gpu"], result["resource_usage"]["vram"]),
+          "ssd": score_ssd(result["disk_usage"]),
+          "hdd": score_hdd(result["disk_usage"]),
+          "psu": score_psu(result["usage_pattern"]),
+        }
+        save_normalized_usage(result)
+        delete_all_monitoring_data()
+        unregister_startup()
+        if self.root.winfo_exists():
+          self.root.after(0, self._show_analysis_complete_screen)
+      except Exception as e:
+        if self.root.winfo_exists():
+          self.root.after(0, lambda err=str(e): self._show_analysis_error_screen(err))
+
+    threading.Thread(target=_run, daemon=True).start()
+
+  def _show_analysis_complete_screen(self):
+    self._clear_window()
+    self.root.title("BuildSense - 분석 완료")
+    self._center_window(420, 220)
+
+    frame = tk.Frame(self.root, padx=24, pady=30)
+    frame.pack(fill=tk.BOTH, expand=True)
+
+    tk.Label(
+      frame,
+      text="분석이 완료되었습니다",
+      font=("Segoe UI", 13, "bold"),
+      anchor="center",
+    ).pack(expand=True)
+
+    tk.Label(
+      frame,
+      text=f"결과 저장 경로:\n{ANALYSIS_DIR / 'normalized_usage.json'}",
+      font=("Segoe UI", 9),
+      fg="#555555",
+      anchor="center",
+      wraplength=380,
+      justify=tk.CENTER,
+    ).pack(expand=True)
+
+    tk.Button(
+      frame,
+      text="확인",
+      width=12,
+      command=self.root.destroy,
+    ).pack(pady=(12, 0))
+
+  def _show_analysis_error_screen(self, error_message: str):
+    self._clear_window()
+    self.root.title("BuildSense - 분석 오류")
+    self._center_window(420, 220)
+
+    frame = tk.Frame(self.root, padx=24, pady=30)
+    frame.pack(fill=tk.BOTH, expand=True)
+
+    tk.Label(
+      frame,
+      text="분석 중 오류가 발생했습니다",
+      font=("Segoe UI", 13, "bold"),
+      fg="#cc3300",
+      anchor="center",
+    ).pack(expand=True)
+
+    tk.Label(
+      frame,
+      text=error_message,
+      font=("Segoe UI", 9),
+      fg="#555555",
+      anchor="center",
+      wraplength=380,
+      justify=tk.CENTER,
+    ).pack(expand=True)
+
+    tk.Button(
+      frame,
+      text="확인",
+      width=12,
+      command=self.root.destroy,
+    ).pack(pady=(12, 0))
 
   # ------------------------------------------------------------------
   # 화면 전환
@@ -424,8 +583,7 @@ class BuildSenseApp:
             size_str = f"{size / 1024:.1f} KB"
           else:
             size_str = f"{size / (1024 * 1024):.2f} MB"
-          with open(USAGE_LOG_PATH, "r", encoding="utf-8") as f:
-            lines = sum(1 for _ in f)
+          lines = get_log_line_count()
           size_label.config(text=f"수집된 데이터:  {size_str}  ({lines:,}개 스냅샷)")
         else:
           size_label.config(text="수집된 데이터:  0 B  (0개 스냅샷)")
@@ -461,7 +619,9 @@ class BuildSenseApp:
 
     def _on_stop():
       stop_monitoring_loop()
+      join_background_task()
       delete_all_monitoring_data()
+      unregister_startup()
       self._clear_window()
       self._center_window(360, 180)
       done = tk.Frame(self.root, padx=24, pady=30)
@@ -580,6 +740,7 @@ class BuildSenseApp:
 
       dialog.destroy()
       start_monitoring_loop()
+      register_startup()
       self._show_monitoring_screen()
 
     tk.Button(
