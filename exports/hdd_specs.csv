@@ -1,0 +1,964 @@
+﻿cache_mb,capacity_gb,category,form_factor,interface,lighting,manufacturer,name,opendb_id,part_id,release_year,series,storage_type,variant
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Barracuda Compute 2TB 3.5"" HDD 5400RPM SATA 6.0 Gb/s",00274e77-58c3-4fec-a978-180eaa79bee8,hdd_0001,,Barracuda,HDD,2000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf Pro 8TB HDD 7200RPM 3.5"" SATA Internal",006a3315-d7ff-4a83-9409-fc74d0fbc040,hdd_0002,,IronWolf,HDD,8000GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Purple Pro 12TB HDD 3.5"" SATA",008efe68-90d2-42d6-bc23-f29390cb5dfc,hdd_0003,,Purple,HDD,12000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate ST6000NM0104 6TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",01f22fe1-0007-41d4-aa16-f0d7b1cc2a1b,hdd_0004,,ST6000NM0104,HDD,6000GB
+,320,hdd,"2.5""",SATA 3.0 Gb/s,,Hitachi,"Hitachi Travelstar 320 GB 2.5"" HDD 5400 RPM SATA 3.0 Gb/s",02b2285f-dcdf-4b36-bfc3-264da6a20b9f,hdd_0005,,Travelstar,HDD,320GB
+,320,hdd,"2.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Scorpio Blue 320GB HDD 2.5"" 5400RPM SATA",02ed1179-39de-49fe-b2e6-4f42f1bbf86c,hdd_0006,,Scorpio,HDD,320GB
+,750,hdd,"3.5""",SATA 3.0 Gb/s,,Seagate,"Seagate BarraCuda 750 GB 3.5"" HDD 7200RPM SATA Internal",02f38c10-b6c5-4203-a292-169a8dd0db00,hdd_0007,,BarraCuda,HDD,750GB
+,320,hdd,"2.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital AV-25 320GB HDD 5400RPM 2.5"" SATA",02fd8986-b123-4d2f-815f-0d2b771c8814,hdd_0008,,AV-25,HDD,320GB
+,8000,hdd,"3.5""",SAS 12.0 Gb/s,,Hitachi,"Hitachi 0F27406 8TB HDD 3.5"" 7200RPM SAS 12.0 Gb/s Internal",0306f233-69a0-43cd-b961-9b70184360e4,hdd_0009,,0F27406,HDD,8000GB
+,10000,hdd,"3.5""",SAS 12.0 Gb/s,,Seagate,"Seagate Exos 10TB HDD 7200RPM 3.5"" SAS 12.0 Gb/s",03740959-31f2-48f4-9611-e104b5891c6c,hdd_0010,,Exos,HDD,10000GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos X18 12TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",039f2edb-e172-4eed-9c60-7b1a8d48d640,hdd_0011,,Exos,HDD,12000GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red 10TB HDD 3.5"" SATA",0494bd56-61ad-4224-919d-3a1b4ea08316,hdd_0012,,Red,HDD,10000GB
+,1000,hdd,"2.5""",SAS 6.0 Gb/s,,Seagate,"Seagate Constellation.2 1TB HDD 7200RPM 2.5"" SAS",0509b6b9-813f-4101-88e2-e3048f05d57e,hdd_0013,,Constellation.2,HDD,1000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Purple 3TB HDD 3.5"" 5400RPM SATA 6.0 Gb/s",0531f3cf-e0c3-4551-be6d-e24b8c4f4079,hdd_0014,,Purple,HDD,3000GB
+,500,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda 500GB HDD 3.5"" 7200RPM SATA",054364f2-d4c5-4fee-bd6e-4ce761153f07,hdd_0015,,BarraCuda,HDD,500GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Pro 2TB HDD 7200RPM 3.5"" SATA",0576371a-c6c2-4fbc-92ed-7f1702138cce,hdd_0016,,Red,HDD,2000GB
+,500,hdd,"2.5""",SATA 3.0 Gb/s,,Seagate,"Seagate Momentus 5400.6 500GB 5400 RPM HDD 2.5"" SATA",058683b3-f983-45fe-b1bf-55d021f2ca67,hdd_0017,,Momentus,HDD,500GB
+,250,hdd,"2.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Black 250GB HDD 7200RPM 2.5"" SATA",05adb6e5-7b76-47f2-abe1-4f117e43f974,hdd_0018,,Black,HDD,250GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Gold 10TB HDD 3.5"" 7200RPM SATA",060df2db-cfaf-464d-8183-bf5c7d369e61,hdd_0019,,Gold,HDD,10000GB
+,8000,hdd,"3.5""",SAS 12.0 Gb/s,,Seagate,"Seagate Enterprise Capacity 8TB HDD 3.5"" SAS",06555cc2-9a3f-41be-94fa-f0da4d32df24,hdd_0020,,Enterprise,HDD,8000GB
+,500,hdd,"3.5""",SATA 3.0 Gb/s,,Hitachi,"Hitachi 7K1000.C 500GB HDD 3.5"" 7200RPM SATA 3.0 Gb/s Internal",06ff6756-6f23-4bc3-82e7-14c862dbc29d,hdd_0021,,7K1000.C,HDD,500GB
+,14000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos X16 14TB HDD 3.5"" 7200RPM SATA",07c8be31-0935-4ba4-91b6-039b5ce9585e,hdd_0022,,Exos,HDD,14000GB
+,16000,hdd,"3.5""",SAS 12.0 Gb/s,,Seagate,"Seagate Exos X18 16TB HDD 3.5"" SAS 12.0 Gb/s",07ca082a-95ec-44c1-8954-2a076812ad69,hdd_0023,,Exos,HDD,16000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MG04ACA200E 2TB HDD 7200RPM 3.5"" SATA",07f25988-b02e-4e11-9451-63b706bd4ab3,hdd_0024,,MG04ACA200E,HDD,2000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Ultrastar 8TB HDD 3.5"" SATA",080c8fbe-1925-4784-84bc-07399909eff5,hdd_0025,,Ultrastar,HDD,8000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate Bare Drives,"Seagate IronWolf 6TB NAS Hard Drive 7200 RPM 256MB Cache SATA 6.0Gb/s CMR 3.5"" Internal HDD for RAID Network Attached Storage ST6000VN0033",081ba78f-80bb-4790-b55f-c0529b61bd0f,hdd_0026,2018,IronWolf,HDD,
+,16000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MG09 512e 16TB 3.5"" HDD 7200RPM SATA",08838759-69e6-4a2b-9ebc-814a0d3f9875,hdd_0027,,MG09,HDD,16000GB
+,18000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Purple Pro 18TB HDD 7200RPM 3.5"" SATA",08c2f2f1-3662-45f6-97be-b65fbdaeedc5,hdd_0028,,Purple,HDD,18000GB
+,14000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MG09 512e 14TB HDD 3.5"" 7200RPM SATA 6.0 Gb/s",0959c7d8-d4bc-4d64-983f-9e45ed701cd5,hdd_0029,,MG09,HDD,14000GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba N300 10TB 3.5"" HDD SATA",09668674-3d72-444b-9010-d2cb6f29bab5,hdd_0030,,N300,HDD,10000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba X300 8TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s",09ded92e-83b6-4347-aea6-1a0d8173553d,hdd_0031,,X300,HDD,8000GB
+,500,hdd,"2.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba HDKCC00 500GB 2.5"" HDD 7200RPM SATA",0aa44d8a-090b-49ed-860d-c3de0080e2ec,hdd_0032,,HDKCC00,HDD,500GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf NAS 3TB HDD 3.5"" 5400RPM SATA",0adcc842-b04f-4ff0-a66c-34663e39b017,hdd_0033,,IronWolf,HDD,3000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red 4TB HDD 5400 RPM 3.5"" SATA",0aef9645-2a53-4737-8d9f-df790c7deb32,hdd_0034,,Red,HDD,4000GB
+,500,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Blue 500GB HDD 3.5"" 7200RPM SATA",0af25141-9ad8-443b-a69e-40efa2f8bd89,hdd_0035,,Blue,HDD,500GB
+,750,hdd,"2.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Scorpio Blue 750 GB HDD 5400RPM 2.5"" SATA",0af4c2f8-fa62-4bd1-93c3-3eca1ef89765,hdd_0036,,Scorpio,HDD,750GB
+,500,hdd,"2.5""",SATA 3.0 Gb/s,,Samsung,"Samsung Spinpoint M8 500GB Internal HDD 5400RPM 2.5"" SATA 3.0 Gb/s",0af8c29a-6b52-46c8-9f3d-c281e9edeec1,hdd_0037,,Spinpoint,HDD,500GB
+512,14000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Ultrastar DC HC550 14TB Internal HDD 7200RPM 3.5"" SATA 6.0 Gb/s",0b031b85-9709-49e9-8f74-cf4b9bb8c3ca,hdd_0038,,Ultrastar,HDD,14000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Surveillance 2TB HDD 3.5"" 5900RPM SATA",0b25aba1-a86c-48bb-a4dd-82032510cb83,hdd_0039,,Surveillance,HDD,2000GB
+,24000,hdd,"3.5""",SAS 12.0 Gb/s,,Seagate,"Seagate Exos X24 24TB HDD 7200RPM 3.5"" SAS 12.0 Gb/s",0b4ff01f-2feb-4d34-b428-215866deb59e,hdd_0040,,Exos,HDD,24000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda Pro 4TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",0bbf94b7-d137-4b09-a07c-b486612ccb3e,hdd_0041,,BarraCuda,HDD,4000GB
+,2000,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital RE4 2TB HDD 3.5"" 7200RPM SATA",0be229e3-e110-43d8-86b2-607d5e8f58a2,hdd_0042,,RE4,HDD,2000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda 1TB 3.5"" HDD 7200RPM SATA Internal",0bf0ed44-eb3c-4676-bfe5-362e0d3ffb14,hdd_0043,,BarraCuda,HDD,1000GB
+,750,hdd,"2.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Blue 750GB 2.5"" HDD 5400RPM SATA",0c37adf9-3ca8-4c1b-a8ef-e8a2893579e3,hdd_0044,,Blue,HDD,750GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital WD Blue 8TB 3.5"" HDD 5640RPM SATA 6.0 Gb/s",0c3af185-6a06-41ec-b730-234b1f43d559,hdd_0045,,WD,HDD,8000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital WD_BLACK 1TB HDD 3.5"" 7200RPM SATA",0cfb430e-0d16-47c1-b09a-373293b84f6c,hdd_0046,,WD_BLACK,HDD,1000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital WD Blue 2TB 3.5"" HDD 5400RPM SATA 6.0 Gb/s",0d032e64-27d9-4f6b-bc53-a6bd8fc59d8d,hdd_0047,,WD,HDD,2000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Plus 3TB 3.5"" HDD SATA",0d974a8e-b471-47e6-81fa-fab8c122d7f1,hdd_0048,,Red,HDD,3000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf NAS 8TB 3.5"" Internal HDD 7200RPM SATA",0da0c94e-c6e1-4bcc-bbb1-268a8807e110,hdd_0049,,IronWolf,HDD,8000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Surveillance 6TB 3.5"" HDD 5400RPM SATA Internal",0da4be18-1188-4a6a-ba7c-8694ff9ac6f7,hdd_0050,,Surveillance,HDD,6000GB
+,1000,hdd,"2.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda 1TB 2.5"" HDD 5400RPM SATA 6.0 Gb/s",0e070db2-9b0f-4f21-b2cf-0ce341602ed2,hdd_0051,,BarraCuda,HDD,1000GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Caviar Green 1TB HDD 3.5"" SATA",0e50a6d5-7ab1-4665-ad03-9bcfb9e5cee0,hdd_0052,,Caviar,HDD,1000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate ST4000NC001 4TB HDD 3.5"" 5900RPM SATA 6.0 Gb/s",0ea7b977-e8e9-4968-a95e-ff60ecb487ed,hdd_0053,,ST4000NC001,HDD,4000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MG03SCA 3TB HDD 3.5"" 7200RPM SATA",0ec23fa2-01ad-4ff5-a4b8-90d410c07764,hdd_0054,,MG03SCA,HDD,3000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba N300 8TB HDD 3.5"" 7200RPM SATA",0f2f526d-ef3c-46e3-a102-188670956a49,hdd_0055,,N300,HDD,8000GB
+,500,hdd,"2.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Travelstar Z7K500 500 GB HDD 7200RPM 2.5"" SATA 6.0 Gb/s",0fe1d17d-29bb-40d3-a360-e92ba8093e8a,hdd_0056,,Travelstar,HDD,500GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba X300 4TB HDD 3.5"" 7200RPM SATA",0ff732f3-f5a4-4992-b6d2-3c42aea36e7d,hdd_0057,,X300,HDD,4000GB
+512,14000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba N300 14TB HDD 3.5"" 7200RPM SATA 6.0 Gb/s",10173dbd-c286-4edb-8036-0df398617d2a,hdd_0058,,N300,HDD,14000GB
+,640,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Caviar Black 640 GB 3.5"" HDD 7200 RPM SATA 6.0 Gb/s",10182557-42ed-423a-8cfb-26426b2734c1,hdd_0059,,Caviar,HDD,640GB
+,14000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf 14TB NAS Hard Drive 7200 RPM 256MB Cache SATA 6.0Gb/s CMR 3.5"" Internal HDD for RAID Network Attached Storage ST14000VN0008",10391aad-55b8-4743-a714-b1e78cb6b4d4,hdd_0060,2018,IronWolf,HDD,
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Deskstar NAS 4TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",108fafcb-e848-47b9-8401-f5c9db41c141,hdd_0061,,Deskstar,HDD,4000GB
+,14000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda Pro 14TB HDD 3.5"" SATA",113634b2-5e21-4fa1-a2b7-de18ac8f19bc,hdd_0062,,BarraCuda,HDD,14000GB
+,640,hdd,"3.5""",SATA 3.0 Gb/s,,Samsung,"Samsung Spinpoint F1 DT 640GB Internal HDD 7200RPM 3.5"" SATA 3.0 Gb/s",1195ecb8-de06-4e2c-91e7-932809a2ae72,hdd_0063,,Spinpoint,HDD,640GB
+,1000,hdd,"2.5""",SATA 3.0 Gb/s,,Lenovo,"Lenovo 0A65633 1TB HDD 2.5"" SATA",11a42b93-69ca-4201-a6b7-c71796083980,hdd_0064,,0A65633,HDD,1000GB
+,14000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Ultrastar DC HC530 14TB 3.5"" HDD SATA",1242b398-fada-4fec-8fed-433b9a9dc5aa,hdd_0065,,Ultrastar,HDD,14000GB
+,2000,hdd,"3.5""",SATA 3.0 Gb/s,,Hitachi,"Hitachi 7K2000 2TB HDD 7200RPM 3.5"" SATA",125ef874-435c-4557-958d-e768ac323fa7,hdd_0066,,7K2000,HDD,2000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Purple 2TB HDD 3.5"" 5400RPM SATA 6.0 Gb/s",13321fbb-1892-437e-9d42-200bfd95eac0,hdd_0067,,Purple,HDD,2000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda Pro 6TB 3.5"" HDD 7200RPM SATA",13701bd4-5aeb-4b59-a576-355cbf63060f,hdd_0068,,BarraCuda,HDD,6000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Archive 8TB 3.5"" HDD 5900RPM SATA",13d81eac-4d5a-4162-90b2-7a7d121b6669,hdd_0069,,Archive,HDD,8000GB
+,2000,hdd,"2.5""",SATA 6.0 Gb/s,,Seagate,"Seagate ST2000NX0303 2TB HDD 2.5"" SATA",13e5961c-f9f4-4c75-ae5d-c1ead23e6b4b,hdd_0070,,ST2000NX0303,HDD,2000GB
+,320,hdd,"2.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Blue 320GB 2.5"" HDD 5400RPM SATA Internal",140731b6-b829-4ca1-bbb7-e0bbf6fa357f,hdd_0071,,Blue,HDD,320GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Gold 6 TB 3.5"" Internal HDD 7200RPM SATA 6.0 Gb/s",147ae617-3070-48a7-9cfc-101e3145fc88,hdd_0072,,Gold,HDD,6000GB
+,5000,hdd,"2.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda 5TB 2.5"" HDD 5400RPM SATA",14b38333-d827-4ad9-b64a-10599606e00c,hdd_0073,,BarraCuda,HDD,5000GB
+,160,hdd,"2.5""",SATA 3.0 Gb/s,,Seagate,"Seagate Momentus 5400.6 160 GB 2.5"" Internal HDD 5400 RPM SATA 3.0 Gb/s",14d253a4-21f7-49a6-905c-41361849a78d,hdd_0074,,Momentus,HDD,160GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Ultrastar He8 8TB HDD 3.5"" 7200RPM SATA 6.0 Gb/s",14dc8cb5-4526-4af5-9f85-67f0dbf68623,hdd_0075,,Ultrastar,HDD,8000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red 8TB 3.5"" HDD 5400RPM SATA 6.0 Gb/s",1534a44d-3f92-4cf7-b10d-18ae6f139e4d,hdd_0076,,Red,HDD,8000GB
+,600,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital VelociRaptor 600GB HDD 3.5"" 10000RPM SATA",15d7012a-5ac2-4bcc-bf75-c6ba5aed28a9,hdd_0077,,VelociRaptor,HDD,600GB
+,10000,hdd,"3.5""",SAS 12.0 Gb/s,,Hitachi,"Hitachi Ultrastar He10 10TB HDD 3.5"" SAS 12.0 Gb/s",15ec3d8a-08aa-46bd-9ca7-6cae26fddba0,hdd_0078,,Ultrastar,HDD,10000GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Ultrastar DC HC520 12 TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s Internal",16014867-4dba-4174-a46c-02f6c3492fa0,hdd_0079,,Ultrastar,HDD,12000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Caviar Green 1.5TB 3.5"" HDD 5400RPM SATA",1601fcdd-f2bb-4efb-8d27-2fabe918e880,hdd_0080,,Caviar,HDD,1000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Barracuda Compute 4TB 3.5"" HDD 5400RPM SATA 6.0 Gb/s",162e161d-6a2f-48bc-a893-cf5642e65851,hdd_0081,,Barracuda,HDD,4000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos 7E8 4TB HDD 3.5"" 7200RPM SATA",163bb6b3-5862-4e02-883a-099d631f5fca,hdd_0082,,Exos,HDD,4000GB
+,2000,hdd,"3.5""",SAS 6.0 Gb/s,,Hitachi,"Hitachi Ultrastar 7K4000 2TB 7200RPM HDD 3.5"" SAS 6.0 Gb/s",163fe5e6-a5c1-4d0f-b426-43a614342543,hdd_0083,,Ultrastar,HDD,2000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Archive v2 6TB HDD 3.5"" 5900RPM SATA",16846209-9084-4de8-8eb4-969cdfea6e26,hdd_0084,,Archive,HDD,6000GB
+,14000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Plus 14TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s Internal",16b7405c-ed18-45d4-a526-798c5f894d05,hdd_0085,,Red,HDD,14000GB
+512,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital WD Blue 12TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",16c1ae50-e61b-4873-80a2-d5460c66b218,hdd_0086,,WD,HDD,12000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital AV-GP 2TB 3.5"" Internal HDD 5400RPM SATA 6.0 Gb/s",16dc2eab-0229-4680-975a-74c8df80ba8f,hdd_0087,,AV-GP,HDD,2000GB
+,3000,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Caviar Green 3TB HDD 3.5"" 5400 RPM SATA",16dde0fd-c6ef-42d6-a381-3099f653fbdd,hdd_0088,,Caviar,HDD,3000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red 4TB 3.5"" HDD 5400RPM SATA 6.0 Gb/s Internal",170e02d8-9f6c-44e5-b79e-e5e84afa75c3,hdd_0089,,Red,HDD,4000GB
+,250,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda 250GB HDD 7200RPM 3.5"" SATA",171efe7a-0550-47d9-8e49-f828f8163d13,hdd_0090,,BarraCuda,HDD,250GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate ST4000VX000 4TB HDD 3.5"" 5900RPM SATA 6.0 Gb/s Internal",176ae2d9-9f57-40bf-bb31-54517080f069,hdd_0091,,ST4000VX000,HDD,4000GB
+512,24000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda 24 TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s",17b7cc1c-7b1b-4592-931a-7c97b6dcebbe,hdd_0092,,BarraCuda,HDD,24000GB
+,500,hdd,"2.5""",SATA 3.0 Gb/s,,Seagate,"Seagate Momentus 7200.4 500GB HDD 2.5"" SATA",17cbcc1a-b078-4b49-a19e-e539df3d753a,hdd_0093,,Momentus,HDD,500GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Pro 12 TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",1895ce3f-c4b7-4ce8-a7eb-d401d1058ba0,hdd_0094,,Red,HDD,12000GB
+512,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba N300 NAS 8TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",18d33bd8-c633-4889-b9cf-1ab99366e1ce,hdd_0095,,N300,HDD,8000GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos X24 12TB HDD 3.5"" SATA",18daa79c-827a-49bd-9fc1-168f500ee693,hdd_0096,,Exos,HDD,12000GB
+,2000,hdd,"3.5""",SAS 6.0 Gb/s,,Seagate,"Seagate Constellation ES.3 2TB HDD 3.5"" 7200RPM SAS 6.0 Gb/s",18e7ac9a-0ab3-4094-879e-bb6eefaac18e,hdd_0097,,Constellation,HDD,2000GB
+,4000,hdd,"2.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda 4TB 2.5"" HDD 5400RPM SATA Internal",193fbc22-f238-4c44-a652-b4b3807bd8b3,hdd_0098,,BarraCuda,HDD,4000GB
+,14000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MG08 14TB HDD 7200RPM 3.5"" SATA Internal",19446376-3ada-4576-bcf2-a0fb09e31fe6,hdd_0099,,MG08,HDD,14000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Barracuda XT 3TB Internal HDD 3.5"" 7200RPM SATA 6.0 Gb/s",19e4016b-beb2-4acd-bbd0-4d738d851f1f,hdd_0100,,Barracuda,HDD,3000GB
+,80,hdd,"3.5""",SATA 3.0 Gb/s,,Seagate,"Seagate ST3808110AS 80 GB HDD 3.5"" 7200 RPM SATA 3.0 Gb/s Internal",19e7c50e-a4b4-4606-aff3-5bb26534bda0,hdd_0101,,ST3808110AS,HDD,80GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf NAS 8TB HDD 3.5"" 7200RPM SATA",19ee2d36-bedd-4ca8-8e11-653dfe14333c,hdd_0102,,IronWolf,HDD,8000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital RE 2TB HDD 3.5"" 7200RPM SATA 6.0 Gb/s Internal",1a127e03-3b42-46f6-b1ee-395286a894bd,hdd_0103,,RE,HDD,2000GB
+,16000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate Technology,Seagate IronWolf ST16000VN001 - hard drive - 16 TB - SATA 6Gb/s,1a4cb84d-40f4-41d7-9161-9d442d120ce4,hdd_0104,2024,IronWolf,HDD,
+,5000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Blue 5TB HDD 3.5"" SATA",1a78099f-0926-4b02-a3ec-6b5d5dcf2ccf,hdd_0105,,Blue,HDD,5000GB
+,600,hdd,"2.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital VelociRaptor 600GB HDD 2.5"" 10000RPM SATA Internal",1bce846b-96bb-4ffd-a4a4-ed4a3c07945b,hdd_0106,,VelociRaptor,HDD,600GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SV35.5 2TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",1bf81ec5-d802-421a-a01f-afe39a7f4a63,hdd_0107,,SV35.5,HDD,2000GB
+,80,hdd,"2.5""",SATA 1.5 Gb/s,,Western Digital,"Western Digital Scorpio Blue 80GB 2.5"" HDD 5400RPM SATA 1.5 Gb/s",1c0a799a-bb4d-4c1f-8a2d-c00d979f3980,hdd_0108,,Scorpio,HDD,80GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos X16 12TB HDD 3.5"" 7200RPM SATA",1c33cb55-ee4d-4c2a-8f5f-9684c58dc4c1,hdd_0109,,Exos,HDD,12000GB
+,320,hdd,"2.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Scorpio Black 320GB HDD 7200RPM 2.5"" SATA",1cb53e3c-691f-45c4-9e9c-4cd55f341525,hdd_0110,,Scorpio,HDD,320GB
+,1000,hdd,"2.5""",SAS 12.0 Gb/s,,Seagate,"Seagate ST1000NX0373 1TB 7200RPM HDD 2.5"" SAS",1cbd58a5-df28-4366-9efc-c2ccadb25a8c,hdd_0111,,ST1000NX0373,HDD,1000GB
+,300,hdd,"2.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Savvio 300GB HDD 2.5"" 10000RPM SATA",1d0be923-bf5f-4010-9f9c-8c70e7a09393,hdd_0112,,Savvio,HDD,300GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Caviar Black 1TB HDD 3.5"" 7200RPM SATA",1d1e96c7-9032-4aa7-be50-7a980a8b6656,hdd_0113,,Caviar,HDD,1000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate Technology,"Seagate Barracuda Compute 3 TB 3.5"" 5400 RPM Internal Hard Drive",1d9e0a9a-f78c-46e1-9299-aba2f9c6513a,hdd_0114,2017,BarraCuda Compute,HDD,3 TB
+,14000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Barracuda Pro 14TB Internal Hard Drive Performance HDD – 3.5 Inch SATA 6 Gb/s 7200 RPM 256MB Cache for Computer Desktop PC, Data Recovery (ST14000DM001)",1de12b28-0495-49ff-92af-d362f6f1bf01,hdd_0115,2018,BarraCuda Pro,HDD,14TB
+,300,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital VelociRaptor 300GB HDD 10000RPM 3.5"" SATA",1e25a2de-067b-4fa9-9198-3fb40b98583d,hdd_0116,,VelociRaptor,HDD,300GB
+,500,hdd,"2.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda 500GB HDD 2.5"" 5400 RPM SATA 6.0 Gb/s Internal",1e2fe0a1-31bf-4192-8241-60311c7e8f52,hdd_0117,,BarraCuda,HDD,500GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red 12 TB HDD 5400 RPM 3.5"" SATA",1e78ff13-4b0b-4a7a-b82e-4bc0eff5a934,hdd_0118,,Red,HDD,12000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos 7E10 512n 4TB HDD 3.5"" 7200RPM SATA",1e8bcaae-8338-45fc-9a2b-9b8e05ec1532,hdd_0119,,Exos,HDD,4000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba N300 8TB HDD 3.5"" 7200RPM SATA 6.0 Gb/s Internal",1f429c7d-e445-4808-a594-062c416a57d2,hdd_0120,,N300,HDD,8000GB
+,500,hdd,"3.5""",PATA 100,,Western Digital,"Western Digital Caviar Blue 500 GB HDD 3.5"" 7200 RPM PATA 100",1f835eab-fe26-4ce8-a6e5-03e8d773763a,hdd_0121,,Caviar,HDD,500GB
+,750,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Barracuda ES 750GB HDD 3.5"" 7200RPM SATA 6.0 Gb/s",1ff12677-134f-4d9f-a8de-b64e5c5b35a6,hdd_0122,,Barracuda,HDD,750GB
+,750,hdd,"2.5""",SATA 3.0 Gb/s,,Toshiba,"Toshiba MK7559GSXP 750GB HDD 5400RPM 2.5"" SATA 3.0 Gb/s Internal",1ff553d1-9534-446a-ad24-5063beca8cd9,hdd_0123,,MK7559GSXP,HDD,750GB
+,500,hdd,"3.5""",SATA 3.0 Gb/s,,Seagate,"Seagate BarraCuda 500GB 3.5"" HDD 7200RPM SATA",200b98ee-7d92-48ec-a1bd-1b952f94020b,hdd_0124,,BarraCuda,HDD,500GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MG07ACA12TA 12TB HDD 3.5"" 7200 RPM SATA Internal",2063a1bb-ed08-4d35-b2ec-c8251bf732d7,hdd_0125,,MG07ACA12TA,HDD,12000GB
+,5000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba X300 5TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s",2065188b-6156-4ae2-ba00-d60871737d0b,hdd_0126,,X300,HDD,5000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate EXOS Enterprise 2TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",208d89a5-0c1b-4359-9d12-f97ddbdee715,hdd_0127,,EXOS,HDD,2000GB
+,18000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Purple 18TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s Internal",20e86732-0e22-48d6-a6a9-46d3ed2dc146,hdd_0128,,Purple,HDD,18000GB
+,18000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Gold 18TB HDD 3.5"" 7200RPM SATA",214dc60a-aadb-46e7-8ea7-b9265c97cc15,hdd_0129,,Gold,HDD,18000GB
+,2000,hdd,"3.5""",SAS 6.0 Gb/s,,IBM,"IBM 90Y8572 2TB HDD 7200RPM 3.5"" SAS 6.0 Gb/s",21a00f0f-42f7-4452-a011-df36b3723b9a,hdd_0130,,90Y8572,HDD,2000GB
+,500,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital AV-GP 500GB 3.5"" HDD 5400RPM SATA",21e6baa7-60ae-41d1-89ee-0ded8a061112,hdd_0131,,AV-GP,HDD,500GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Seagate,"Seagate Barracuda ES 1TB HDD 3.5"" SATA",238f651b-cbf2-4d9b-8e38-4ffbe2746284,hdd_0132,,Barracuda,HDD,1000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba X300 8TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s Internal",239f7ec9-ec09-411b-8d7d-5b15c782be4f,hdd_0133,,X300,HDD,8000GB
+,500,hdd,"2.5""",SATA 6.0 Gb/s,,Seagate,"Seagate ST500LM021 500GB 2.5"" HDD 7200RPM SATA Internal",2403dac2-f608-40f9-8faf-b07c7c827a16,hdd_0134,,ST500LM021,HDD,500GB
+,160,hdd,"3.5""",SATA 3.0 Gb/s,,Seagate,"Seagate Barracuda 7200.10 160GB 3.5"" HDD 7200RPM SATA",244c19d8-a430-470e-aa3e-060d8ba18ef2,hdd_0135,,Barracuda,HDD,160GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SkyHawk AI 10TB 3.5"" HDD 7200RPM SATA",248add02-8d90-42c6-b40e-c712922803f3,hdd_0136,,SkyHawk,HDD,10000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Ultrastar 1TB 7200RPM HDD 3.5"" SATA",252e0a1d-bd20-4677-98a3-90f2bb51ff9b,hdd_0137,,Ultrastar,HDD,1000GB
+,160,hdd,"3.5""",SATA 3.0 Gb/s,,Samsung,"Samsung Spinpoint F3 160GB 3.5"" HDD SATA",25892677-f6c2-41f1-81a2-f5867846405c,hdd_0138,,Spinpoint,HDD,160GB
+,24000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos X24 SED 24TB HDD 3.5"" SATA",25964957-acdc-4150-98a4-ffbd4cc4380b,hdd_0139,,Exos,HDD,24000GB
+,150,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital VelociRaptor 150GB HDD 3.5"" SATA",25dcf94e-9180-48f4-8c9e-3eb54c3cd025,hdd_0140,,VelociRaptor,HDD,150GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba X300 Pro 12TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",25f8746b-7df2-4b77-a596-9090a1eaef3b,hdd_0141,,X300,HDD,12000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Plus 6TB HDD 5400RPM 3.5"" SATA 6.0 Gb/s",279ce5c4-4215-42b3-9429-ebc0b6898025,hdd_0142,,Red,HDD,6000GB
+,250,hdd,"3.5""",SATA 3.0 Gb/s,,Samsung,"Samsung ST250DM001/HD253GJ 250GB HDD 3.5"" 7200RPM SATA",27da7495-3fbc-4005-8793-0144b43afe85,hdd_0143,,ST250DM001/HD253GJ,HDD,250GB
+,1000,hdd,"2.5""",SATA 6.0 Gb/s,,Seagate,"Seagate ST1000NX0313 1TB 2.5"" HDD 7200RPM SATA",2814448f-7a6e-4202-a845-548ec4b730ec,hdd_0144,,ST1000NX0313,HDD,1000GB
+,320,hdd,"2.5""",SATA 3.0 Gb/s,,Toshiba,"Toshiba MQ01ABD032 320GB HDD 5400RPM 2.5"" SATA 3.0 Gb/s",283871aa-3aa6-4bb0-9a05-7c97a87ba662,hdd_0145,,MQ01ABD032,HDD,320GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Deskstar 5K3000 3TB HDD 5400RPM 3.5"" SATA 6.0 Gb/s",28fe0ef2-60a6-476e-adda-037ba05cb4c3,hdd_0146,,Deskstar,HDD,3000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital SE 4TB HDD 3.5"" 7200RPM SATA",29041e01-b126-496d-92b3-ac06b27d4e2e,hdd_0147,,SE,HDD,4000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SkyHawk 1TB HDD 3.5"" 5900RPM SATA",293a6e98-1ce7-4089-aaa9-791e12ee44be,hdd_0148,,SkyHawk,HDD,1000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Blue 3 TB HDD 3.5"" 5400 RPM SATA",293c77aa-4578-41c3-a5e0-8b5db5c89859,hdd_0149,,Blue,HDD,3000GB
+,16000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Gold 16TB 3.5"" HDD 7200RPM SATA",2999322d-7351-4b50-a71f-08f20884dca6,hdd_0150,,Gold,HDD,16000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Purple 2TB HDD 3.5"" 5400RPM SATA Internal",29b4ce1a-c1f9-422d-a616-8c244f5ed61d,hdd_0151,,Purple,HDD,2000GB
+,250,hdd,"3.5""",SATA 3.0 Gb/s,,Seagate,"Seagate Barracuda ES.2 250GB HDD 3.5"" SATA",29dbb642-793c-4261-936b-faa475b48ffd,hdd_0152,,Barracuda,HDD,250GB
+,20000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf Pro 20TB HDD 3.5"" SATA",29e51efa-6daa-4cdc-afe5-edd50b6fc387,hdd_0153,,IronWolf,HDD,20000GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SkyHawk Surveillance 12TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s Internal",2a176930-57dc-4bea-ae7f-1491917a55fa,hdd_0154,,SkyHawk,HDD,12000GB
+,14000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba N300 14TB 3.5"" HDD 7200RPM SATA Internal",2a5919b8-91ab-4599-914b-5e4ae0951b3b,hdd_0155,,N300,HDD,14000GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red 10TB 3.5"" HDD 5400RPM SATA",2a907dd2-ce9a-4152-8631-ad1a37739641,hdd_0156,,Red,HDD,10000GB
+,250,hdd,"2.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MQ01ABD025V 250GB HDD 2.5"" SATA",2add12ed-d3a1-4a41-9875-8df3e003e0f2,hdd_0157,,MQ01ABD025V,HDD,250GB
+,14000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Pro 14TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s",2aeb47a8-d8f9-4745-88b4-6f5e49a5aecc,hdd_0158,,Red,HDD,14000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Pro 2TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s",2afcf92f-e916-40ef-972b-beae5778a7ca,hdd_0159,,Red,HDD,2000GB
+,500,hdd,"2.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Scorpio Black 500GB HDD 7200RPM 2.5"" SATA 3.0 Gb/s",2b0a9dda-42ae-4170-98e6-49c23a2270ec,hdd_0160,,Scorpio,HDD,500GB
+,16000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos X18 16 TB HDD 3.5"" 7200 RPM SATA 6.0 Gb/s",2b16a789-1147-4daa-bc3d-9c303a686fbf,hdd_0161,,Exos,HDD,16000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Enterprise Capacity 6TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",2b31ab50-6381-4772-9be3-f5f339297faf,hdd_0162,,Enterprise,HDD,6000GB
+,1000,hdd,"2.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda Pro Compute 1TB HDD 2.5"" SATA",2c11dfee-f1c2-482b-aace-5f30bb339a9d,hdd_0163,,BarraCuda,HDD,1000GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital WD_BLACK 10TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s",2cb1bb5c-da3b-4df9-8283-3bb5f1cce84a,hdd_0164,,WD_BLACK,HDD,10000GB
+,6000,hdd,"3.5""",SAS 12.0 Gb/s,,Hitachi,"Hitachi Ultrastar 6TB HDD 3.5"" 7200RPM SAS 12.0 Gb/s",2ce5727e-4664-4615-8371-fdff3cd978ce,hdd_0165,,Ultrastar,HDD,6000GB
+,1000,hdd,"2.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Black 1TB HDD 2.5"" 7200RPM SATA Internal",2cfe4be9-7fb2-46b0-b6aa-02dfc5e28536,hdd_0166,,Black,HDD,1000GB
+,14000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Gold 14 TB HDD 3.5"" 7200 RPM SATA 6.0 Gb/s Internal",2d289f16-ed5c-4fad-bcee-693901b1c442,hdd_0167,,Gold,HDD,14000GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SkyHawk AI 12TB HDD 3.5"" SATA",2d379b79-17e2-49e1-afe9-5df61480e436,hdd_0168,,SkyHawk,HDD,12000GB
+,36000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos M 36TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",2d4b9481-c324-4166-85b7-4e1420e766bc,hdd_0169,,Exos,HDD,36000GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Ultrastar He10 10TB HDD 3.5"" 7200RPM SATA",2dcc21ac-36ae-492f-a9fe-8c363fde1df8,hdd_0170,,Ultrastar,HDD,10000GB
+,500,hdd,"3.5""",SATA 6.0 Gb/s,,Axiom,"Axiom 0A89470-AX 500GB HDD 3.5"" 7200RPM SATA",2dd343f1-afce-47ca-8855-5f10f3755670,hdd_0171,,0A89470-AX,HDD,500GB
+,20000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MG10 512e 20TB HDD 7200RPM 3.5"" SATA",2dd9fde0-c33b-4877-bfad-17960bc6e1f1,hdd_0172,,MG10,HDD,20000GB
+,500,hdd,"3.5""",SATA 3.0 Gb/s,,Seagate,"Seagate SV35.5 500GB HDD 3.5"" 5900RPM SATA",2e19eb81-5e25-44c0-8a0a-e7d7dfdf873d,hdd_0173,,SV35.5,HDD,500GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda 3TB HDD 3.5"" SATA",2e2d97a7-79b4-4199-9dfe-aa9433b95931,hdd_0174,,BarraCuda,HDD,3000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Black 8TB HDD 3.5"" 7200RPM SATA 6.0 Gb/s",2eba0d43-ccb9-47ca-b0ff-e57c6b3ffed5,hdd_0175,,Black,HDD,8000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Caviar Black 2TB HDD 3.5"" 7200RPM SATA",2ec78461-eca8-460e-a2b4-3ffc2500d1ea,hdd_0176,,Caviar,HDD,2000GB
+64,3000,hdd,"3.5""",SAS 6.0 Gb/s,,Hitachi,"Hitachi Ultrastar 7K4000 3 TB 3.5"" HDD 7200RPM SAS 6.0 Gb/s",2ee52dca-7ccb-4b1d-bf20-cb8f31193edc,hdd_0177,,Ultrastar,HDD,3000GB
+,5000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Archive v2 5TB HDD 3.5"" 5900RPM SATA 6.0 Gb/s Internal",2f718820-fe57-4cb9-be4e-8f5ac02cd0ee,hdd_0178,,Archive,HDD,5000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Blue 3TB HDD 5400RPM 3.5"" SATA",2f777de2-688f-40d2-937f-4f04adfa33b8,hdd_0179,,Blue,HDD,3000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Blue 1TB 3.5"" HDD 5400RPM SATA",2f8b66bb-7e9e-4dce-92ef-c3bfdb902397,hdd_0180,,Blue,HDD,1000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Surveillance 2TB 3.5"" HDD 5400RPM SATA",2fbee15b-166b-447c-89e7-a3e0136c4d8e,hdd_0181,,Surveillance,HDD,2000GB
+,24000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Gold 24 TB 3.5"" 7200 RPM Internal",2fe25755-57c7-42c9-9668-e67707cc8045,hdd_0182,,Gold,HDD,24000GB
+,500,hdd,"3.5""",SATA 3.0 Gb/s,,Hitachi,"Hitachi Deskstar 5K1000 500GB HDD 5400RPM 3.5"" SATA 3.0 Gb/s Internal",2fe85106-e493-44fa-b218-607f7dd78d40,hdd_0183,,Deskstar,HDD,500GB
+,1000,hdd,"3.5""",SAS 12.0 Gb/s,,Seagate,"Seagate Enterprise Performance 1.8TB HDD 10000RPM 3.5"" SAS 12.0 Gb/s",30643fa7-c78b-4e3f-8ba9-806ff2fd7cae,hdd_0184,,Enterprise,HDD,1000GB
+,500,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Caviar Black 500GB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",309884e1-b12f-4233-b0a9-8b0f01a0b2f6,hdd_0185,,Caviar,HDD,500GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Hitachi,"Hitachi 7K1000.C 1TB 3.5"" HDD 7200RPM SATA",3098d24b-17d4-4193-ac8e-985d1121a7dc,hdd_0186,,7K1000.C,HDD,1000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos 7E10 6TB 3.5"" HDD SATA 7200RPM 512e/4Kn",30a3469a-e55e-43f0-8d4b-29f1338b4359,hdd_0187,,Exos,HDD,6000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Constellation ES 2TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",30b793b5-346d-417a-a5de-75a2a6467c17,hdd_0188,,Constellation,HDD,2000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Black 6TB HDD 3.5"" SATA 7200RPM",30e083a4-060f-4059-b5ef-f4836724cde7,hdd_0189,,Black,HDD,6000GB
+,640,hdd,"2.5""",SATA 3.0 Gb/s,,Toshiba,"Toshiba MK6465GSX 640GB 2.5"" HDD 5400RPM SATA Internal",30e1dc18-1b4e-4cae-9a5a-1962242acb93,hdd_0190,,MK6465GSX,HDD,640GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Surveillance 4TB HDD 3.5"" SATA",31158617-2790-47cf-a43f-c4b860a93318,hdd_0191,,Surveillance,HDD,4000GB
+,16000,hdd,"3.5""",SAS 12.0 Gb/s,,Seagate,"Seagate EXOS Enterprise 16 TB 3.5"" HDD 7200 RPM SAS 12.0 Gb/s",31298ba5-e794-4d86-88b6-3c5a033d25f7,hdd_0192,,EXOS,HDD,16000GB
+,500,hdd,"2.5""",SATA 3.0 Gb/s,,Hitachi,"Hitachi Travelstar Z5K500 500GB Internal HDD 5400RPM 2.5"" SATA 3.0 Gb/s",317519ba-8540-4f5e-9dfc-7f356dc58b15,hdd_0193,,Travelstar,HDD,500GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba X300 4TB HDD 3.5"" SATA",31904134-daf9-4ce0-91f0-908a54c818b4,hdd_0194,,X300,HDD,4000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Enterprise Capacity 8TB 3.5"" HDD 7200RPM SATA",32b52408-d02d-42d9-a9bb-d703c88c646a,hdd_0195,,Enterprise,HDD,8000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba N300 6TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s Internal",32ed9152-7d36-49d6-ab71-0f284bef96e8,hdd_0196,,N300,HDD,6000GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Samsung,"Samsung Spinpoint F1 DT 1TB HDD 7200RPM 3.5"" SATA",3343249e-95b6-4a38-8fa8-3f41d719e462,hdd_0197,,Spinpoint,HDD,1000GB
+,14000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MG07ACA14TE 14TB HDD 3.5"" 7200RPM SATA",3348da24-ffce-47c8-b8b1-0138430dfe8e,hdd_0198,,MG07ACA14TE,HDD,14000GB
+,320,hdd,"2.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Scorpio Blue 320GB 2.5"" HDD 5400RPM SATA",33dbc0f1-1c52-4eb7-89ed-60bad7335cbb,hdd_0199,,Scorpio,HDD,320GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Ultrastar He8 6TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s",340fe1b2-f260-46af-8980-d51ebbd3e4be,hdd_0200,,Ultrastar,HDD,6000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos 7E8 4Kn 6TB HDD 7200RPM 3.5"" SATA",341dc535-5e11-49b4-b3f5-435f83339639,hdd_0201,,Exos,HDD,6000GB
+256,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SkyHawk Surveillance 10TB 3.5"" HDD 7200RPM SATA",349fbece-6a45-4597-b45b-5e4470f216b6,hdd_0202,,SkyHawk,HDD,10000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Pro 8 TB 3.5"" Internal HDD 7200 RPM SATA 6.0 Gb/s",359ed54b-cf00-4f07-b0e7-a068c0b33fa7,hdd_0203,,Red,HDD,8000GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf NAS 10TB HDD 3.5"" 7200RPM SATA",35b97ce1-7260-49f4-84ca-f0d5b865ed7f,hdd_0204,,IronWolf,HDD,10000GB
+,500,hdd,"3.5""",SATA 3.0 Gb/s,,Samsung,"Samsung Spinpoint F2 EG 500GB HDD 3.5"" SATA",35dc6e12-0f79-4bc9-9316-5cdffc349e5c,hdd_0205,,Spinpoint,HDD,500GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Hitachi,"Hitachi 7K1000.C 1TB HDD 7200RPM 3.5"" SATA",36066cd0-ec86-45ff-b7f0-c29ee7156fc9,hdd_0206,,7K1000.C,HDD,1000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MG04ACA100N 1TB HDD 3.5"" 7200 RPM Internal",36334163-e16b-4dd3-af5f-3613f3e5d12e,hdd_0207,,MG04ACA100N,HDD,1000GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,Seagate IronWolf 12TB NAS Internal Hard Drive HDD – CMR 3.5 Inch SATA 6Gb/s 7200 RPM 256MB Cache for RAID Network Attached Storage,3660fbd1-4808-46a6-a18b-2c0a69d02132,hdd_0208,2020,IronWolf,HDD,
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Hitachi,"Hitachi Deskstar 1 TB HDD 3.5"" 7200RPM SATA 3.0 Gb/s",36bb876f-a0a6-4ec9-a93c-778c2f150b91,hdd_0209,,Deskstar,HDD,1000GB
+,80,hdd,"2.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Scorpio Blue 80 GB 2.5"" HDD 5400RPM SATA 3.0 Gb/s Internal",37a0949a-c270-4def-8d68-0d56133d15ac,hdd_0210,,Scorpio,HDD,80GB
+,500,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Caviar Green 500GB HDD 3.5"" SATA",37ee2391-6722-4dc0-bf8d-e7a3af23ba88,hdd_0211,,Caviar,HDD,500GB
+,2000,hdd,"3.5""",SATA 3.0 Gb/s,,Samsung,"Samsung Spinpoint F4 2TB HDD 5400RPM Internal 3.5""",38108c57-ac95-4486-ade4-ed93ee1ec312,hdd_0212,,Spinpoint,HDD,2000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf Pro 4TB 3.5"" HDD 7200RPM SATA",38170590-410c-4dd5-bbae-f32834df1a47,hdd_0213,,IronWolf,HDD,4000GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SkyHawk AI 12TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",382c291c-dff4-4280-91f8-c33cefa2b5ff,hdd_0214,,SkyHawk,HDD,12000GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos X18 10TB HDD 7200RPM 3.5"" SATA",3836d11c-c0e0-426f-a4bd-8c328bf2ba82,hdd_0215,,Exos,HDD,10000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Caviar Black 4TB Internal HDD 7200RPM 3.5"" SATA 6.0 Gb/s",3882f6fe-c00f-43c9-8498-35f06e37998c,hdd_0216,,Caviar,HDD,4000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Ultrastar 4TB HDD 3.5"" 7200RPM SATA 6.0 Gb/s Internal",38d89b3a-6570-4a18-9ffa-64b4674561e3,hdd_0217,,Ultrastar,HDD,4000GB
+,500,hdd,"2.5""",SATA 3.0 Gb/s,,Toshiba,"Toshiba MQ01ABD050 500GB HDD 2.5"" 5400RPM SATA",38dddb52-f9ca-42d0-8227-b9845def31db,hdd_0218,,MQ01ABD050,HDD,500GB
+,160,hdd,"2.5""",SATA 3.0 Gb/s,,Seagate,"Seagate Momentus 7200.4 160 GB HDD 7200 RPM 2.5"" SATA 3.0 Gb/s",38ebcb71-41cf-49f8-be35-2e7bf205c0c0,hdd_0219,,Momentus,HDD,160GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Purple 12TB 3.5"" HDD 7200RPM SATA",38ef2538-9ce8-4172-9b81-fdc4686d19ad,hdd_0220,,Purple,HDD,12000GB
+,14000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Pro 14TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s",395394ac-a37f-4237-aa71-3e8c93161910,hdd_0221,,Red,HDD,14000GB
+128,4000,hdd,"3.5""",SAS 6.0 Gb/s,,Seagate,"Seagate Constellation ES.3 4TB 3.5"" HDD 7200RPM SAS 6.0 Gb/s",395ca3ff-0181-49e0-9033-0fc7cd36b316,hdd_0222,,Constellation,HDD,4000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf NAS 8TB 3.5"" HDD 7200RPM SATA",39d3ac5f-45de-4275-90df-9ad475742ff1,hdd_0223,,IronWolf,HDD,8000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Gold 2TB HDD 3.5"" 7200RPM SATA 6.0 Gb/s Internal",3a05afd9-c7d3-4982-bd17-b91406de5f4b,hdd_0224,,Gold,HDD,2000GB
+,750,hdd,"2.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Scorpio Blue 750GB HDD 5200RPM 2.5"" SATA",3a08c88d-f5bd-4bc5-8b12-6700f2995242,hdd_0225,,Scorpio,HDD,750GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Barracuda XT 2TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s",3a738c04-5316-4ac1-8682-2e7c62b984c9,hdd_0226,,Barracuda,HDD,2000GB
+,1000,hdd,"2.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MQ02ABF100 1TB HDD 5400 RPM 2.5"" SATA 6.0 Gb/s",3a79f8bd-f3eb-469f-b852-0b1e7688e54d,hdd_0227,,MQ02ABF100,HDD,1000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Blue 1TB 3.5"" HDD 7200RPM SATA Internal",3ac0fa47-e0e8-4e07-8783-8fc1785d70a6,hdd_0228,,Blue,HDD,1000GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SkyHawk 10TB HDD 3.5"" SATA",3ae60367-6ca3-41f6-aba4-3940aff581d2,hdd_0229,,SkyHawk,HDD,10000GB
+,30000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos M 30TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",3b069510-78c2-464c-9d0f-6e8dfdd4e1ea,hdd_0230,,Exos,HDD,30000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Purple NV 4TB HDD 3.5"" 5400RPM SATA",3b3b3dd2-895a-4a43-9ac4-376945d08717,hdd_0231,,Purple,HDD,4000GB
+,24000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf Pro 24TB 3.5"" HDD 7200RPM SATA",3b3dc9cb-4b85-44ff-8478-da5541662393,hdd_0232,,IronWolf,HDD,24000GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Hitachi,"Hitachi E7K1000 1TB 3.5"" HDD 7200RPM SATA 3.0 Gb/s",3b55ed3e-8784-4688-96a1-5ea3054bcc17,hdd_0233,,E7K1000,HDD,1000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf 4TB 3.5"" HDD 5900RPM SATA",3b742de3-a158-4069-99fc-b0df4c624567,hdd_0234,,ST4000VN000,HDD,4000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba X300 4TB 3.5"" HDD 7200RPM SATA Internal",3bcd9289-7e1b-4b78-b06b-8c8f464e5a9b,hdd_0235,,X300,HDD,4000GB
+,500,hdd,"3.5""",SATA 3.0 Gb/s,,Samsung,"Samsung Spinpoint 500GB HDD 3.5"" SATA 7200RPM",3c152e3a-4802-408c-8d61-a413762104bb,hdd_0236,,Spinpoint,HDD,500GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Constellation ES.3 2TB 3.5"" HDD 7200RPM SATA",3c1c3d76-3adb-4660-b3f6-ac1d2c55989d,hdd_0237,,Constellation,HDD,2000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda 1TB 3.5"" HDD 7200RPM SATA",3c42e6b9-5724-4bd1-9f7c-ca05b8170325,hdd_0238,,BarraCuda,HDD,1000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red 6TB 3.5"" HDD 5400RPM SATA Internal",3cb1fce4-a8bb-4731-a4ee-37d4c133294a,hdd_0239,,Red,HDD,6000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red 2TB HDD 5400RPM 3.5"" SATA",3ce57992-171f-4cf7-b535-4b631db16602,hdd_0240,,Red,HDD,2000GB
+,16000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos X16 16TB 3.5"" HDD 7200RPM SATA",3cff6303-a943-42ef-ab98-ae97f1ac3c18,hdd_0241,,Exos,HDD,16000GB
+,18000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Ultrastar DC HC550 18TB HDD 3.5"" 7200RPM SATA 6.0 Gb/s",3d4825c9-2f66-47a4-9bda-b252d14cb76f,hdd_0242,,Ultrastar,HDD,18000GB
+,5000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Black 5TB HDD 3.5"" 7200RPM SATA Internal",3d533122-94a8-4007-ab6a-dcd57c6b2ac0,hdd_0243,,Black,HDD,5000GB
+,1000,hdd,"2.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba L200 1TB HDD 5400RPM 2.5"" SATA",3d7ac292-617d-4d29-8aae-027c03c2ab32,hdd_0244,,L200,HDD,1000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos 7E8 2TB HDD 7200RPM 3.5"" SATA",3df72572-6969-4320-8d8e-fc9048185dc4,hdd_0245,,Exos,HDD,2000GB
+,320,hdd,"2.5""",SATA 3.0 Gb/s,,Toshiba,"Toshiba MK3276GSX 320GB 2.5"" HDD 5400 RPM SATA 3.0 Gb/s",3e39eaf8-d161-4494-8f0c-286d53f24bfc,hdd_0246,,MK3276GSX,HDD,320GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Ultrastar 7K4000 2TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s",3e7eb220-2b73-4178-9dbc-ab804e679c3c,hdd_0247,,Ultrastar,HDD,2000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital WD_BLACK 4TB 3.5"" HDD 7200RPM SATA",3e8f6efd-4428-4faa-b8c4-2b9f42219e75,hdd_0248,,WD_BLACK,HDD,4000GB
+,16000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba N300 Pro 16TB 3.5"" HDD 7200RPM SATA",3e942f64-5f66-4dbd-b7b2-9a1116ded382,hdd_0249,,N300,HDD,16000GB
+,14000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Ultrastar 14TB DC HC530 7200 RPM SATA 6.0Gb/s 3.5"" Data Center Internal Hard Disk Drive - 0F31284",3edb7b02-2652-4b4e-9e0b-ad635991ba50,hdd_0250,0,Ultrastar DC HC530,HDD,
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Plus 6TB 3.5"" HDD SATA",3f889eb4-2545-4cf4-bf85-1799af4f425e,hdd_0251,,Red,HDD,6000GB
+,20000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos X20 20TB 3.5"" HDD 7200RPM SATA",3fe93593-afd6-4452-861a-626b0aa0fcff,hdd_0252,,Exos,HDD,20000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba P300 6TB HDD 3.5"" 5400RPM SATA",400641b7-9996-49e6-b0c9-9837cf7c2839,hdd_0253,,P300,HDD,6000GB
+,300,hdd,"2.5""",SAS 12.0 Gb/s,,Seagate,"Seagate Enterprise Performance 300GB 2.5"" HDD 15000 RPM SAS 12.0 Gb/s",403a4c86-8de7-48b6-9209-18c92cb32af8,hdd_0254,,Enterprise,HDD,300GB
+,320,hdd,"3.5""",SATA 3.0 Gb/s,,Samsung,"Samsung Spinpoint F1 DT 320GB 3.5"" HDD 7200RPM SATA",40558578-b77d-4ed7-9c79-81c4d4f7352b,hdd_0255,,Spinpoint,HDD,320GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf Pro 12TB HDD 3.5"" SATA",4059f16b-6b35-471c-9ddd-0de47d9afa72,hdd_0256,,IronWolf,HDD,12000GB
+,2000,hdd,"3.5""",SATA 3.0 Gb/s,,Seagate,"Seagate BarraCuda 2TB 3.5"" HDD 7200RPM SATA 3.0 Gb/s",4064b0cf-1781-41bb-ad88-99e076a88d18,hdd_0257,,BarraCuda,HDD,2000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Barracuda Green 2TB 3.5"" HDD 5900RPM SATA",4118bfcd-4725-44ac-b256-d16fdeba413a,hdd_0258,,Barracuda,HDD,2000GB
+,20000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SkyHawk AI 20TB HDD 7200RPM 3.5"" SATA",417d77e2-671a-4fcf-b755-56e1b320e6b4,hdd_0259,,SkyHawk,HDD,20000GB
+512,20000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos X24 SED 20TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",41dbb778-fb69-44ce-9773-26bb03547d40,hdd_0260,,Exos,HDD,20000GB
+,2000,hdd,"2.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Barracuda Compute 2TB HDD 2.5"" 5400RPM SATA",42059961-4ea1-4ed9-a881-cae063e11955,hdd_0261,,Barracuda,HDD,2000GB
+,320,hdd,"3.5""",PATA 100,,Western Digital,"Western Digital Caviar SE 320GB 3.5"" HDD 7200RPM PATA 100",421d0df0-1ac8-471d-8887-2ac1f6fbea24,hdd_0262,,Caviar,HDD,320GB
+,160,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Barracuda 7200.9 160GB 3.5"" Internal HDD 7200RPM SATA 6.0 Gb/s",42211b63-cb67-4a2a-91db-b399cdd49dd8,hdd_0263,,Barracuda,HDD,160GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Seagate,"Seagate Barracuda Green 1TB HDD 3.5"" 5900 RPM SATA Internal",422696fa-ebbe-4adc-aae5-8bd470453e75,hdd_0264,,Barracuda,HDD,1000GB
+,500,hdd,"2.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Constellation.2 500GB HDD 2.5"" 7200RPM SATA 6.0 Gb/s Internal",42399780-94a4-4b6f-abce-bac269ff8523,hdd_0265,,Constellation.2,HDD,500GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SkyHawk Surveillance 4TB HDD 7200RPM 3.5"" SATA",4265a04d-fb2d-4150-aa84-4053b3f08c89,hdd_0266,,SkyHawk,HDD,4000GB
+,250,hdd,"3.5""",SATA 3.0 Gb/s,,Hitachi,"Hitachi 7K1000.C 250GB HDD 3.5"" 7200RPM SATA 3.0 Gb/s",4293a38a-d0c6-41e8-a22b-01c26c6693de,hdd_0267,,7K1000.C,HDD,250GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate ST4000NM0024 4TB HDD 3.5"" 7200RPM SATA",42d1927f-d4b6-43d0-9727-c4274c3552c4,hdd_0268,,ST4000NM0024,HDD,4000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Constellation ES.3 3TB HDD 3.5"" 7200RPM SATA",430cbf48-e592-409f-8dd2-32ca525cb978,hdd_0269,,Constellation,HDD,3000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos 7E8 1TB HDD 7200RPM 3.5"" SATA",434d5624-debb-4810-9454-c3bd7eb2aa52,hdd_0270,,Exos,HDD,1000GB
+512,30000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf Pro 30TB HDD 3.5"" 7200RPM SATA 6.0 Gb/s",436a1608-1c20-4062-a77a-5050ebf4979c,hdd_0271,,IronWolf,HDD,30000GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba X300 10TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",43ae1dd6-f5ea-47b7-a9df-bd6c89b927b9,hdd_0272,,X300,HDD,10000GB
+512,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba N300 NAS 10TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s Internal",44013c32-0457-4204-8395-9f5ea07402a2,hdd_0273,,N300,HDD,10000GB
+,18000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Ultrastar DC HC550 18TB HDD 3.5"" 7200RPM SATA Internal",441b307f-4ebf-40b3-8d9d-3e12bc0ce699,hdd_0274,,Ultrastar,HDD,18000GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf NAS 12TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",44589671-396a-4f72-9e15-b668b81adcae,hdd_0275,,IronWolf,HDD,12000GB
+,500,hdd,"2.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Blue 500GB HDD 2.5"" SATA",452d837c-2821-43c7-9f5a-63b3f13531e8,hdd_0276,,Blue,HDD,500GB
+,250,hdd,"2.5""",SATA 1.5 Gb/s,,Western Digital,"Western Digital Scorpio Blue 250GB 5400RPM HDD 2.5"" SATA",454765a3-a642-48fa-80aa-2f5f6cfcd9fa,hdd_0277,,Scorpio,HDD,250GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Gold 10 TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s Internal",45516fa9-5380-49c4-bdf8-4ca17bb7fd64,hdd_0278,,Gold,HDD,10000GB
+,160,hdd,"3.5""",SATA 3.0 Gb/s,,Seagate,"Seagate BarraCuda 160GB HDD 3.5"" 7200RPM SATA",4586cb65-7a0f-438a-8693-029e070e83f9,hdd_0279,,BarraCuda,HDD,160GB
+,14000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf Pro NAS 14TB 3.5"" HDD 7200RPM SATA",45d02f68-c4c8-4ee2-9faa-f631a4802ede,hdd_0280,,IronWolf,HDD,14000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Green 6TB 3.5"" HDD 5400RPM SATA 6.0 Gb/s Internal",46551aac-a508-4067-a64d-a9533b42452f,hdd_0281,,Green,HDD,6000GB
+,5000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Green 5TB HDD 3.5"" 5400RPM SATA 64 Cache",46792128-8aae-41a4-a2da-9b2e094519a2,hdd_0282,,Green,HDD,5000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Barracuda Compute 8TB HDD 3.5"" 5400RPM SATA",467fc606-9d9c-4c1b-bc72-d84466259a40,hdd_0283,,Barracuda,HDD,8000GB
+,320,hdd,"3.5""",SATA 3.0 Gb/s,,Seagate,"Seagate Pipeline HD 320GB HDD 5900RPM 3.5"" SATA",46936f16-1ae4-40c9-a44d-8b107befb199,hdd_0284,,Pipeline,HDD,320GB
+,1000,hdd,"2.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital WDBMYH0010BNC-NRSN 1TB 5400RPM HDD 2.5"" SATA",469dfedb-059d-4e78-8c49-06bd106b96b3,hdd_0285,,WDBMYH0010BNC-NRSN,HDD,1000GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda Pro 10TB 3.5"" HDD 7200RPM SATA Internal",46b5a2f9-0d4b-486e-9431-4ed01d7564e2,hdd_0286,,BarraCuda,HDD,10000GB
+,750,hdd,"3.5""",SATA 3.0 Gb/s,,Samsung,"Samsung Spinpoint F1 DT 750GB 3.5"" HDD 7200RPM SATA",46eaf0ac-f074-4ea1-9201-1eac8bd6c196,hdd_0287,,Spinpoint,HDD,750GB
+,160,hdd,"2.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Scorpio Blue 160GB HDD 2.5"" SATA",47074604-1cd1-42d7-953a-ca61670da71d,hdd_0288,,Scorpio,HDD,160GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Ultrastar 7K6000 4TB HDD 3.5"" SATA",4730712e-49b2-4b5d-b2cb-e0694d3e318c,hdd_0289,,Ultrastar,HDD,4000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SkyHawk 4TB HDD 3.5"" 5900RPM SATA Internal",47e8520f-6372-4a7a-9821-08b660d1b330,hdd_0290,,SkyHawk,HDD,4000GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,Ultrastar DC HC330 - 10TB,48379abb-df4a-40d3-9f0d-50b172e5989b,hdd_0291,2020,Ultrastar DC HC330,HDD,10TB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MG08ADA400E 4TB 3.5"" HDD 7200RPM SATA",48440fa9-91fd-4743-bbd8-459477bc0053,hdd_0292,,MG08ADA400E,HDD,4000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Constellation ES.3 4TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",48c9e7e3-ef1b-4f58-a03d-45d3ca39a19c,hdd_0293,,Constellation,HDD,4000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate NAS 8TB HDD 7200RPM 3.5"" SATA",490141a9-04a8-4730-bcc3-2472cccb3b2d,hdd_0294,,NAS,HDD,8000GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos X14 12TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s",491135df-a6eb-4f05-9067-c12c94024945,hdd_0295,,Exos,HDD,12000GB
+,24000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Purple Pro 24 TB HDD 3.5"" 7200RPM SATA",4917da35-fda2-4453-a0e6-1d24f0d4d1af,hdd_0296,,Purple,HDD,24000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Plus 4 TB HDD 5400 RPM 3.5"" SATA 6.0 Gb/s",492f0bef-4842-4069-8d9d-444bda65ea66,hdd_0297,,Red,HDD,4000GB
+,16000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MG08 16TB HDD 3.5"" 7200RPM SATA",4988a11a-e021-49cf-bf99-4567b76bc7aa,hdd_0298,,MG08,HDD,16000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Black 6TB 3.5"" HDD 7200RPM SATA",499e291c-d2d2-4bab-8383-19c658c451b5,hdd_0299,,Black,HDD,6000GB
+,2000,hdd,"3.5""",SATA 3.0 Gb/s,,Samsung,"Samsung Spinpoint F3 EG 2TB HDD 3.5"" SATA",4a26e9e8-2531-4a35-a50c-2d5210bc010f,hdd_0300,,Spinpoint,HDD,2000GB
+,500,hdd,"2.5""",SATA 3.0 Gb/s,,Hitachi,"Hitachi HTS547550A9E384 500GB HDD 5400RPM 2.5"" SATA 3.0 Gb/s",4a907a39-c1ee-45d4-9320-81ae2db12d1f,hdd_0301,,HTS547550A9E384,HDD,500GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Ultrastar 6TB 3.5"" HDD 7200RPM SATA",4a95c6b0-fe1b-4ba1-ad1d-15c17a0b8471,hdd_0302,,Ultrastar,HDD,6000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MG08ADA600E 6TB HDD 3.5"" 7200RPM SATA 6.0 Gb/s Internal",4ad164b8-82d2-4d94-b7b9-ffb832528bb7,hdd_0303,,MG08ADA600E,HDD,6000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Pro 4TB HDD 3.5"" 7200RPM SATA 6.0 Gb/s",4af15866-0d95-46bd-8fcf-ae1fda04c676,hdd_0304,,Red,HDD,4000GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Seagate,"Seagate BarraCuda 1.5TB HDD 3.5"" 7200RPM SATA",4b38cb1c-2fa9-4924-9983-11c3f18b4450,hdd_0305,,BarraCuda,HDD,1000GB
+,640,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Caviar Black 640GB HDD 7200RPM 3.5"" SATA 3.0 Gb/s",4b9f0179-3efa-4a15-9ff4-ba7bb1edcbb4,hdd_0306,,Caviar,HDD,640GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Black 3TB HDD 3.5"" 7200RPM SATA",4bbd63e1-2e8d-4e4b-8cb3-2c9662e18ae7,hdd_0307,,Black,HDD,3000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Gold 4 TB HDD 7200RPM 3.5"" SATA Internal",4c427ee9-a6c7-498e-8a92-132ed86cc4cb,hdd_0308,,Gold,HDD,4000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Constellation ES.3 1TB HDD 7200RPM 3.5"" SATA",4c6fd74c-2ba6-4e80-a7a4-beadd8a8e80a,hdd_0309,,Constellation,HDD,1000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SV35.5 3TB HDD 3.5"" 7200RPM SATA",4c712977-238f-4fcb-8dec-c412e6695608,hdd_0310,,SV35.5,HDD,3000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Deskstar 7K1000.C 1TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",4cd55637-2631-4dcb-b1db-6542a52ae5cb,hdd_0311,,Deskstar,HDD,1000GB
+,2000,hdd,"2.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba L200 2TB 2.5"" HDD 5400RPM SATA Internal",4dccb282-2d07-4f7a-9a4a-3d28d9af468c,hdd_0312,,L200,HDD,2000GB
+,500,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital AV-GP 500GB HDD 3.5"" 5400 RPM SATA Internal",4dce04ad-ae08-433f-96df-7ff9e0d10b2b,hdd_0313,,AV-GP,HDD,500GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Samsung,"Samsung Spinpoint 1TB HDD 3.5"" SATA",4e0f86cd-4380-464b-ade6-e8737b71426b,hdd_0314,,Spinpoint,HDD,1000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital AV-GP 1TB 3.5"" Internal HDD 7200RPM SATA 6.0 Gb/s",4e976d99-8ba9-4389-8c7e-b9362d310b5f,hdd_0315,,AV-GP,HDD,1000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf Pro 4TB HDD 3.5"" 7200RPM SATA 6.0 Gb/s",4ef34900-c043-42e6-8c11-28b8493a771c,hdd_0316,,IronWolf,HDD,4000GB
+,2000,hdd,"2.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Momentus 2TB 2.5"" HDD SATA",4efd7e60-3f69-4255-8e44-f80f89ef274a,hdd_0317,,Momentus,HDD,2000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Gold 6 TB HDD 7200 RPM 3.5"" SATA 6.0 Gb/s Internal",4f3cbf79-8b46-43a9-b6c7-3c2bc31839c3,hdd_0318,,Gold,HDD,6000GB
+,320,hdd,"2.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Black 320GB 2.5"" HDD SATA",4fbacdf7-26b0-4c62-9676-60afe5cd1e8b,hdd_0319,,Black,HDD,320GB
+,14000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos X18 14TB HDD 3.5"" SATA",4fca4dfd-3657-4b09-884a-f2be3aac9e75,hdd_0320,,Exos,HDD,14000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Plus 2TB 3.5"" HDD 5400RPM SATA",50592c69-5cac-4066-acd6-93e2dd4d83c0,hdd_0321,,Red,HDD,2000GB
+,2000,hdd,"2.5""",SATA 6.0 Gb/s,,Seagate,"Seagate ST2000NX0253 2TB HDD 7200RPM 2.5"" SATA",5097468b-1d7f-40f6-807a-1960850338e3,hdd_0322,,ST2000NX0253,HDD,2000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SkyHawk Surveillance 2TB Internal HDD 3.5"" SATA",50c326ab-5d65-4f7e-8a58-be6ab813749e,hdd_0323,,SkyHawk,HDD,2000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Surveillance 1TB HDD 3.5"" 5900RPM SATA",50d4a37a-071c-4baa-9c27-916d54a2e22d,hdd_0324,,Surveillance,HDD,1000GB
+,500,hdd,"3.5""",SATA 3.0 Gb/s,,Hitachi,"Hitachi A7K2000 500GB HDD 3.5"" 7200RPM SATA 3.0 Gb/s",51015b51-aa72-4981-93b9-5746d54a26a4,hdd_0325,,A7K2000,HDD,500GB
+,500,hdd,"2.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Scorpio Blue 500GB HDD 2.5"" SATA",51242136-1d23-41ef-9517-ab04b8db1b12,hdd_0326,,Scorpio,HDD,500GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Enterprise Capacity 4TB HDD 3.5"" SATA",512f2dd4-7f0b-496e-bfd6-c791aba437be,hdd_0327,,Enterprise,HDD,4000GB
+,2000,hdd,"3.5""",SATA 3.0 Gb/s,,Hitachi,"Hitachi Ultrastar 2TB HDD 3.5"" SATA",51e41333-355e-42d3-8bb4-271b75dc6d0f,hdd_0328,,Ultrastar,HDD,2000GB
+,16000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba X300 Pro 16TB Internal HDD 7200RPM 3.5"" SATA 6.0 Gb/s",51e8520f-6afe-4c4b-8546-d672970189c2,hdd_0329,,X300,HDD,16000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Caviar Blue 1TB HDD 3.5"" 7200RPM SATA 6.0 Gb/s",5258e5bd-f31d-4b75-a438-8ea68dd381e8,hdd_0330,,Caviar,HDD,1000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Purple 8TB HDD 3.5"" SATA",5282778a-9dce-4410-b105-1a8f0444a64a,hdd_0331,,Purple,HDD,8000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Surveillance 3TB HDD 3.5"" 5900 RPM SATA Internal",5286e692-d95e-47c7-b901-f7936efbd46a,hdd_0332,,Surveillance,HDD,3000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba V300 2TB HDD 3.5"" 5700RPM SATA 6.0 Gb/s",52e52933-0eea-4d93-930e-dd8a5d5b267d,hdd_0333,,V300,HDD,2000GB
+256,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SkyHawk Surveillance +Rescue 2TB HDD 5400 RPM 3.5"" SATA 6.0 Gb/s",52f0ed6f-7caa-4fef-9e83-5329e4311995,hdd_0334,,SkyHawk,HDD,2000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf NAS 2TB HDD 3.5"" SATA",53ce5186-a0c4-410e-b17d-0b99e9b25240,hdd_0335,,IronWolf,HDD,2000GB
+,40,hdd,"2.5""",SATA 3.0 Gb/s,,Seagate,"Seagate EE25.2 40GB 2.5"" HDD 5400RPM SATA 3.0 Gb/s Internal",542cd788-80ea-4fdd-9f22-bd9bd0337c0f,hdd_0336,,EE25.2,HDD,40GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf NAS 6TB HDD 3.5"" 7200RPM SATA 6.0 Gb/s Internal",546be831-d22c-4ebe-8876-d86470094f1a,hdd_0337,,IronWolf,HDD,6000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Blue 4TB HDD 5400 RPM 3.5"" SATA Internal",54a22761-5897-49bc-8955-77735f741c51,hdd_0338,,Blue,HDD,4000GB
+128,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MG04ACA600E 6TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s",55032c0a-2425-4f88-9a9f-1647520fe9b8,hdd_0339,,MG04ACA600E,HDD,6000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Caviar Green 1.5TB HDD 7200RPM 3.5"" SATA",561367b1-a79e-4fea-8390-5af8d9681576,hdd_0340,,Caviar,HDD,1000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate ST1000DM004 1TB 3.5"" HDD 7200RPM SATA",561c93e3-8ba3-48f6-a38e-196ecb774959,hdd_0341,,ST1000DM004,HDD,1000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Enterprise Capacity 3TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",562c74cd-64a5-4367-8b61-e572fe238773,hdd_0342,,Enterprise,HDD,3000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MD04ACA400 4TB HDD 3.5"" 7200RPM SATA 6.0 Gb/s",569a9d4d-30d6-4313-a00d-1cd959dbd754,hdd_0343,,MD04ACA400,HDD,4000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate ST6000NM0024 6TB HDD 3.5"" SATA",56a12946-5258-4046-bcf5-8cc352b77eec,hdd_0344,,ST6000NM0024,HDD,6000GB
+,150,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Raptor 150GB HDD 3.5"" 10000RPM SATA",574bed0f-9efd-487f-8dc5-50839cfc6607,hdd_0345,,Raptor,HDD,150GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red 2TB 3.5"" HDD 5400 RPM SATA 6.0 Gb/s",57bc404d-948c-4960-b575-acd093e0a20b,hdd_0346,,Red,HDD,2000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Surveillance 1TB HDD 3.5"" 5400RPM SATA",57e8470d-ca93-4a00-8a13-50cadfc72431,hdd_0347,,Surveillance,HDD,1000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba S300 4TB HDD 3.5"" 5400RPM SATA",57f257c1-fe5a-4813-97d6-d594763cfb9a,hdd_0348,,S300,HDD,4000GB
+,250,hdd,"2.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Scorpio Blue 250GB HDD 5400RPM 2.5"" SATA",58906aa6-dd46-44e5-8adb-7e9d3aaf86b3,hdd_0349,,Scorpio,HDD,250GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda 2TB 3.5"" HDD 7200RPM SATA",58f3c59e-98b3-4346-980a-1c7fcd5b4740,hdd_0350,,BarraCuda,HDD,2000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Ultrastar 7K4000 4TB HDD 3.5"" 7200RPM SATA",59163698-2fb7-4382-8cb2-37847ca0ffbc,hdd_0351,,Ultrastar,HDD,4000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi 7K3000 2TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s",596b283a-1f51-455e-8290-fd1466f5a04b,hdd_0352,,7K3000,HDD,2000GB
+,1000,hdd,"2.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Momentus 1TB HDD 5400RPM 2.5"" SATA",5984eaf5-3460-4e7b-a620-304d3911caab,hdd_0353,,Momentus,HDD,1000GB
+,16000,hdd,"3.5""",SAS 12.0 Gb/s,,Seagate,"Seagate Exos X24 16TB HDD 3.5"" SAS",5abb633f-0911-4109-8763-95170544ef08,hdd_0354,,Exos,HDD,16000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red 3 TB 3.5"" HDD 5400 RPM SATA 6.0 Gb/s Internal",5aedf047-01df-498f-95e5-0eb2a6f3179a,hdd_0355,,Red,HDD,3000GB
+,16000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Ultrastar DC HC550 16TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s",5b0e1eb1-c837-4639-a1c5-2fb63c479b15,hdd_0356,,Ultrastar,HDD,16000GB
+,22000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Gold 22 TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s Internal",5b225dc0-0871-4aa9-aaee-90e3936089ad,hdd_0357,,Gold,HDD,22000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate EXOS Enterprise 4TB 3.5"" HDD 7200RPM SATA",5bd5002b-f2c6-4e9d-bea3-87e03cea9fb5,hdd_0358,,EXOS,HDD,4000GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Hitachi,"Hitachi A7K1000-1000 1TB HDD 3.5"" 7200RPM SATA 3.0 Gb/s",5c62d4a4-2764-4b2b-b97a-606a2135ef84,hdd_0359,,A7K1000-1000,HDD,1000GB
+,14000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate EXOS Enterprise 14TB HDD 3.5"" 7200RPM SATA",5cb17f98-bf51-469b-9cf0-77cc45c3e104,hdd_0360,,EXOS,HDD,14000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Barracuda Compute 3TB 3.5"" HDD 5400RPM SATA",5dbd1329-9d43-4edb-895b-d732cea98a1a,hdd_0361,,Barracuda,HDD,3000GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SkyHawk AI 10TB HDD 3.5"" 7200RPM SATA",5dd8a292-9395-4ee2-af43-b2ab0b6a9ae4,hdd_0362,,SkyHawk,HDD,10000GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MG07ACA12TE 12TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s",5dd9b6f3-1aec-440d-99c4-0e25f85b8d8c,hdd_0363,,MG07ACA12TE,HDD,12000GB
+,250,hdd,"3.5""",SATA 1.5 Gb/s,,Maxtor,"Maxtor 7Y250M0 250GB Internal HDD 7200RPM 3.5"" SATA 1.5 Gb/s",5e7ebd08-fe45-4bb0-8606-b843ca3888b0,hdd_0364,,7Y250M0,HDD,250GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos X16 10TB HDD 7200RPM 3.5"" SATA",5f05e136-61d0-46df-87cc-b669fc52d2e8,hdd_0365,,Exos,HDD,10000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Plus 2TB 3.5"" HDD 5400RPM SATA",5f32b0bb-56cd-47d8-8fd7-5d0e1a397ba5,hdd_0366,,Red,HDD,2000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red 4TB Internal HDD 5400 RPM 3.5"" SATA 6.0 Gb/s",5f4a73b1-1397-4d18-a08b-0a9032cdef9c,hdd_0367,,Red,HDD,4000GB
+,500,hdd,"3.5""",SATA 3.0 Gb/s,,Samsung,"Samsung Spinpoint F1 RAID 500GB HDD 7200RPM 3.5"" SATA",5f546141-3d31-4947-85c4-f621816c3f58,hdd_0368,,Spinpoint,HDD,500GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital AV-GP 1.5TB HDD 5400RPM 3.5"" SATA",5fac7f77-0773-4474-9704-ec724cd081c4,hdd_0369,,AV-GP,HDD,1000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Purple 6TB 3.5"" HDD 5400RPM SATA",5fd2b694-83f4-4ef3-acf4-bc2282344470,hdd_0370,,Purple,HDD,6000GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Hitachi,"Hitachi A7K2000 1TB 3.5"" HDD 7200RPM SATA",610eef8c-3ce0-4949-ae01-7f19bd0204ab,hdd_0371,,A7K2000,HDD,1000GB
+,500,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital WD1001FALS 500GB HDD 3.5"" 7200RPM SATA",623f4f41-a08d-4c3e-bb7a-d57df0958009,hdd_0372,,WD1001FALS,HDD,500GB
+,5000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Deskstar NAS 5TB HDD 3.5"" 7200RPM SATA",624e91b6-8711-4664-9d44-72486910044f,hdd_0373,,Deskstar,HDD,5000GB
+,3000,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Blue 3TB 3.5"" HDD 5400RPM SATA",627640cb-6ceb-4e18-9b38-802ec2122a50,hdd_0374,,Blue,HDD,3000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate ST2000DM002 2TB HDD 3.5"" 7200RPM SATA 6.0 Gb/s",63229545-a342-4b45-a3fe-f365a2d7a10b,hdd_0375,,ST2000DM002,HDD,2000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Surveillance 8TB HDD 7200RPM 3.5"" SATA Internal",6430ba94-2329-4dcd-8536-91ee0413a451,hdd_0376,,Surveillance,HDD,8000GB
+,1000,hdd,"2.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Travelstar 5K1000 1TB HDD 5400RPM 2.5"" SATA",64463013-3a21-454c-9367-dd0acfadc53c,hdd_0377,,Travelstar,HDD,1000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MG04ACA400N 4TB HDD 3.5"" SATA",6453259a-0a35-4ab8-8a6e-a13ef4d7b007,hdd_0378,,MG04ACA400N,HDD,4000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SkyHawk Surveillance +Rescue 8TB HDD 3.5"" SATA",647decf7-dabe-453f-9ed9-1a772d33daab,hdd_0379,,SkyHawk,HDD,8000GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MG09 512e 12 TB HDD 7200 RPM 3.5"" SATA 6.0 Gb/s",64dd2585-ca4a-4bb9-ac7c-f49487061db1,hdd_0380,,MG09,HDD,12000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Deskstar 7K3000 3TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s Internal",64fc8c93-adac-4396-a826-e502a4338f41,hdd_0381,,Deskstar,HDD,3000GB
+,24000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos X24 24 TB 3.5"" Internal HDD 7200RPM SATA 6.0 Gb/s",65246e10-9a61-49e3-ba86-da6a65148cb0,hdd_0382,,Exos,HDD,24000GB
+,8000,hdd,"3.5""",SAS 6.0 Gb/s,,Seagate,"Seagate Enterprise Capacity 8TB HDD 3.5"" 7200RPM SAS",65291077-59e0-44e0-8529-e9cf37b27f0e,hdd_0383,,Enterprise,HDD,8000GB
+,14000,hdd,"3.5""",SATA 6.0 Gb/s,,Water Panther,"Water Panther Arsenal 14TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",6530ddcf-8d36-4f98-87a3-a16cf9fdec45,hdd_0384,,Arsenal,HDD,14000GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Samsung,"Samsung Spinpoint F3 1TB Internal HDD 7200RPM 3.5"" SATA 3.0 Gb/s",658c79c0-224e-4931-b3fc-d98b6ab7c251,hdd_0385,,Spinpoint,HDD,1000GB
+,16000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Pro 16TB HDD 3.5"" SATA",658c8947-8e76-4c9a-8d7c-af06ab24118e,hdd_0386,,Red,HDD,16000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital WDBSLA0010HNC-NRSN 1 TB Internal HDD 3.5"" 7200RPM SATA 6.0 Gb/s",65d1e98a-7a05-4dfb-bd6b-77066b3eb603,hdd_0387,,WDBSLA0010HNC-NRSN,HDD,1000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda 4TB HDD 5400RPM 3.5"" SATA",65e72630-c17b-4997-95c2-eefcdddf55bd,hdd_0388,,BarraCuda,HDD,4000GB
+,2000,hdd,"3.5""",SAS 6.0 Gb/s,,Toshiba,"Toshiba HDD3A01 2TB HDD 3.5"" 7200RPM SAS 6.0 Gb/s",660a14c3-0183-4105-9702-7d59fd55652d,hdd_0389,,HDD3A01,HDD,2000GB
+,1000,hdd,"2.5""",SATA 3.0 Gb/s,,Samsung,"Samsung Spinpoint M8 1TB HDD 2.5"" 5400RPM SATA",666a2cf9-b1d5-4eb6-a318-b525e72562a9,hdd_0390,,Spinpoint,HDD,1000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Ultrastar 7K3000 2TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s",66cb8bc8-edb5-4010-93b0-2d91909dd64c,hdd_0391,,Ultrastar,HDD,2000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Plus 8TB HDD 3.5"" 5640RPM SATA",66e0f773-9380-45aa-af87-dd46892726a9,hdd_0392,,Red,HDD,8000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Gold 1TB HDD 3.5"" 7200RPM SATA 6.0 Gb/s",66f1ec6c-3e6e-435b-893b-8e244979f84b,hdd_0393,,Gold,HDD,1000GB
+,28000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos M 28TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s Internal",66fbede6-59a8-4e26-80ef-34d14e284c1e,hdd_0394,,Exos,HDD,28000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf NAS 6TB HDD 3.5"" 5400RPM SATA",672fe93e-b37c-40d7-889c-78db9acee108,hdd_0395,,IronWolf,HDD,6000GB
+,150,hdd,"2.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital VelociRaptor 150GB HDD 2.5"" SATA",67376a68-d04a-41bc-bec7-5c03ca905b7c,hdd_0396,,VelociRaptor,HDD,150GB
+,900,hdd,"2.5""",SAS 6.0 Gb/s,,Toshiba,"Toshiba AL13SE 900GB HDD 10500RPM 2.5"" SAS 6.0 Gb/s",67c7f135-69f5-4f16-b583-52c0a4f8d0ee,hdd_0397,,AL13SE,HDD,900GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba N300 Pro 6TB HDD 3.5"" 7200RPM SATA",680a7466-8668-4f2a-9dea-7ffb8e3033ec,hdd_0398,,N300,HDD,6000GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Toshiba,"Toshiba MK1002TSKB 1TB HDD 3.5"" SATA",68bb7207-32e3-423b-8ace-6e265ec30f1f,hdd_0399,,MK1002TSKB,HDD,1000GB
+,600,hdd,"3.5""",SAS 6.0 Gb/s,,Seagate,"Seagate Cheetah 15K.7 600GB HDD 3.5"" SAS 6.0 Gb/s",692d7aee-d48d-4341-a1ef-3a9d06d320da,hdd_0400,,Cheetah,HDD,600GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Plus 10TB HDD 7200RPM 3.5"" SATA",69570bba-b894-4f04-abd6-e264fdecd3a9,hdd_0401,,Red,HDD,10000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Purple 4TB 3.5"" HDD 5400 RPM SATA",69670f8a-d054-4dcb-819e-4fb72d4c7d28,hdd_0402,,Purple,HDD,4000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MG03ACA 1TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",6a230b63-e97f-4f07-99b0-c2c63e244457,hdd_0403,,MG03ACA,HDD,1000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Barracuda Green 1.5TB HDD 3.5"" SATA",6a47b1e0-6f01-4516-ae54-1d2eb44880aa,hdd_0404,,Barracuda,HDD,1000GB
+,320,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Caviar Blue 320GB HDD 7200RPM 3.5"" SATA",6a5dec1c-17fe-4af9-9215-ff95b554682b,hdd_0405,,Caviar,HDD,320GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba N300 12TB HDD 3.5"" 7200RPM SATA",6a6dcc47-70f2-48e7-a8e1-798ad56ccc68,hdd_0406,,N300,HDD,12000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda Pro 8TB HDD 3.5"" 7200RPM SATA",6a928585-f595-41fc-9703-62a4cdabfea9,hdd_0407,,BarraCuda,HDD,8000GB
+,14000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba X300 14TB 3.5"" HDD 7200RPM SATA",6aaabc3e-e2e4-4156-9e11-a3df90abe28a,hdd_0408,,X300,HDD,14000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate ST3000VN000 3TB HDD 3.5"" SATA",6ac3e5c2-9de9-468b-a0a4-9cf69c730e30,hdd_0409,,ST3000VN000,HDD,3000GB
+,18000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos 18TB HDD 3.5"" 7200RPM SATA",6ac4508f-f9f5-442f-a1c6-c6411fd95e09,hdd_0410,,Exos,HDD,18000GB
+,500,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Caviar Green 500GB HDD 5400RPM 3.5"" SATA 6.0 Gb/s",6bcd4521-86cf-41f6-80ee-4a437e297442,hdd_0411,,Caviar,HDD,500GB
+,12,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MD07ACA 12GB 3.5"" HDD 7200RPM SATA",6beed498-7218-4731-ba66-d5dd8d80e8a9,hdd_0412,,MD07ACA,HDD,12GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,HP,"HP 628065-B21 3TB HDD 3.5"" 7200RPM SATA",6c131185-f800-4238-9bb6-2f6a67f19ce7,hdd_0413,,628065-B21,HDD,3000GB
+,1000,hdd,"2.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Black 1 TB HDD 2.5"" 7200 RPM SATA Internal",6c32f2cc-853f-4dfc-a902-d990becf9f42,hdd_0414,,Black,HDD,1000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf 1TB HDD 5400RPM 3.5"" SATA",6cc6ffb4-881f-4ef6-8975-30c842faa4bd,hdd_0415,,IronWolf,HDD,1000GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Caviar Black 1TB HDD 3.5"" 7200RPM SATA",6cea2768-39cf-4b7e-be7e-1dac83c263d6,hdd_0416,,Caviar,HDD,1000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Blue 2TB HDD 3.5"" SATA",6d474c53-90d4-4d3d-b19d-6339d8008938,hdd_0417,,Blue,HDD,2000GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Pro 12TB HDD 3.5"" SATA",6da2a6af-04a6-4917-9567-245373af0fb9,hdd_0418,,Red,HDD,12000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi 0B36040 4TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",6dd0af31-deb3-4af5-9f94-a234c4426f95,hdd_0419,,0B36040,HDD,4000GB
+,3000,hdd,"2.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda 3TB HDD 2.5"" SATA",6ea8150f-5b5e-411f-a498-95e466197d5a,hdd_0420,,BarraCuda,HDD,3000GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos X14 12TB Internal HDD 3.5"" 7200RPM SATA 6.0 Gb/s",6ed2cc45-acd4-49c2-81f5-da0a51da467b,hdd_0421,,Exos,HDD,12000GB
+,18000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba N300 Pro 18TB HDD 3.5"" 7200RPM SATA 6.0 Gb/s",6f00492e-a235-4885-8049-508b0843688b,hdd_0422,,N300,HDD,18000GB
+,250,hdd,"2.5""",SATA 3.0 Gb/s,,Toshiba,"Toshiba MK2565GSX 250GB HDD 5400RPM 2.5"" SATA 3.0 Gb/s Internal",6f5686f5-5555-416e-b7dc-cb088cb3a91f,hdd_0423,,MK2565GSX,HDD,250GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf Pro NAS 6TB 3.5"" HDD 7200RPM SATA",6f7eaa50-c91f-4a3e-a174-2117b3fa0869,hdd_0424,,IronWolf,HDD,6000GB
+,2000,hdd,"2.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda 2TB HDD 2.5"" 5400RPM SATA Internal",6fa1fe39-e9bb-4782-8360-b0867a6ea23c,hdd_0425,,BarraCuda,HDD,2000GB
+,750,hdd,"2.5""",SATA 3.0 Gb/s,,Toshiba,"Toshiba MQ01ABD075 750GB HDD 2.5"" 5400RPM SATA 3.0 Gb/s Internal",703d9f83-63b7-46a0-9aae-3194016c0949,hdd_0426,,MQ01ABD075,HDD,750GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Caviar Green 3TB Internal HDD 5400RPM 3.5"" SATA 6.0 Gb/s",7068b721-c0e8-475d-8af0-0a60f8e47765,hdd_0427,,Caviar,HDD,3000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba P300 3TB HDD 3.5"" 7200RPM SATA 6.0 Gb/s",70d02ff4-6c97-4d75-94d3-b4a6f486c5da,hdd_0428,,P300,HDD,3000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Constellation CS 3TB HDD 7200RPM 3.5"" SATA",70d07679-8f8f-4b12-a4a5-a134215e80a5,hdd_0429,,Constellation,HDD,3000GB
+,750,hdd,"2.5""",SATA 3.0 Gb/s,,Hitachi,"Hitachi Travelstar 7K750 750 GB 2.5"" HDD 7200 RPM SATA 3.0 Gb/s Internal",70fff4fb-3689-4695-9d19-6af46db76ffd,hdd_0430,,Travelstar,HDD,750GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Ultrastar He8 8TB HDD 7200RPM 3.5"" SATA",71505629-a04e-445f-aaba-344eb3060e75,hdd_0431,,Ultrastar,HDD,8000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Purple 8TB HDD 3.5"" 5640RPM SATA",717c802b-5610-4e93-98ff-d505a90c9ace,hdd_0432,,Purple,HDD,8000GB
+,20000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos X24 20TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s Internal",7198a679-eade-42a8-a44a-d1fae0c2b086,hdd_0433,,Exos,HDD,20000GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Enterprise Capacity 10 TB 3.5"" 7200 RPM Internal",71a2354b-6ca5-471e-b753-c1c2a6407f3b,hdd_0434,,Enterprise,HDD,10000GB
+,1000,hdd,"2.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Black 1TB HDD 2.5"" 7200RPM SATA Internal",71a96e05-6968-4893-b4d4-b1fc9b7d9df7,hdd_0435,,Black,HDD,1000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SkyHawk 6TB Internal HDD 3.5"" 5900 RPM SATA",7222722d-65b4-4058-9e39-e5b585e21dd2,hdd_0436,,SkyHawk,HDD,6000GB
+,18000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos X18 18TB HDD 3.5"" SATA",725fd827-9103-413e-a6fe-77117853169f,hdd_0437,,Exos,HDD,18000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda Pro 6TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",72b7e99b-705d-4ba6-a7e4-1439559c7fb6,hdd_0438,,BarraCuda,HDD,6000GB
+,14,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MD07ACA 14TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",72c60292-6ee0-4b5d-8c94-d77993ff8da1,hdd_0439,,MD07ACA,HDD,14GB
+,160,hdd,"3.5""",PATA 100,,Seagate,"Seagate BarraCuda 160GB HDD 3.5"" 7200RPM PATA 100",72d4fc17-0330-4fec-adfa-0eee7e0f8a09,hdd_0440,,BarraCuda,HDD,160GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Enterprise 1TB HDD 3.5"" 7200RPM SATA",740b2419-9225-4147-a477-aac7c852e11b,hdd_0441,,Enterprise,HDD,1000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf NAS 6TB HDD 5400RPM 3.5"" SATA",743487d9-1b75-4466-a33f-41d023a8ddd1,hdd_0442,,IronWolf,HDD,6000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Constellation ES.2 3 TB HDD 3.5"" 7200RPM SATA 6.0 Gb/s",745b8441-8ae0-4ced-a269-0186175f1eac,hdd_0443,,Constellation,HDD,3000GB
+,1000,hdd,"2.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital VelociRaptor 1TB 2.5"" HDD 10000RPM SATA",74a30788-ba98-48ce-b385-d42b9436f5c7,hdd_0444,,VelociRaptor,HDD,1000GB
+,40,hdd,"2.5""",SATA 3.0 Gb/s,,Seagate,"Seagate EE25.2 40GB HDD 5400RPM 2.5"" SATA",74bbb306-ce02-4837-a537-bec1589b103b,hdd_0445,,EE25.2,HDD,40GB
+,2000,hdd,"2.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Green 2TB HDD 2.5"" SATA",74da8e29-290b-48bc-84c5-70292d37ef86,hdd_0446,,Green,HDD,2000GB
+,1000,hdd,"2.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba HDKBB96 1TB 2.5"" HDD 5400RPM SATA 6.0 Gb/s Internal",74e4f963-0233-48ec-8960-b59a39f663b8,hdd_0447,,HDKBB96,HDD,1000GB
+,1000,hdd,"2.5""",SATA 6.0 Gb/s,,Seagate,"Seagate ST1000LM035 1TB HDD 2.5"" SATA",74f07c4a-aec8-4e94-a6f5-e0c13069a307,hdd_0448,,ST1000LM035,HDD,1000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital AV-GP 1TB HDD 3.5"" SATA",75417e09-9056-4a49-b50d-d4f313d89fdc,hdd_0449,,AV-GP,HDD,1000GB
+,3000,hdd,"3.5""",SATA 3.0 Gb/s,,Toshiba,"Toshiba HDKPC08 3TB HDD 7200RPM 3.5"" SATA 3.0 Gb/s Internal",757c0cf0-5017-4afc-a505-9415ed384c36,hdd_0450,,HDKPC08,HDD,3000GB
+,22000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Ultrastar DC HC560 22TB HDD 7200RPM 3.5"" SATA",76498642-6d7c-42b1-8ef6-4d45cfc536fc,hdd_0451,,Ultrastar,HDD,22000GB
+,500,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate ST500VM000 500GB HDD 3.5"" 5900RPM SATA 6.0 Gb/s Internal",7715935c-53f5-48d1-a655-f75d9eecff86,hdd_0452,,ST500VM000,HDD,500GB
+,2000,hdd,"2.5""",SAS 12.0 Gb/s,,Seagate,"Seagate Enterprise Performance 2.4 TB HDD 10000 RPM 2.5"" SAS 12.0 Gb/s",77c744ed-94e7-4207-88cd-0940e4379966,hdd_0453,,Enterprise,HDD,2000GB
+,2000,hdd,"3.5""",SATA 3.0 Gb/s,,Hitachi,"Hitachi Ultrastar 2TB 3.5"" HDD 7200RPM SATA 3.0 Gb/s",788dc255-0c12-4bb3-b106-d935c8d2c203,hdd_0454,,Ultrastar,HDD,2000GB
+,750,hdd,"2.5""",SATA 3.0 Gb/s,,Toshiba,"Toshiba HDD2K12 750GB HDD 2.5"" 5400RPM SATA 3.0 Gb/s Internal",78c962be-4766-42ee-90e8-6cf11faf7063,hdd_0455,,HDD2K12,HDD,750GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba PH3300U-1I72 3TB HDD 3.5"" 7200RPM SATA",78da8fe0-47cb-458f-8c24-b38f66455696,hdd_0456,,PH3300U-1I72,HDD,3000GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Enterprise Capacity 10 TB 3.5"" 7200 RPM Internal",78db9c20-81df-49ed-bc75-5ad0819c68ba,hdd_0457,,Enterprise,HDD,10000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba S300 6TB HDD 3.5"" 5400RPM SATA",79250769-27b6-4175-ba35-f594dbedeaf3,hdd_0458,,S300,HDD,6000GB
+512,16000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba N300 16TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",793fe910-3b62-488c-ba90-7b70bd9a40ef,hdd_0459,,N300,HDD,16000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Ultrastar He10 8TB Internal HDD 7200RPM 3.5""",7998d0a2-095b-4fbf-bbd7-c0694c71153a,hdd_0460,,Ultrastar,HDD,8000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate EXOS Enterprise 6TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",7a017ed4-6632-42c9-bf5b-61f30ad5ad8e,hdd_0461,,EXOS,HDD,6000GB
+,500,hdd,"3.5""",SATA 3.0 Gb/s,,Samsung,"Samsung Spinpoint F1 DT 500GB 3.5"" HDD 7200RPM SATA 3.0 Gb/s",7a9253a0-c789-4dae-9517-2b5a26017c8e,hdd_0462,,Spinpoint,HDD,500GB
+,2000,hdd,"2.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MQ04ABD200 2TB HDD 2.5"" 5400RPM SATA",7a9956d5-e761-413a-a48b-3ef399f9afc4,hdd_0463,,MQ04ABD200,HDD,2000GB
+,320,hdd,"3.5""",SATA 3.0 Gb/s,,Seagate,"Seagate BarraCuda 320GB 3.5"" HDD 7200RPM SATA",7ab42abb-17c9-468c-8515-debc20f39037,hdd_0464,,BarraCuda,HDD,320GB
+,320,hdd,"2.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital WD3200BPVT/BVVT/BEVT 320GB HDD 2.5"" SATA Internal",7ae75a38-9971-4857-ae03-46e690d78fd8,hdd_0465,,WD3200BPVT/BVVT/BEVT,HDD,320GB
+,500,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Blue 500GB HDD 5400RPM 3.5"" SATA 6.0 Gb/s Internal",7ae86971-3bbe-4275-82e3-c71c6b07fd3a,hdd_0466,,Blue,HDD,500GB
+,500,hdd,"2.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Black 500GB 2.5"" HDD SATA",7b080b7b-4e04-472e-adc3-2b1121f5f0bc,hdd_0467,,Black,HDD,500GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba DT01ACA200 2TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s Internal",7b235171-b917-4a26-b8c5-4dce2ce11829,hdd_0468,,DT01ACA200,HDD,2000GB
+,14000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos X14 14TB 3.5"" HDD 7200RPM SATA",7b2c798b-cb25-43cb-b87e-3e5500e89933,hdd_0469,,Exos,HDD,14000GB
+,1000,hdd,"2.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital AV-25 1TB HDD 2.5"" SATA",7c42fe5d-0c00-4ad2-b835-6b2a650e6c33,hdd_0470,,AV-25,HDD,1000GB
+,500,hdd,"2.5""",SATA 3.0 Gb/s,,Hitachi,"Hitachi 0J11561 500GB HDD 5400RPM 2.5"" SATA 3.0 Gb/s Internal",7c82db12-1e9c-4dc3-a465-51bf09b7cf18,hdd_0471,,0J11561,HDD,500GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Enterprise Capacity 12TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",7d09a060-7bc4-47ee-9c84-bce50db9080a,hdd_0472,,Enterprise,HDD,12000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos 7E8 512e 6TB HDD 3.5"" 7200RPM SATA",7d6ceff3-9deb-4c50-8ddc-38944e3e0147,hdd_0473,,Exos,HDD,6000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf Pro NAS 2TB HDD 3.5"" 7200RPM SATA",7e26fdb3-cadf-4d44-90cd-50ded3dfbeb5,hdd_0474,,IronWolf,HDD,2000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi He6 6TB 3.5"" HDD 7200RPM SATA",7e530b07-f0ab-478e-a75c-77d648f4d418,hdd_0475,,He6,HDD,6000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Black 4TB HDD 7200RPM 3.5"" SATA",7e926549-6d59-4106-ae14-de829c90085a,hdd_0476,,Black,HDD,4000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Enterprise NAS 3TB 3.5"" HDD 7200RPM SATA",7f0583d1-2940-4a33-9292-cd9fd20603ee,hdd_0477,,Enterprise,HDD,3000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba P300 3TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s Internal",7f10727e-8ffe-4d80-85e0-9d1b9a7ac6c5,hdd_0478,,P300,HDD,3000GB
+,250,hdd,"3.5""",SATA 3.0 Gb/s,,Seagate,"Seagate BarraCuda 250GB HDD 3.5"" 7200RPM SATA",7faa6893-3332-4ff4-bc20-4bd851ee0ddf,hdd_0479,,BarraCuda,HDD,250GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba N300 4TB HDD 7200RPM 3.5"" SATA",7ff74710-75d5-418c-bc05-9bc66c730fe5,hdd_0480,,N300,HDD,4000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate ST3000DM002 3TB HDD 3.5"" 7200RPM SATA 6.0 Gb/s",80119f9a-2fa0-425e-92f4-8105080a1fcf,hdd_0481,,ST3000DM002,HDD,3000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba P300 1TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s Internal",801970e2-ab91-4414-9458-86b693a1d9f8,hdd_0482,,P300,HDD,1000GB
+,500,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba P300 500GB 3.5"" HDD 7200RPM SATA",80df0341-b594-403f-b081-f2dcce2296e8,hdd_0483,,P300,HDD,500GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf Pro NAS 10TB HDD 3.5"" 7200RPM SATA",80fd45c7-e002-4772-8e13-a3e77b354da6,hdd_0484,,IronWolf,HDD,10000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Plus 3TB HDD 5400RPM 3.5"" SATA 6.0 Gb/s Internal",816cf411-944a-4059-8975-95d9a9fc74a2,hdd_0485,,Red,HDD,3000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Gold 8TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s Internal",81e987a6-d982-4e41-9862-fb1a166bb5e4,hdd_0486,,Gold,HDD,8000GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba X300 12TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s Internal",81f4391a-327b-4549-8558-354885dc3c52,hdd_0487,,X300,HDD,12000GB
+512,26000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital WD Red Pro 26TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",82738494-c0e4-47cb-8e4f-57dd59303da7,hdd_0488,,WD,HDD,26000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi 0F18335 6TB HDD 7200RPM 3.5"" SATA",82b9b460-a177-4385-87ef-c91235953729,hdd_0489,,0F18335,HDD,6000GB
+,500,hdd,"2.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital VelociRaptor 500GB HDD 2.5"" 10000RPM SATA 6.0 Gb/s Internal",82f01cdf-9543-400a-858d-836cc4d47529,hdd_0490,,VelociRaptor,HDD,500GB
+,160,hdd,"2.5""",SATA 1.5 Gb/s,,Western Digital,"Western Digital Scorpio Blue 160GB HDD 2.5"" 5400RPM SATA 1.5 Gb/s",83e86a25-07f8-478c-8cea-91e5a9bdc063,hdd_0491,,Scorpio,HDD,160GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf 6TB 3.5"" HDD 7200RPM SATA",83f969e2-00fc-4e8a-a429-5c5ec3cd5e4d,hdd_0492,,IronWolf,HDD,6000GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf 12TB HDD 3.5"" SATA 6.0 Gb/s",845a162e-cad4-479f-8984-d535de9e9acc,hdd_0493,,IronWolf,HDD,12000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SkyHawk 3TB 3.5"" HDD 5900RPM SATA",8495591e-a73b-4a43-addb-60aecfda4b93,hdd_0494,,SkyHawk,HDD,3000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda Pro 8TB 3.5"" HDD 7200RPM SATA",84ef85b3-ca31-4f7f-b067-f8d8a0c11543,hdd_0495,,BarraCuda,HDD,8000GB
+512,16000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba N300 NAS 16 TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s",84f941c4-8de1-4fc1-9b3d-cd0d25e6038c,hdd_0496,,N300,HDD,16000GB
+,500,hdd,"3.5""",SATA 3.0 Gb/s,,Samsung,"Samsung Spinpoint F3 500GB HDD 3.5"" SATA",856182e6-cef0-4177-b707-0735858407ca,hdd_0497,,Spinpoint,HDD,500GB
+,500,hdd,"2.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MQ01ABF050M 500GB HDD 2.5"" 5400RPM SATA 6.0 Gb/s",86047d52-1b01-46c4-8d63-70b14af454c5,hdd_0498,,MQ01ABF050M,HDD,500GB
+,18000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MG09 512e 18TB 3.5"" HDD 7200RPM SATA",864fd581-f81f-472c-8bf1-1e2e248d8f33,hdd_0499,,MG09,HDD,18000GB
+,2000,hdd,"3.5""",SATA 3.0 Gb/s,,Hitachi,"Hitachi Deskstar 7K2000 2TB HDD 3.5"" 7200RPM SATA 3.0 Gb/s",87257476-6ae6-4f8d-85c9-affdfbb54d1d,hdd_0500,,Deskstar,HDD,2000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Purple 3TB HDD 3.5"" SATA",873d3bbf-ba2e-4d16-ae19-5c9b5ae9e6ec,hdd_0501,,Purple,HDD,3000GB
+,300,hdd,"3.5""",SAS 3.0 Gb/s,,IBM,"IBM 43X0805 300GB HDD 15000RPM 3.5"" SAS 3.0 Gb/s Internal",8773bfce-5ca3-428d-ad0a-81e0175b9900,hdd_0502,,43X0805,HDD,300GB
+,20000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf Pro 20TB HDD 3.5"" 7200RPM SATA 6.0 Gb/s",87dcf987-8338-46f4-a121-d1c9922ed067,hdd_0503,,IronWolf,HDD,20000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos 7E8 512e 8TB Internal HDD 7200RPM 3.5"" SATA 6.0 Gb/s",882c15c6-131e-4e95-8d79-6f94174910bc,hdd_0504,,Exos,HDD,8000GB
+128,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Deskstar NAS 4TB HDD 7200RPM 3.5"" SATA",885f1ac3-af22-4afc-8cf1-c92714da5bd2,hdd_0505,,Deskstar,HDD,4000GB
+,14000,hdd,"3.5""",SAS 12.0 Gb/s,,Western Digital,"Western Digital Ultrastar DC HC530 14TB Internal HDD 3.5"" 7200RPM SAS 12.0 Gb/s",887f38dd-f8e6-4cd3-9aad-6e01f6754aa1,hdd_0506,,Ultrastar,HDD,14000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba P300 1TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",897601a7-3dbb-43b3-a648-97adaca2567b,hdd_0507,,P300,HDD,1000GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Samsung,"Samsung Spinpoint F3 1TB HDD 3.5"" SATA",8a0b78b0-e67d-48b6-9609-448df3055c23,hdd_0508,,Spinpoint,HDD,1000GB
+,320,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital AV-GP 320GB 3.5"" HDD 5400RPM SATA Internal",8a0d449e-b576-4a54-bb56-860b72496b68,hdd_0509,,AV-GP,HDD,320GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba N300 10TB 3.5"" HDD 7200RPM SATA",8a2663b3-dcdc-44b5-8ce8-14bb40a4fa13,hdd_0510,,N300,HDD,10000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Deskstar NAS 8TB HDD 3.5"" 7200RPM SATA",8a58ca36-35a3-41f6-8976-6583af7d2d81,hdd_0511,,Deskstar,HDD,8000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos 7E8 3TB HDD 7200RPM 3.5"" SATA",8ac4a6d9-ab81-4fe4-9a5f-2223a108fae4,hdd_0512,,Exos,HDD,3000GB
+,24000,hdd,"3.5""",SAS 12.0 Gb/s,,Seagate,"Seagate Exos X24 SED 24TB 3.5"" HDD 7200RPM SAS 12.0 Gb/s",8acbe430-f1f2-4b0a-959c-8d6cac8ce79b,hdd_0513,,Exos,HDD,24000GB
+,18000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba N300 18TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",8b6a94c0-ba60-419c-9881-6bd97e60cda3,hdd_0514,,N300,HDD,18000GB
+64,1000,hdd,"3.5""",SAS 6.0 Gb/s,,Toshiba,"Toshiba MG03SCA 1TB HDD 3.5"" 7200RPM SAS 6.0 Gb/s",8ba0ab73-f231-4f96-95b9-1b3dbfe4e9dd,hdd_0515,,MG03SCA,HDD,1000GB
+,300,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital VelociRaptor 300 GB HDD 3.5"" 10000RPM SATA 3.0 Gb/s Internal",8ba4e5c1-a8f9-4e50-bdec-cb401b47e2a8,hdd_0516,,VelociRaptor,HDD,300GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Ultrastar 7K4000 3TB HDD 3.5"" 7200RPM SATA",8bb6a183-7fae-4fec-86cb-ad69248474bf,hdd_0517,,Ultrastar,HDD,3000GB
+,640,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Caviar Green 640GB HDD 3.5"" SATA",8bd6cb83-450a-49c7-9b38-e6688853f677,hdd_0518,,Caviar,HDD,640GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Pro 4TB 3.5"" HDD 7200RPM SATA",8be5b73e-c6a9-4dd0-87d5-385d8ea255ff,hdd_0519,,Red,HDD,4000GB
+,500,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Caviar Green 500GB 3.5"" HDD 5400RPM SATA",8c3f5604-1821-48cb-b405-58a91416bce4,hdd_0520,,Caviar,HDD,500GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba DT01-V 2TB HDD 3.5"" SATA 6.0 Gb/s 5940RPM Internal",8c594b33-f896-4b1a-8545-c20349dbb523,hdd_0521,,DT01-V,HDD,2000GB
+,500,hdd,"2.5""",SATA 3.0 Gb/s,,Seagate,"Seagate Momentus 7200.4 500GB 2.5"" HDD SATA",8caa8011-ce97-4d5e-8384-997205bee471,hdd_0522,,Momentus,HDD,500GB
+128,5000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MD04ACA500 5TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s Internal",8d6ffdab-6207-48b9-af1a-ceb082506d59,hdd_0523,,MD04ACA500,HDD,5000GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Caviar Green 1TB Internal HDD 3.5"" 5400RPM SATA",8d7eca45-af74-44c5-a4e6-e8582b5ff0c5,hdd_0524,,Caviar,HDD,1000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Purple 8TB 3.5"" HDD 7200RPM SATA",8e45272c-d4c6-4e87-bd11-d2452b2d24b7,hdd_0525,,Purple,HDD,8000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Blue 6TB HDD 3.5"" 5400 RPM SATA 6.0 Gb/s",8e5aef13-3699-4882-be80-66bad0c37b5c,hdd_0526,,Blue,HDD,6000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SkyHawk Surveillance 6TB 3.5"" HDD 5400RPM SATA Internal",8e8f8e58-07ee-4b60-b6e2-27101a882197,hdd_0527,,SkyHawk,HDD,6000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Purple 6TB HDD 3.5"" SATA",8ea82fec-a409-446e-9b29-ed6c7ae89a55,hdd_0528,,Purple,HDD,6000GB
+,500,hdd,"2.5""",SATA 3.0 Gb/s,,Hitachi,"Hitachi Travelstar 7K500 500GB 2.5"" HDD 7200RPM SATA 3.0 Gb/s",8eee5eca-5a69-4430-aaaf-2dd7b593fdb0,hdd_0529,,Travelstar,HDD,500GB
+,16000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos X18 16TB 3.5"" HDD 7200RPM SATA",8f138108-4caa-4067-92c0-2a3ac0dc8f18,hdd_0530,,Exos,HDD,16000GB
+,14000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Purple Pro 14TB HDD 3.5"" 7200RPM SATA 6.0 Gb/s",8f7f2342-21ef-4c87-95ce-542d256ae335,hdd_0531,,Purple,HDD,14000GB
+,750,hdd,"2.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Black 750GB HDD 7200RPM 2.5"" SATA 6.0 Gb/s Internal",8fefe2ed-01e2-49ee-b926-2a6b019a9f9c,hdd_0532,,Black,HDD,750GB
+,750,hdd,"2.5""",SATA 3.0 Gb/s,,Samsung,"Samsung ST750LM022/HN-M750MBB 750GB HDD 2.5"" SATA",90bbbc93-18d6-473f-a416-f9a509e04631,hdd_0533,,ST750LM022/HN-M750MBB,HDD,750GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba X300 8TB 3.5"" HDD 7200RPM SATA",90c488e5-16ed-4314-b162-b9ad7e60783c,hdd_0534,,X300,HDD,8000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SkyHawk Surveillance +Rescue 6TB HDD 5400RPM 3.5"" SATA",90ca4083-a655-4362-ab9f-9a83e83686bf,hdd_0535,,SkyHawk,HDD,6000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Enterprise Capacity 8TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",91085a24-3ad2-49c1-a136-03aa6fa2f996,hdd_0536,,Enterprise,HDD,8000GB
+,1000,hdd,"2.5""",SATA 3.0 Gb/s,,Samsung,"Samsung Spinpoint M8 1TB 2.5"" HDD SATA",91248b6c-4d3f-49d5-b730-ff4ec2df685c,hdd_0537,,Spinpoint,HDD,1000GB
+,160,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital AV-GP 160GB HDD 3.5"" 5400RPM SATA",91395f0c-52a8-4967-8bf0-1ed3f6689568,hdd_0538,,AV-GP,HDD,160GB
+,250,hdd,"2.5""",SATA 3.0 Gb/s,,Seagate,"Seagate Momentus 7200.4 250GB HDD 7200RPM 2.5"" SATA 3.0 Gb/s",91671378-8113-4430-902f-3d10b9a3275c,hdd_0539,,Momentus,HDD,250GB
+,16000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf NAS 16TB HDD 3.5"" 7200RPM SATA",917cdf29-1615-4f59-96d1-975eede0ebd3,hdd_0540,,IronWolf,HDD,16000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Desktop 4TB HDD 3.5"" 5900RPM SATA",9198f5fc-552b-4999-8eaa-36acd8cedfdb,hdd_0541,,Desktop,HDD,4000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red 8TB HDD 5400RPM 3.5"" SATA",91a653e4-2ae2-42a8-a112-e9d6da71e128,hdd_0542,,Red,HDD,8000GB
+,1000,hdd,"2.5""",SATA 3.0 Gb/s,,Samsung,"Samsung Spinpoint 1TB HDD 2.5"" SATA",9213ce83-648b-4039-abf5-2f224ab1eb8f,hdd_0543,,Spinpoint,HDD,1000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Blue 2TB HDD 3.5"" 5400 RPM SATA 6.0 Gb/s Internal",92274b3e-a637-408b-8038-093249984fc6,hdd_0544,,Blue,HDD,2000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba X300 Pro 8TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",922afa61-e714-4e0b-a4b6-d33ad3565b58,hdd_0545,,X300,HDD,8000GB
+64,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Plus 4TB 3.5"" HDD 5400RPM SATA 6.0 Gb/s Internal",924dd235-979e-4fa0-889c-32c55154790f,hdd_0546,,Red,HDD,4000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital WD_BLACK 6TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",935989e3-c5b2-45fd-b444-d8f538e242bf,hdd_0547,,WD_BLACK,HDD,6000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Caviar Green 2TB HDD 3.5"" SATA",9448965e-c7e7-4c7e-a1a2-3dc3d6ce6b8a,hdd_0548,,Caviar,HDD,2000GB
+8,320,hdd,"3.5""",PATA 100,,Western Digital,"Western Digital Caviar Blue 320GB 3.5"" HDD 7200RPM PATA 100 Internal",948a696d-c5a5-4aa7-ad27-fbbf9cce5671,hdd_0549,,Caviar,HDD,320GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba N300 Pro 4TB HDD 7200RPM 3.5"" SATA",94e771ba-72da-475b-9e28-50d6f816968a,hdd_0550,,N300,HDD,4000GB
+,24000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SkyHawk AI 24TB 3.5"" HDD 7200RPM SATA",954905d0-9ecd-4b26-954b-bf1324b6a094,hdd_0551,,SkyHawk,HDD,24000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Ultrastar 7K4000 3TB HDD 7200RPM 3.5"" SATA",95848617-21c3-44d6-8474-9eac0c3bf8aa,hdd_0552,,Ultrastar,HDD,3000GB
+,500,hdd,"3.5""",SATA 3.0 Gb/s,,Hitachi,"Hitachi 7K1000.B 500GB 3.5"" HDD 7200RPM SATA 3.0 Gb/s",95853705-b215-4b36-87ea-08b3cbc63415,hdd_0553,,7K1000.B,HDD,500GB
+,500,hdd,"3.5""",SATA 3.0 Gb/s,,Seagate,"Seagate BarraCuda 500GB HDD 7200RPM 3.5"" SATA 3.0 Gb/s",95be6d5d-798d-4aa4-b612-deabd45759a5,hdd_0554,,BarraCuda,HDD,500GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate EXOS Enterprise 4TB 3.5"" HDD 7200RPM SATA",95dbfb1f-480d-4995-9c7e-647d3db24f60,hdd_0555,,EXOS,HDD,4000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SV35.5 1TB HDD 3.5"" 7200RPM SATA",95fbe20a-b5c5-497c-8936-5360d92271f7,hdd_0556,,SV35.5,HDD,1000GB
+,500,hdd,"3.5""",SATA 3.0 Gb/s,,Seagate,"Seagate Spinpoint F3 500GB HDD 3.5"" 7200RPM SATA",961845b8-ffae-4249-b883-bbfcb34239c7,hdd_0557,,Spinpoint,HDD,500GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba P300 2TB HDD 3.5"" 5400RPM SATA 6.0 Gb/s Internal",962bb19c-0792-4ce7-b49d-04d0b5e32894,hdd_0558,,P300,HDD,2000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi 0F23663 6TB HDD 3.5"" 7200RPM SATA 6.0 Gb/s Internal",9643e669-90e9-45be-a8de-937c127e8ad5,hdd_0559,,0F23663,HDD,6000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Gold 4TB HDD 7200RPM 3.5"" SATA",96be80eb-c07b-4582-947b-630565c699d5,hdd_0560,,Gold,HDD,4000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf Pro 6TB HDD 3.5"" 7200RPM SATA",96fcbc21-5419-421f-9e23-dd9ddf0b3922,hdd_0561,,IronWolf,HDD,6000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba N300 6TB HDD 3.5"" 7200RPM SATA",970eaccf-287f-41bf-993e-0bf1ec696b9e,hdd_0562,,N300,HDD,6000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital WDBMMA0010HNC-NRSN 1TB 3.5"" HDD 5400RPM SATA",970fb495-eab4-45dc-8be2-c013ad5a4a44,hdd_0563,,WDBMMA0010HNC-NRSN,HDD,1000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate EXOS Enterprise 4TB HDD 7200 RPM 3.5"" SATA 6.0 Gb/s Internal",97458214-82f5-4efb-8a31-4a901f3822c9,hdd_0564,,EXOS,HDD,4000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital WDBSLA0040HNC-NRSN 4TB HDD 7200RPM 3.5"" SATA",97698cf3-a5cc-4a39-9ca6-aa69de10b974,hdd_0565,,WDBSLA0040HNC-NRSN,HDD,4000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda 3TB 3.5"" HDD 7200RPM SATA",979ee412-14af-4b80-9af5-80821cf7db22,hdd_0566,,BarraCuda,HDD,3000GB
+,18000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Pro 18TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",9801faaa-7668-4792-bc28-f4a60dcc63f1,hdd_0567,,Red,HDD,18000GB
+16,320,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital AV-GP 320 GB HDD 3.5"" 5400 RPM SATA 3.0 Gb/s",985f27aa-6784-4225-8964-2f50af49ce76,hdd_0568,,AV-GP,HDD,320GB
+,160,hdd,"2.5""",SATA 3.0 Gb/s,,Hitachi,"Hitachi E5K500.B 160GB HDD 5400RPM 2.5"" SATA 3.0 Gb/s",986beb16-127f-4b09-b149-9b85c19ba891,hdd_0569,,E5K500.B,HDD,160GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf Pro NAS 4TB HDD 3.5"" 7200RPM SATA",9899ea60-8265-4d3a-99f7-e4667361ef05,hdd_0570,,IronWolf,HDD,4000GB
+,2000,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Caviar Black 2TB HDD 3.5"" 7200RPM SATA Internal",9905ed69-d538-44f2-b5ec-1310338aa569,hdd_0571,,Caviar,HDD,2000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Green 4TB 3.5"" Internal HDD 5900RPM SATA 6.0 Gb/s",991cfb7f-66e2-4814-b42d-718e979d3430,hdd_0572,,Green,HDD,4000GB
+,500,hdd,"2.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda Pro 500GB HDD 2.5"" SATA",994342fe-3e29-4fc6-8610-62fdc23e1776,hdd_0573,,BarraCuda,HDD,500GB
+,500,hdd,"2.5""",SATA 3.0 Gb/s,,Samsung,"Samsung Spinpoint M7 500GB HDD 2.5"" SATA",9950c07b-788f-4263-9ea8-2e30de5a4481,hdd_0574,,Spinpoint,HDD,500GB
+,14000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos X18 14TB HDD 7200RPM 3.5"" SATA",996123ed-200f-4fe4-ad12-8a896ba9b4f4,hdd_0575,,Exos,HDD,14000GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Samsung,"Samsung Spinpoint F2 EG 1.5TB HDD 3.5"" 5400RPM SATA",998189b4-9066-4cf1-80d7-ca9c3683ffd8,hdd_0576,,Spinpoint,HDD,1000GB
+512,20000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba N300 NAS 20TB HDD 3.5"" 7200RPM SATA 6.0 Gb/s Internal",99eedf19-addd-4136-8dc7-1ed3bbc7330a,hdd_0577,,N300,HDD,20000GB
+,500,hdd,"2.5""",SATA 3.0 Gb/s,,Seagate,"Seagate Momentus XT 500GB HDD 2.5"" 7200RPM SATA",9a10bac6-68eb-49cc-85bb-c1430a556c60,hdd_0578,,Momentus,HDD,500GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Travelstar 7K1000 1TB HDD Internal 3.5"" 7200RPM SATA 6.0 Gb/s",9ac56dbf-ca83-4af1-81e2-4ac2dbd5e00f,hdd_0579,,Travelstar,HDD,1000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital RE 4TB 3.5"" HDD 7200RPM SATA",9b64cf2a-bd9f-4932-b3db-2f002721e142,hdd_0580,,RE,HDD,4000GB
+,750,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Caviar Blue 750GB HDD 7200RPM 3.5"" SATA",9b698f1b-56bc-4268-afc2-5b15da48594f,hdd_0581,,Caviar,HDD,750GB
+,500,hdd,"3.5""",SATA 6.0 Gb/s,,WD_BLACK,WD_BLACK Gaming Internal Hard Drive,9bb9291d-b934-49cf-bac2-440f3d281370,hdd_0582,2022,WD_BLACK,HDD,500GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,Seagate IronWolf 4TB NAS Hard Drive HDD – CMR 3.5 Inch SATA 6Gb/s 5900 RPM 64MB Cache for RAID Network Attached Storage – Frustration Free Packaging (ST4000VNZ08),9bd63cce-2e9e-4403-a60f-16d50cb18102,hdd_0583,2018,IronWolf,HDD,
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Hitachi,"Hitachi 7K1000.B 1TB HDD 3.5"" 7200RPM SATA 3.0 Gb/s",9bdd2352-edca-4270-8404-f5f4c3bc3845,hdd_0584,,7K1000.B,HDD,1000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Purple 2TB 3.5"" HDD 5400 RPM SATA 6.0 Gb/s Internal",9c22791c-bf08-4c7f-9c27-b42336ba888c,hdd_0585,,Purple,HDD,2000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Blue 4TB HDD 5400RPM 3.5"" SATA 6.0 Gb/s",9c817dae-e2a1-4716-afae-45bba3b4c808,hdd_0586,,Blue,HDD,4000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba X300 6TB HDD 3.5"" 7200RPM SATA 6.0 Gb/s",9c971639-461d-4022-bc18-e67532ab35e3,hdd_0587,,X300,HDD,6000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital WD_BLACK 8TB 3.5"" HDD 7200RPM SATA",9cb9a7e2-c628-4a9d-8226-9b3ba63fe5ae,hdd_0588,,WD_BLACK,HDD,8000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda 2TB HDD 3.5"" SATA",9cd6a9e7-1e24-4e3b-9a12-a4dd088d49c1,hdd_0589,,BarraCuda,HDD,2000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Blue 2TB HDD 3.5"" SATA",9d02c438-9722-4d06-bf28-a9fa53032ad0,hdd_0590,,Blue,HDD,2000GB
+,500,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Caviar Blue 500GB HDD 3.5"" 7200RPM SATA",9d406e1a-6569-4434-8ad5-61e0a06ac0e5,hdd_0591,,Caviar,HDD,500GB
+512,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,Toshiba N300 NAS 6TB HDD 7200RPM SATA 6.0 Gb/s,9dae17ac-e616-4e1c-823d-ecad3611a115,hdd_0592,,N300,HDD,6000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SkyHawk Surveillance 8TB 7200RPM HDD 3.5"" SATA",9dd114ea-662e-454b-84f8-16acbb6cded2,hdd_0593,,SkyHawk,HDD,8000GB
+,750,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda 750GB 3.5"" HDD 7200RPM SATA 6.0 Gb/s Internal",9e5f8f76-6ad1-4c77-ae37-4e5b92e5fa70,hdd_0594,,BarraCuda,HDD,750GB
+,250,hdd,"2.5""",SATA 3.0 Gb/s,,Seagate,"Seagate Momentus 5400.6 250GB HDD 2.5"" 5400RPM SATA 3.0 Gb/s Internal",9e77e935-ff56-483f-8445-e5b7387e712a,hdd_0595,,Momentus,HDD,250GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba N300 4TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s Internal",9e8d31d6-a377-4186-b13a-a63a786ef127,hdd_0596,,N300,HDD,4000GB
+,24000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Pro 24 TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",9e8e673a-1433-42cc-bbd5-92ddd85a46b5,hdd_0597,,Red,HDD,24000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf Pro 8TB 3.5"" HDD 7200RPM SATA",9ee2f52e-ab49-48cd-a4ac-f1008eb9d504,hdd_0598,,IronWolf,HDD,8000GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Seagate,"Seagate Barracuda ES.2 1TB 3.5"" HDD 7200RPM SATA",a04a6a39-6939-4a11-8534-c7c152ce9c63,hdd_0599,,Barracuda,HDD,1000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Black 4TB HDD 3.5"" 7200RPM SATA",a05bee30-1a9c-4696-88df-d1124ba2fd91,hdd_0600,,Black,HDD,4000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Supermicro,"Supermicro HDD-T4000-ST4000NM00 4TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",a05d3c09-2ca4-48cc-a7ae-f3aa5120f45b,hdd_0601,,HDD-T4000-ST4000NM00,HDD,4000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Pro 4TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s",a0e8d54f-4968-41c0-8449-40f9576d31f3,hdd_0602,,Red,HDD,4000GB
+,80,hdd,"3.5""",SATA 3.0 Gb/s,,Seagate,"Seagate Barracuda 7200.10 80GB 3.5"" HDD 7200RPM SATA 3.0 Gb/s Internal",a207107f-cad4-49e8-9963-88778e7da68d,hdd_0603,,Barracuda,HDD,80GB
+,500,hdd,"3.5""",SATA 3.0 Gb/s,,Hitachi,"Hitachi A7K1000-500 500GB HDD 3.5"" SATA",a2435254-537b-454e-871a-c3aa816a457b,hdd_0604,,A7K1000-500,HDD,500GB
+,320,hdd,"2.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Black 320GB HDD 2.5"" 7200RPM SATA 6.0 Gb/s Internal",a2712e22-9287-4442-9a42-c35ba74efb2c,hdd_0605,,Black,HDD,320GB
+,2000,hdd,"3.5""",SAS 6.0 Gb/s,,Seagate,"Seagate Constellation ES 2TB HDD 3.5"" SAS 6.0 Gb/s",a2a9a418-4eef-4c64-aa48-238f686a61f3,hdd_0606,,Constellation,HDD,2000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Ultrastar 8TB HDD 3.5"" SATA",a3579f01-9917-4559-b79a-1ce91a588283,hdd_0607,,Ultrastar,HDD,8000GB
+,320,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Caviar Blue 320GB HDD 3.5"" SATA",a3a10b04-057f-45d9-90f9-c9989e32a2c1,hdd_0608,,Caviar,HDD,320GB
+,2000,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Caviar Green 2TB HDD 5400RPM 3.5"" SATA",a3ecf21c-d477-4aa6-8aa0-1fa82c84ff09,hdd_0609,,Caviar,HDD,2000GB
+,450,hdd,"2.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MBF245LRC 450GB HDD 10000RPM 2.5"" SATA",a4022233-f844-46cf-b9f1-7d89d8eca6b9,hdd_0610,,MBF245LRC,HDD,450GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red 3TB HDD 3.5"" 5400RPM SATA",a41ad925-4b47-4be2-9aa5-2bbc2c37fea5,hdd_0611,,Red,HDD,3000GB
+,2000,hdd,"3.5""",SAS 6.0 Gb/s,,Seagate,"Seagate Constellation ES.3 2TB 3.5"" HDD 7200RPM SAS 6.0 Gb/s Internal",a425884f-1251-4dc4-8631-bedf0404e751,hdd_0612,,Constellation,HDD,2000GB
+,320,hdd,"3.5""",SATA 3.0 Gb/s,,Samsung,"Samsung Spinpoint F1 DT 320 GB HDD 3.5"" 7200RPM SATA",a4565f2f-fa55-4e19-b501-c522deb62575,hdd_0613,,Spinpoint,HDD,320GB
+,18000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba X300 Pro 18TB HDD 7200RPM 3.5"" SATA",a48aef55-406f-4fbf-a80e-a266c02ad0cf,hdd_0614,,X300,HDD,18000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital VelociRaptor 1TB HDD 10000RPM 3.5"" SATA",a4ae03c4-3396-4602-994a-402537df409a,hdd_0615,,VelociRaptor,HDD,1000GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital WD_BLACK 10TB 3.5"" HDD 7200RPM SATA Internal",a58896db-c929-467f-a635-efd5ef6afca8,hdd_0616,,WD_BLACK,HDD,10000GB
+,18000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MG09 4Kn 18TB 3.5"" HDD 7200RPM SATA",a5ba30de-0a68-4db7-9de2-78ae6a4a419a,hdd_0617,,MG09,HDD,18000GB
+,24000,hdd,"3.5""",SAS 12.0 Gb/s,,Seagate,"Seagate Exos X24 SED-FIPS 24TB 3.5"" HDD 7200RPM SAS 12.0 Gb/s",a5c45a2e-8e01-44c0-8119-8326bc2c1421,hdd_0618,,Exos,HDD,24000GB
+,500,hdd,"2.5""",SATA 6.0 Gb/s,,Seagate,"Seagate ST500VT001 500GB 2.5"" HDD 5400RPM SATA 6.0 Gb/s",a5d69c10-fc77-4f30-a4f7-067b28c91d66,hdd_0619,,ST500VT001,HDD,500GB
+,2000,hdd,"2.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Green 2TB 2.5"" HDD 5900RPM SATA",a5f677df-323f-4d9a-92e6-c08b574fa541,hdd_0620,,Green,HDD,2000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,Seagate IronWolf 8TB NAS Internal Hard Drive HDD – 3.5 Inch SATA 6Gb/s 7200 RPM 256MB Cache for RAID Network Attached Storage,a5f70655-dce2-4883-a9f5-b76ce6618328,hdd_0621,2020,IronWolf,HDD,NAS
+128,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MD04ACA600 6TB HDD 3.5"" 7200RPM SATA 6.0 Gb/s",a62f2838-ba73-414e-bf32-732c6b5b4fa6,hdd_0622,,MD04ACA600,HDD,6000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Pro 8TB 3.5"" Internal HDD 7200RPM SATA",a69c476e-04eb-4d67-bcb7-3ded13a3502a,hdd_0623,,Red,HDD,8000GB
+,6000,hdd,"3.5""",SAS 12.0 Gb/s,,Seagate,"Seagate Enterprise 6TB HDD 3.5"" 7200RPM SAS 12.0 Gb/s Internal",a755ba38-9459-423e-9f7f-9602de3bf7a2,hdd_0624,,Enterprise,HDD,6000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos 7E10 8TB 3.5"" HDD 7200RPM SATA 512e/4Kn",a798ebe2-bbea-4016-afdb-95650331858f,hdd_0625,,Exos,HDD,8000GB
+,750,hdd,"3.5""",SATA 3.0 Gb/s,,Samsung,"Samsung Spinpoint F1 RAID 750GB HDD 3.5"" SATA",a7ac952c-9854-4381-999e-74e13c177e09,hdd_0626,,Spinpoint,HDD,750GB
+,500,hdd,"2.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Black 500GB HDD 2.5"" SATA",a811d86f-4073-4c75-8f19-766f52fa5330,hdd_0627,,Black,HDD,500GB
+,250,hdd,"3.5""",SATA 3.0 Gb/s,,Hitachi,"Hitachi 7K1000.B 250GB 3.5"" HDD 7200RPM SATA 3.0 Gb/s Internal",a816d9a5-cf6f-41d0-b13c-f392747b4286,hdd_0628,,7K1000.B,HDD,250GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate NAS 2TB 3.5"" HDD 5400 RPM SATA Internal",a848c560-c396-40e6-a106-ae889f2173fb,hdd_0629,,NAS,HDD,2000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Ultrastar 8TB HDD 3.5"" SATA",a8d32107-0a0d-4e64-b4b9-010e2279921e,hdd_0630,,Ultrastar,HDD,8000GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Seagate,"Seagate BarraCuda 1TB HDD 7200RPM 3.5"" SATA 3.0 Gb/s",a9254770-0a73-498f-8249-87e21746043c,hdd_0631,,BarraCuda,HDD,1000GB
+,10,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf NAS 10 TB 3.5"" 7200 RPM Internal Hard Drive",a9322526-57b6-4dfc-b370-88baf55111d9,hdd_0632,2020,IronWolf,HDD,NAS
+,18000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SkyHawk AI 18TB HDD 3.5"" SATA",a94ec858-4af5-4652-ad26-10fb897e7dc1,hdd_0633,,SkyHawk,HDD,18000GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Purple Pro 10 TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",a95db4aa-17c7-49e2-810f-cde52226cd05,hdd_0634,,Purple,HDD,10000GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Enterprise 12TB HDD 3.5"" 7200RPM SATA 6.0 Gb/s Internal",a9accdd3-37d5-42b6-9f5b-7a6c01f305bb,hdd_0635,,Enterprise,HDD,12000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SkyHawk Surveillance +Rescue 3TB HDD 3.5"" 5400RPM SATA",a9b63abf-207a-48fd-9149-76855a1489ce,hdd_0636,,SkyHawk,HDD,3000GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MG06ACA10TE 10 TB HDD 3.5"" 7200RPM SATA 6.0 Gb/s",a9dfd0cf-0bd1-461a-a820-c98c58817792,hdd_0637,,MG06ACA10TE,HDD,10000GB
+,24000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Gold 24 TB 3.5"" 7200 RPM Internal",aa06deff-2945-4481-823d-69eb023dd9f3,hdd_0638,,Gold,HDD,24000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi He6 6TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",aa2f5a8d-ae0a-4565-a110-4cbada260dc8,hdd_0639,,He6,HDD,6000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi HUA721010KLA330 1TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s Internal",aa3001c2-69eb-457d-baa5-65a2e5ac0298,hdd_0640,,HUA721010KLA330,HDD,1000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Blue 6TB HDD 3.5"" SATA",aa39c6b8-bb26-4a9a-8a88-3afa47b10b54,hdd_0641,,Blue,HDD,6000GB
+,750,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Caviar Green 750GB HDD 5400RPM 3.5"" SATA",aa6346e9-63e8-430b-8e8e-c40a44996ab7,hdd_0642,,Caviar,HDD,750GB
+,20000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Pro 20TB HDD 3.5"" 7200RPM SATA",aaeadd5c-64d6-4698-a900-c8aa6fee23e0,hdd_0643,,Red,HDD,20000GB
+,14000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SkyHawk AI 14TB HDD 3.5"" 7200RPM SATA",aaf55e55-63f2-4723-862f-573d327d3bc9,hdd_0644,,SkyHawk,HDD,14000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Purple 4TB HDD 3.5"" 5400RPM SATA 6.0 Gb/s Internal",ab4b8316-0db4-4dd6-807e-ee113b73b00c,hdd_0645,,Purple,HDD,4000GB
+,1000,hdd,"2.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Blue 1TB HDD 5400RPM 2.5"" SATA",ab7d17a9-6b4c-44e4-b5a6-99bd04c169c1,hdd_0646,,Blue,HDD,1000GB
+,18000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf Pro 18TB 3.5"" HDD 7200RPM SATA",abbf4074-172d-47ba-b672-bfa990627c36,hdd_0647,,IronWolf,HDD,18000GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Caviar Blue 1TB HDD 7200RPM 3.5"" SATA 3.0 Gb/s Internal",abf43526-e267-46d0-bd97-737e146b21c8,hdd_0648,,Caviar,HDD,1000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital WD_BLACK 8TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s Internal",ac1e36c1-ef54-49bc-aceb-dd4936915ddd,hdd_0649,,WD_BLACK,HDD,8000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba X300 4TB 3.5"" HDD 7200RPM SATA",ac841878-9aee-44cf-b72c-6c52b2752e09,hdd_0650,,X300,HDD,4000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Purple 2TB 3.5"" HDD 5400RPM SATA 6.0 Gb/s",acb17575-ce88-4883-b1ec-f0e9ef18002a,hdd_0651,,Purple,HDD,2000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf Pro 8TB 3.5"" HDD 7200RPM SATA",acb798a3-1483-4013-9cf3-010f3d3a4103,hdd_0652,,IronWolf,HDD,8000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate NAS 4TB HDD 3.5"" 5400RPM SATA 6.0 Gb/s Internal",acff2b66-9987-4e41-bd8d-d9ddce512b37,hdd_0653,,NAS,HDD,4000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital WDBMMA0030HNC-NRSN 3TB HDD 5400RPM 3.5"" SATA",ad305212-8a3d-4df2-bcc8-a51413314083,hdd_0654,,WDBMMA0030HNC-NRSN,HDD,3000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba X300 8TB HDD 3.5"" 7200RPM SATA",ad6b5ab8-61b7-4393-ab12-889dcc8b5931,hdd_0655,,X300,HDD,8000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba DT01ACA300 3TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",ad8fbe19-3d8c-4780-a767-b61981570a75,hdd_0656,,DT01ACA300,HDD,3000GB
+,22000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos X22 22TB HDD 3.5"" SATA",adf642ef-23df-4e8d-8cb3-8ab9ff815785,hdd_0657,,Exos,HDD,22000GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf NAS 10TB HDD 7200RPM 3.5"" SATA",af24d67b-c072-481f-8f75-0045a1d1c4f7,hdd_0658,,IronWolf,HDD,10000GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Gold 12TB HDD 3.5"" 7200RPM SATA",af9687b9-65c8-4471-91f3-20183f072dba,hdd_0659,,Gold,HDD,12000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Ultrastar 2TB HDD 3.5"" SATA",afca4522-5005-40d0-b1d7-4d27c0e84b8b,hdd_0660,,Ultrastar,HDD,2000GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Ultrastar He10 10TB HDD 7200RPM 3.5"" SATA",aff2f3b9-de8b-446b-a583-c36dde5d4af4,hdd_0661,,Ultrastar,HDD,10000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital WD_BLACK 6TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s Internal",b0297735-5f5c-43f9-b292-8c51ddb4919d,hdd_0662,,WD_BLACK,HDD,6000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf Pro 8TB HDD 7200RPM 3.5"" SATA",b0836146-1b30-490a-abc0-8d0a5865d996,hdd_0663,,IronWolf,HDD,8000GB
+,16000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate EXOS Enterprise 16TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",b08e518a-802d-461f-951c-03ba7bf2f854,hdd_0664,,EXOS,HDD,16000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital SE 3TB HDD 3.5"" SATA",b0b87ec6-0372-4f4c-8ba7-f798a1f88a07,hdd_0665,,SE,HDD,3000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba DT01ACA 2TB HDD 3.5"" SATA",b0ebd5c1-42f4-4ed9-ba4d-1a574e26bd39,hdd_0666,,DT01ACA,HDD,2000GB
+,6000,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital WD Blue 6TB HDD 3.5"" 5400RPM SATA 3.0 Gb/s Internal",b0faac5d-e2cd-4f95-8cd1-2949a584543e,hdd_0667,,WD,HDD,6000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SV35 2TB HDD 5900 RPM 3.5"" SATA",b101fd70-2edc-4134-8b23-6de866b43a44,hdd_0668,,SV35,HDD,2000GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Ultrastar He12 12TB HDD 3.5"" 7200RPM SATA",b118beb7-359b-4424-84b2-1d6a183c998e,hdd_0669,,Ultrastar,HDD,12000GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda Pro 12TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",b1776d03-4906-49c7-80dc-939a1b62c815,hdd_0670,,BarraCuda,HDD,12000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Deskstar NAS 4TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",b1b91e25-9b67-43cf-82e5-28b7efd38660,hdd_0671,,Deskstar,HDD,4000GB
+,1000,hdd,"2.5""",SAS 12.0 Gb/s,,Seagate,"Seagate ST1800MM0128 1.8TB 2.5"" HDD 10000RPM SAS 12.0 Gb/s",b1de43da-b016-4305-9f41-32289fc71234,hdd_0672,,ST1800MM0128,HDD,1000GB
+,250,hdd,"2.5""",SATA 3.0 Gb/s,,Samsung,"Samsung Spinpoint MP4 250GB 2.5"" HDD 7200RPM SATA",b2255571-21b0-443a-8cf3-7a38a76314fc,hdd_0673,,Spinpoint,HDD,250GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Barracuda Compute 8TB HDD 3.5"" 5400RPM SATA 6.0 Gb/s Internal",b2c02864-db4d-4eae-9b84-93dab8e30118,hdd_0674,,Barracuda,HDD,8000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MG03ACA400 4TB 3.5"" HDD 7200RPM SATA",b335b92a-8b9d-46f1-93cd-74510bde530e,hdd_0675,,MG03ACA400,HDD,4000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba P300 3TB HDD 3.5"" SATA",b34bec2f-6636-40e6-bc45-3013b04a6066,hdd_0676,,P300,HDD,3000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Deskstar NAS 6TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",b3e2dcd6-2b52-4020-8c9e-218797ebe3c1,hdd_0677,,Deskstar,HDD,6000GB
+,320,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda 320GB HDD 7200RPM 3.5"" SATA",b3ec9237-33d5-4f54-8681-1454511a57d9,hdd_0678,,BarraCuda,HDD,320GB
+,640,hdd,"2.5""",SATA 3.0 Gb/s,,Samsung,"Samsung Spinpoint M7E 640GB 2.5"" HDD 5400RPM SATA 3.0 Gb/s Internal",b425706f-0073-4597-8807-3e89c7dc3e5c,hdd_0679,,Spinpoint,HDD,640GB
+,250,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital AV-GP 250GB 5400RPM HDD 3.5"" SATA",b46bd755-99ba-4960-ad8b-29d0e5204e33,hdd_0680,,AV-GP,HDD,250GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Caviar Green 1TB 3.5"" HDD 5400RPM SATA 6.0 Gb/s",b4bddc56-5871-41c4-a55a-466ccc498205,hdd_0681,,Caviar,HDD,1000GB
+,750,hdd,"2.5""",SATA 3.0 Gb/s,,Seagate,"Seagate Momentus 750GB HDD 2.5"" 7200RPM SATA",b4c111a0-fcdc-4824-bc3c-c19de35151dc,hdd_0682,,Momentus,HDD,750GB
+,6000,hdd,"3.5""",SAS 12.0 Gb/s,,Hitachi,"Hitachi Ultrastar 6TB HDD 7200RPM 3.5"" SAS",b4c51204-34d8-4610-b866-dcca57a7ecbc,hdd_0683,,Ultrastar,HDD,6000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Caviar Green 1TB HDD 5400RPM 3.5"" SATA",b56603cf-e004-4f10-b2c6-b3c571527bf6,hdd_0684,,Caviar,HDD,1000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Plus 6TB HDD 5640RPM 3.5"" SATA",b5be84d9-6dc4-4d24-91f0-ebc59ecfef0c,hdd_0685,,Red,HDD,6000GB
+,500,hdd,"2.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Blue Mobile 500GB HDD 2.5"" 5400RPM SATA",b63000ca-662b-45e8-ac0f-eb26eb8adce3,hdd_0686,,Blue,HDD,500GB
+,320,hdd,"3.5""",SATA 3.0 Gb/s,,Seagate,"Seagate Barracuda 7200.11 320GB HDD 3.5"" SATA",b6acf49d-6c4a-4077-b90c-22548038b85f,hdd_0687,,Barracuda,HDD,320GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf Pro NAS 12TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s",b77d9416-5125-45eb-b2e7-96b38b7e071c,hdd_0688,,IronWolf,HDD,12000GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Caviar Green 1TB HDD 3.5"" 5400RPM SATA",b7882b86-3970-4e85-9826-26605b4fc2c0,hdd_0689,,Caviar,HDD,1000GB
+,320,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda 320GB HDD 7200RPM 3.5"" SATA",b7d1da49-019c-46e9-89dc-bbdb50383f33,hdd_0690,,BarraCuda,HDD,320GB
+,500,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital VelociRaptor 500 GB 3.5"" HDD 10000 RPM SATA 6.0 Gb/s",b7f2afc6-f7d7-4319-9b69-5b802baf3623,hdd_0691,,VelociRaptor,HDD,500GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Seagate,"Seagate Barracuda LP 1TB HDD 5900RPM 3.5"" SATA 3.0 Gb/s",b802bd14-1f41-4b88-9a75-af112f0536e1,hdd_0692,,Barracuda,HDD,1000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SkyHawk 2TB 3.5"" HDD 5900RPM SATA Internal",b83eb6a2-eab9-4076-9929-454580946dcd,hdd_0693,,SkyHawk,HDD,2000GB
+256,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SkyHawk AI 10TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",b98b29f3-7b2a-45ac-9a85-5e45f4bfe8e5,hdd_0694,,SkyHawk,HDD,10000GB
+512,16000,hdd,"3.5""",SAS 12.0 Gb/s,,Western Digital,"Western Digital Ultrastar DC HC550 16TB 3.5"" HDD 7200RPM SAS 12.0 Gb/s",b9d1e89f-bcfd-4427-8580-7d332618e0ef,hdd_0695,,Ultrastar,HDD,16000GB
+,22000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Purple Pro 22TB 3.5"" HDD 7200RPM SATA",ba067426-670a-4adc-98a1-65454ce8c37a,hdd_0696,,Purple,HDD,22000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Purple Surveillance 6TB HDD 3.5"" 5400 RPM SATA 6.0 Gb/s",ba267125-1095-45f5-a94c-d03f4ade96bc,hdd_0697,,Purple,HDD,6000GB
+,2000,hdd,"3.5""",SATA 3.0 Gb/s,,Seagate,"Seagate Pipeline HD 2TB HDD 3.5"" 5900RPM SATA",ba35e3d7-eb24-468d-aad2-9a45fa8c92ac,hdd_0698,,Pipeline,HDD,2000GB
+,1000,hdd,"2.5""",SAS 6.0 Gb/s,,Hitachi,"Hitachi HUC101212CSS600 1.2TB 2.5"" HDD 10000RPM SAS",ba41e08d-36d7-4666-b441-3d72df6ea59b,hdd_0699,,HUC101212CSS600,HDD,1000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba X300 Pro 4TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",ba80901a-8a95-45fd-b4b6-5e8e37736f0a,hdd_0700,,X300,HDD,4000GB
+,250,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Caviar Blue 250GB HDD 3.5"" 7200RPM SATA 6.0 Gb/s",bac33129-19d8-40f8-a7de-e4323c9ee027,hdd_0701,,Caviar,HDD,250GB
+,500,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba DT01ACA050 500GB HDD 3.5"" 7200RPM SATA 6.0 Gb/s Internal",bb2a8bcb-e992-48e0-93d8-0870732aeca8,hdd_0702,,DT01ACA050,HDD,500GB
+,1000,hdd,"3.5""",SAS 6.0 Gb/s,,Toshiba,"Toshiba HDD3B04 1TB HDD 3.5"" 7200RPM SAS 6.0 Gb/s",bb8bc18d-86e3-4801-a3a5-df757d7dac8d,hdd_0703,,HDD3B04,HDD,1000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Deskstar 1TB HDD 3.5"" SATA",bb9283ff-3fd0-456f-ad2f-c7295075b346,hdd_0704,,Deskstar,HDD,1000GB
+,500,hdd,"3.5""",SATA 3.0 Gb/s,,Seagate,"Seagate Pipeline 500GB HDD 3.5"" SATA",bb92bec0-13b9-4963-8759-1d36fbc08d2b,hdd_0705,,Pipeline,HDD,500GB
+,4000,hdd,"3.5""",SAS 6.0 Gb/s,,Hitachi,"Hitachi Ultrastar 7K4000 4TB Internal HDD 3.5"" 7200RPM SAS 6.0 Gb/s",bb9de87a-5953-4233-977f-a06b23f61d3b,hdd_0706,,Ultrastar,HDD,4000GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Samsung,"Samsung Spinpoint F1 EG 1TB HDD 5400RPM 3.5"" SATA 3.0 Gb/s",bbfea382-419a-4410-9288-fb4bc7c6ba1f,hdd_0707,,Spinpoint,HDD,1000GB
+,1000,hdd,"2.5""",SAS 12.0 Gb/s,,Seagate,"Seagate EXOS 1TB HDD 2.5"" SAS",bc899b82-dda9-45d4-bc99-9404a2445016,hdd_0708,,EXOS,HDD,1000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Pro 6TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s",bcb4ac5f-c361-4f31-9ad3-3865491d240f,hdd_0709,,Red,HDD,6000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda Pro 2TB HDD 3.5"" SATA",bd7b1cd6-bf00-4800-9910-72afb4b0689b,hdd_0710,,BarraCuda,HDD,2000GB
+,320,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Caviar SE16 320GB 3.5"" HDD 7200RPM SATA 3.0 Gb/s",be568a98-4156-44f9-bfe9-6dbe0ca30896,hdd_0711,,Caviar,HDD,320GB
+,640,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Caviar Blue 640GB HDD 3.5"" 7200RPM SATA",bea68294-c8d4-4151-b27f-ee4e174370f5,hdd_0712,,Caviar,HDD,640GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi HDS723020BLA642 2TB HDD 3.5"" SATA",beb0bf73-1e15-4ae6-be4e-ecc8a9bbfd6d,hdd_0713,,HDS723020BLA642,HDD,2000GB
+,3000,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Caviar Green 3TB HDD 3.5"" SATA",beb145f7-38e9-4781-9179-be93272963fe,hdd_0714,,Caviar,HDD,3000GB
+,22000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos X22 22TB 3.5"" HDD 7200RPM SATA",beb30012-6cec-4814-9ba5-1e8d104dacdc,hdd_0715,,Exos,HDD,22000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba HDWA110XZSTA 1TB HDD 3.5"" 5700RPM SATA",befce43c-57e1-4852-b06d-7eccb66b9996,hdd_0716,,HDWA110XZSTA,HDD,1000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Plus 8TB HDD 3.5"" SATA",bfec09d5-d1a2-4c04-9569-3e14f5cbc926,hdd_0717,,Red,HDD,8000GB
+,750,hdd,"2.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Momentus XT 750GB 2.5"" HDD 7200RPM SATA",bff96984-4cda-4e5b-898e-373324cf5400,hdd_0718,,Momentus,HDD,750GB
+,16000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SkyHawk AI 16TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",bffa7d54-0109-42e4-8554-e895d9c241e5,hdd_0719,,SkyHawk,HDD,16000GB
+,18000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos X20 18TB 3.5"" HDD 7200RPM SATA",c02eb0f8-5bc8-478e-b36b-341285892ff1,hdd_0720,,Exos,HDD,18000GB
+,1000,hdd,"3.5""",SAS 3.0 Gb/s,,Seagate,"Seagate Constellation ES 1TB 3.5"" HDD 7200RPM SAS 3.0 Gb/s",c07a7e9f-58cd-4ffc-9fac-8e5042e0947c,hdd_0721,,Constellation,HDD,1000GB
+,14000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf NAS 14TB HDD 7200RPM 3.5"" SATA",c0ce672e-7cff-4831-a044-528176f57a42,hdd_0722,,IronWolf,HDD,14000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Purple Pro 8TB HDD 3.5"" 7200RPM SATA 6.0 Gb/s",c1a1c5a6-e860-4ac9-ae97-07235f589dd6,hdd_0723,,Purple,HDD,8000GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf Pro 10TB HDD 3.5"" SATA",c1f309de-6197-404d-9f75-56bd01ee9af1,hdd_0724,,IronWolf,HDD,10000GB
+,1000,hdd,"2.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Travelstar 1TB HDD 2.5"" SATA",c2250439-28ae-449a-bd89-9fabd0e04091,hdd_0725,,Travelstar,HDD,1000GB
+,1000,hdd,"2.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MQ01ABD100M 1TB HDD 5400RPM 2.5"" SATA 6.0 Gb/s",c284f43f-e40d-4194-a0c1-fdf5d9f58913,hdd_0726,,MQ01ABD100M,HDD,1000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Purple 1TB HDD 3.5"" 5900RPM SATA",c2db4e28-068f-46c3-8214-bdaee0315f36,hdd_0727,,Purple,HDD,1000GB
+128,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba S300 4TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",c2eec7b8-0f0b-4714-96c8-dc8294c984cd,hdd_0728,,S300,HDD,4000GB
+,14000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba X300 Pro 14TB 3.5"" HDD 7200RPM SATA",c37ded3c-d365-49b5-bf85-9c65a957571a,hdd_0729,,X300,HDD,14000GB
+,250,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Caviar Blue 250GB 3.5"" HDD 7200RPM SATA 3.0 Gb/s",c38adfa9-f8b7-4e7d-bfe3-33c0aa98ee33,hdd_0730,,Caviar,HDD,250GB
+,12,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Ultrastar 12TB DC HC520 7200 RPM SATA 6.0Gb/s 3.5"" Data Center Internal Hard Drive - 0F30146",c3b640e1-3899-4fa7-bcd1-5b4de138a8e1,hdd_0731,0,Ultrastar DC HC520,HDD,
+1024,24000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba N300 Pro 24TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s",c3b6d860-e309-411b-bacb-e473186bd5ff,hdd_0732,,N300,HDD,24000GB
+512,16000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda 16 TB 3.5"" HDD 7200RPM SATA",c3ec4fc2-9943-4b50-9665-7e4f5cb876ac,hdd_0733,,BarraCuda,HDD,16000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SkyHawk Surveillance 3TB HDD 3.5"" SATA",c3f11cae-c34c-4a42-a8e0-cfb62d72bfa5,hdd_0734,,SkyHawk,HDD,3000GB
+,900,hdd,"2.5""",SAS 12.0 Gb/s,,Seagate,"Seagate Enterprise Performance 900GB HDD 15000RPM 2.5"" SAS",c4775ef3-4f58-423a-ad3c-0d3c1a6a8ff5,hdd_0735,,Enterprise,HDD,900GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Purple 1TB HDD 3.5"" 5400RPM SATA",c4805275-ec37-47f4-9250-1c6988f3445f,hdd_0736,,Purple,HDD,1000GB
+,320,hdd,"2.5""",SATA 3.0 Gb/s,,Seagate,"Seagate Momentus Thin 320GB 2.5"" HDD 7200RPM SATA",c4df196c-cd35-4ad9-807f-077b629d229f,hdd_0737,,Momentus,HDD,320GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital RE2-GP 1 TB HDD 3.5"" 7200RPM SATA 3.0 Gb/s Internal",c4e6c20f-03fe-46f8-93aa-2cf9417c20d2,hdd_0738,,RE2-GP,HDD,1000GB
+,250,hdd,"2.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Scorpio Black 250GB HDD 7200RPM 2.5"" SATA",c508b070-110e-44b4-9708-2a0ab4fc9269,hdd_0739,,Scorpio,HDD,250GB
+512,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba N300 NAS 4TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",c5114cc1-06ea-426f-ae89-4dbc65322e82,hdd_0740,,N300,HDD,4000GB
+,2000,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Caviar Green 2TB 3.5"" HDD 5400RPM SATA",c5402023-1050-4e02-b7d0-112dfdbd1256,hdd_0741,,Caviar,HDD,2000GB
+,500,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital WD_BLACK 500GB HDD 7200RPM 3.5"" SATA 6.0 Gb/s",c580720b-5016-4c60-8d56-cf7007b0b67a,hdd_0742,,WD_BLACK,HDD,500GB
+256,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba N300 6TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s Internal",c58dccd8-a359-4164-9a4e-0a75a106cad0,hdd_0743,,N300,HDD,6000GB
+,1000,hdd,"2.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Blue 1TB 2.5"" HDD 5400RPM SATA 6.0 Gb/s",c5ce8cbe-81b7-4a89-a5f8-9be458dc9046,hdd_0744,,Blue,HDD,1000GB
+,5000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Surveillance 5TB HDD 3.5"" 5400RPM SATA",c5fa6ab8-102b-47d8-ab76-0fe6e7a31fea,hdd_0745,,Surveillance,HDD,5000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Pro 6TB 3.5"" HDD 7200RPM SATA",c65c69e8-d3c6-4f07-85fd-beb01ce9a972,hdd_0746,,Red,HDD,6000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MG08ADA800E 8TB HDD 3.5"" 7200RPM SATA 6.0 Gb/s",c6b66f5b-8995-431f-8c00-c11682d014a5,hdd_0747,,MG08ADA800E,HDD,8000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf NAS 1TB HDD 5900RPM 3.5"" SATA 6.0 Gb/s",c6bd2e9a-c1ed-46a2-bff0-7e8ef25320ac,hdd_0748,,IronWolf,HDD,1000GB
+,16000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf Pro 16TB HDD 7200RPM 3.5"" SATA",c6e4b2a1-485b-4770-9e16-eda9cf537e5c,hdd_0749,,IronWolf,HDD,16000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba P300 1TB HDD 7200RPM 3.5"" SATA",c6e855ad-426e-4a0d-a88b-d75116467969,hdd_0750,,P300,HDD,1000GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Pro 10TB HDD 3.5"" SATA",c6ebf828-d217-4d25-a32d-b92a3be40d13,hdd_0751,,Red,HDD,10000GB
+,250,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Caviar Blue 250GB 3.5"" HDD 7200RPM SATA",c7a5419a-1ad8-45f8-af6d-6a919426c103,hdd_0752,,Caviar,HDD,250GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba P300 4TB HDD 3.5"" 5400RPM SATA",c8105f54-e07d-403f-a085-0d8ae051c926,hdd_0753,,P300,HDD,4000GB
+,18000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf Pro 18TB HDD 3.5"" SATA",c9117799-e6f6-4144-b042-a51b7c096175,hdd_0754,,IronWolf,HDD,18000GB
+,14000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba N300 14TB 3.5"" HDD 7200RPM SATA",c95ae6c5-5108-4d88-b9cb-f187dc359e20,hdd_0755,,N300,HDD,14000GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda Pro Compute 12TB HDD 3.5"" 7200RPM SATA",c9e718a9-2282-43b8-bc43-aa7ccb060613,hdd_0756,,BarraCuda,HDD,12000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"WD WD2003FZEX Black 2 TB 3.5"" SATA 64 MB Cache 7200 RPM Hard Drive",c9eb8f2f-41ea-40ff-b71f-16a084eb0be0,hdd_0757,2014,WD Black,HDD,2TB 64MB Cache
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf Pro 6TB 3.5"" HDD 7200RPM SATA",ca84c6f0-6933-43a5-af35-eb9e76c9dc82,hdd_0758,,IronWolf,HDD,6000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Blue 8TB 3.5"" HDD 5640 RPM SATA 6.0 Gb/s Internal",cabeebf0-a79b-4988-9131-e86120887892,hdd_0759,,Blue,HDD,8000GB
+,1000,hdd,"2.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Blue 1TB HDD 2.5"" SATA",cac63b70-1252-481d-98d5-becf47b6717b,hdd_0760,,Blue,HDD,1000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate FireCuda 8 TB 3.5"" 7200 RPM Internal",cad457a5-58b3-4235-a34d-8c4d73de74ca,hdd_0761,,FireCuda,HDD,8000GB
+,160,hdd,"2.5""",SATA 3.0 Gb/s,,Hitachi,"Hitachi Travelstar Z5K320 160GB HDD 2.5"" 5400RPM SATA 3.0 Gb/s",cadd91c6-c32b-4550-9304-a39f2421e179,hdd_0762,,Travelstar,HDD,160GB
+,500,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital AV 500GB HDD 3.5"" SATA",caf683d7-dbd6-4d0e-b76f-c67d1db79560,hdd_0763,,AV,HDD,500GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital WD_BLACK 6TB HDD 7200RPM 3.5"" SATA",cafb20c6-7eda-43ce-a3ee-ddc1da0da8d3,hdd_0764,,WD_BLACK,HDD,6000GB
+,14000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red 14TB HDD 3.5"" SATA",cb431f3b-3e93-4456-9328-6176ada90dc1,hdd_0765,,Red,HDD,14000GB
+,32000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos M 32TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",cb50e481-6d58-4818-bf6b-2a62d7db0b8c,hdd_0766,,Exos,HDD,32000GB
+,20000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Gold 20TB 3.5"" HDD 7200RPM SATA",cb8f6a17-4d49-4eee-8c37-02d39f4e55a1,hdd_0767,,Gold,HDD,20000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Purple 3TB HDD 3.5"" 5400RPM SATA",cbd330a8-8e59-4f57-92f8-8811a69fc02b,hdd_0768,,Purple,HDD,3000GB
+,16000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf Pro 16TB HDD 7200RPM 3.5"" SATA",cc36f3bf-685e-4f51-8888-aadedc65bbe0,hdd_0769,,IronWolf,HDD,16000GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Hitachi,"Hitachi Ultrastar A7K2000 1TB HDD 7200RPM 3.5"" SATA 3.0 Gb/s",cc98ab66-c127-4469-b247-5fb8ecd7d00d,hdd_0770,,Ultrastar,HDD,1000GB
+,1000,hdd,"2.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MQ04ABF100 1TB HDD 2.5"" SATA",ccc26796-ae46-4077-9a43-1a6438931128,hdd_0771,,MQ04ABF100,HDD,1000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Enterprise Capacity 2TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s",cceb7037-0654-4c8a-9efa-2c3b9685fdf7,hdd_0772,,Enterprise,HDD,2000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Ultrastar He8 8TB HDD 3.5"" 7200RPM SATA",cd008962-3e01-407a-9edd-ff574c6203c3,hdd_0773,,Ultrastar,HDD,8000GB
+,120,hdd,"2.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Scorpio Blue 120GB HDD 2.5"" 5400RPM SATA 3.0 Gb/s Internal",cd2dbb96-db4e-45e1-b4ed-97dac3309a5a,hdd_0774,,Scorpio,HDD,120GB
+,750,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Caviar Black 750GB 3.5"" HDD 7200RPM SATA",cd522835-ff76-4543-a804-c74e8348f907,hdd_0775,,Caviar,HDD,750GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Plus 4TB HDD 5400RPM 3.5"" SATA 6.0 Gb/s Internal",cd5362c0-d138-4136-a65d-afc7d47f6622,hdd_0776,,Red,HDD,4000GB
+,1000,hdd,"2.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Travelstar 1TB HDD 2.5"" 5400RPM SATA",cd769d5c-ed1e-4491-b52d-dcdc239aa965,hdd_0777,,Travelstar,HDD,1000GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos X18 12TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s",cd803090-b5d1-4dad-89d8-398826c428a8,hdd_0778,,Exos,HDD,12000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SkyHawk Surveillance 4TB HDD 3.5"" 5000RPM SATA 6.0 Gb/s",ce0b4f13-3fbd-4e24-8f19-c1512aee98fb,hdd_0779,,SkyHawk,HDD,4000GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Caviar Green 1TB 3.5"" HDD 5400RPM SATA",ce4ea997-d0a2-4e6f-8453-a18caf017e03,hdd_0780,,Caviar,HDD,1000GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos X18 10TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s Internal",ceb8e5c7-a167-4e78-a067-1edbad21a322,hdd_0781,,Exos,HDD,10000GB
+,22000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf Pro NAS 22TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s Internal",cf4376fc-e4e3-40be-b3de-212bd4d6e842,hdd_0782,,IronWolf,HDD,22000GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda Pro 10TB HDD 3.5"" SATA",cf48ea47-c23f-41d8-a39d-e29a9046b070,hdd_0783,,BarraCuda,HDD,10000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Enterprise Capacity 4TB HDD 7200RPM 3.5"" SATA",cfc2231e-7e3c-44d6-a395-ea1324bc5a3b,hdd_0784,,Enterprise,HDD,4000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"WD Red Plus Internal NAS HDD 3.5"" - 8TB",cffce1e1-be8d-4855-a001-7d50702ab76a,hdd_0785,2022,WD Red Plus,HDD,Internal NAS HDD
+,2000,hdd,"3.5""",SATA 3.0 Gb/s,,Seagate,"Seagate Barracuda LP 2TB Internal HDD 3.5"" 5900RPM SATA 3.0 Gb/s",d07d89f0-1e60-495f-b741-92acd4febc7a,hdd_0786,,Barracuda,HDD,2000GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital RE4 1TB HDD 3.5"" SATA",d125de0d-4ad5-4d96-8e32-76094592a53a,hdd_0787,,RE4,HDD,1000GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Pro 10TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",d13999fd-afb5-4fa3-b009-f33432409485,hdd_0788,,Red,HDD,10000GB
+,1000,hdd,"2.5""",SAS 6.0 Gb/s,,Seagate,"Seagate Constellation.2 1TB HDD 2.5"" SAS 6.0 Gb/s",d13b8fb2-201c-4061-bf0a-2e4d65343352,hdd_0789,,Constellation.2,HDD,1000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Green 2TB 3.5"" HDD 5400RPM SATA 6.0 Gb/s",d16b4a2b-bda3-4668-a1e8-e3a7101dd86f,hdd_0790,,Green,HDD,2000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SkyHawk AI 8TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",d19a27a4-30be-40b8-b1bf-690b38eda920,hdd_0791,,SkyHawk,HDD,8000GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Green 1TB 3.5"" HDD 5400RPM SATA 3.0 Gb/s",d1f4fbad-508f-417e-b8dc-3d1960323521,hdd_0792,,Green,HDD,1000GB
+,18000,hdd,"3.5""",SAS 12.0 Gb/s,,Western Digital,"Western Digital Ultrastar DC HC550 18TB HDD 7200RPM 3.5"" SAS 12.0 Gb/s",d2ae368b-47f0-4d3f-b90b-95cacaf91b4e,hdd_0793,,Ultrastar,HDD,18000GB
+,1000,hdd,"2.5""",SATA 3.0 Gb/s,,Toshiba,"Toshiba MQ01ABD100 1TB HDD 2.5"" 5400RPM SATA 3.0 Gb/s Internal",d344ac78-7a7d-42c8-82cd-5b1b379c2f11,hdd_0794,,MQ01ABD100,HDD,1000GB
+256,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos 7E10 512e/4Kn 4TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s",d36ab758-68ca-4d6f-afb2-6296e22bae9e,hdd_0795,,Exos,HDD,4000GB
+512,26000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Purple Pro 26 TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",d3c06493-afe6-4622-bc29-f9d22d1adb94,hdd_0796,,Purple,HDD,26000GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos X14 10TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s Internal",d4a96d98-295d-439d-9851-f8c3a99bad35,hdd_0797,,Exos,HDD,10000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba P300 2TB 3.5"" HDD 5400RPM SATA 6.0 Gb/s Internal",d4aca340-3e5e-4b28-8abe-77e4ecd68896,hdd_0798,,P300,HDD,2000GB
+,5000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba PH3500U-1I72 5TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s Internal",d4e45eaf-bf70-4784-bd95-e286b3fbacfe,hdd_0799,,PH3500U-1I72,HDD,5000GB
+,14000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba N300 Pro 14TB 3.5"" HDD 7200 RPM SATA",d575de7c-3589-4527-a5f8-c208bfd5561f,hdd_0800,,N300,HDD,14000GB
+,8000,hdd,"3.5""",SAS 12.0 Gb/s,,Hitachi,"Hitachi Ultrastar He8 8TB 3.5"" HDD 7200RPM SAS 12.0 Gb/s",d595e8fd-17b1-4f1c-b2e7-1fbf6098308a,hdd_0801,,Ultrastar,HDD,8000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Blue 2TB 3.5"" HDD 5400RPM SATA",d5ca4fc7-8983-4113-8857-5130aa488445,hdd_0802,,Blue,HDD,2000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Pro 3TB HDD 3.5"" SATA",d62d017e-338c-4ed4-ace2-afb9c834f9f8,hdd_0803,,Red,HDD,3000GB
+,750,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital RE3 750GB HDD 3.5"" 7200RPM SATA 3.0 Gb/s",d651b5c9-fd93-4b2d-8388-cd3145ed225b,hdd_0804,,RE3,HDD,750GB
+,6000,hdd,"3.5""",SAS 6.0 Gb/s,,Seagate,"Seagate Enterprise Capacity 6TB 3.5"" HDD 7200RPM SAS 6.0 Gb/s",d6596cf9-f559-44ad-941d-1dbae31d9674,hdd_0805,,Enterprise,HDD,6000GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba X300 12TB HDD 3.5"" 7200RPM SATA",d65e7012-deb2-428d-ab56-71b486c98696,hdd_0806,,X300,HDD,12000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba N300 6TB 3.5"" HDD 7200RPM SATA Internal",d667ed5f-65b0-43a5-b624-92bf75116021,hdd_0807,,N300,HDD,6000GB
+,16000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SkyHawk AI 16TB HDD 3.5"" SATA",d6746cd6-b0c0-4af3-bebc-46061eac928d,hdd_0808,,SkyHawk,HDD,16000GB
+,2000,hdd,"3.5""",SAS 6.0 Gb/s,,Toshiba,"Toshiba HDD3B03 2TB HDD 3.5"" 7200RPM SAS 6.0 Gb/s Internal",d6ae6877-fdce-4a42-a75f-1ea7bb1a3dc6,hdd_0809,,HDD3B03,HDD,2000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi 5K3000 2TB 3.5"" HDD 5400RPM SATA",d6b818e8-3af6-47ba-81f5-851c2d4343fc,hdd_0810,,5K3000,HDD,2000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MG05ACA800E 8TB HDD 3.5"" SATA",d70c7b06-665c-4260-b45b-343dad1a01ec,hdd_0811,,MG05ACA800E,HDD,8000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda 1TB 3.5"" HDD 7200RPM SATA Internal",d70f5fd1-4623-46f8-b35d-3bd64b40e847,hdd_0812,,BarraCuda,HDD,1000GB
+,80,hdd,"2.5""",SATA 3.0 Gb/s,,Seagate,"Seagate ST980813AS 80 GB Internal HDD 7200RPM 2.5"" SATA 3.0 Gb/s",d749dd72-90bf-4a99-8ffd-c904ed01f47b,hdd_0813,,ST980813AS,HDD,80GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf NAS 4TB HDD 3.5"" 5900 RPM SATA 6.0 Gb/s Internal",d75d4bbe-4f12-46fb-916a-59354756dc69,hdd_0814,,IronWolf,HDD,4000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Pro 8 TB HDD 3.5"" 7200RPM SATA 6.0 Gb/s",d7ce917d-e65e-4798-954a-e61d1fa962cc,hdd_0815,,Red,HDD,8000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda 4TB 5900RPM HDD 3.5"" SATA",d7dd7270-16a5-43cf-928b-cf7728cebcd2,hdd_0816,,BarraCuda,HDD,4000GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Purple 10TB 3.5"" Internal HDD 7200RPM SATA 6.0 Gb/s",d7e66c94-988e-4416-888a-cf59e42f3c98,hdd_0817,,Purple,HDD,10000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi HDS723030ALA640 3TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s",d7f69f21-8e3b-4eba-830c-1b6af93686b1,hdd_0818,,HDS723030ALA640,HDD,3000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba X300 6TB HDD 3.5"" SATA",d81293f2-dceb-46ac-8c76-65821691a75b,hdd_0819,,X300,HDD,6000GB
+512,20000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital WD Red Pro 20 TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",d82e8869-089b-45de-b20e-3cb8f656682b,hdd_0820,,WD,HDD,20000GB
+,400,hdd,"2.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Scorpio Blue 400GB HDD 2.5"" 5400RPM SATA",d830163d-0da5-4e76-9d20-5d5c0094c5bc,hdd_0821,,Scorpio,HDD,400GB
+,2000,hdd,"3.5""",SATA 3.0 Gb/s,,Seagate,"Seagate BarraCuda 2TB 3.5"" HDD 5900RPM SATA 3.0 Gb/s Internal",d834711e-729f-44ef-8e78-569a84c26cf0,hdd_0822,,BarraCuda,HDD,2000GB
+,500,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Deskstar 7K1000.D 500GB HDD 7200RPM 3.5"" SATA",d84618a1-83ac-4e7f-a7c0-d58e361daff3,hdd_0823,,Deskstar,HDD,500GB
+,640,hdd,"2.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Scorpio Blue 640GB HDD 2.5"" SATA",d8bb3a72-cd08-4fd5-a2e6-084b0beec76a,hdd_0824,,Scorpio,HDD,640GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Purple 6TB HDD 3.5"" 5640RPM SATA",d925897d-9263-4c15-aef1-407233ab8934,hdd_0825,,Purple,HDD,6000GB
+,4000,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital WD Blue 4TB 3.5"" HDD 5400RPM SATA",d9bbf71d-393d-4b50-b189-da4d9f1de76b,hdd_0826,,WD,HDD,4000GB
+,750,hdd,"2.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Scorpio Black 750 GB 2.5"" HDD 7200RPM SATA Internal",da02df5c-dd8a-4eaa-a4f9-8e09e156222e,hdd_0827,,Scorpio,HDD,750GB
+,3000,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Caviar 3TB HDD 3.5"" SATA",da32e58d-4018-45bf-92e9-d0cf929e86ec,hdd_0828,,Caviar,HDD,3000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda 6TB HDD 3.5"" SATA",da547e05-3218-456e-adb5-1973c0e355d5,hdd_0829,,BarraCuda,HDD,6000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba X300 6TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s Internal",da8876e9-b9c2-48ea-a051-2cd6dbca6367,hdd_0830,,X300,HDD,6000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Caviar Black 1TB HDD 3.5"" 7200RPM SATA 6.0 Gb/s",dac41602-8596-4c1f-b6c0-abe106f7966e,hdd_0831,,Caviar,HDD,1000GB
+,300,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital VelociRaptor 300GB HDD 3.5"" 10000RPM SATA Internal",dae47167-e6f6-43c4-ab62-565bd2630a9b,hdd_0832,,VelociRaptor,HDD,300GB
+,1000,hdd,"2.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MQ01ABD-V 1TB 2.5"" HDD 5400RPM SATA 6.0 Gb/s Internal",db0fefec-3174-4f3c-83e2-d9a80d899b18,hdd_0833,,MQ01ABD-V,HDD,1000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba P300 2TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s Internal",db124465-458c-43ed-ad10-d10e8c5e0a87,hdd_0834,,P300,HDD,2000GB
+,500,hdd,"2.5""",SATA 3.0 Gb/s,,Toshiba,"Toshiba MK5061GSYN 500GB HDD 7200RPM 2.5"" SATA 3.0 Gb/s Internal",db15b125-15c2-45a9-9757-836b93cf46ac,hdd_0835,,MK5061GSYN,HDD,500GB
+,500,hdd,"2.5""",SATA 3.0 Gb/s,,Hitachi,"Hitachi Travelstar Z5K500 500GB 2.5"" HDD 5400RPM SATA 3.0 Gb/s",db41c200-b396-485b-b277-5bcacb5c0e17,hdd_0836,,Travelstar,HDD,500GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital SE 2TB HDD 3.5"" 7200RPM SATA 6.0 Gb/s Internal",db659fdd-c3fd-4659-b3a4-a0e8672057f9,hdd_0837,,SE,HDD,2000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital WDBSLA0020HNC-NRSN 2TB Internal HDD 3.5"" 7200RPM SATA 6.0 Gb/s",db6e1ad2-50f3-4ada-864e-a5d848e5b8d7,hdd_0838,,WDBSLA0020HNC-NRSN,HDD,2000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Plus 1TB HDD 3.5"" SATA",dba5e70b-a7f5-4b68-9d7a-4bdf256de04b,hdd_0839,,Red,HDD,1000GB
+,500,hdd,"2.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba MQ01ABD050V 500GB HDD 2.5"" 5400RPM SATA 6.0 Gb/s Internal",dbad4e85-1366-47df-849f-3743eac6d106,hdd_0840,,MQ01ABD050V,HDD,500GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Hitachi,"Hitachi Deskstar 1TB HDD 5400RPM 3.5"" SATA",dc2bad1f-982f-4ac0-a73b-b145e6a64cf9,hdd_0841,,Deskstar,HDD,1000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Constellation ES 1TB 3.5"" 7200RPM HDD SATA",dc663737-db8d-48e2-98a7-c4127116aef0,hdd_0842,,Constellation,HDD,1000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Plus 8TB 3.5"" HDD 5640RPM SATA 6.0 Gb/s",dd1d5777-5e9a-4d8e-b9f4-f28285bd5c8a,hdd_0843,,Red,HDD,8000GB
+,80,hdd,"2.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Scorpio Black 80GB HDD 2.5"" SATA",dd201b26-2ae6-43e3-9d78-f6fa499e43cb,hdd_0844,,Scorpio,HDD,80GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf NAS 4TB HDD 3.5"" 5400RPM SATA",dd32e7b3-8a1e-407f-b08a-18b7aa73854f,hdd_0845,,IronWolf,HDD,4000GB
+512,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba N300 NAS 12 TB HDD 3.5"" 7200RPM SATA",ddb8b82a-191d-4c00-8a7f-fcc2d2667f31,hdd_0846,,N300,HDD,12000GB
+,500,hdd,"2.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Caviar Blue 500 GB HDD 5400 RPM 2.5"" SATA 6.0 Gb/s",ddbb160c-5b09-4fde-8519-84224207e44f,hdd_0847,,Caviar,HDD,500GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SkyHawk 8TB 3.5"" HDD 5900RPM SATA",de181ffc-fea6-4815-888c-fa1bf00add33,hdd_0848,,SkyHawk,HDD,8000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf NAS 3TB HDD 3.5"" 5900RPM SATA",de539334-cca7-4b04-8758-04e33f96e4fa,hdd_0849,,IronWolf,HDD,3000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Enterprise Capacity 8TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s",de5e5338-d09e-403d-93f4-e63a70ab9ea2,hdd_0850,,Enterprise,HDD,8000GB
+512,24000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital WD Red Pro 24 TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s",de7e9aa8-1f94-47f2-8e36-fd5f9930db80,hdd_0851,,WD,HDD,24000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,WD_BLACK 3.5-Inch Gaming Hard Drive - 2TB,de8ea285-2789-4780-a807-5e5c659ca7fa,hdd_0852,2022,WD_BLACK,HDD,2TB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda 1TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s Internal",df04c79f-e567-4630-9c5b-0ecc7bca952d,hdd_0853,,BarraCuda,HDD,1000GB
+,4000,hdd,"2.5""",SATA 6.0 Gb/s,,Seagate,"Seagate ST4000LM016 4TB HDD 2.5"" 5400RPM SATA Internal",df70d799-4379-4e01-900e-4232a35b68cf,hdd_0854,,ST4000LM016,HDD,4000GB
+,16000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos X24 16TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",dfd4fc25-712d-49da-a974-220ff62e2512,hdd_0855,,Exos,HDD,16000GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba N300 Pro 12TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",dfd6caf2-8ebf-452a-ac29-7311e2f3044c,hdd_0856,,N300,HDD,12000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda Pro 8TB HDD 3.5"" 7200RPM SATA",dfe815b0-37fe-422a-9759-a7106017a5f4,hdd_0857,,BarraCuda,HDD,8000GB
+,500,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital RE3 500 GB HDD 3.5"" 7200RPM SATA 3.0 Gb/s",e071106b-f466-46b2-91ad-328e16cdc8b1,hdd_0858,,RE3,HDD,500GB
+,160,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Caviar Blue 160GB 3.5"" HDD 7200RPM SATA 3.0 Gb/s",e0ae2f88-de85-415f-b461-43f3c5e050f5,hdd_0859,,Caviar,HDD,160GB
+,5000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital RE 5TB 3.5"" HDD 7200RPM SATA",e16edbdb-ab62-4ecd-a2a7-450648198972,hdd_0860,,RE,HDD,5000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba S300 4TB HDD 3.5"" SATA",e1a6c29f-0400-4302-89ee-dc1913e624e8,hdd_0861,,S300,HDD,4000GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba S300 Pro 10TB HDD 3.5"" SATA",e1aabad7-de26-4fff-85e1-f1fc52e74839,hdd_0862,,S300,HDD,10000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Barracuda Compute 6TB HDD 3.5"" 5400RPM SATA",e1d1a14f-a0f7-4ee6-887d-1bc79f4c507d,hdd_0863,,Barracuda,HDD,6000GB
+,500,hdd,"3.5""",SATA 3.0 Gb/s,,Seagate,"Seagate BarraCuda 500GB HDD 3.5"" 7200RPM SATA Internal",e1e86404-6692-4e06-980b-33b04e54702a,hdd_0864,,BarraCuda,HDD,500GB
+,1000,hdd,"2.5""",SAS 3.0 Gb/s,,Dell,"Dell 342-3520 1TB HDD 2.5"" SAS 3.0 Gb/s",e2829c3a-587a-4ecb-b71d-9b2f8bc42643,hdd_0865,,342-3520,HDD,1000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf NAS 2TB 3.5"" HDD 5400 RPM SATA 6.0 Gb/s",e309ec78-eb61-4458-9fb8-7b6b3cc93997,hdd_0866,,IronWolf,HDD,2000GB
+,16000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba X300 16TB HDD 3.5"" SATA",e3112397-25f3-4a1d-8553-118f19877633,hdd_0867,,X300,HDD,16000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba DT02 4TB 3.5"" HDD 5400RPM SATA Internal",e314f6f3-cc96-4e8d-b683-27351feb6afd,hdd_0868,,DT02,HDD,4000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital SE 1TB HDD 7200RPM 3.5"" SATA",e32319fb-0226-4671-ae6f-6cd3991b98fc,hdd_0869,,SE,HDD,1000GB
+8,1000,hdd,"2.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Scorpio Blue 1TB 2.5"" HDD 5200RPM SATA",e3790bc5-d709-4e24-9baa-9f5e085651b5,hdd_0870,,Scorpio,HDD,1000GB
+,3000,hdd,"3.5""",SAS 6.0 Gb/s,,Seagate,"Seagate Constellation ES.2 3TB Internal HDD 7200RPM 3.5"" SAS 6.0 Gb/s",e3805de8-b6da-4b69-a76f-c2f631f2df1f,hdd_0871,,Constellation,HDD,3000GB
+256,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf Pro 10TB 3.5"" HDD 7200RPM SATA",e3dd081f-cc50-4514-80f4-f519d714028e,hdd_0872,,IronWolf,HDD,10000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba S300 1TB 3.5"" HDD 5700 RPM SATA 6.0 Gb/s Internal",e420eadb-13e8-48ce-ab31-0962633c6b03,hdd_0873,,S300,HDD,1000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Surveillance 4TB HDD 3.5"" SATA 5900 RPM Internal",e42a249b-584c-42c3-8d41-17264dbfaefd,hdd_0874,,Surveillance,HDD,4000GB
+,2000,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Caviar Green 2TB HDD 3.5"" 5400RPM SATA 3.0 Gb/s",e45cc0bf-d10c-4ab0-af57-3d16c207a5f3,hdd_0875,,Caviar,HDD,2000GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Hitachi,"Hitachi 7K1000 1TB 3.5"" HDD 7200 RPM Internal SATA 3.0 Gb/s",e488e613-803c-484c-88c3-2ee025d497ce,hdd_0876,,7K1000,HDD,1000GB
+,500,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital RE4 500GB HDD 7200RPM 3.5"" SATA",e4b8fbac-aa4f-4640-8012-13e89dc3749e,hdd_0877,,RE4,HDD,500GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Enterprise Capacity 10TB HDD 3.5"" 7200RPM SATA",e5211d9f-e9cb-44ab-8fba-fa12e0435077,hdd_0878,,Enterprise,HDD,10000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Blue 4TB HDD 3.5"" 5400RPM SATA 6.0 Gb/s",e52a99dd-23d7-43c8-bb3f-5a994ee3eafd,hdd_0879,,Blue,HDD,4000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Enterprise 8 TB 3.5"" HDD 7200 RPM SATA 6.0 Gb/s Internal",e55494a3-3fea-4218-b578-d9f633a95ec0,hdd_0880,,Enterprise,HDD,8000GB
+,2000,hdd,"3.5""",SATA 3.0 Gb/s,,Seagate,"Seagate Constellation ES 2TB 3.5"" HDD 7200RPM SATA Internal",e5847c67-41c3-4c59-ac60-34390b51ec4a,hdd_0881,,Constellation,HDD,2000GB
+,20000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos X22 20TB 3.5"" Internal HDD 7200RPM SATA 6.0 Gb/s",e58e7721-a7f6-4c4e-896d-0ce73ed7340a,hdd_0882,,Exos,HDD,20000GB
+,500,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Purple 500 GB 3.5"" HDD 5400 RPM SATA 6.0 Gb/s Internal",e5e71342-ae0a-4d4f-9721-f2364a4834fb,hdd_0883,,Purple,HDD,500GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate ST3000VM002 3TB 3.5"" HDD 5900RPM SATA Internal",e6444333-5e9a-43f5-ba43-47c64e64baac,hdd_0884,,ST3000VM002,HDD,3000GB
+,18000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf NAS 18TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s Internal",e743c708-f724-43d4-adc2-910ef2834736,hdd_0885,,IronWolf,HDD,18000GB
+,500,hdd,"2.5""",SATA 3.0 Gb/s,,Seagate,"Seagate Momentus Thin 500GB HDD 2.5"" SATA",e7472f88-5861-4849-85a2-13f361cf61de,hdd_0886,,Momentus,HDD,500GB
+,250,hdd,"2.5""",SATA 3.0 Gb/s,,Toshiba,"Toshiba MK2576GSX 250GB 2.5"" HDD 5400RPM SATA",e74f1b82-fa9f-4a5b-8001-359a5d719ab5,hdd_0887,,MK2576GSX,HDD,250GB
+,320,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Caviar Blue 320GB HDD 3.5"" SATA",e7819664-26b0-4095-9b64-9162dbaa6eba,hdd_0888,,Caviar,HDD,320GB
+,18000,hdd,"3.5""",SAS 12.0 Gb/s,,Seagate,"Seagate Exos X18 18TB 3.5"" HDD 7200RPM SAS 12.0 Gb/s",e7bd1f03-7b60-464f-9543-97af724881eb,hdd_0889,,Exos,HDD,18000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital WD Blue 1TB 3.5"" HDD 5400RPM SATA 6.0 Gb/s",e7e2a0b2-310a-429f-b1c8-0e916b5e7b4a,hdd_0890,,WD,HDD,1000GB
+,500,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda 500 GB 3.5"" 7200 RPM Internal Hard Drive",e7f6bce0-b2b2-40cb-86ea-4929bbabef60,hdd_0891,2016,BarraCuda,HDD,500GB 7200RPM
+,2000,hdd,"2.5""",SATA 6.0 Gb/s,,Samsung,"Samsung Spinpoint 2TB HDD 2.5"" SATA",e8581de6-3808-45b0-b4aa-999c0e521081,hdd_0892,,Spinpoint,HDD,2000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos 7E10 512n 2TB HDD 3.5"" SATA",e8596e8d-f1d9-4528-a5e1-f38e2d455ccb,hdd_0893,,Exos,HDD,2000GB
+,500,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Caviar Blue 500GB HDD 3.5"" SATA",e8601753-4e1c-4a55-92aa-5ed6b0c7d1ae,hdd_0894,,Caviar,HDD,500GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital RE 1TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",e8639767-5466-453b-a1cd-fa5a0bcecdb0,hdd_0895,,RE,HDD,1000GB
+,500,hdd,"2.5""",SATA 3.0 Gb/s,,Toshiba,"Toshiba MK5076GSX 500GB HDD 2.5"" SATA",e87a7f74-9a7b-4f99-a62c-0cd1a38ed1e2,hdd_0896,,MK5076GSX,HDD,500GB
+,500,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Caviar Blue 500GB HDD 7200RPM 3.5"" SATA",e88b60b2-ad17-426a-b761-32695d6cfb30,hdd_0897,,Caviar,HDD,500GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba DT01ACA100 1TB HDD 3.5"" 7200RPM SATA",e8bda71a-6de2-48f0-862e-295c6a9a8f12,hdd_0898,,DT01ACA100,HDD,1000GB
+,1000,hdd,"2.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Travelstar 7K1000 1TB HDD 7200RPM 2.5"" SATA 6.0 Gb/s",e90dcfdd-b220-4e0a-a29f-941e03e102a1,hdd_0899,,Travelstar,HDD,1000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Blue 6TB HDD 3.5"" 5400RPM SATA 6.0 Gb/s Internal",e9ab5434-4bb2-4a01-9f1e-9a4888d0ab31,hdd_0900,,Blue,HDD,6000GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Caviar Black 1TB HDD 3.5"" 7200RPM SATA",e9f721ca-46bf-45fc-b480-a145910ff336,hdd_0901,,Caviar,HDD,1000GB
+,5000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red 5TB 3.5"" HDD 5400RPM SATA",ea1b69b2-777a-4b3b-acef-d7c0544fd190,hdd_0902,,Red,HDD,5000GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Ultrastar DC HC520 12TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s Internal",eab434a5-6ade-4853-bbd2-a0cf0ee8ff24,hdd_0903,,Ultrastar,HDD,12000GB
+,250,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda 250GB HDD 7200RPM 3.5"" SATA 6.0 Gb/s Internal",eacff4d5-ce3a-46e4-84ba-90a041f1e90e,hdd_0904,,BarraCuda,HDD,250GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Ultrastar DC HC330 10TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s",eb386180-82a8-4264-ab85-bb5d3561a588,hdd_0905,,Ultrastar,HDD,10000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SkyHawk Surveillance 3TB HDD 3.5"" SATA",eb4d5d46-7325-4055-8020-9b0a9c709986,hdd_0906,,SkyHawk,HDD,3000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital WD_BLACK 4TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s Internal",eb7b6e40-a20b-4e02-892c-69a701bccadb,hdd_0907,,WD_BLACK,HDD,4000GB
+,1000,hdd,"2.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red 1TB HDD 2.5"" 5400RPM SATA",ebab7ba6-9795-459c-8616-ccd2194e4ddd,hdd_0908,,Red,HDD,1000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba S300 Pro 6 TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s",ebf79909-63df-48f7-971b-6a6704185257,hdd_0909,,S300,HDD,6000GB
+,5000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate ST5000DM000 5TB HDD 5900RPM 3.5"" SATA",ec1331ef-86d2-46be-b719-8f05b84149bd,hdd_0910,,ST5000DM000,HDD,5000GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Seagate,"Seagate Pipeline 1TB HDD 3.5"" SATA",ec41d695-700a-4f64-83d1-b161d956b66d,hdd_0911,,Pipeline,HDD,1000GB
+,2000,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital AV-GP 2TB HDD 3.5"" SATA",ec9bcdb7-3df1-4917-83df-0528f2e4c533,hdd_0912,,AV-GP,HDD,2000GB
+512,20000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda 20TB HDD 3.5"" 7200RPM SATA Internal",ecd1c0ff-b34a-4e7c-8445-0910ce0cff67,hdd_0913,,BarraCuda,HDD,20000GB
+,160,hdd,"2.5""",SATA 1.5 Gb/s,,Samsung,"Samsung Spinpoint M 160GB HDD 5400RPM 2.5"" SATA 1.5 Gb/s Internal",ecf98fee-bfec-4a64-8bd2-d409138ad039,hdd_0914,,Spinpoint,HDD,160GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SkyHawk Surveillance +Rescue 4TB 3.5"" HDD 5400RPM SATA Internal",ecfa3c9c-8218-4f16-aefc-4c3968696984,hdd_0915,,SkyHawk,HDD,4000GB
+,640,hdd,"2.5""",SATA 3.0 Gb/s,,Toshiba,"Toshiba HDD2J92 640GB HDD 5400RPM 2.5"" SATA",eda1b54c-7579-4b69-b1c6-d9745d37d84f,hdd_0916,,HDD2J92,HDD,640GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Ultrastar 6TB 3.5"" HDD 7200RPM SATA",edcdbebe-fcd8-43eb-90c6-06a565099339,hdd_0917,,Ultrastar,HDD,6000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi HDN724040ALE640 4TB HDD 3.5"" SATA",ee2b5884-f847-459a-b04c-1192ff208434,hdd_0918,,HDN724040ALE640,HDD,4000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,Seagate IronWolf NAS 4TB Internal Hard Drive,ee69b71e-bfbf-4492-a11e-945388b8f2e9,hdd_0919,2022,IronWolf,HDD,4TB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate FireCuda 8 TB 3.5"" 7200 RPM Internal",eeca2993-dbf0-446b-b9a6-240cdefb5d41,hdd_0920,,FireCuda,HDD,8000GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Plus 12TB HDD 7200RPM 3.5"" SATA",eef84a31-42fc-4d0a-9609-d2d3edca91cc,hdd_0921,,Red,HDD,12000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Blue 3 TB HDD 5400RPM 3.5"" SATA",f0758cc4-4a4e-47a7-ac0d-355b8d374b79,hdd_0922,,Blue,HDD,3000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate SkyHawk AI 8TB 3.5"" HDD 7200RPM SATA",f0cce715-6f56-4707-90fa-a1b0ba01b79f,hdd_0923,,SkyHawk,HDD,8000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba S300 2TB HDD 3.5"" 5400RPM SATA",f0ef69c3-4480-4457-82ea-6c976cbd9472,hdd_0924,,S300,HDD,2000GB
+,22000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Pro 22TB HDD 7200RPM 3.5"" SATA",f118c8aa-3030-4231-87a2-042f6a8d2ce1,hdd_0925,,Red,HDD,22000GB
+,500,hdd,"2.5""",SATA 3.0 Gb/s,,Seagate,"Seagate ST500VT000 500GB HDD 2.5"" SATA",f1bea44f-66f4-4148-b50b-32513c8ce438,hdd_0926,,ST500VT000,HDD,500GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Red Pro 10TB HDD 3.5"" 7200RPM SATA 6.0 Gb/s Internal",f1ea9414-681b-4077-8770-2f5cbeb0bbfe,hdd_0927,,Red,HDD,10000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba N300 8TB HDD 3.5"" SATA",f1ff176c-4fcd-401d-9467-3e8a9d0a7ccb,hdd_0928,,N300,HDD,8000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate FireCuda 4TB HDD 7200RPM 3.5"" SATA Internal",f21eb4da-a1bd-4904-8018-3c2b2286cd16,hdd_0929,,FireCuda,HDD,4000GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Purple 10TB HDD 3.5"" 5400RPM SATA 6.0 Gb/s",f2246ea4-9881-4977-9e78-f631c06c3f1d,hdd_0930,,Purple,HDD,10000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos 7E10 512e/4Kn 2TB HDD 7200RPM 3.5"" SATA",f35e99a3-92fe-4f61-8f0b-995a8546b532,hdd_0931,,Exos,HDD,2000GB
+,6000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Surveillance 6TB HDD 3.5"" 5400RPM SATA",f3cea586-6090-4214-b61b-4e828f2fb8cc,hdd_0932,,Surveillance,HDD,6000GB
+,3000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital RE 3TB 3.5"" HDD 7200RPM SATA Internal",f3f2bda2-823d-437b-ba24-682cb90b30eb,hdd_0933,,RE,HDD,3000GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Caviar Black 1.5 TB HDD 7200RPM 3.5"" SATA",f45af758-7dad-4003-be82-b930565cb7af,hdd_0934,,Caviar,HDD,1000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Barracuda Compute 1TB 3.5"" HDD 5400RPM SATA",f55eb03a-d70f-4fcb-96de-b537cc5f97c5,hdd_0935,,Barracuda,HDD,1000GB
+,320,hdd,"2.5""",SATA 3.0 Gb/s,,Seagate,"Seagate Momentus 320GB HDD 2.5"" SATA",f5956efe-334c-4367-8fdb-d9981e4f1468,hdd_0936,,Momentus,HDD,320GB
+,10000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos 10TB 3.5"" HDD 7200RPM SATA 512e/4Kn",f5a19995-c7dd-4286-bf3b-161483b295be,hdd_0937,,Exos,HDD,10000GB
+,12000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf NAS 12TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s",f611f809-a944-45f8-8a5d-ef0f54602d79,hdd_0938,,IronWolf,HDD,12000GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Hitachi,"Hitachi Ultrastar He8 8TB HDD 7200RPM 3.5"" SATA",f632df5f-06ab-40f9-bef8-42d579bf110c,hdd_0939,,Ultrastar,HDD,8000GB
+,20000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf Pro, 20TB NAS Internal HDD –CMR 3.5 Inch SATA 6 Gb/s, 7,200 RPM, 256MB Cache for RAID Network Attached Storage, Rescue Services (ST20000NEZ00/000)",f6b87ebd-e504-46d8-bf0c-87d8fefeedbe,hdd_0940,2021,IronWolf Pro,HDD,20 TB
+,750,hdd,"2.5""",SATA 3.0 Gb/s,,Hitachi,"Hitachi 0J11563 750GB HDD 5400RPM 2.5"" SATA",f70cadd2-2c90-404c-a703-6eff9ea6ceb8,hdd_0941,,0J11563,HDD,750GB
+,2000,hdd,"2.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Blue 2TB 2.5"" HDD 5400RPM SATA",f87d8597-117e-428f-9747-57deadcc7602,hdd_0942,,Blue,HDD,2000GB
+,500,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,Seagate BarraCuda ESA-3502 Internal Hard Drive 3.5 Inches - 500 GB (ST500DM002) + Silicone HDD 3.5 Inch Protective Cover - White,f8a84efc-58de-43c9-87e9-743312424bac,hdd_0943,2012,BarraCuda,HDD,ESA-3502
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba P300 2TB HDD 7200RPM 3.5"" SATA",f945ce8b-9194-49ab-b88a-bebdd125bc7b,hdd_0944,,P300,HDD,2000GB
+,320,hdd,"3.5""",SATA 3.0 Gb/s,,Hitachi,"Hitachi 7K1000.C 320GB 3.5"" HDD 7200RPM SATA Internal",f9f12000-df8f-4d28-8019-13754ba39b05,hdd_0945,,7K1000.C,HDD,320GB
+,250,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital RE 250GB HDD 7200RPM 3.5"" SATA Internal",fa938755-1983-4dba-bb9d-e69a7f9725c8,hdd_0946,,RE,HDD,250GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Seagate,"Seagate BarraCuda 1TB 3.5"" HDD 7200RPM SATA",fa9f48a4-6973-4069-b945-3860ea93023a,hdd_0947,,BarraCuda,HDD,1000GB
+,4000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Purple 4TB 3.5"" HDD 5400RPM SATA",fad62557-7723-429a-b8e7-96939e41b229,hdd_0948,,Purple,HDD,4000GB
+,16000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Ultrastar DC HC550 16TB HDD 7200RPM 3.5"" SATA",fb23fc77-fc4b-4ef6-a24c-718ce584ad0e,hdd_0949,,Ultrastar,HDD,16000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate BarraCuda 1.5TB 3.5"" HDD 7200RPM SATA",fbd6677e-dd4c-4ff9-8230-6b78975620bd,hdd_0950,,BarraCuda,HDD,1000GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate IronWolf Pro 2TB 3.5"" HDD 7200RPM SATA",fc0773dd-e75e-4b4b-91ec-85f9f05e89a5,hdd_0951,,IronWolf,HDD,2000GB
+,1000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate NAS 1TB HDD 3.5"" 5900RPM SATA",fc327c6b-6d29-4d0a-bf84-8a83b46de78b,hdd_0952,,NAS,HDD,1000GB
+,1000,hdd,"3.5""",SAS 12.0 Gb/s,,Hitachi,"Hitachi HGST Ultrastar C10K1800 1.2 TB 3.5"" HDD 10500 RPM SAS 12.0 Gb/s",fc42aa0a-396c-41fe-9dbd-90167e29c362,hdd_0953,,HGST,HDD,1000GB
+,500,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Black 500GB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",fc9e0f0a-c28d-4018-8421-195b6ada62e5,hdd_0954,,Black,HDD,500GB
+,500,hdd,"3.5""",SATA 3.0 Gb/s,,Seagate,"Seagate Barracuda 500GB 3.5"" HDD 7200RPM SATA",fcfe0975-8ec6-4440-9e92-2b6a909ab407,hdd_0955,,Barracuda,HDD,500GB
+,16000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate Exos X16 16TB HDD 7200RPM 3.5"" SATA 6.0 Gb/s",fd34cd35-6e45-4da3-94b1-4e8ab0285f69,hdd_0956,,Exos,HDD,16000GB
+,20000,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital Gold 20TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s Internal",fd73ef9f-8c6f-4427-a207-b8af7a02501e,hdd_0957,,Gold,HDD,20000GB
+8,250,hdd,"2.5""",SATA 3.0 Gb/s,,Western Digital,"Western Digital Scorpio Blue 250GB 2.5"" HDD 5400RPM SATA 3.0 Gb/s",fdbe03bf-34d2-4db2-a285-fd333f88c3a5,hdd_0958,,Scorpio,HDD,250GB
+,2000,hdd,"3.5""",SATA 6.0 Gb/s,,Toshiba,"Toshiba P300 2TB 3.5"" HDD 7200RPM SATA 6.0 Gb/s",fe19d310-9fcf-45fd-a5f7-924622ad07f6,hdd_0959,,P300,HDD,2000GB
+,150,hdd,"3.5""",SATA 6.0 Gb/s,,Western Digital,"Western Digital VelociRaptor 150GB HDD 3.5"" SATA",ff37f12c-fe61-421b-8c99-d2e76902ceb2,hdd_0960,,VelociRaptor,HDD,150GB
+,8000,hdd,"3.5""",SATA 6.0 Gb/s,,Seagate,"Seagate EXOS Enterprise 8TB HDD 7200RPM 3.5"" SATA",ff7bf778-0eee-4914-8762-476f64d7f93b,hdd_0961,,EXOS,HDD,8000GB
+,500,hdd,"2.5""",SATA 3.0 Gb/s,,Toshiba,"Toshiba MK5059GSXP 500GB HDD 2.5"" 5400RPM SATA",ffa18543-de0e-4e0e-bb6b-e3497b02d861,hdd_0962,,MK5059GSXP,HDD,500GB
+,1000,hdd,"3.5""",SATA 3.0 Gb/s,,Samsung,"Samsung Spinpoint F2 EG 1TB HDD 3.5"" SATA 3.0 Gb/s",ffec34d1-79d8-48b2-b141-747ad4a47a55,hdd_0963,,Spinpoint,HDD,1000GB

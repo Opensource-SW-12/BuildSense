@@ -3,7 +3,7 @@ from datetime import datetime, timezone
 import psutil
 
 from src.gpu import collect_gpu_snapshot
-from src.process_tracker import get_running_processes, get_system_boot_time, get_system_uptime_seconds
+from src.process_tracker import get_running_processes, get_boot_and_uptime
 from src.background import start_background_task, stop_background_task, is_background_running, get_stop_event
 from src.storage import append_usage_log, check_and_clear_abort_signal
 
@@ -18,6 +18,25 @@ def get_ram_usage() -> float:
   return psutil.virtual_memory().percent
 
 
+def get_disk_usage() -> list[dict]:
+  result = []
+  for part in psutil.disk_partitions(all=False):
+    try:
+      usage = psutil.disk_usage(part.mountpoint)
+      result.append({
+        "mountpoint": part.mountpoint,
+        "device": part.device,
+        "fstype": part.fstype,
+        "total_gb": round(usage.total / (1024 ** 3), 1),
+        "used_gb": round(usage.used / (1024 ** 3), 1),
+        "free_gb": round(usage.free / (1024 ** 3), 1),
+        "percent": usage.percent,
+      })
+    except Exception:
+      continue
+  return result
+
+
 def collect_monitoring_snapshot() -> dict:
   try:
     gpu = collect_gpu_snapshot()
@@ -30,11 +49,15 @@ def collect_monitoring_snapshot() -> dict:
     processes = []
 
   try:
-    boot_time = get_system_boot_time()
-    uptime_seconds = get_system_uptime_seconds()
+    boot_time, uptime_seconds = get_boot_and_uptime()
   except Exception:
     boot_time = None
     uptime_seconds = None
+
+  try:
+    disks = get_disk_usage()
+  except Exception:
+    disks = []
 
   return {
     "timestamp": datetime.now(timezone.utc).isoformat(),
@@ -46,6 +69,7 @@ def collect_monitoring_snapshot() -> dict:
     "vram_total_mb": gpu.get("vram_total_mb"),
     "boot_time": boot_time,
     "uptime_seconds": uptime_seconds,
+    "disks": disks,
     "processes": processes,
   }
 

@@ -1,0 +1,39 @@
+{
+  "game": [
+    "steam.exe",
+    "epicgameslauncher.exe",
+    "riotclientservices.exe"
+  ],
+
+  "development": [
+    "code.exe",
+    "pycharm64.exe",
+    "idea64.exe",
+    "git.exe",
+    "python.exe",
+    "java.exe",
+    "node.exe"
+  ],
+
+  "document": [
+    "winword.exe",
+    "excel.exe",
+    "powerpnt.exe",
+    "hwp.exe",
+    "acrobat.exe"
+  ],
+
+  "browser": [
+    "chrome.exe",
+    "msedge.exe",
+    "firefox.exe",
+    "whale.exe"
+  ],
+
+  "messenger": [
+    "discord.exe",
+    "kakaotalk.exe",
+    "slack.exe",
+    "teams.exe"
+  ]
+}

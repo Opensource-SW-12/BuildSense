@@ -108,14 +108,6 @@ def search_ebay(query, limit=10):
         f"&limit={limit}"
     )
 
-    encoded_query = urllib.parse.quote(query)
-
-    url = (
-        f"{EBAY_SEARCH_API_URL}"
-        f"?q={encoded_query}"
-        f"&limit={limit}"
-    )
-
     request = urllib.request.Request(url)
     request.add_header("Authorization", f"Bearer {ebay_token}")
     request.add_header("X-EBAY-C-MARKETPLACE-ID", "EBAY_US")
@@ -133,7 +125,7 @@ def search_ebay(query, limit=10):
 
     except urllib.error.URLError as error:
         raise RuntimeError(
-            f"eBay API 연결 실패: 네트워크 또는 주소 문제 - {error}"
+            f"eBay API 연결 실패: {error}"
         ) from error
 
     except json.JSONDecodeError as error:
