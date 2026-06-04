@@ -1,6 +1,7 @@
 import base64
 import json
 import os
+import time
 import urllib.parse
 import urllib.request
 
@@ -8,8 +9,18 @@ import urllib.request
 EBAY_TOKEN_URL = "https://api.ebay.com/identity/v1/oauth2/token"
 EBAY_SCOPE = "https://api.ebay.com/oauth/api_scope"
 
+_cached_access_token = None
+_token_expires_at = 0
+
 
 def get_ebay_access_token():
+    global _cached_access_token, _token_expires_at
+
+    now = time.time()
+
+    if _cached_access_token and now < _token_expires_at:
+        return _cached_access_token
+
     client_id = os.getenv("EBAY_CLIENT_ID")
     client_secret = os.getenv("EBAY_CLIENT_SECRET")
 
@@ -33,7 +44,6 @@ def get_ebay_access_token():
         data=data,
         method="POST"
     )
-
     request.add_header("Content-Type", "application/x-www-form-urlencoded")
     request.add_header("Authorization", f"Basic {encoded_credentials}")
 
@@ -43,7 +53,12 @@ def get_ebay_access_token():
 
         token_data = json.loads(response_body)
 
-        return token_data["access_token"]
+        _cached_access_token = token_data["access_token"]
+        expires_in = int(token_data.get("expires_in", 7200))
+
+        _token_expires_at = now + expires_in - 300
+
+        return _cached_access_token
 
     except urllib.error.HTTPError as error:
         raise RuntimeError(
