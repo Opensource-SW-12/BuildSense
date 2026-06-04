@@ -3,6 +3,7 @@ import os
 import urllib.parse
 import urllib.request
 
+from src.pricing.ebay_auth import get_ebay_access_token
 from src.pricing.exchange_rate import get_usd_to_krw_rate, convert_usd_to_krw
 
 
@@ -97,12 +98,7 @@ def extract_naver_candidates(api_result):
 
 
 def search_ebay(query, limit=10):
-    ebay_token = os.getenv("EBAY_ACCESS_TOKEN")
-
-    if not ebay_token:
-        raise ValueError(
-            "eBay API 키가 설정되지 않았습니다. EBAY_ACCESS_TOKEN 환경변수를 확인하세요."
-        )
+    ebay_token = get_ebay_access_token()
 
     encoded_query = urllib.parse.quote(query)
 
@@ -129,7 +125,7 @@ def search_ebay(query, limit=10):
 
     except urllib.error.URLError as error:
         raise RuntimeError(
-            f"eBay API 연결 실패: 네트워크 또는 주소 문제 - {error}"
+            f"eBay API 연결 실패: {error}"
         ) from error
 
     except json.JSONDecodeError as error:
