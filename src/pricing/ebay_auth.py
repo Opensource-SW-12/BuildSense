@@ -6,11 +6,17 @@ import urllib.parse
 import urllib.request
 
 
-EBAY_TOKEN_URL = "https://api.ebay.com/identity/v1/oauth2/token"
 EBAY_SCOPE = "https://api.ebay.com/oauth/api_scope"
+
+_PROD_TOKEN_URL = "https://api.ebay.com/identity/v1/oauth2/token"
+_SBX_TOKEN_URL  = "https://api.sandbox.ebay.com/identity/v1/oauth2/token"
 
 _cached_access_token = None
 _token_expires_at = 0
+
+
+def _is_sandbox(client_id: str) -> bool:
+    return "SBX" in client_id.upper()
 
 
 def get_ebay_access_token():
@@ -29,6 +35,8 @@ def get_ebay_access_token():
             "EBAY_CLIENT_ID 또는 EBAY_CLIENT_SECRET 환경변수가 없습니다."
         )
 
+    token_url = _SBX_TOKEN_URL if _is_sandbox(client_id) else _PROD_TOKEN_URL
+
     credentials = f"{client_id}:{client_secret}"
     encoded_credentials = base64.b64encode(
         credentials.encode("utf-8")
@@ -40,7 +48,7 @@ def get_ebay_access_token():
     }).encode("utf-8")
 
     request = urllib.request.Request(
-        EBAY_TOKEN_URL,
+        token_url,
         data=data,
         method="POST"
     )

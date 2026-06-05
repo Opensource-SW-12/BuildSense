@@ -241,13 +241,16 @@ def calculate_gpu_tier(score):
 
 
 def find_matching_passmark_data(part_name, passmark_items):
+    if not part_name:
+        return None
+
     normalized_part_name = normalize_text(part_name)
 
     for item in passmark_items:
         passmark_name = item.get("name")
         normalized_passmark_name = normalize_text(passmark_name)
 
-        if normalized_part_name == normalized_passmark_name:
+        if normalized_part_name and normalized_part_name == normalized_passmark_name:
             return item
 
     return None
@@ -287,12 +290,14 @@ def fetch_price_candidates_when_na(part):
 
 def enrich_parts_with_passmark(parts, passmark_items, category):
     enriched_parts = []
+    exchange_rate = None
 
     for part in parts:
         part_name = part.get("name")
         passmark_data = find_matching_passmark_data(part_name, passmark_items)
 
         if passmark_data is None:
+            enriched_parts.append(part)
             continue
 
         score = passmark_data.get("score")
@@ -313,7 +318,10 @@ def enrich_parts_with_passmark(parts, passmark_items, category):
             part["passmark_price_krw"] = "NA"
             part["price_candidates"] = fetch_price_candidates_when_na(part)
         else:
-            part["passmark_price_krw"] = convert_usd_to_krw(price_usd)
+            if exchange_rate is None:
+                from src.pricing.exchange_rate import get_usd_to_krw_rate
+                exchange_rate = get_usd_to_krw_rate()
+            part["passmark_price_krw"] = convert_usd_to_krw(price_usd, exchange_rate)
             part["price_candidates"] = []
 
         enriched_parts.append(part)

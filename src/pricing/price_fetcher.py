@@ -3,12 +3,18 @@ import os
 import urllib.parse
 import urllib.request
 
-from src.pricing.ebay_auth import get_ebay_access_token
+from src.pricing.ebay_auth import get_ebay_access_token, _is_sandbox
 from src.pricing.exchange_rate import get_usd_to_krw_rate, convert_usd_to_krw
 
 
 NAVER_SHOPPING_API_URL = "https://openapi.naver.com/v1/search/shop.json"
-EBAY_SEARCH_API_URL = "https://api.ebay.com/buy/browse/v1/item_summary/search"
+_EBAY_SEARCH_PROD = "https://api.ebay.com/buy/browse/v1/item_summary/search"
+_EBAY_SEARCH_SBX  = "https://api.sandbox.ebay.com/buy/browse/v1/item_summary/search"
+
+
+def _ebay_search_url() -> str:
+    client_id = os.getenv("EBAY_CLIENT_ID", "")
+    return _EBAY_SEARCH_SBX if _is_sandbox(client_id) else _EBAY_SEARCH_PROD
 
 
 def build_search_query(part):
@@ -103,7 +109,7 @@ def search_ebay(query, limit=10):
     encoded_query = urllib.parse.quote(query)
 
     url = (
-        f"{EBAY_SEARCH_API_URL}"
+        f"{_ebay_search_url()}"
         f"?q={encoded_query}"
         f"&limit={limit}"
     )
