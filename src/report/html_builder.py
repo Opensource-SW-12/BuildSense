@@ -102,6 +102,54 @@ footer {
     border-top: 1px solid #1E2740; margin-top: 8px;
 }
 footer span { color: #00D4AA; font-weight: 700; }
+/* Recommendation section */
+.rec-list { display: flex; flex-direction: column; gap: 14px; }
+.rec-card {
+    background: #0F1420; border: 1px solid #2D3748;
+    border-radius: 10px; padding: 18px 20px;
+}
+.rec-card.rec-psu {
+    border-color: rgba(0,212,170,0.2);
+    background: rgba(0,212,170,0.03);
+}
+.rec-header {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap;
+}
+.rec-part { font-size: 14px; font-weight: 700; color: #F0F4F8; min-width: 44px; }
+.rec-priority {
+    margin-left: auto; display: flex; align-items: center; gap: 8px;
+}
+.rec-bar-bg {
+    width: 110px; height: 5px; background: #1E2740; border-radius: 3px; overflow: hidden;
+}
+.rec-bar-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, #00D4AA, #00A080); }
+.rec-pct { font-size: 11px; color: #8892A4; min-width: 34px; text-align: right; }
+.rec-reason { font-size: 13px; color: #A0AEC0; line-height: 1.7; margin-bottom: 10px; }
+.rec-spec {
+    font-size: 12px; color: #8892A4; padding: 7px 12px;
+    background: #161B2E; border-radius: 6px; margin-bottom: 12px;
+}
+.rec-spec strong { color: #00D4AA; }
+.rec-cand-title {
+    font-size: 10px; color: #8892A4; text-transform: uppercase;
+    letter-spacing: 0.8px; margin-bottom: 8px; font-weight: 600;
+}
+.rec-cand-row {
+    display: flex; align-items: center; gap: 10px;
+    padding: 8px 12px; border-radius: 6px; background: #161B2E;
+    margin-bottom: 6px; font-size: 13px;
+}
+.rec-cand-name { flex: 1; color: #E2E8F0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.rec-cand-price { color: #00D4AA; font-weight: 700; font-size: 13px; white-space: nowrap; }
+.rec-cand-link {
+    color: #8892A4; font-size: 11px; text-decoration: none;
+    padding: 2px 8px; border: 1px solid #2D3748; border-radius: 4px; white-space: nowrap;
+}
+.rec-cand-link:hover { color: #00D4AA; border-color: #00D4AA; }
+.rec-search-hint {
+    font-size: 12px; color: #8892A4; padding: 8px 12px;
+    background: #161B2E; border-radius: 6px; font-style: italic;
+}
 """
 
 
@@ -274,6 +322,134 @@ def _section_scores(data: dict, charts: dict) -> str:
 </div>"""
 
 
+def _format_price(price_krw: int | None) -> str:
+    if price_krw is None:
+        return "가격 미확인"
+    return f"₩ {price_krw:,}"
+
+
+def _rec_spec_html(item: dict) -> str:
+    part        = item["part"]
+    current_tier = item.get("current_tier")
+    target_tier  = item.get("target_tier")
+    target_spec  = item.get("target_spec") or {}
+
+    if part in ("CPU", "GPU") and target_tier:
+        if current_tier:
+            inner = f"<strong>Tier {current_tier} → Tier {target_tier}</strong>"
+        else:
+            inner = f"목표 <strong>Tier {target_tier}</strong>"
+        return f'<div class="rec-spec">{inner}</div>'
+
+    note = html.escape(target_spec.get("note", ""))
+    if part == "PSU":
+        label = html.escape(target_spec.get("recommended_efficiency", ""))
+        if label:
+            return (
+                f'<div class="rec-spec">'
+                f'권장 효율 등급: <strong>80+ {label}</strong>'
+                + (f'<br><span style="font-size:11px">{note}</span>' if note else "")
+                + "</div>"
+            )
+    if note:
+        return f'<div class="rec-spec">{note}</div>'
+    return ""
+
+
+def _rec_candidates_html(item: dict) -> str:
+    part        = item["part"]
+    candidates  = item.get("candidates") or []
+    search_query = html.escape(item.get("search_query") or "")
+
+    if part == "PSU":
+        return ""
+
+    if not candidates:
+        if search_query:
+            return (
+                f'<div class="rec-search-hint">'
+                f'네이버 쇼핑 검색어: <strong>{search_query}</strong>'
+                f"</div>"
+            )
+        return ""
+
+    rows = ""
+    for c in candidates[:3]:
+        name  = html.escape((c.get("name") or "")[:60])
+        price = _format_price(c.get("price_krw"))
+        url   = c.get("product_url") or ""
+        link  = (
+            f'<a class="rec-cand-link" href="{html.escape(url)}" target="_blank">구매</a>'
+            if url else ""
+        )
+        rows += (
+            f'<div class="rec-cand-row">'
+            f'<span class="rec-cand-name">{name}</span>'
+            f'<span class="rec-cand-price">{price}</span>'
+            f'{link}'
+            f"</div>"
+        )
+
+    return f'<div class="rec-cand-title">후보 제품</div>{rows}'
+
+
+def _section_recommendations(items: list[dict]) -> str:
+    if not items:
+        return """
+<div class="card">
+  <h2>하드웨어 업그레이드 추천</h2>
+  <div class="info-banner" style="color:#8892A4;background:rgba(136,146,164,0.06);border-color:rgba(136,146,164,0.2)">
+    현재 사용 패턴에서 즉각적인 업그레이드가 권고되는 부품이 없습니다.
+  </div>
+</div>"""
+
+    cards = ""
+    for item in items:
+        part     = item["part"]
+        grade    = item.get("grade", "unknown")
+        priority = item.get("priority", 0.0)
+        reason   = html.escape(item.get("reason", ""))
+        is_psu   = (part == "PSU")
+
+        if is_psu:
+            grade_tag = '<span class="tag" style="color:#8892A4;background:#1E2433;border-color:#2D3748">의존성</span>'
+            priority_html = ""
+        else:
+            grade_tag     = _tag(grade)
+            bar_pct       = min(int(priority / 1.5 * 100), 100)
+            priority_html = (
+                f'<div class="rec-priority">'
+                f'<div class="rec-bar-bg">'
+                f'<div class="rec-bar-fill" style="width:{bar_pct}%"></div>'
+                f"</div>"
+                f'<span class="rec-pct">{int(priority * 100)}%</span>'
+                f"</div>"
+            )
+
+        spec_html  = _rec_spec_html(item)
+        cand_html  = _rec_candidates_html(item)
+        card_class = "rec-card rec-psu" if is_psu else "rec-card"
+
+        cards += (
+            f'<div class="{card_class}">'
+            f'<div class="rec-header">'
+            f'<span class="rec-part">{html.escape(part)}</span>'
+            f'{grade_tag}'
+            f'{priority_html}'
+            f"</div>"
+            f'<p class="rec-reason">{reason}</p>'
+            f'{spec_html}'
+            f'{cand_html}'
+            f"</div>"
+        )
+
+    return f"""
+<div class="card">
+  <h2>하드웨어 업그레이드 추천</h2>
+  <div class="rec-list">{cards}</div>
+</div>"""
+
+
 def build_html(report_data: dict, charts: dict) -> str:
     now_str = datetime.now().strftime("%Y년 %m월 %d일 %H:%M")
 
@@ -283,6 +459,7 @@ def build_html(report_data: dict, charts: dict) -> str:
         + _section_pattern(charts)
         + _section_disk_process(charts)
         + _section_scores(report_data, charts)
+        + _section_recommendations(report_data.get("recommendations") or [])
     )
 
     return f"""<!DOCTYPE html>

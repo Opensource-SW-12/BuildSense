@@ -2,7 +2,7 @@ import webbrowser
 from datetime import datetime
 from pathlib import Path
 
-from src.storage import read_user_profile, get_report_path, ensure_reports_directory
+from src.storage import read_user_profile, get_report_path, ensure_reports_directory, load_user_preferences
 from src.report.report_data_collector import load_usage_logs, collect_report_data
 from src.report.chart_builder import (
     build_cpu_chart, build_ram_chart, build_gpu_chart, build_vram_chart,
@@ -34,13 +34,36 @@ def _build_charts(data: dict) -> dict:
     }
 
 
-def generate_report() -> Path:
+def _attach_recommendations(data: dict, hw_info: dict | None) -> None:
+    """data 딕셔너리에 recommendations 키를 추가한다. 실패 시 빈 리스트를 설정한다."""
+    try:
+        from src.recommendation.recommendation_assembler import assemble_recommendations
+        if hw_info is None:
+            from src.hardware import get_hardware_info
+            hw_info = get_hardware_info()
+        user_preferences = load_user_preferences()
+        scores = {
+            **data.get("scores", {}),
+            "user_classification": data.get("user_type", {}),
+        }
+        data["recommendations"] = assemble_recommendations(
+            scores,
+            hw_info,
+            data.get("profile") or {},
+            user_preferences,
+        )
+    except Exception:
+        data["recommendations"] = []
+
+
+def generate_report(hw_info: dict | None = None) -> Path:
     logs = load_usage_logs()
     if not logs:
         raise RuntimeError("분석할 모니터링 데이터가 없습니다. 먼저 모니터링을 실행해주세요.")
 
     profile = read_user_profile()
     data    = collect_report_data(logs, profile)
+    _attach_recommendations(data, hw_info)
     charts  = _build_charts(data)
     html    = build_html(data, charts)
 
