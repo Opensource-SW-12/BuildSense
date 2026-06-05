@@ -17,6 +17,7 @@ from src.settings import (
   ANALYSIS_DAYS_MAX,
   PARTS,
   PART_OPTIONS,
+  PART_OPTIONS_MB,
   PART_OPTION_LABELS,
   PART_DESCRIPTIONS,
   build_settings_state,
@@ -603,7 +604,7 @@ class BuildSenseApp:
       radio_frame.pack(fill=tk.X, pady=(2, 0))
 
       radio_widgets = []
-      for label, value in PART_OPTIONS:
+      for label, value in (PART_OPTIONS_MB if part == "메인보드" else PART_OPTIONS):
         rb = tk.Radiobutton(
           radio_frame,
           text=label,
@@ -620,7 +621,11 @@ class BuildSenseApp:
       hw_frame = tk.Frame(container)
       self._part_hw_frames[part] = hw_frame
 
-      hw_text = self._hardware_info.get(part, "확인할 수 없음")
+      if part == "메인보드":
+        socket = self._hardware_info.get("CPU_socket")
+        hw_text = f"{socket} 소켓" if socket else "소켓 감지 불가"
+      else:
+        hw_text = self._hardware_info.get(part, "확인할 수 없음")
       tk.Label(
         hw_frame,
         text=f"현재 장착:  {hw_text}",
