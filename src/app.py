@@ -17,7 +17,6 @@ from src.settings import (
   ANALYSIS_DAYS_MAX,
   PARTS,
   PART_OPTIONS,
-  PART_OPTIONS_MB,
   PART_OPTION_LABELS,
   PART_DESCRIPTIONS,
   build_settings_state,
@@ -55,8 +54,6 @@ class BuildSenseApp:
     self._knowledge_var = None
     self._days_var = None
     self._part_vars = {}
-    self._part_entries = {}
-    self._part_entry_frames = {}
     self._part_hw_frames = {}
     self._part_radio_widgets = {}
     self._part_desc_labels = {}
@@ -441,8 +438,6 @@ class BuildSenseApp:
     self._center_window(580, 580)
 
     self._part_vars = {}
-    self._part_entries = {}
-    self._part_entry_frames = {}
     self._part_hw_frames = {}
     self._part_radio_widgets = {}
     self._part_desc_labels = {}
@@ -604,7 +599,7 @@ class BuildSenseApp:
       radio_frame.pack(fill=tk.X, pady=(2, 0))
 
       radio_widgets = []
-      for label, value in (PART_OPTIONS_MB if part == "메인보드" else PART_OPTIONS):
+      for label, value in PART_OPTIONS:
         rb = tk.Radiobutton(
           radio_frame,
           text=label,
@@ -634,25 +629,9 @@ class BuildSenseApp:
         anchor="w",
       ).pack(fill=tk.X)
 
-      # 직접 입력 프레임 (이미 결정 선택 시)
-      entry_frame = tk.Frame(container)
-      self._part_entry_frames[part] = entry_frame
-
-      tk.Label(entry_frame, text="직접 입력:", font=("Segoe UI", 10)).pack(side=tk.LEFT)
-      entry_var = tk.StringVar(value=part_state["manual_input"])
-      tk.Entry(
-        entry_frame,
-        textvariable=entry_var,
-        font=("Segoe UI", 10),
-        width=34,
-      ).pack(side=tk.LEFT, padx=(6, 0))
-      self._part_entries[part] = entry_var
-
       # 저장된 상태에 따라 초기 표시
       if part_state["option"] == "keep":
         hw_frame.pack(fill=tk.X, pady=(4, 0))
-      elif part_state["option"] == "decided":
-        entry_frame.pack(fill=tk.X, pady=(6, 0))
 
       if i < len(PARTS) - 1:
         tk.Frame(inner, height=1, bg="#eeeeee").pack(fill=tk.X, pady=(10, 6))
@@ -813,9 +792,7 @@ class BuildSenseApp:
       part_state = state["parts"][part]
       option_label = PART_OPTION_LABELS.get(part_state["option"], part_state["option"])
       text = f"  {part}:  {option_label}"
-      if part_state["option"] == "decided" and part_state["manual_input"]:
-        text += f"  ({part_state['manual_input']})"
-      elif part_state["option"] == "keep":
+      if part_state["option"] == "keep":
         hw = self._hardware_info.get(part, "")
         if hw:
           text += f"  ({hw})"
@@ -910,21 +887,16 @@ class BuildSenseApp:
       # 전혀 모름: 모든 부품을 추천으로 초기화하고 하위 프레임 숨김
       if is_beginner:
         self._part_vars[part].set("recommend")
-        self._part_entry_frames[part].pack_forget()
         self._part_hw_frames[part].pack_forget()
 
   def _on_part_option_change(self, part: str):
     value = self._part_vars[part].get()
-    entry_frame = self._part_entry_frames[part]
     hw_frame = self._part_hw_frames[part]
 
-    entry_frame.pack_forget()
     hw_frame.pack_forget()
 
     if value == "keep":
       hw_frame.pack(fill=tk.X, pady=(4, 0))
-    elif value == "decided":
-      entry_frame.pack(fill=tk.X, pady=(6, 0))
 
   # ------------------------------------------------------------------
   # 검증 및 상태 동기화
@@ -949,7 +921,6 @@ class BuildSenseApp:
     self.settings_state["analysis_days"] = self._days_var.get()
     for part in PARTS:
       self.settings_state["parts"][part]["option"] = self._part_vars[part].get()
-      self.settings_state["parts"][part]["manual_input"] = self._part_entries[part].get()
 
   # ------------------------------------------------------------------
   # 유틸리티
