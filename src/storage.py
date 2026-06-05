@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from src.config import DATA_DIR, LOGS_DIR, REPORTS_DIR, ANALYSIS_DIR, EXPORTS_DIR, SPECS_DIR, PRICES_DIR, USER_PROFILE_PATH, USAGE_LOG_PATH
+from src.config import DATA_DIR, LOGS_DIR, REPORTS_DIR, ANALYSIS_DIR, EXPORTS_DIR, SPECS_DIR, PRICES_DIR, USER_PROFILE_PATH, USER_PREFERENCES_PATH, USAGE_LOG_PATH
 
 
 def ensure_app_directories() -> None:
@@ -62,6 +62,22 @@ def save_user_profile(profile: dict) -> None:
   DATA_DIR.mkdir(parents=True, exist_ok=True)
   with open(USER_PROFILE_PATH, "w", encoding="utf-8") as f:
     json.dump(profile, f, ensure_ascii=False, indent=2)
+
+
+def save_user_preferences(prefs: dict) -> None:
+  DATA_DIR.mkdir(parents=True, exist_ok=True)
+  with open(USER_PREFERENCES_PATH, "w", encoding="utf-8") as f:
+    json.dump(prefs, f, ensure_ascii=False, indent=2)
+
+
+def load_user_preferences() -> dict | None:
+  try:
+    if not USER_PREFERENCES_PATH.exists():
+      return None
+    with open(USER_PREFERENCES_PATH, "r", encoding="utf-8") as f:
+      return json.load(f)
+  except Exception:
+    return None
 
 
 def read_user_profile() -> dict | None:

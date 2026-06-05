@@ -22,7 +22,7 @@ from src.settings import (
   build_settings_state,
 )
 from src.hardware import get_hardware_info
-from src.storage import save_user_profile, delete_all_monitoring_data, read_user_profile, init_log_line_count, get_log_line_count
+from src.storage import save_user_profile, save_user_preferences, delete_all_monitoring_data, read_user_profile, init_log_line_count, get_log_line_count
 from src.validators import validate_analysis_days, validate_parts_not_all_keep
 from src.monitor import start_monitoring_loop, stop_monitoring_loop, is_monitoring_running
 from src.background import join_background_task
@@ -86,6 +86,94 @@ class BuildSenseApp:
     self._show_monitoring_screen()
 
   def _on_analyze(self):
+    self._unknown_procs: list[dict] = []
+    self._show_analysis_notification_screen()
+
+  def _show_analysis_notification_screen(self):
+    self._clear_window()
+    self.root.title("BuildSense - 분석 기간 종료")
+    self.root.resizable(False, False)
+    self._center_window(460, 240)
+
+    frame = tk.Frame(self.root, padx=24, pady=28)
+    frame.pack(fill=tk.BOTH, expand=True)
+
+    tk.Label(
+      frame,
+      text="모니터링 기간이 종료되었습니다",
+      font=("Segoe UI", 13, "bold"),
+      anchor="center",
+    ).pack(fill=tk.X, pady=(0, 8))
+
+    tk.Label(
+      frame,
+      text="추가 정보를 입력하면 더 정확한 업그레이드 추천을 받을 수 있습니다.",
+      font=("Segoe UI", 10),
+      fg="#555555",
+      anchor="center",
+      wraplength=400,
+      justify=tk.CENTER,
+    ).pack(fill=tk.X, pady=(0, 22))
+
+    btn_frame = tk.Frame(frame)
+    btn_frame.pack()
+
+    self._extra_info_btn = tk.Button(
+      btn_frame,
+      text="추가 정보 입력 (확인 중...)",
+      width=24,
+      state=tk.DISABLED,
+      command=self._on_open_preference_dialog,
+    )
+    self._extra_info_btn.pack(side=tk.LEFT, padx=(0, 10))
+
+    tk.Button(
+      btn_frame,
+      text="바로 분석하기",
+      width=14,
+      command=self._show_analyzing_screen,
+    ).pack(side=tk.LEFT)
+
+    def _detect():
+      from src.normalization.core import read_jsonl
+      from src.recommendation.user_input_dialog import find_impactful_unknown_processes
+      try:
+        logs = read_jsonl(USAGE_LOG_PATH)
+        procs = find_impactful_unknown_processes(logs)
+      except Exception:
+        procs = []
+      if self.root.winfo_exists():
+        self.root.after(0, lambda p=procs: self._on_unknown_procs_ready(p))
+
+    threading.Thread(target=_detect, daemon=True).start()
+
+  def _on_unknown_procs_ready(self, procs: list[dict]):
+    self._unknown_procs = procs
+    if not self.root.winfo_exists():
+      return
+    try:
+      suffix = f" ({len(procs)}개 미분류 포함)" if procs else ""
+      self._extra_info_btn.config(
+        text=f"추가 정보 입력{suffix}",
+        state=tk.NORMAL,
+      )
+    except tk.TclError:
+      pass
+
+  def _on_open_preference_dialog(self):
+    from src.recommendation.user_input_dialog import UserPreferenceDialog
+    UserPreferenceDialog(
+      parent=self.root,
+      unknown_procs=self._unknown_procs,
+      on_confirm=self._on_preferences_confirmed,
+      on_cancel=self._show_analyzing_screen,
+    )
+
+  def _on_preferences_confirmed(self, prefs: dict):
+    try:
+      save_user_preferences(prefs)
+    except Exception:
+      pass
     self._show_analyzing_screen()
 
   def _show_analyzing_screen(self):
