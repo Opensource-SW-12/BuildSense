@@ -59,6 +59,7 @@ class BuildSenseApp:
     self._part_hw_frames = {}
     self._part_radio_widgets = {}
     self._part_desc_labels = {}
+    self._report_path: str | None = None
 
     if startup_state == StartupState.RESUME:
       self._on_resume()   # KAN-62: feature-resume-monitoring-after-reboot
@@ -221,6 +222,15 @@ class BuildSenseApp:
           "psu": score_psu(result["usage_pattern"]),
         }
         save_normalized_usage(result)
+
+        # 로그 삭제 전에 보고서 생성 (삭제 후에는 load_usage_logs 실패)
+        try:
+          from src.report.report_generator import generate_report
+          report_path = generate_report(hw_info=self._hardware_info)
+          self._report_path = str(report_path)
+        except Exception:
+          self._report_path = None
+
         delete_all_monitoring_data()
         unregister_startup()
         if self.root.winfo_exists():
@@ -234,9 +244,9 @@ class BuildSenseApp:
   def _show_analysis_complete_screen(self):
     self._clear_window()
     self.root.title("BuildSense - 분석 완료")
-    self._center_window(420, 220)
+    self._center_window(420, 240)
 
-    frame = tk.Frame(self.root, padx=24, pady=30)
+    frame = tk.Frame(self.root, padx=24, pady=24)
     frame.pack(fill=tk.BOTH, expand=True)
 
     tk.Label(
@@ -246,22 +256,43 @@ class BuildSenseApp:
       anchor="center",
     ).pack(expand=True)
 
-    tk.Label(
-      frame,
-      text=f"결과 저장 경로:\n{ANALYSIS_DIR / 'normalized_usage.json'}",
-      font=("Segoe UI", 9),
-      fg="#555555",
-      anchor="center",
-      wraplength=380,
-      justify=tk.CENTER,
-    ).pack(expand=True)
+    if self._report_path:
+      tk.Label(
+        frame,
+        text="보고서가 브라우저에서 열렸습니다.",
+        font=("Segoe UI", 9),
+        fg="#555555",
+        anchor="center",
+      ).pack(expand=True)
+
+      def _reopen():
+        import webbrowser
+        from pathlib import Path
+        webbrowser.open(Path(self._report_path).as_uri())
+
+      tk.Button(
+        frame,
+        text="보고서 다시 열기",
+        width=16,
+        command=_reopen,
+      ).pack(pady=(8, 4))
+    else:
+      tk.Label(
+        frame,
+        text=f"결과 저장 경로:\n{ANALYSIS_DIR / 'normalized_usage.json'}",
+        font=("Segoe UI", 9),
+        fg="#555555",
+        anchor="center",
+        wraplength=380,
+        justify=tk.CENTER,
+      ).pack(expand=True)
 
     tk.Button(
       frame,
       text="확인",
       width=12,
       command=self.root.destroy,
-    ).pack(pady=(12, 0))
+    ).pack(pady=(4, 0))
 
   def _show_analysis_error_screen(self, error_message: str):
     self._clear_window()
