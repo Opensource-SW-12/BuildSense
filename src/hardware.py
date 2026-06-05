@@ -1,16 +1,20 @@
 import subprocess
 import psutil
 
+from src.platform_mapper import infer_socket_from_cpu_name
+
 
 def get_hardware_info() -> dict:
   ssd, hdd = _get_disks_by_type()
+  cpu_name  = _get_cpu()
   return {
-    "CPU":  _get_cpu(),
-    "GPU":  _get_gpu(),
-    "RAM":  _get_ram(),
-    "SSD":  ssd,
-    "HDD":  hdd,
-    "파워": "확인할 수 없음",
+    "CPU":        cpu_name,
+    "CPU_socket": infer_socket_from_cpu_name(cpu_name),
+    "GPU":        _get_gpu(),
+    "RAM":        _get_ram(),
+    "SSD":        ssd,
+    "HDD":        hdd,
+    "파워":       "확인할 수 없음",
   }
 
 

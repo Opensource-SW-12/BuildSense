@@ -201,6 +201,39 @@ class UserPreferenceDialog:
                 font=("Segoe UI", 10),
             ).pack(side=tk.LEFT, padx=(0, 16))
 
+        tk.Frame(outer, height=1, bg="#cccccc").pack(fill=tk.X, pady=(0, 14))
+
+        # ── 메인보드 업그레이드 ───────────────────────────────────
+        tk.Label(
+            outer,
+            text="메인보드 업그레이드",
+            font=("Segoe UI", 11, "bold"),
+            anchor="w",
+        ).pack(fill=tk.X, pady=(0, 8))
+
+        self._motherboard_var = tk.StringVar(value="keep")
+        mb_row = tk.Frame(outer)
+        mb_row.pack(fill=tk.X, pady=(0, 4))
+
+        for text, value in [("현재 메인보드 유지", "keep"), ("메인보드 교체 포함", "recommend")]:
+            tk.Radiobutton(
+                mb_row,
+                text=text,
+                variable=self._motherboard_var,
+                value=value,
+                font=("Segoe UI", 10),
+            ).pack(side=tk.LEFT, padx=(0, 16))
+
+        tk.Label(
+            outer,
+            text="※ '교체 포함' 선택 시 소켓 제약 없이 CPU를 추천하고 호환 메인보드도 함께 제안합니다",
+            font=("Segoe UI", 9),
+            fg="#888888",
+            anchor="w",
+            wraplength=450,
+            justify=tk.LEFT,
+        ).pack(fill=tk.X, pady=(0, 14))
+
         # ── 미분류 프로세스 ───────────────────────────────────────
         if self._unknown_procs:
             tk.Frame(outer, height=1, bg="#cccccc").pack(fill=tk.X, pady=(0, 14))
@@ -304,6 +337,7 @@ class UserPreferenceDialog:
         result = {
             "budget": budget,
             "rgb_preference": self._rgb_var.get(),
+            "upgrade_motherboard": self._motherboard_var.get() == "recommend",
             "unknown_process_categories": {
                 name: _TEXT_TO_VALUE.get(var.get(), "etc")
                 for name, var in self._proc_vars.items()

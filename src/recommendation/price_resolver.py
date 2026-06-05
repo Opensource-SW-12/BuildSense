@@ -183,6 +183,26 @@ def _search_storage_candidates(search_query: str) -> list[dict]:
     return cands
 
 
+def _enrich_board_candidate(candidate: dict) -> dict:
+    """메인보드 후보에 네이버 검색으로 가격을 보완한다. product_matcher 미적용."""
+    if candidate.get("price_krw") is not None:
+        return candidate
+    name = candidate.get("name", "")
+    if not name:
+        return candidate
+    items = _naver_search_safe(name)
+    if items:
+        first = items[0]
+        return {
+            **candidate,
+            "price_krw":    first.get("price_krw"),
+            "price_source": "naver",
+            "product_url":  first.get("link"),
+            "mall_name":    first.get("mall_name"),
+        }
+    return candidate
+
+
 # ── 진입점 ────────────────────────────────────────────────────────────
 
 def resolve_prices(filtered_targets: list[dict]) -> list[dict]:
@@ -209,6 +229,10 @@ def resolve_prices(filtered_targets: list[dict]) -> list[dict]:
 
         elif part in ("SSD", "HDD"):
             result.append({**target, "candidates": _search_storage_candidates(search_query)})
+
+        elif part == "Motherboard":
+            enriched = [_enrich_board_candidate(c) for c in candidates[:_MAX_ENRICH]]
+            result.append({**target, "candidates": enriched})
 
         else:
             result.append(target)

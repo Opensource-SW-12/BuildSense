@@ -90,7 +90,8 @@ def assemble_recommendations(
     hw_tiers = map_hardware_to_tiers(hw_info)
     targets  = select_upgrade_targets(scores, user_profile, user_preferences)
     enriched = calculate_target_tiers(targets, hw_tiers, hw_info)
-    filtered = filter_spec_candidates(enriched, user_preferences)
+    socket   = hw_info.get("CPU_socket")
+    filtered = filter_spec_candidates(enriched, user_preferences, socket=socket)
     resolved = resolve_prices(filtered)
 
     # GPU 업그레이드가 추천 목록에 포함된 경우 PSU 의존성 항목 추가
