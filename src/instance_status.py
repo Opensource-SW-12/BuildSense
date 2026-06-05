@@ -118,8 +118,6 @@ def _section_settings(parent: tk.Frame) -> None:
     for part, state in parts.items():
       option = PART_OPTION_LABELS.get(state.get("option", ""), "-")
       text = f"  {part}:  {option}"
-      if state.get("manual_input"):
-        text += f"  ({state['manual_input']})"
       tk.Label(frame, text=text, font=("Segoe UI", 9), fg="#444444", anchor="w").pack(fill=tk.X)
 
 

@@ -12,14 +12,6 @@ PARTS = ["CPU", "GPU", "RAM", "SSD", "HDD", "메인보드", "파워"]
 
 PART_OPTIONS = [
   ("추천", "recommend"),
-  ("제외", "exclude"),
-  ("유지", "keep"),
-  ("이미 결정", "decided"),
-]
-
-# 메인보드는 "제외"·"이미 결정"이 의미 없으므로 2개 옵션만 제공
-PART_OPTIONS_MB = [
-  ("추천", "recommend"),
   ("유지", "keep"),
 ]
 
@@ -66,10 +58,7 @@ PART_DESCRIPTIONS = {
 
 
 def build_settings_state() -> dict:
-  parts = {
-    part: {"option": "recommend", "manual_input": ""}
-    for part in PARTS
-  }
+  parts = {part: {"option": "recommend"} for part in PARTS}
   parts["메인보드"]["option"] = "keep"  # 기본값: 현재 메인보드 유지
   return {
     "knowledge_level": "intermediate",
