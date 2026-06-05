@@ -26,24 +26,40 @@ _TIER_BELOW    = 1   # target_tier - 1 이상
 _TIER_ABOVE    = 2   # target_tier + 2 이하
 _MAX_CANDS     = 5   # 부품당 최대 후보 수
 
-# 메인보드 칩셋 등급 분류 (높을수록 상위)
+# 메인보드 칩셋 등급 분류 (0=프리미엄, 2=메인스트림, 4=보급)
+# board_specs.json의 칩셋 값은 "AMD X870E" / "Intel Z790" 형식이므로
+# _chipset_rank()에서 제조사 접두사를 제거 후 조회한다.
 _CHIPSET_RANK: dict[str, int] = {
-    # AM5
-    "X870E": 0, "X870": 1,
-    # AM4
-    "X570": 0, "X470": 1,
-    # LGA 1851
-    "Z890": 0,
-    # LGA 1700 / 1200
-    "Z790": 0, "Z690": 0, "Z590": 0, "Z490": 0,
-    # Mainstream
-    "B860": 2, "B760": 2, "B660": 2, "B560": 2,
-    "B650E": 1, "B650": 2, "B550": 2, "B450": 2,
-    "H770": 2,
-    # Budget
-    "H810": 3, "H610": 3, "H510": 3, "H470": 3,
-    "A620": 3, "A520": 3, "A320": 3, "H310": 3,
+    # ── AM5 ──────────────────────────────────────────────────────
+    "X870E": 0, "X670E": 0,          # flagship
+    "X870":  1, "X670":  1,          # high-end
+    "B850":  2, "B650E": 2,          # mid-high
+    "B840":  3, "B650":  3,          # mid
+    "A620":  4,                       # budget
+    # ── AM4 ──────────────────────────────────────────────────────
+    "X570":  0, "X470":  0, "X370": 0,  # flagship
+    "B550":  2, "B450":  2,             # mid
+    "B350":  3,                          # mid-budget
+    "A520":  4, "A320":  4,             # budget
+    # ── LGA 1851 ─────────────────────────────────────────────────
+    "Z890":  0,
+    "B860":  2,
+    "H810":  4,
+    # ── LGA 1700 ─────────────────────────────────────────────────
+    "Z790":  0, "Z690":  0,
+    "B760":  2, "B660":  2, "H770": 2, "H670": 2,
+    "H610":  4, "Q670":  4,
+    # ── LGA 1200 ─────────────────────────────────────────────────
+    "Z590":  0, "Z490":  0,
+    "B560":  2, "B460":  2, "H570": 2,
+    "H510":  4, "H470":  4, "H410": 4,
 }
+
+
+def _chipset_rank(chipset: str) -> int:
+    """칩셋 이름에서 제조사 접두사(AMD / Intel)를 제거한 뒤 등급을 반환한다."""
+    short = chipset.split(" ", 1)[-1] if " " in chipset else chipset
+    return _CHIPSET_RANK.get(short, 99)
 
 
 # ── 공통 유틸 ─────────────────────────────────────────────────────────
@@ -152,13 +168,13 @@ def _get_board_candidates(socket: str) -> list[dict]:
         return []
 
     # 칩셋 등급 오름차순(0=프리미엄), 이름 알파벳순으로 정렬
-    boards.sort(key=lambda b: (_CHIPSET_RANK.get(b.get("chipset", ""), 99), b.get("name", "")))
+    boards.sort(key=lambda b: (_chipset_rank(b.get("chipset", "")), b.get("name", "")))
 
     # 등급별 1개씩 최대 3개 선정
     seen_ranks: set[int] = set()
     result = []
     for b in boards:
-        rank = _CHIPSET_RANK.get(b.get("chipset", ""), 99)
+        rank = _chipset_rank(b.get("chipset", ""))
         if rank not in seen_ranks:
             seen_ranks.add(rank)
             result.append({
