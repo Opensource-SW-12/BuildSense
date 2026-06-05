@@ -11,6 +11,16 @@ _USER_TYPE_KO = {
     "etc":         "기타",
 }
 
+_PART_KO = {
+    "CPU":         "CPU",
+    "GPU":         "GPU",
+    "RAM":         "RAM",
+    "SSD":         "SSD",
+    "HDD":         "HDD",
+    "PSU":         "파워 서플라이",
+    "Motherboard": "메인보드",
+}
+
 _GRADE_KO = {
     "low":      ("낮음",    "#00D4AA", "#0D2B24"),
     "medium":   ("보통",    "#FF8C42", "#2B1A0D"),
@@ -351,6 +361,13 @@ def _rec_spec_html(item: dict) -> str:
                 + (f'<br><span style="font-size:11px">{note}</span>' if note else "")
                 + "</div>"
             )
+    if part == "Motherboard":
+        socket = html.escape(target_spec.get("socket", ""))
+        if socket:
+            inner = f"소켓: <strong>{socket}</strong>"
+            if note:
+                inner += f'<br><span style="font-size:11px">{note}</span>'
+            return f'<div class="rec-spec">{inner}</div>'
     if note:
         return f'<div class="rec-spec">{note}</div>'
     return ""
@@ -382,9 +399,26 @@ def _rec_candidates_html(item: dict) -> str:
             f'<a class="rec-cand-link" href="{html.escape(url)}" target="_blank">구매</a>'
             if url else ""
         )
+
+        spec_suffix = ""
+        if part == "Motherboard":
+            spec_parts = []
+            if c.get("chipset"):
+                spec_parts.append(html.escape(c["chipset"]))
+            if c.get("form_factor"):
+                spec_parts.append(html.escape(c["form_factor"]))
+            m2 = c.get("m2_interfaces") or []
+            if m2:
+                spec_parts.append(f"M.2×{len(m2)}")
+            if spec_parts:
+                spec_suffix = (
+                    f' <span style="color:#8892A4;font-size:11px">'
+                    f'[{" | ".join(spec_parts)}]</span>'
+                )
+
         rows += (
             f'<div class="rec-cand-row">'
-            f'<span class="rec-cand-name">{name}</span>'
+            f'<span class="rec-cand-name">{name}{spec_suffix}</span>'
             f'<span class="rec-cand-price">{price}</span>'
             f'{link}'
             f"</div>"
@@ -405,15 +439,31 @@ def _section_recommendations(items: list[dict]) -> str:
 
     cards = ""
     for item in items:
-        part     = item["part"]
-        grade    = item.get("grade", "unknown")
-        priority = item.get("priority", 0.0)
-        reason   = html.escape(item.get("reason", ""))
-        is_psu   = (part == "PSU")
+        part      = item["part"]
+        grade     = item.get("grade", "unknown")
+        priority  = item.get("priority", 0.0)
+        reason    = html.escape(item.get("reason", ""))
+        is_psu    = (part == "PSU")
+        is_board  = (part == "Motherboard")
+        part_label = html.escape(_PART_KO.get(part, part))
 
         if is_psu:
-            grade_tag = '<span class="tag" style="color:#8892A4;background:#1E2433;border-color:#2D3748">의존성</span>'
+            grade_tag     = '<span class="tag" style="color:#8892A4;background:#1E2433;border-color:#2D3748">의존성</span>'
             priority_html = ""
+        elif is_board:
+            grade_tag = (
+                '<span class="tag" style="color:#00D4AA;background:rgba(0,212,170,0.1);'
+                'border-color:rgba(0,212,170,0.3)">호환 필요</span>'
+            )
+            bar_pct       = min(int(priority / 1.5 * 100), 100)
+            priority_html = (
+                f'<div class="rec-priority">'
+                f'<div class="rec-bar-bg">'
+                f'<div class="rec-bar-fill" style="width:{bar_pct}%"></div>'
+                f"</div>"
+                f'<span class="rec-pct">{int(priority * 100)}%</span>'
+                f"</div>"
+            )
         else:
             grade_tag     = _tag(grade)
             bar_pct       = min(int(priority / 1.5 * 100), 100)
@@ -433,7 +483,7 @@ def _section_recommendations(items: list[dict]) -> str:
         cards += (
             f'<div class="{card_class}">'
             f'<div class="rec-header">'
-            f'<span class="rec-part">{html.escape(part)}</span>'
+            f'<span class="rec-part">{part_label}</span>'
             f'{grade_tag}'
             f'{priority_html}'
             f"</div>"

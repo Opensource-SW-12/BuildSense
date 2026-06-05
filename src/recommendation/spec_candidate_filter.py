@@ -3,7 +3,9 @@
 
 CPU/GPU : PassMark 벤치마크 목록에서 목표 tier 범위 + 예산 조건으로 후보 최대 5개 선정.
 RAM/SSD/HDD : PassMark tier 없음 → 빈 candidates + search_query 생성 (KAN-140에서 채움).
+Motherboard : upgrade_motherboard=True 일 때 board_specs.json에서 소켓 호환 보드 선정.
 """
+import json
 
 from src.pricing.passmark_tiering import (
     load_cpu_passmark_items,
@@ -13,10 +15,35 @@ from src.pricing.passmark_tiering import (
     parse_price_usd,
     MAX_TIER,
 )
+from src.platform_mapper import (
+    cpu_patterns_for_socket,
+    infer_socket_from_cpu_name,
+    socket_to_pcie_gen,
+    socket_to_ram_type,
+)
 
 _TIER_BELOW    = 1   # target_tier - 1 이상
 _TIER_ABOVE    = 2   # target_tier + 2 이하
 _MAX_CANDS     = 5   # 부품당 최대 후보 수
+
+# 메인보드 칩셋 등급 분류 (높을수록 상위)
+_CHIPSET_RANK: dict[str, int] = {
+    # AM5
+    "X870E": 0, "X870": 1,
+    # AM4
+    "X570": 0, "X470": 1,
+    # LGA 1851
+    "Z890": 0,
+    # LGA 1700 / 1200
+    "Z790": 0, "Z690": 0, "Z590": 0, "Z490": 0,
+    # Mainstream
+    "B860": 2, "B760": 2, "B660": 2, "B560": 2,
+    "B650E": 1, "B650": 2, "B550": 2, "B450": 2,
+    "H770": 2,
+    # Budget
+    "H810": 3, "H610": 3, "H510": 3, "H470": 3,
+    "A620": 3, "A520": 3, "A320": 3, "H310": 3,
+}
 
 
 # ── 공통 유틸 ─────────────────────────────────────────────────────────
@@ -83,24 +110,76 @@ def _gb_str(gb: int) -> str:
     return f"{gb // 1024}TB" if gb >= 1024 else f"{gb}GB"
 
 
-def _ram_query(spec: dict) -> str:
-    return f"RAM {_gb_str(spec.get('target_gb', 16))}"
+def _ram_query(spec: dict, socket: str | None = None) -> str:
+    cap = _gb_str(spec.get("target_gb", 16))
+    ddr = socket_to_ram_type(socket)
+    if ddr:
+        return f"{ddr} RAM {cap}"
+    return f"RAM {cap}"
 
 
-def _ssd_query(spec: dict) -> str:
-    return f"NVMe SSD {_gb_str(spec.get('target_gb', 1024))}"
+def _ssd_query(spec: dict, socket: str | None = None) -> str:
+    cap = _gb_str(spec.get("target_gb", 1024))
+    gen = socket_to_pcie_gen(socket)
+    if gen:
+        return f"PCIe {gen}.0 NVMe SSD {cap}"
+    return f"NVMe SSD {cap}"
 
 
-def _hdd_query(spec: dict) -> str:
+def _hdd_query(spec: dict, socket: str | None = None) -> str:
     # HDD 교체 목적이므로 SSD 검색
-    return f"SSD {_gb_str(spec.get('target_gb', 1024))}"
+    cap = _gb_str(spec.get("target_gb", 1024))
+    return f"SSD {cap}"
 
 
-_QUERY_BUILDERS = {
-    "RAM": _ram_query,
-    "SSD": _ssd_query,
-    "HDD": _hdd_query,
-}
+# ── 메인보드 후보 선정 ────────────────────────────────────────────────
+
+def _load_board_specs() -> list[dict]:
+    try:
+        from src.config import SPECS_DIR
+        path = SPECS_DIR / "board_specs.json"
+        if not path.exists():
+            return []
+        return json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return []
+
+
+def _get_board_candidates(socket: str) -> list[dict]:
+    """소켓 호환 메인보드를 칩셋 등급별로 최대 3개(상위/중간/보급) 반환한다."""
+    boards = [b for b in _load_board_specs() if b.get("socket") == socket]
+    if not boards:
+        return []
+
+    # 칩셋 등급 오름차순(0=프리미엄), 이름 알파벳순으로 정렬
+    boards.sort(key=lambda b: (_CHIPSET_RANK.get(b.get("chipset", ""), 99), b.get("name", "")))
+
+    # 등급별 1개씩 최대 3개 선정
+    seen_ranks: set[int] = set()
+    result = []
+    for b in boards:
+        rank = _CHIPSET_RANK.get(b.get("chipset", ""), 99)
+        if rank not in seen_ranks:
+            seen_ranks.add(rank)
+            result.append({
+                "name":             b.get("name"),
+                "chipset":          b.get("chipset"),
+                "socket":           b.get("socket"),
+                "form_factor":      b.get("form_factor"),
+                "m2_interfaces":    b.get("m2_interfaces", []),
+                "sata_ports":       b.get("sata_ports", 0),
+                "passmark_score":   None,
+                "performance_tier": None,
+                "price_usd":        None,
+                "price_krw":        None,
+                "price_source":     None,
+                "product_url":      None,
+                "mall_name":        None,
+            })
+        if len(result) >= 3:
+            break
+
+    return result
 
 
 # ── 진입점 ────────────────────────────────────────────────────────────
@@ -108,14 +187,18 @@ _QUERY_BUILDERS = {
 def filter_spec_candidates(
     enriched_targets: list[dict],
     user_preferences: dict | None,
+    socket: str | None = None,
 ) -> list[dict]:
     """
     각 추천 대상에 candidates 목록과 search_query를 추가해 반환한다.
 
-    enriched_targets : calculate_target_tiers() 결과
-    user_preferences : user_preferences.json (budget 필터용)
+    enriched_targets  : calculate_target_tiers() 결과
+    user_preferences  : user_preferences.json (budget / upgrade_motherboard 필터용)
+    socket            : hw_info["CPU_socket"] — 소켓 인식 쿼리·필터링에 사용
     """
-    budget: int | None = (user_preferences or {}).get("budget")
+    prefs              = user_preferences or {}
+    budget: int | None = prefs.get("budget")
+    upgrade_motherboard: bool = prefs.get("upgrade_motherboard", False)
 
     # 예산이 있을 때만 환율 조회 (루프 밖 1회)
     exchange_rate: float | None = None
@@ -130,6 +213,27 @@ def filter_spec_candidates(
     _cpu_items: list[dict] | None = None
     _gpu_items: list[dict] | None = None
 
+    # upgrade_motherboard=True 인 경우, CPU 후보를 미리 계산해 새 소켓을 파악한다.
+    # (RAM/SSD 쿼리에 새 플랫폼의 DDR/PCIe gen 반영)
+    effective_socket = socket
+    if upgrade_motherboard:
+        for t in enriched_targets:
+            if t["part"] == "CPU" and t.get("target_tier") is not None:
+                try:
+                    if _cpu_items is None:
+                        _cpu_items = load_cpu_passmark_items()
+                    pre_cands = _filter_passmark(
+                        _cpu_items, calculate_cpu_tier,
+                        t["target_tier"], budget, exchange_rate,
+                    )
+                    if pre_cands:
+                        inferred = infer_socket_from_cpu_name(pre_cands[0]["name"])
+                        if inferred:
+                            effective_socket = inferred
+                except Exception:
+                    pass
+                break
+
     result = []
     for target in enriched_targets:
         part         = target["part"]
@@ -142,9 +246,40 @@ def filter_spec_candidates(
                     _cpu_items = load_cpu_passmark_items()
                 except Exception:
                     _cpu_items = []
+
             cands = _filter_passmark(_cpu_items, calculate_cpu_tier, target_tier, budget, exchange_rate)
+
+            # keep 모드: 현재 소켓 호환 CPU만 남김
+            if not upgrade_motherboard and socket:
+                patterns = cpu_patterns_for_socket(socket)
+                if patterns:
+                    cands = [c for c in cands if any(p.search(c.get("name", "")) for p in patterns)]
+
             query = cands[0]["name"] if cands else "CPU"
             result.append({**target, "candidates": cands, "search_query": query})
+
+            # recommend 모드: 새 소켓 호환 메인보드 항목 추가
+            if upgrade_motherboard:
+                target_socket = effective_socket or socket
+                if target_socket:
+                    board_cands = _get_board_candidates(target_socket)
+                    result.append({
+                        "part":         "Motherboard",
+                        "score":        0.0,
+                        "grade":        "medium",
+                        "priority":     round(target.get("priority", 0.5) - 0.05, 4),
+                        "reason":       (
+                            f"CPU 업그레이드 시 {target_socket} 소켓 호환 메인보드가 필요합니다."
+                        ),
+                        "current_tier": None,
+                        "target_tier":  None,
+                        "target_spec": {
+                            "socket": target_socket,
+                            "note":   f"{target_socket} 소켓 호환 메인보드",
+                        },
+                        "candidates":   board_cands,
+                        "search_query": f"메인보드 {target_socket}",
+                    })
 
         elif part == "GPU" and target_tier is not None:
             if _gpu_items is None:
@@ -156,8 +291,16 @@ def filter_spec_candidates(
             query = cands[0]["name"] if cands else "GPU"
             result.append({**target, "candidates": cands, "search_query": query})
 
-        elif part in _QUERY_BUILDERS and target_spec:
-            query = _QUERY_BUILDERS[part](target_spec)
+        elif part == "RAM" and target_spec:
+            query = _ram_query(target_spec, effective_socket)
+            result.append({**target, "candidates": [], "search_query": query})
+
+        elif part == "SSD" and target_spec:
+            query = _ssd_query(target_spec, effective_socket)
+            result.append({**target, "candidates": [], "search_query": query})
+
+        elif part == "HDD" and target_spec:
+            query = _hdd_query(target_spec, effective_socket)
             result.append({**target, "candidates": [], "search_query": query})
 
         else:
