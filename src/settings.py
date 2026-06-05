@@ -8,13 +8,19 @@ ANALYSIS_DAYS_MIN = 3
 ANALYSIS_DAYS_MAX = 30
 ANALYSIS_DAYS_DEFAULT = 7
 
-PARTS = ["CPU", "GPU", "RAM", "SSD", "HDD", "파워"]
+PARTS = ["CPU", "GPU", "RAM", "SSD", "HDD", "메인보드", "파워"]
 
 PART_OPTIONS = [
   ("추천", "recommend"),
   ("제외", "exclude"),
   ("유지", "keep"),
   ("이미 결정", "decided"),
+]
+
+# 메인보드는 "제외"·"이미 결정"이 의미 없으므로 2개 옵션만 제공
+PART_OPTIONS_MB = [
+  ("추천", "recommend"),
+  ("유지", "keep"),
 ]
 
 KNOWLEDGE_LEVEL_LABELS = {value: label for label, value in KNOWLEDGE_LEVELS}
@@ -46,6 +52,11 @@ PART_DESCRIPTIONS = {
     "intermediate": "대용량 저장에 적합하며 SSD보다 가격 대비 용량이 큽니다.",
     "advanced":     "RPM·캐시 크기·플래터 밀도가 순차 처리량을 결정합니다.",
   },
+  "메인보드": {
+    "beginner":     "CPU·RAM·저장장치를 연결하는 기판입니다. CPU 소켓이 맞아야 장착됩니다.",
+    "intermediate": "칩셋과 소켓이 CPU 호환성을 결정하며, RAM 슬롯·M.2 수가 확장성에 영향을 줍니다.",
+    "advanced":     "칩셋 등급(Z/X/B/H)이 오버클럭·PCIe 레인·M.2 슬롯 수를 결정합니다.",
+  },
   "파워": {
     "beginner":     "컴퓨터에 전기를 공급하는 부품입니다.",
     "intermediate": "와트 수와 80PLUS 등급이 안정성과 전력 효율에 영향을 줍니다.",
@@ -55,11 +66,13 @@ PART_DESCRIPTIONS = {
 
 
 def build_settings_state() -> dict:
+  parts = {
+    part: {"option": "recommend", "manual_input": ""}
+    for part in PARTS
+  }
+  parts["메인보드"]["option"] = "keep"  # 기본값: 현재 메인보드 유지
   return {
     "knowledge_level": "intermediate",
     "analysis_days": ANALYSIS_DAYS_DEFAULT,
-    "parts": {
-      part: {"option": "recommend", "manual_input": ""}
-      for part in PARTS
-    },
+    "parts": parts,
   }

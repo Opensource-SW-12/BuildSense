@@ -204,17 +204,20 @@ def filter_spec_candidates(
     enriched_targets: list[dict],
     user_preferences: dict | None,
     socket: str | None = None,
+    upgrade_motherboard: bool | None = None,
 ) -> list[dict]:
     """
     각 추천 대상에 candidates 목록과 search_query를 추가해 반환한다.
 
-    enriched_targets  : calculate_target_tiers() 결과
-    user_preferences  : user_preferences.json (budget / upgrade_motherboard 필터용)
-    socket            : hw_info["CPU_socket"] — 소켓 인식 쿼리·필터링에 사용
+    enriched_targets    : calculate_target_tiers() 결과
+    user_preferences    : user_preferences.json (budget 필터용)
+    socket              : hw_info["CPU_socket"] — 소켓 인식 쿼리·필터링에 사용
+    upgrade_motherboard : user_profile parts 설정에서 전달; None 이면 user_preferences 폴백
     """
     prefs              = user_preferences or {}
     budget: int | None = prefs.get("budget")
-    upgrade_motherboard: bool = prefs.get("upgrade_motherboard", False)
+    if upgrade_motherboard is None:
+        upgrade_motherboard = prefs.get("upgrade_motherboard", False)
 
     # 예산이 있을 때만 환율 조회 (루프 밖 1회)
     exchange_rate: float | None = None

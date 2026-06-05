@@ -91,7 +91,13 @@ def assemble_recommendations(
     targets  = select_upgrade_targets(scores, user_profile, user_preferences)
     enriched = calculate_target_tiers(targets, hw_tiers, hw_info)
     socket   = hw_info.get("CPU_socket")
-    filtered = filter_spec_candidates(enriched, user_preferences, socket=socket)
+    upgrade_motherboard = (
+        (user_profile or {}).get("parts", {}).get("메인보드", {}).get("option") == "recommend"
+    )
+    filtered = filter_spec_candidates(
+        enriched, user_preferences, socket=socket,
+        upgrade_motherboard=upgrade_motherboard,
+    )
     resolved = resolve_prices(filtered)
 
     # GPU 업그레이드가 추천 목록에 포함된 경우 PSU 의존성 항목 추가
