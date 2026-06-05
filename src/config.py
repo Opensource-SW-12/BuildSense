@@ -11,5 +11,6 @@ SPECS_DIR = DATA_DIR / "specs"
 PRICES_DIR = DATA_DIR / "prices"
 
 USER_PROFILE_PATH = DATA_DIR / "user_profile.json"
+USER_PREFERENCES_PATH = DATA_DIR / "user_preferences.json"
 PROCESS_CATEGORIES_PATH = DATA_DIR / "process_categories.json"
 USAGE_LOG_PATH = LOGS_DIR / "usage.jsonl"
