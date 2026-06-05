@@ -334,8 +334,8 @@ def _rec_spec_html(item: dict) -> str:
     target_tier  = item.get("target_tier")
     target_spec  = item.get("target_spec") or {}
 
-    if part in ("CPU", "GPU") and target_tier:
-        if current_tier:
+    if part in ("CPU", "GPU") and target_tier is not None:
+        if current_tier is not None:
             inner = f"<strong>Tier {current_tier} → Tier {target_tier}</strong>"
         else:
             inner = f"목표 <strong>Tier {target_tier}</strong>"
