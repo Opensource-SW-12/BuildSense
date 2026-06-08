@@ -1,6 +1,8 @@
 import base64
 import io
 
+import matplotlib
+matplotlib.use("Agg")  # 보고서는 백그라운드 스레드에서 생성됨 — 기본 TkAgg는 스레드 세이프하지 않아 차트 생성이 조용히 실패함
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 import numpy as np
@@ -13,7 +15,7 @@ _C_BLUE   = "#00D4AA"
 _C_GREEN  = "#00D4AA"
 _C_ORANGE = "#FF8C42"
 _C_RED    = "#FF5252"
-_C_GRAY   = "#8892A4"
+_C_GRAY   = "#A6AEC8"
 
 _BG       = "#161B2E"
 _AX_BG    = "#0F1420"
@@ -365,7 +367,10 @@ def build_disk_chart(disk: dict) -> str:
         return _fig_to_base64(fig)
 
     n = len(drives)
-    fig, axes = plt.subplots(1, n, figsize=(max(4.5 * n, 5), 4.5))
+    # 드라이브가 1개뿐이면 정사각형에 가까운 비율이 되어 width:100% 컨테이너에서
+    # 지나치게 크게 늘어나 보임 — 가로로 더 넓은 비율을 사용해 완화
+    figsize = (6.5, 3.6) if n == 1 else (4.5 * n, 4.5)
+    fig, axes = plt.subplots(1, n, figsize=figsize)
     fig.suptitle("드라이브 사용 현황", fontsize=14, fontweight="bold", y=1.02, color=_TEXT)
     if n == 1:
         axes = [axes]

@@ -10,6 +10,7 @@
   6. PSU 의존성 검사            (KAN-141): GPU 업그레이드 시 PSU 항목 추가
 """
 
+from src.platform_mapper                        import infer_socket_from_cpu_name
 from src.recommendation.chipset_tier_mapper     import map_hardware_to_tiers
 from src.recommendation.upgrade_target_selector import select_upgrade_targets
 from src.recommendation.target_tier_calculator  import calculate_target_tiers
@@ -90,7 +91,9 @@ def assemble_recommendations(
     hw_tiers = map_hardware_to_tiers(hw_info)
     targets  = select_upgrade_targets(scores, user_profile, user_preferences)
     enriched = calculate_target_tiers(targets, hw_tiers, hw_info)
-    socket   = hw_info.get("CPU_socket")
+    # 노트북 등 소켓 정보가 없는 경우, 현재 CPU 모델명에서 소켓을 추론한다
+    # (PassMark 조회 실패 시에도 메인보드 추천이 누락되지 않도록 하는 폴백)
+    socket = hw_info.get("CPU_socket") or infer_socket_from_cpu_name(hw_info.get("CPU"))
     upgrade_motherboard = (
         (user_profile or {}).get("parts", {}).get("메인보드", {}).get("option") == "recommend"
     )
