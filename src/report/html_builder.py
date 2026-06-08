@@ -21,11 +21,38 @@ _PART_KO = {
     "Motherboard": "메인보드",
 }
 
+_KNOWLEDGE_LEVEL_KO = {
+    "beginner":     "전혀 모름",
+    "intermediate": "어느 정도 알고 있음",
+    "advanced":     "잘 알고 있음",
+}
+
+_PART_OPTION_KO = {
+    "recommend": "추천",
+    "keep":      "유지",
+}
+
+_RGB_PREFERENCE_KO = {
+    "yes":  "선호함",
+    "no":   "선호하지 않음",
+    "none": "상관없음",
+}
+
+_PROCESS_CATEGORY_KO = {
+    "game":        "게임",
+    "development": "개발·프로그래밍",
+    "creative":    "영상·이미지 편집",
+    "business":    "업무·생산성",
+    "streaming":   "스트리밍·방송",
+    "browser":     "웹 브라우저",
+    "etc":         "기타",
+}
+
 _GRADE_KO = {
     "low":      ("낮음",    "#00D4AA", "#0D2B24"),
     "medium":   ("보통",    "#FF8C42", "#2B1A0D"),
     "high":     ("높음",    "#FF5252", "#2B0D0D"),
-    "unknown":  ("미감지",  "#8892A4", "#1E2433"),
+    "unknown":  ("미감지",  "#A6AEC8", "#1E2433"),
     "gold":     ("낮음",    "#00D4AA", "#0D2B24"),
     "platinum": ("보통",    "#FF8C42", "#2B1A0D"),
     "titanium": ("높음",    "#FF5252", "#2B0D0D"),
@@ -57,7 +84,7 @@ body {
     text-transform: uppercase;
 }
 .header h1 { font-size: 24px; font-weight: 700; margin-bottom: 6px; color: #F0F4F8; }
-.header .sub { color: #8892A4; font-size: 13px; }
+.header .sub { color: #A6AEC8; font-size: 13px; }
 .card {
     background: #161B2E; border: 1px solid #2D3748;
     border-radius: 12px; padding: 28px;
@@ -76,7 +103,7 @@ body {
     border-radius: 8px; padding: 14px 16px;
 }
 .meta-item .label {
-    font-size: 10px; color: #8892A4; margin-bottom: 6px;
+    font-size: 10px; color: #A6AEC8; margin-bottom: 6px;
     text-transform: uppercase; letter-spacing: 0.8px;
 }
 .meta-item .value { font-size: 20px; font-weight: 700; color: #00D4AA; }
@@ -90,7 +117,7 @@ body {
 .chart-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
 .chart-row.single { grid-template-columns: 1fr; }
 .chart-row.three { grid-template-columns: 1fr 1fr 1fr; }
-.chart-wrap h3 { font-size: 12px; color: #8892A4; margin-bottom: 8px; font-weight: 600; }
+.chart-wrap h3 { font-size: 12px; color: #A6AEC8; margin-bottom: 8px; font-weight: 600; }
 .score-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
 .info-banner {
     display: flex; align-items: center; gap: 10px;
@@ -101,7 +128,7 @@ body {
 .info-banner::before { content: '●'; font-size: 8px; }
 table { border-collapse: collapse; }
 table thead tr { background: #0F1420; }
-table thead th { color: #8892A4; font-size: 10px; text-transform: uppercase; letter-spacing: 0.6px; }
+table thead th { color: #A6AEC8; font-size: 10px; text-transform: uppercase; letter-spacing: 0.6px; }
 table tbody tr { border-bottom: 1px solid #1E2740; }
 table tbody tr:hover { background: #1A2035; }
 @media (max-width: 768px) {
@@ -133,15 +160,15 @@ footer span { color: #00D4AA; font-weight: 700; }
     width: 110px; height: 5px; background: #1E2740; border-radius: 3px; overflow: hidden;
 }
 .rec-bar-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, #00D4AA, #00A080); }
-.rec-pct { font-size: 11px; color: #8892A4; min-width: 34px; text-align: right; }
+.rec-pct { font-size: 11px; color: #A6AEC8; min-width: 34px; text-align: right; }
 .rec-reason { font-size: 13px; color: #A0AEC0; line-height: 1.7; margin-bottom: 10px; }
 .rec-spec {
-    font-size: 12px; color: #8892A4; padding: 7px 12px;
+    font-size: 12px; color: #A6AEC8; padding: 7px 12px;
     background: #161B2E; border-radius: 6px; margin-bottom: 12px;
 }
 .rec-spec strong { color: #00D4AA; }
 .rec-cand-title {
-    font-size: 10px; color: #8892A4; text-transform: uppercase;
+    font-size: 10px; color: #A6AEC8; text-transform: uppercase;
     letter-spacing: 0.8px; margin-bottom: 8px; font-weight: 600;
 }
 .rec-cand-row {
@@ -152,12 +179,12 @@ footer span { color: #00D4AA; font-weight: 700; }
 .rec-cand-name { flex: 1; color: #E2E8F0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 .rec-cand-price { color: #00D4AA; font-weight: 700; font-size: 13px; white-space: nowrap; }
 .rec-cand-link {
-    color: #8892A4; font-size: 11px; text-decoration: none;
+    color: #A6AEC8; font-size: 11px; text-decoration: none;
     padding: 2px 8px; border: 1px solid #2D3748; border-radius: 4px; white-space: nowrap;
 }
 .rec-cand-link:hover { color: #00D4AA; border-color: #00D4AA; }
 .rec-search-hint {
-    font-size: 12px; color: #8892A4; padding: 8px 12px;
+    font-size: 12px; color: #A6AEC8; padding: 8px 12px;
     background: #161B2E; border-radius: 6px; font-style: italic;
 }
 """
@@ -168,7 +195,7 @@ def _img(b64: str, alt: str = "") -> str:
 
 
 def _tag(grade: str) -> str:
-    label, fg, bg = _GRADE_KO.get(grade, ("?", "#8892A4", "#1E2433"))
+    label, fg, bg = _GRADE_KO.get(grade, ("?", "#A6AEC8", "#1E2433"))
     return f'<span class="tag" style="color:{fg};background:{bg};border-color:{fg}40">{label}</span>'
 
 
@@ -196,7 +223,7 @@ def _section_summary(data: dict) -> str:
         f'<span class="tag" style="color:#00D4AA;background:rgba(0,212,170,0.1);border-color:rgba(0,212,170,0.3)">'
         f'{_USER_TYPE_KO.get(t, t)}</span>'
         for t in user_types
-    ) or '<span class="tag" style="color:#8892A4;background:#1E2433;border-color:#2D3748">분류 없음</span>'
+    ) or '<span class="tag" style="color:#A6AEC8;background:#1E2433;border-color:#2D3748">분류 없음</span>'
 
     metas = "".join([
         _meta("총 스냅샷", f"{total:,} 회"),
@@ -210,10 +237,77 @@ def _section_summary(data: dict) -> str:
   <h2>분석 요약</h2>
   <div class="info-banner">모든 데이터는 이 기기에만 저장됩니다. 외부 서버로 전송되는 정보는 없습니다.</div>
   <div style="margin-bottom:18px">
-    <div style="font-size:11px;color:#8892A4;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.8px">사용자 유형</div>
+    <div style="font-size:11px;color:#A6AEC8;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.8px">사용자 유형</div>
     {type_tags}
   </div>
   <div class="meta-grid">{metas}</div>
+</div>"""
+
+
+def _section_user_input(data: dict) -> str:
+    profile = data.get("profile") or {}
+    prefs   = data.get("user_preferences") or {}
+
+    # ── 최초 입력 (분석 시작 전 설정) ─────────────────────────────
+    knowledge_level = profile.get("knowledge_level")
+    initial_metas = "".join([
+        _meta("컴퓨터 지식 수준", _KNOWLEDGE_LEVEL_KO.get(knowledge_level, "-"), small=True),
+        _meta("분석 기간", f"{profile.get('analysis_days', '-')} 일", small=True),
+        _meta("데이터 수집 동의", "동의함" if (profile.get("consent") or {}).get("agreed") else "-", small=True),
+    ])
+
+    parts_config = profile.get("parts") or {}
+    part_tags = "".join(
+        f'<span class="tag" style="color:#A6AEC8;background:#1E2433;border-color:#2D3748">'
+        f'{html.escape(part)} · {_PART_OPTION_KO.get((parts_config.get(part) or {}).get("option"), "-")}</span>'
+        for part in ["CPU", "GPU", "RAM", "SSD", "HDD", "메인보드", "파워"]
+        if part in parts_config
+    )
+
+    # ── 최종 입력 (분석 종료 후 답변) ─────────────────────────────
+    if prefs:
+        budget = prefs.get("budget")
+        budget_text = f"{budget:,} 원" if isinstance(budget, int) else "설정 안 함"
+        rgb_text = _RGB_PREFERENCE_KO.get(prefs.get("rgb_preference"), "-")
+
+        final_metas = "".join([
+            _meta("예산", budget_text, small=True),
+            _meta("RGB 선호도", rgb_text, small=True),
+        ])
+
+        proc_categories = prefs.get("unknown_process_categories") or {}
+        proc_tags = "".join(
+            f'<span class="tag" style="color:#A6AEC8;background:#1E2433;border-color:#2D3748">'
+            f'{html.escape(name)} · {_PROCESS_CATEGORY_KO.get(cat, cat)}</span>'
+            for name, cat in proc_categories.items()
+        )
+        proc_block = (
+            f'<div style="font-size:11px;color:#A6AEC8;margin:14px 0 8px;text-transform:uppercase;letter-spacing:0.8px">미분류 프로그램 분류</div>'
+            f'<div style="display:flex;flex-wrap:wrap;gap:8px">{proc_tags}</div>'
+        ) if proc_tags else ""
+
+        final_block = f"""
+  <div style="margin-top:22px">
+    <div style="font-size:11px;color:#A6AEC8;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.8px">최종 입력 — 분석 종료 후 답변</div>
+    <div class="meta-grid">{final_metas}</div>
+    {proc_block}
+  </div>"""
+    else:
+        final_block = """
+  <div style="margin-top:22px">
+    <div style="font-size:11px;color:#A6AEC8;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.8px">최종 입력 — 분석 종료 후 답변</div>
+    <p style="color:#A6AEC8;font-size:13px">기록된 답변이 없습니다.</p>
+  </div>"""
+
+    return f"""
+<div class="card">
+  <h2>사용자 입력 정보</h2>
+  <div>
+    <div style="font-size:11px;color:#A6AEC8;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.8px">최초 입력 — 분석 시작 전 설정</div>
+    <div class="meta-grid">{initial_metas}</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px">{part_tags}</div>
+  </div>
+  {final_block}
 </div>"""
 
 
@@ -269,7 +363,7 @@ def _section_disk_process(charts: dict) -> str:
   <div class="chart-row" style="grid-template-columns:1fr 2fr">
     <div>{_img(category_b64, "카테고리")}</div>
     <div style="display:flex;align-items:center;padding:20px;background:#0F1420;border-radius:8px;border:1px solid #2D3748">
-      <p style="color:#8892A4;font-size:13px;line-height:2.0">
+      <p style="color:#A6AEC8;font-size:13px;line-height:2.0">
         카테고리 분포는 각 프로세스의 출현 빈도를 기반으로 집계됩니다.<br>
         <span style="color:#00D4AA;font-weight:600">게임</span>·<span style="color:#00D4AA;font-weight:600">개발</span> 비중이 높을수록 GPU·CPU 부하와 연관성이 높습니다.
       </p>
@@ -303,7 +397,7 @@ def _section_scores(data: dict, charts: dict) -> str:
             f'<tr>'
             f'<td style="padding:11px 10px;font-weight:600;color:#F0F4F8">{label}</td>'
             f'<td style="padding:11px 10px">{_tag(grade)}</td>'
-            f'<td style="padding:11px 10px;color:#8892A4;font-size:13px;font-family:monospace">{score:.3f}</td>'
+            f'<td style="padding:11px 10px;color:#A6AEC8;font-size:13px;font-family:monospace">{score:.3f}</td>'
             f'</tr>'
         )
 
@@ -373,6 +467,33 @@ def _rec_spec_html(item: dict) -> str:
     return ""
 
 
+def _rec_budget_guide_html(item: dict, user_budget: int | None) -> str:
+    """후보 가격을 바탕으로 권장 예산 가이드를 표시하고, 사용자가 입력한 예산이
+    부족한 경우 경고를 함께 보여준다."""
+    candidates = item.get("candidates") or []
+    prices = [c.get("price_krw") for c in candidates if isinstance(c.get("price_krw"), int)]
+    if not prices:
+        return ""
+
+    min_price = min(prices)
+    guide = (
+        f'<div class="rec-spec" style="margin-top:0">'
+        f'권장 예산 가이드 — 이 등급의 업그레이드를 만족스럽게 진행하려면 '
+        f'<strong>최소 약 {min_price:,} 원</strong> 이상을 고려하세요.'
+        f"</div>"
+    )
+
+    if isinstance(user_budget, int) and user_budget > 0 and user_budget < min_price:
+        guide += (
+            f'<div class="rec-spec" style="margin-top:0;color:#FF8C42;background:rgba(255,140,66,0.08)">'
+            f'⚠ 입력한 예산({user_budget:,} 원)으로는 이 부품의 추천 후보를 구매하기에 부족할 수 있습니다. '
+            f'예산을 조정하거나 더 낮은 등급의 제품을 고려해보세요.'
+            f"</div>"
+        )
+
+    return guide
+
+
 def _rec_candidates_html(item: dict) -> str:
     part        = item["part"]
     candidates  = item.get("candidates") or []
@@ -412,7 +533,7 @@ def _rec_candidates_html(item: dict) -> str:
                 spec_parts.append(f"M.2×{len(m2)}")
             if spec_parts:
                 spec_suffix = (
-                    f' <span style="color:#8892A4;font-size:11px">'
+                    f' <span style="color:#A6AEC8;font-size:11px">'
                     f'[{" | ".join(spec_parts)}]</span>'
                 )
 
@@ -427,12 +548,14 @@ def _rec_candidates_html(item: dict) -> str:
     return f'<div class="rec-cand-title">후보 제품</div>{rows}'
 
 
-def _section_recommendations(items: list[dict]) -> str:
+def _section_recommendations(items: list[dict], user_preferences: dict | None = None) -> str:
+    user_budget = (user_preferences or {}).get("budget")
+
     if not items:
         return """
 <div class="card">
   <h2>하드웨어 업그레이드 추천</h2>
-  <div class="info-banner" style="color:#8892A4;background:rgba(136,146,164,0.06);border-color:rgba(136,146,164,0.2)">
+  <div class="info-banner" style="color:#A6AEC8;background:rgba(166,174,200,0.06);border-color:rgba(166,174,200,0.2)">
     현재 사용 패턴에서 즉각적인 업그레이드가 권고되는 부품이 없습니다.
   </div>
 </div>"""
@@ -448,7 +571,7 @@ def _section_recommendations(items: list[dict]) -> str:
         part_label = html.escape(_PART_KO.get(part, part))
 
         if is_psu:
-            grade_tag     = '<span class="tag" style="color:#8892A4;background:#1E2433;border-color:#2D3748">의존성</span>'
+            grade_tag     = '<span class="tag" style="color:#A6AEC8;background:#1E2433;border-color:#2D3748">의존성</span>'
             priority_html = ""
         elif is_board:
             grade_tag = (
@@ -461,7 +584,7 @@ def _section_recommendations(items: list[dict]) -> str:
                 f'<div class="rec-bar-bg">'
                 f'<div class="rec-bar-fill" style="width:{bar_pct}%"></div>'
                 f"</div>"
-                f'<span class="rec-pct">{int(priority * 100)}%</span>'
+                f'<span class="rec-pct">{min(int(priority * 100), 100)}%</span>'
                 f"</div>"
             )
         else:
@@ -472,13 +595,14 @@ def _section_recommendations(items: list[dict]) -> str:
                 f'<div class="rec-bar-bg">'
                 f'<div class="rec-bar-fill" style="width:{bar_pct}%"></div>'
                 f"</div>"
-                f'<span class="rec-pct">{int(priority * 100)}%</span>'
+                f'<span class="rec-pct">{min(int(priority * 100), 100)}%</span>'
                 f"</div>"
             )
 
-        spec_html  = _rec_spec_html(item)
-        cand_html  = _rec_candidates_html(item)
-        card_class = "rec-card rec-psu" if is_psu else "rec-card"
+        spec_html   = _rec_spec_html(item)
+        budget_html = _rec_budget_guide_html(item, user_budget)
+        cand_html   = _rec_candidates_html(item)
+        card_class  = "rec-card rec-psu" if is_psu else "rec-card"
 
         cards += (
             f'<div class="{card_class}">'
@@ -489,6 +613,7 @@ def _section_recommendations(items: list[dict]) -> str:
             f"</div>"
             f'<p class="rec-reason">{reason}</p>'
             f'{spec_html}'
+            f'{budget_html}'
             f'{cand_html}'
             f"</div>"
         )
@@ -505,11 +630,12 @@ def build_html(report_data: dict, charts: dict) -> str:
 
     body = (
         _section_summary(report_data)
+        + _section_user_input(report_data)
         + _section_resource(charts)
         + _section_pattern(charts)
         + _section_disk_process(charts)
         + _section_scores(report_data, charts)
-        + _section_recommendations(report_data.get("recommendations") or [])
+        + _section_recommendations(report_data.get("recommendations") or [], report_data.get("user_preferences"))
     )
 
     return f"""<!DOCTYPE html>

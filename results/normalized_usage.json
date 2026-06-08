@@ -1,0 +1,478 @@
+{
+  "resource_usage": {
+    "cpu": {
+      "raw": {
+        "min": 23.9,
+        "max": 94.0,
+        "average": 72.9946200403497,
+        "median": 76.9,
+        "percentile_80": 87.1
+      },
+      "normalized": {
+        "min": 0.02710413694721829,
+        "max": 1.0,
+        "average": 0.7040642219798048,
+        "median": 0.7560627674750359,
+        "percentile_80": 0.9015691868758916,
+        "is_constant": false
+      },
+      "high_load_ratio": 0.544,
+      "sustained_high_load": {
+        "episode_count": 63,
+        "min_consecutive_snapshots": 5
+      }
+    },
+    "ram": {
+      "raw": {
+        "min": 48.0,
+        "max": 86.0,
+        "average": 73.52693602693603,
+        "median": 74.2,
+        "percentile_80": 80.9
+      },
+      "normalized": {
+        "min": 0.04210526315789478,
+        "max": 1.0,
+        "average": 0.6740007112375533,
+        "median": 0.6907894736842105,
+        "percentile_80": 0.8657894736842107,
+        "is_constant": false
+      },
+      "high_load_ratio": 0.043333333333333335,
+      "max_sustained_high_load_minutes": 2.0
+    },
+    "gpu": {
+      "raw": {
+        "min": 8.1,
+        "max": 98.0,
+        "average": 65.55793333333334,
+        "median": 83.5,
+        "percentile_80": 92.2
+      },
+      "normalized": {
+        "min": 0.0,
+        "max": 1.0,
+        "average": 0.6391316277345198,
+        "median": 0.8387096774193549,
+        "percentile_80": 0.935483870967742,
+        "is_constant": false
+      },
+      "gpu_not_detected_ratio": 0.0,
+      "high_load_ratio": 0.6086666666666667
+    },
+    "vram": {
+      "vram_total_mb": 6141.0,
+      "used_mb": {
+        "raw": {
+          "min": 737.5,
+          "max": 5401.6,
+          "average": 3741.0947333333334,
+          "median": 4708.1,
+          "percentile_80": 5134.2
+        },
+        "normalized": {
+          "min": 0.0,
+          "max": 1.0,
+          "average": 0.6439816327551582,
+          "median": 0.8513110782358868,
+          "percentile_80": 0.9426684676572114,
+          "is_constant": false
+        }
+      },
+      "usage_percent": {
+        "raw": {
+          "min": 12.009444715844324,
+          "max": 87.9596156977691,
+          "average": 60.919959832817675,
+          "median": 76.66666666666666,
+          "percentile_80": 83.60527601367855
+        },
+        "normalized": {
+          "min": 0.0,
+          "max": 1.0,
+          "average": 0.6439816327551582,
+          "median": 0.8513110782358868,
+          "percentile_80": 0.9426684676572114,
+          "is_constant": false
+        }
+      },
+      "high_load_ratio": 0.0
+    }
+  },
+  "usage_pattern": {
+    "time_period_count": {
+      "dawn": 6,
+      "morning": 54,
+      "afternoon": 420,
+      "evening": 1020
+    },
+    "weekday_count": {
+      "weekday": 960,
+      "weekend": 540
+    },
+    "active_snapshot_ratio": 0.17123287671232876,
+    "average_continuous_usage_hours": 2.066666666666667,
+    "inactive_segments": [
+      {
+        "start": "2026-06-01T22:35:51.764072+00:00",
+        "end": "2026-06-02T21:06:51.764072+00:00",
+        "duration_hours": 22.52
+      },
+      {
+        "start": "2026-06-03T00:05:51.764072+00:00",
+        "end": "2026-06-03T15:06:51.764072+00:00",
+        "duration_hours": 15.02
+      },
+      {
+        "start": "2026-06-03T16:35:51.764072+00:00",
+        "end": "2026-06-03T21:06:51.764072+00:00",
+        "duration_hours": 4.52
+      },
+      {
+        "start": "2026-06-03T23:05:51.764072+00:00",
+        "end": "2026-06-04T11:06:51.764072+00:00",
+        "duration_hours": 12.02
+      },
+      {
+        "start": "2026-06-04T13:05:51.764072+00:00",
+        "end": "2026-06-04T22:06:51.764072+00:00",
+        "duration_hours": 9.02
+      },
+      {
+        "start": "2026-06-04T23:35:51.764072+00:00",
+        "end": "2026-06-05T20:06:51.764072+00:00",
+        "duration_hours": 20.52
+      },
+      {
+        "start": "2026-06-05T23:35:51.764072+00:00",
+        "end": "2026-06-06T12:06:51.764072+00:00",
+        "duration_hours": 12.52
+      },
+      {
+        "start": "2026-06-06T14:05:51.764072+00:00",
+        "end": "2026-06-06T17:06:51.764072+00:00",
+        "duration_hours": 3.02
+      },
+      {
+        "start": "2026-06-06T18:05:51.764072+00:00",
+        "end": "2026-06-06T21:06:51.764072+00:00",
+        "duration_hours": 3.02
+      },
+      {
+        "start": "2026-06-06T23:35:51.764072+00:00",
+        "end": "2026-06-07T14:06:51.764072+00:00",
+        "duration_hours": 14.52
+      },
+      {
+        "start": "2026-06-07T15:35:51.764072+00:00",
+        "end": "2026-06-07T20:06:51.764072+00:00",
+        "duration_hours": 4.52
+      }
+    ],
+    "uptime": {
+      "average_uptime_hours": 11.125579166666666,
+      "long_usage_ratio": 0.716
+    }
+  },
+  "disk_usage": {
+    "C:\\": {
+      "drive_type": "NVMe",
+      "total_gb": 447.7,
+      "used_gb_stats": {
+        "min": 310.0,
+        "max": 340.0,
+        "average": 325.3485333333333,
+        "median": 325.25,
+        "percentile_80": 334.6
+      },
+      "free_gb_stats": {
+        "min": 105.0,
+        "average": 119.65226666666666,
+        "median": 119.3
+      },
+      "percent_stats": {
+        "min": 70.0,
+        "max": 76.0,
+        "average": 73.0188,
+        "median": 73.0,
+        "percentile_80": 74.8
+      },
+      "danger_ratio": 0.0
+    }
+  },
+  "process_usage": {
+    "top_by_frequency": [
+      {
+        "name": "gta5.exe",
+        "appearance_count": 1020,
+        "appearance_ratio": 0.68,
+        "avg_cpu_percent": 35.04186274509806,
+        "avg_memory_mb": 4200.0,
+        "category": "etc"
+      },
+      {
+        "name": "steam.exe",
+        "appearance_count": 1020,
+        "appearance_ratio": 0.68,
+        "avg_cpu_percent": 4.464411764705888,
+        "avg_memory_mb": 320.0,
+        "category": "game"
+      },
+      {
+        "name": "discord.exe",
+        "appearance_count": 1020,
+        "appearance_ratio": 0.68,
+        "avg_cpu_percent": 2.097745098039218,
+        "avg_memory_mb": 280.0,
+        "category": "messenger"
+      },
+      {
+        "name": "code.exe",
+        "appearance_count": 420,
+        "appearance_ratio": 0.28,
+        "avg_cpu_percent": 12.05952380952381,
+        "avg_memory_mb": 820.0,
+        "category": "development"
+      },
+      {
+        "name": "python.exe",
+        "appearance_count": 420,
+        "appearance_ratio": 0.28,
+        "avg_cpu_percent": 8.447142857142858,
+        "avg_memory_mb": 310.0,
+        "category": "development"
+      },
+      {
+        "name": "chrome.exe",
+        "appearance_count": 420,
+        "appearance_ratio": 0.28,
+        "avg_cpu_percent": 6.088809523809525,
+        "avg_memory_mb": 1100.0,
+        "category": "browser"
+      },
+      {
+        "name": "explorer.exe",
+        "appearance_count": 60,
+        "appearance_ratio": 0.04,
+        "avg_cpu_percent": 0.8833333333333331,
+        "avg_memory_mb": 120.0,
+        "category": "etc"
+      },
+      {
+        "name": "msmpeng.exe",
+        "appearance_count": 60,
+        "appearance_ratio": 0.04,
+        "avg_cpu_percent": 0.9100000000000003,
+        "avg_memory_mb": 90.0,
+        "category": "etc"
+      }
+    ],
+    "top_by_cpu": [
+      {
+        "name": "gta5.exe",
+        "appearance_count": 1020,
+        "appearance_ratio": 0.68,
+        "avg_cpu_percent": 35.04186274509806,
+        "avg_memory_mb": 4200.0,
+        "category": "etc"
+      },
+      {
+        "name": "code.exe",
+        "appearance_count": 420,
+        "appearance_ratio": 0.28,
+        "avg_cpu_percent": 12.05952380952381,
+        "avg_memory_mb": 820.0,
+        "category": "development"
+      },
+      {
+        "name": "python.exe",
+        "appearance_count": 420,
+        "appearance_ratio": 0.28,
+        "avg_cpu_percent": 8.447142857142858,
+        "avg_memory_mb": 310.0,
+        "category": "development"
+      },
+      {
+        "name": "chrome.exe",
+        "appearance_count": 420,
+        "appearance_ratio": 0.28,
+        "avg_cpu_percent": 6.088809523809525,
+        "avg_memory_mb": 1100.0,
+        "category": "browser"
+      },
+      {
+        "name": "steam.exe",
+        "appearance_count": 1020,
+        "appearance_ratio": 0.68,
+        "avg_cpu_percent": 4.464411764705888,
+        "avg_memory_mb": 320.0,
+        "category": "game"
+      },
+      {
+        "name": "discord.exe",
+        "appearance_count": 1020,
+        "appearance_ratio": 0.68,
+        "avg_cpu_percent": 2.097745098039218,
+        "avg_memory_mb": 280.0,
+        "category": "messenger"
+      },
+      {
+        "name": "msmpeng.exe",
+        "appearance_count": 60,
+        "appearance_ratio": 0.04,
+        "avg_cpu_percent": 0.9100000000000003,
+        "avg_memory_mb": 90.0,
+        "category": "etc"
+      },
+      {
+        "name": "explorer.exe",
+        "appearance_count": 60,
+        "appearance_ratio": 0.04,
+        "avg_cpu_percent": 0.8833333333333331,
+        "avg_memory_mb": 120.0,
+        "category": "etc"
+      }
+    ],
+    "top_by_memory": [
+      {
+        "name": "gta5.exe",
+        "appearance_count": 1020,
+        "appearance_ratio": 0.68,
+        "avg_cpu_percent": 35.04186274509806,
+        "avg_memory_mb": 4200.0,
+        "category": "etc"
+      },
+      {
+        "name": "chrome.exe",
+        "appearance_count": 420,
+        "appearance_ratio": 0.28,
+        "avg_cpu_percent": 6.088809523809525,
+        "avg_memory_mb": 1100.0,
+        "category": "browser"
+      },
+      {
+        "name": "code.exe",
+        "appearance_count": 420,
+        "appearance_ratio": 0.28,
+        "avg_cpu_percent": 12.05952380952381,
+        "avg_memory_mb": 820.0,
+        "category": "development"
+      },
+      {
+        "name": "steam.exe",
+        "appearance_count": 1020,
+        "appearance_ratio": 0.68,
+        "avg_cpu_percent": 4.464411764705888,
+        "avg_memory_mb": 320.0,
+        "category": "game"
+      },
+      {
+        "name": "python.exe",
+        "appearance_count": 420,
+        "appearance_ratio": 0.28,
+        "avg_cpu_percent": 8.447142857142858,
+        "avg_memory_mb": 310.0,
+        "category": "development"
+      },
+      {
+        "name": "discord.exe",
+        "appearance_count": 1020,
+        "appearance_ratio": 0.68,
+        "avg_cpu_percent": 2.097745098039218,
+        "avg_memory_mb": 280.0,
+        "category": "messenger"
+      },
+      {
+        "name": "explorer.exe",
+        "appearance_count": 60,
+        "appearance_ratio": 0.04,
+        "avg_cpu_percent": 0.8833333333333331,
+        "avg_memory_mb": 120.0,
+        "category": "etc"
+      },
+      {
+        "name": "msmpeng.exe",
+        "appearance_count": 60,
+        "appearance_ratio": 0.04,
+        "avg_cpu_percent": 0.9100000000000003,
+        "avg_memory_mb": 90.0,
+        "category": "etc"
+      }
+    ],
+    "category_summary": {
+      "etc": 1140,
+      "game": 1020,
+      "messenger": 1020,
+      "development": 840,
+      "browser": 420
+    }
+  },
+  "scores": {
+    "user_classification": {
+      "user_type": [
+        "game",
+        "development",
+        "messenger"
+      ],
+      "category_scores": {
+        "game": 0.7041666666666667,
+        "messenger": 0.3541666666666667,
+        "development": 0.44166666666666665
+      },
+      "hardware_signals": {
+        "gpu_high_load_ratio": 0.6086666666666667,
+        "cpu_sustained_episodes": 63,
+        "vram_p80": 83.60527601367855
+      }
+    },
+    "cpu": {
+      "score": 0.766,
+      "grade": "high",
+      "factors": {
+        "p80_percent": 87.1,
+        "high_load_ratio": 0.544,
+        "sustained_episodes": 63
+      }
+    },
+    "ram": {
+      "score": 0.3476,
+      "grade": "medium",
+      "factors": {
+        "p80_percent": 80.9,
+        "high_load_ratio": 0.0433,
+        "max_sustained_high_load_minutes": 2.0
+      }
+    },
+    "gpu_vram": {
+      "score": 0.6264,
+      "grade": "high",
+      "factors": {
+        "gpu_p80_percent": 92.2,
+        "gpu_high_load_ratio": 0.6087,
+        "vram_p80_percent": 83.61,
+        "vram_high_load_ratio": 0.0,
+        "gpu_not_detected_ratio": 0.0
+      }
+    },
+    "ssd": {
+      "score": 0.374,
+      "grade": "medium",
+      "drive_scores": {
+        "C:\\": {
+          "score": 0.374,
+          "grade": "medium",
+          "drive_type": "NVMe"
+        }
+      }
+    },
+    "hdd": null,
+    "psu": {
+      "score": 0.5393,
+      "grade": "platinum",
+      "factors": {
+        "average_uptime_hours": 11.13,
+        "long_usage_ratio": 0.716
+      }
+    }
+  }
+}

@@ -63,6 +63,7 @@ def generate_report(hw_info: dict | None = None) -> Path:
 
     profile = read_user_profile()
     data    = collect_report_data(logs, profile)
+    data["user_preferences"] = load_user_preferences()
     _attach_recommendations(data, hw_info)
     charts  = _build_charts(data)
     html    = build_html(data, charts)

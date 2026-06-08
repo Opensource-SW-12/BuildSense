@@ -59,7 +59,6 @@ PART_DESCRIPTIONS = {
 
 def build_settings_state() -> dict:
   parts = {part: {"option": "recommend"} for part in PARTS}
-  parts["메인보드"]["option"] = "keep"  # 기본값: 현재 메인보드 유지
   return {
     "knowledge_level": "intermediate",
     "analysis_days": ANALYSIS_DAYS_DEFAULT,

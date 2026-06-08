@@ -61,6 +61,9 @@ def cpu_patterns_for_socket(socket: str | None) -> list[re.Pattern]:
 def infer_socket_from_cpu_name(cpu_name: str) -> str | None:
     """CPU 모델명 문자열에서 소켓 타입을 추론한다."""
     name = (cpu_name or "").lower()
+    # OS가 보고하는 이름에는 "(R)", "(TM)" 같은 상표 표기가 토큰 사이에 끼어 있어
+    # "core ultra"/"core i5" 같은 패턴 매칭을 방해하므로 제거한다
+    name = re.sub(r"\(\s*[a-z]+\s*\)", " ", name)
 
     # Intel Core Ultra 2xx (Arrow Lake-S) → LGA 1851
     if re.search(r"core\s+ultra\s+[3579]\s+2\d{2}", name):
