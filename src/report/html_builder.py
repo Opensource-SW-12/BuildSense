@@ -251,12 +251,11 @@ def _section_summary(data: dict) -> str:
 
 
 _HW_PART_KO = {
-    "CPU":  "CPU",
-    "GPU":  "GPU",
-    "RAM":  "RAM",
-    "SSD":  "SSD",
-    "HDD":  "HDD",
-    "파워": "파워 서플라이",
+    "CPU": "CPU",
+    "GPU": "GPU",
+    "RAM": "RAM",
+    "SSD": "SSD",
+    "HDD": "HDD",
 }
 
 def _hw_spec_block(hw_info: dict) -> str:
