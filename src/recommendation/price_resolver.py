@@ -195,8 +195,9 @@ def _make_price_candidate(item: dict) -> dict:
 
 def _enrich_hw_candidate(candidate: dict, part: str) -> dict:
     """
-    PassMark CPU/GPU 후보 1개에 대해 네이버 → eBay 순으로 가격을 보완한다.
-    이미 price_krw 값이 있으면 검색을 건너뛴다.
+    PassMark CPU/GPU 후보 1개에 대해 가격을 보완한다.
+    순서: 캐시 → Naver(product_matcher 검증) → eBay(product_matcher 검증)
+    Naver에 결과가 있어도 매칭 제품이 없으면 eBay를 별도로 시도한다.
     """
     if candidate.get("price_krw") is not None:
         return candidate
@@ -206,20 +207,44 @@ def _enrich_hw_candidate(candidate: dict, part: str) -> dict:
         return candidate
 
     part_dict = _cpu_part_dict(name) if part == "CPU" else _gpu_part_dict(name)
-    items = _search_safe(name, part, ebay_fallback=True)
 
-    for item in items:
+    # 1. 캐시 확인
+    naver_items = _cache_load(part, name)
+    cache_hit   = naver_items is not None
+    if not cache_hit:
+        naver_items = _naver_search_safe(name)
+
+    # 2. Naver 결과에서 product_matcher 검증
+    for item in naver_items:
         if not is_matching_product(item.get("title", ""), part_dict):
             continue
-        source = item.get("source", "naver")
+        if not cache_hit and naver_items:
+            _cache_save(part, name, naver_items)
         return {
             **candidate,
             "price_krw":    item.get("price_krw"),
-            "price_source": source,
+            "price_source": item.get("source", "naver"),
             "product_url":  item.get("link"),
-            "mall_name":    item.get("mall_name") or ("eBay" if source == "ebay" else None),
+            "mall_name":    item.get("mall_name"),
         }
 
+    # 3. Naver 매칭 없음 → eBay 별도 시도
+    ebay_items = _ebay_search_safe(name)
+    for item in ebay_items:
+        if not is_matching_product(item.get("title", ""), part_dict):
+            continue
+        _cache_save(part, name, ebay_items)
+        return {
+            **candidate,
+            "price_krw":    item.get("price_krw"),
+            "price_source": "ebay",
+            "product_url":  item.get("link"),
+            "mall_name":    "eBay",
+        }
+
+    # Naver 결과 캐시 저장 (매칭 없었더라도 다음 요청 재사용)
+    if not cache_hit and naver_items:
+        _cache_save(part, name, naver_items)
     return candidate
 
 
