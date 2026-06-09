@@ -447,11 +447,13 @@ def _rec_spec_html(item: dict) -> str:
 
     note = html.escape(target_spec.get("note", ""))
     if part == "PSU":
-        label = html.escape(target_spec.get("recommended_efficiency", ""))
+        label    = html.escape(target_spec.get("recommended_efficiency", ""))
+        min_watt = target_spec.get("min_wattage")
         if label:
+            watt_str = f"<strong>{min_watt}W</strong> 이상, " if min_watt else ""
             return (
                 f'<div class="rec-spec">'
-                f'권장 효율 등급: <strong>80+ {label}</strong>'
+                f'권장 용량: {watt_str}효율 등급 <strong>80+ {label}</strong>'
                 + (f'<br><span style="font-size:11px">{note}</span>' if note else "")
                 + "</div>"
             )
@@ -498,9 +500,6 @@ def _rec_candidates_html(item: dict) -> str:
     part        = item["part"]
     candidates  = item.get("candidates") or []
     search_query = html.escape(item.get("search_query") or "")
-
-    if part == "PSU":
-        return ""
 
     if not candidates:
         if search_query:
@@ -584,7 +583,7 @@ def _section_recommendations(items: list[dict], user_preferences: dict | None = 
                 f'<div class="rec-bar-bg">'
                 f'<div class="rec-bar-fill" style="width:{bar_pct}%"></div>'
                 f"</div>"
-                f'<span class="rec-pct">{min(int(priority * 100), 100)}%</span>'
+                f'<span class="rec-pct">{bar_pct}%</span>'
                 f"</div>"
             )
         else:
@@ -595,7 +594,7 @@ def _section_recommendations(items: list[dict], user_preferences: dict | None = 
                 f'<div class="rec-bar-bg">'
                 f'<div class="rec-bar-fill" style="width:{bar_pct}%"></div>'
                 f"</div>"
-                f'<span class="rec-pct">{min(int(priority * 100), 100)}%</span>'
+                f'<span class="rec-pct">{bar_pct}%</span>'
                 f"</div>"
             )
 

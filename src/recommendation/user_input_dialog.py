@@ -261,12 +261,12 @@ class UserPreferenceDialog:
 
                 tk.Label(
                     row, text=proc["name"], fg=_WHITE, bg=_CARD,
-                    font=("Segoe UI", 10), anchor="w", width=24,
+                    font=("Segoe UI", 10), anchor="w", width=18,
                 ).pack(side=tk.LEFT)
 
                 tk.Label(
                     row, text=f"({ratio_pct}, {cpu_text})", fg=_GRAY, bg=_CARD,
-                    font=("Segoe UI", 9), anchor="w", width=20,
+                    font=("Segoe UI", 9), anchor="w", width=16,
                 ).pack(side=tk.LEFT)
 
                 var = tk.StringVar(value=_VALUE_TO_TEXT["etc"])
@@ -278,7 +278,7 @@ class UserPreferenceDialog:
                           relief=tk.FLAT, font=("Segoe UI", 9))
                 om["menu"].config(bg=_CARD, fg=_WHITE,
                                   activebackground=_TEAL, activeforeground=_BG)
-                om.pack(side=tk.LEFT, padx=(4, 0))
+                om.pack(side=tk.LEFT, padx=(4, 0), fill=tk.X, expand=True)
 
         # ── 버튼 ─────────────────────────────────────────────────
         _divider(outer, pady=(14, 10))

@@ -1,3 +1,4 @@
+import os
 import webbrowser
 from datetime import datetime
 from pathlib import Path
@@ -73,5 +74,26 @@ def generate_report(hw_info: dict | None = None) -> Path:
     path = get_report_path(filename)
     path.write_text(html, encoding="utf-8")
 
-    webbrowser.open(path.as_uri())
+    _open_in_browser(path)
     return path
+
+
+def _open_in_browser(path: Path) -> None:
+    """보고서 파일을 기본 브라우저로 연다.
+
+    백그라운드 스레드(분석 _run())에서 호출될 때 COM 미초기화 등으로
+    webbrowser.open()이 예외를 던지거나 조용히 실패(False 반환)할 수 있음.
+    실패해도 보고서 파일 자체는 이미 저장된 상태이므로 generate_report()는
+    성공으로 처리하고, 여기서는 os.startfile()로 한 번 더 시도만 한다.
+    (사용자는 완료 화면의 "보고서 다시 열기" 버튼으로 메인 스레드에서 다시 열 수 있음)
+    """
+    try:
+        if webbrowser.open(path.as_uri()):
+            return
+    except Exception:
+        pass
+
+    try:
+        os.startfile(path)
+    except Exception:
+        pass

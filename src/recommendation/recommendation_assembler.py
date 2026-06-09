@@ -24,17 +24,56 @@ _PSU_GRADE_LABEL: dict[str, str] = {
     "titanium": "티타늄",
 }
 
+# PassMark tier(0-29) → 대표 데스크톱 TDP(W) 근사값
+# tier = int((passmark_score / max_score) * 29)
+_CPU_TIER_TDP: list[tuple[int, int]] = [
+    (8,  65), (14,  95), (18, 125), (22, 165), (29, 253),
+]
+_GPU_TIER_TDP: list[tuple[int, int]] = [
+    (5,  75), (10, 150), (14, 200), (18, 250), (22, 320), (29, 400),
+]
+_SYSTEM_OVERHEAD_W = 100   # RAM·SSD·메인보드·쿨러·팬 등 기타 소비전력
+_PSU_SAFETY_MARGIN = 1.25  # 25% 여유 (안정성 마진)
+_PSU_STANDARD_WATT = [400, 500, 550, 600, 650, 700, 750, 800, 850, 1000, 1200]
 
-def _build_psu_item(psu_score_data: dict, gpu_item: dict) -> dict:
-    """
-    GPU 업그레이드에 연동되는 PSU 의존성 항목을 생성한다.
-    PSU는 직접 감지·가격 조회가 불가능하므로 candidates는 비워 둔다.
-    """
-    grade    = psu_score_data.get("grade", "platinum")   # gold | platinum | titanium
+
+def _tier_to_tdp(tier: int | None, table: list[tuple[int, int]]) -> int:
+    """tier 값을 대표 TDP(W)로 변환한다. tier가 None이면 중간 기본값 반환."""
+    if tier is None:
+        return table[len(table) // 2][1]
+    for threshold, tdp in table:
+        if tier <= threshold:
+            return tdp
+    return table[-1][1]
+
+
+def _recommend_wattage(cpu_tier: int | None, gpu_tier: int | None) -> int:
+    """CPU·GPU tier를 기반으로 최소 권장 PSU 용량(W)을 반환한다."""
+    raw = (
+        _tier_to_tdp(cpu_tier, _CPU_TIER_TDP)
+        + _tier_to_tdp(gpu_tier, _GPU_TIER_TDP)
+        + _SYSTEM_OVERHEAD_W
+    ) * _PSU_SAFETY_MARGIN
+    for w in _PSU_STANDARD_WATT:
+        if w >= raw:
+            return w
+    return _PSU_STANDARD_WATT[-1]
+
+
+def _build_psu_item(
+    psu_score_data: dict,
+    gpu_item: dict,
+    cpu_item: dict | None = None,
+) -> dict:
+    """GPU 업그레이드에 연동되는 PSU 의존성 항목을 생성한다."""
+    grade    = psu_score_data.get("grade", "platinum")
     label    = _PSU_GRADE_LABEL.get(grade, "플래티넘")
     score    = psu_score_data.get("score", 0.5)
-    # GPU 우선순위보다 0.2 낮게 설정해 목록 후반부에 자연스럽게 배치
     priority = round(max(0.0, gpu_item.get("priority", 0.5) - 0.2), 4)
+
+    cpu_tier = (cpu_item or {}).get("target_tier")
+    gpu_tier = gpu_item.get("target_tier")
+    min_watt = _recommend_wattage(cpu_tier, gpu_tier)
 
     return {
         "part":         "PSU",
@@ -49,10 +88,11 @@ def _build_psu_item(psu_score_data: dict, gpu_item: dict) -> dict:
         "target_tier":  None,
         "target_spec": {
             "recommended_efficiency": label,
-            "note": f"업그레이드 GPU의 TDP를 확인하고 충분한 출력(W)의 PSU를 선택하세요.",
+            "min_wattage":            min_watt,
+            "note": f"{min_watt}W 이상, 80+ {label} 등급 권장",
         },
         "candidates":   [],
-        "search_query": None,
+        "search_query": f"파워서플라이 {min_watt}W 80PLUS",
     }
 
 
@@ -101,12 +141,15 @@ def assemble_recommendations(
         enriched, user_preferences, socket=socket,
         upgrade_motherboard=upgrade_motherboard,
     )
-    resolved = resolve_prices(filtered)
 
-    # GPU 업그레이드가 추천 목록에 포함된 경우 PSU 의존성 항목 추가
-    gpu_item = next((t for t in resolved if t["part"] == "GPU"), None)
+    # GPU 업그레이드가 추천 목록에 포함된 경우 PSU 의존성 항목을 resolve_prices 전에 추가해
+    # 네이버 가격 조회가 함께 실행되도록 한다
+    gpu_item = next((t for t in filtered if t["part"] == "GPU"), None)
     if gpu_item is not None:
-        resolved.append(_build_psu_item(scores.get("psu", {}), gpu_item))
+        cpu_item = next((t for t in filtered if t["part"] == "CPU"), None)
+        filtered.append(_build_psu_item(scores.get("psu", {}), gpu_item, cpu_item))
+
+    resolved = resolve_prices(filtered)
 
     resolved.sort(key=lambda x: x.get("priority", 0.0), reverse=True)
     return resolved
