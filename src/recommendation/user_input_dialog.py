@@ -86,6 +86,11 @@ _RGB_DESCRIPTIONS = {
     "intermediate": "RGB 선호도는 추천 후보를 고를 때 LED 조명 효과 유무를 고려할지 결정하는 항목입니다.",
 }
 
+_COLOR_DESCRIPTIONS = {
+    "beginner":     "부품 색상 선호도입니다. 검정 또는 흰색 계열 부품을 선택하면 RAM·메인보드·파워 검색 시 해당 색상을 우선 반영합니다.",
+    "intermediate": "색상 선호도를 설정하면 RAM·메인보드·파워 검색 쿼리에 블랙 또는 화이트 키워드가 추가됩니다.",
+}
+
 _CATEGORY_LABELS = [
     ("게임",             "game"),
     ("개발·프로그래밍", "development"),
@@ -302,6 +307,33 @@ class UserPreferenceDialog:
                 selectcolor=_CARD, highlightthickness=0,
             ).pack(side=tk.LEFT, padx=(0, 16))
 
+        _divider(outer)
+
+        # ── 색상 ──────────────────────────────────────────────────
+        _section_title("색상 선호도", pady=(0, 4))
+
+        color_desc = _COLOR_DESCRIPTIONS.get(self._knowledge_level or "")
+        if color_desc:
+            tk.Label(
+                outer, text=color_desc, fg=_GRAY, bg=_BG, font=("Segoe UI", 9),
+                anchor="w", wraplength=450, justify=tk.LEFT,
+            ).pack(fill=tk.X, pady=(0, 6))
+
+        self._color_var = tk.StringVar(value="none")
+        color_row = tk.Frame(outer, bg=_BG)
+        color_row.pack(fill=tk.X, pady=(0, 14))
+
+        for text, value in [("검정", "black"), ("흰색", "white"), ("상관없음", "none")]:
+            tk.Radiobutton(
+                color_row,
+                text=text,
+                variable=self._color_var,
+                value=value,
+                font=("Segoe UI", 10),
+                bg=_BG, fg=_GRAY, activebackground=_BG, activeforeground=_WHITE,
+                selectcolor=_CARD, highlightthickness=0,
+            ).pack(side=tk.LEFT, padx=(0, 16))
+
         # ── 미분류 프로세스 ───────────────────────────────────────
         if self._unknown_procs:
             _divider(outer)
@@ -384,7 +416,8 @@ class UserPreferenceDialog:
             "budget_mode": mode,
             "budgets": dict(self._part_budgets) if mode == "custom" else {},
             "budget": None,
-            "rgb_preference": self._rgb_var.get(),
+            "rgb_preference":    self._rgb_var.get(),
+            "color_preference":  self._color_var.get(),
             "unknown_process_categories": {
                 name: _TEXT_TO_VALUE.get(var.get(), "etc")
                 for name, var in self._proc_vars.items()

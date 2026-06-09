@@ -38,6 +38,12 @@ _RGB_PREFERENCE_KO = {
     "none": "상관없음",
 }
 
+_COLOR_PREFERENCE_KO = {
+    "black": "검정",
+    "white": "흰색",
+    "none":  "상관없음",
+}
+
 _PROCESS_CATEGORY_KO = {
     "game":        "게임",
     "development": "개발·프로그래밍",
@@ -315,11 +321,13 @@ def _section_user_input(data: dict) -> str:
         else:
             budget_text = mode_label
 
-        rgb_text = _RGB_PREFERENCE_KO.get(prefs.get("rgb_preference"), "-")
+        rgb_text   = _RGB_PREFERENCE_KO.get(prefs.get("rgb_preference"), "-")
+        color_text = _COLOR_PREFERENCE_KO.get(prefs.get("color_preference"), "-")
 
         final_metas = "".join([
-            _meta("예산 설정", budget_text, small=True),
-            _meta("RGB 선호도", rgb_text, small=True),
+            _meta("예산 설정",  budget_text, small=True),
+            _meta("RGB 선호도", rgb_text,    small=True),
+            _meta("색상 선호도", color_text,  small=True),
         ])
 
         proc_categories = prefs.get("unknown_process_categories") or {}

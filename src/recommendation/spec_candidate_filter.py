@@ -165,43 +165,54 @@ def _filter_passmark(
     exclude_fn=None,
     max_results: int = _MAX_CANDS,
 ) -> list[dict]:
-    tier_min = max(1, target_tier - _TIER_BELOW)
-    tier_max = min(MAX_TIER, target_tier + _TIER_ABOVE)
+    """
+    target_tier 근방의 후보를 반환한다.
+    조건을 모두 충족하는 후보가 없으면 target_tier를 1씩 낮춰 재시도한다.
+    """
+    current_target = target_tier
+    while current_target >= 1:
+        tier_min = max(1, current_target - _TIER_BELOW)
+        tier_max = min(MAX_TIER, current_target + _TIER_ABOVE)
 
-    candidates = []
-    for item in items:
-        tier = calc_tier_fn(item.get("score"))
-        if tier is None or not (tier_min <= tier <= tier_max):
-            continue
+        candidates = []
+        for item in items:
+            tier = calc_tier_fn(item.get("score"))
+            if tier is None or not (tier_min <= tier <= tier_max):
+                continue
 
-        # 현재 하드웨어보다 낮은 점수의 후보 제외 (다운그레이드 방지)
-        if min_score is not None and (item.get("score") or 0) <= min_score:
-            continue
+            # 현재 하드웨어보다 낮은 점수의 후보 제외 (다운그레이드 방지)
+            if min_score is not None and (item.get("score") or 0) <= min_score:
+                continue
 
-        # 워크스테이션/전문가용 부품 제외
-        if exclude_fn is not None and exclude_fn(item.get("name", "")):
-            continue
+            # 워크스테이션/전문가용 부품 제외
+            if exclude_fn is not None and exclude_fn(item.get("name", "")):
+                continue
 
-        price_usd = parse_price_usd(item.get("price_usd", "NA"))
-        price_krw = _krw_from_usd(price_usd, exchange_rate)
+            price_usd = parse_price_usd(item.get("price_usd", "NA"))
+            price_krw = _krw_from_usd(price_usd, exchange_rate)
 
-        if not _within_budget(price_krw, budget):
-            continue
+            if not _within_budget(price_krw, budget):
+                continue
 
-        candidates.append({
-            "name":             item.get("name"),
-            "passmark_score":   item.get("score"),
-            "performance_tier": tier,
-            "price_usd":        price_usd,
-            "price_krw":        price_krw,
-        })
+            candidates.append({
+                "name":             item.get("name"),
+                "passmark_score":   item.get("score"),
+                "performance_tier": tier,
+                "price_usd":        price_usd,
+                "price_krw":        price_krw,
+            })
 
-    # target_tier에 가까운 순 → 같은 tier면 score 높은 순
-    candidates.sort(key=lambda x: (
-        abs(x["performance_tier"] - target_tier),
-        -(x["passmark_score"] or 0),
-    ))
-    return candidates[:max_results]
+        candidates.sort(key=lambda x: (
+            abs(x["performance_tier"] - current_target),
+            -(x["passmark_score"] or 0),
+        ))
+        result = candidates[:max_results]
+        if result:
+            return result
+
+        current_target -= 1
+
+    return []
 
 
 def _diversify_cpu_candidates(candidates: list[dict], target_tier: int) -> list[dict]:
@@ -245,15 +256,20 @@ def _gb_str(gb: int) -> str:
     return f"{gb // 1024}TB" if gb >= 1024 else f"{gb}GB"
 
 
-def _ram_query(spec: dict, socket: str | None = None) -> str:
+def _color_suffix(color_pref: str) -> str:
+    return {"black": " 블랙", "white": " 화이트"}.get(color_pref, "")
+
+
+def _ram_query(spec: dict, socket: str | None = None, color_pref: str = "none") -> str:
     cap = _gb_str(spec.get("target_gb", 16))
     ddr = socket_to_ram_type(socket)
+    sfx = _color_suffix(color_pref)
     if ddr:
-        return f"{ddr} RAM {cap}"
-    return f"RAM {cap}"
+        return f"{ddr} RAM {cap}{sfx}"
+    return f"RAM {cap}{sfx}"
 
 
-def _ssd_query(spec: dict, socket: str | None = None) -> str:
+def _ssd_query(spec: dict, socket: str | None = None, color_pref: str = "none") -> str:
     cap = _gb_str(spec.get("target_gb", 1024))
     gen = socket_to_pcie_gen(socket)
     if gen:
@@ -261,7 +277,7 @@ def _ssd_query(spec: dict, socket: str | None = None) -> str:
     return f"NVMe SSD {cap}"
 
 
-def _hdd_query(spec: dict, socket: str | None = None) -> str:
+def _hdd_query(spec: dict, socket: str | None = None, color_pref: str = "none") -> str:
     # HDD 교체 목적이므로 SSD 검색
     cap = _gb_str(spec.get("target_gb", 1024))
     return f"SSD {cap}"
@@ -338,6 +354,7 @@ def filter_spec_candidates(
     prefs        = user_preferences or {}
     budget_mode  = prefs.get("budget_mode", "recommended")
     part_budgets: dict[str, int | None] = prefs.get("budgets", {}) if budget_mode == "custom" else {}
+    color_pref   = prefs.get("color_preference", "none")
     if upgrade_motherboard is None:
         upgrade_motherboard = prefs.get("upgrade_motherboard", False)
 
@@ -478,7 +495,7 @@ def filter_spec_candidates(
                             "note":   f"{target_socket} 소켓 호환 메인보드",
                         },
                         "candidates":   board_cands,
-                        "search_query": f"메인보드 {target_socket}",
+                        "search_query": f"메인보드 {target_socket}{_color_suffix(color_pref)}",
                     })
 
         elif part == "GPU" and target_tier is not None:
@@ -497,15 +514,15 @@ def filter_spec_candidates(
             result.append({**target, "candidates": cands, "search_query": query})
 
         elif part == "RAM" and target_spec:
-            query = _ram_query(target_spec, effective_socket)
+            query = _ram_query(target_spec, effective_socket, color_pref)
             result.append({**target, "candidates": [], "search_query": query})
 
         elif part == "SSD" and target_spec:
-            query = _ssd_query(target_spec, effective_socket)
+            query = _ssd_query(target_spec, effective_socket, color_pref)
             result.append({**target, "candidates": [], "search_query": query})
 
         elif part == "HDD" and target_spec:
-            query = _hdd_query(target_spec, effective_socket)
+            query = _hdd_query(target_spec, effective_socket, color_pref)
             result.append({**target, "candidates": [], "search_query": query})
 
         else:
