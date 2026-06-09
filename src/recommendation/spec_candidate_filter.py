@@ -52,6 +52,53 @@ _GPU_WORKSTATION_RE = re.compile(
 def _is_workstation_gpu(name: str) -> bool:
     return bool(_GPU_WORKSTATION_RE.search(name))
 
+
+# ── 모바일 SoC / 노트북 CPU 런타임 필터 ─────────────────────────────────
+# ARM SoC 및 모바일 서픽스(HX/H/HS/HQ/U/V 등)를 가진 노트북 CPU를 제외한다.
+# 이 CPU들은 standalone으로 판매되지 않으므로 검색 시 노트북 제품이 반환된다.
+_CPU_MOBILE_SOC_RE = re.compile(
+    r"^Snapdragon"    # Qualcomm Snapdragon (ARM SoC)
+    r"|^Qualcomm"     # Qualcomm 브랜드 전체
+    r"|^Apple M\d"    # Apple Silicon
+    r"|^MediaTek"     # MediaTek (ARM SoC)
+    r"|^Dimensity"    # MediaTek Dimensity
+    r"|^Exynos"       # Samsung Exynos
+    r"|^Kirin"        # Huawei Kirin
+    r"|^Helio"        # MediaTek Helio
+    r"|^Unisoc"       # Unisoc (ARM SoC)
+    r"|\bSoC\b"       # 이름에 SoC가 명시된 경우
+    # ── 노트북/모바일 CPU 서픽스 ──────────────────────────────────────
+    r"|\bLaptop\b"    # "Laptop CPU" 명시
+    r"|\d+HX3D\b"     # AMD HX3D 모바일 (7945HX3D 등)
+    r"|\d+HX\b"       # HX 모바일 서픽스
+    r"| HX\b"         # 독립형 HX (Ryzen AI 9 HX 470 등)
+    r"|\d+HS\b"       # HS 모바일 서픽스
+    r"|\d+HQ\b"       # HQ 모바일 서픽스
+    r"|\d+HK\b"       # HK 모바일 서픽스 (Intel)
+    r"|\d+H\b"        # H 모바일 서픽스 (13900H 등)
+    r"|\d+U\b"        # U 초저전력 서픽스
+    r"|\d+V\b"        # V 서픽스 (Intel Lunar Lake Core Ultra 200V)
+    r"|Ryzen AI Max"  # AMD 모바일 AI APU (Ryzen AI Max+ 395 등, 대소문자 무시)
+    r"|Ryzen AI [0-9]"  # AMD Ryzen AI 모바일 시리즈
+    , re.IGNORECASE   # 대소문자 무시 (RYZEN AI MAX+ 392 등 대문자 변형 대응)
+)
+
+
+def _is_mobile_soc(name: str) -> bool:
+    return bool(_CPU_MOBILE_SOC_RE.search(name))
+
+
+def _infer_cpu_manufacturer(cpu_name: str) -> str:
+    """CPU 이름에서 제조사를 추론한다. 소켓 감지 실패 시 호환성 폴백에 사용.
+    반환값: 'amd' | 'intel' | '' (미확인)
+    """
+    n = (cpu_name or "").lower()
+    if re.search(r"\b(amd|ryzen|athlon|threadripper)\b", n):
+        return "amd"
+    if re.search(r"\b(intel|celeron|pentium|xeon)\b", n) or "core i" in n or "core ultra" in n:
+        return "intel"
+    return ""
+
 # 메인보드 칩셋 등급 분류 (0=프리미엄, 2=메인스트림, 4=보급)
 # board_specs.json의 칩셋 값은 "AMD X870E" / "Intel Z790" 형식이므로
 # _chipset_rank()에서 제조사 접두사를 제거 후 조회한다.
@@ -277,6 +324,7 @@ def filter_spec_candidates(
     user_preferences: dict | None,
     socket: str | None = None,
     upgrade_motherboard: bool | None = None,
+    current_cpu: str | None = None,
 ) -> list[dict]:
     """
     각 추천 대상에 candidates 목록과 search_query를 추가해 반환한다.
@@ -285,6 +333,7 @@ def filter_spec_candidates(
     user_preferences    : user_preferences.json (budget 필터용)
     socket              : hw_info["CPU_socket"] — 소켓 인식 쿼리·필터링에 사용
     upgrade_motherboard : user_profile parts 설정에서 전달; None 이면 user_preferences 폴백
+    current_cpu         : hw_info["CPU"] — 소켓 감지 실패 시 제조사 기반 호환성 폴백에 사용
     """
     prefs        = user_preferences or {}
     budget_mode  = prefs.get("budget_mode", "recommended")
@@ -318,6 +367,7 @@ def filter_spec_candidates(
                         _cpu_items, calculate_cpu_tier,
                         t["target_tier"], part_budgets.get("CPU"), exchange_rate,
                         min_score=t.get("current_score"),
+                        exclude_fn=_is_mobile_soc,
                         max_results=30,
                     )
                     pre_cands = _diversify_cpu_candidates(pre_cands, t["target_tier"])
@@ -348,14 +398,55 @@ def filter_spec_candidates(
                     _cpu_items, calculate_cpu_tier, target_tier,
                     part_budgets.get("CPU"), exchange_rate,
                     min_score=target.get("current_score"),
+                    exclude_fn=_is_mobile_soc,
                     max_results=30,
                 )
 
-                # keep 모드: 현재 소켓 호환 CPU만 남김
-                if not upgrade_motherboard and socket:
-                    patterns = cpu_patterns_for_socket(socket)
-                    if patterns:
-                        cands_pool = [c for c in cands_pool if any(p.search(c.get("name", "")) for p in patterns)]
+                # ── CPU 호환성 필터 ───────────────────────────────────────
+                if not upgrade_motherboard:
+                    # keep 모드: 소켓 호환 CPU만 남김
+                    if socket:
+                        _sock_patterns = cpu_patterns_for_socket(socket)
+                        if _sock_patterns:
+                            cands_pool = [c for c in cands_pool
+                                          if any(p.search(c.get("name", "")) for p in _sock_patterns)]
+
+                            # 소켓 필터 후 빈 결과 → 플랫폼 최고 tier로 폴백
+                            # (예: AM4 사용자의 target_tier=20이 AM4 최대 tier=16을 초과)
+                            if not cands_pool and _cpu_items:
+                                _plat_max = max(
+                                    (calculate_cpu_tier(i.get("score"))
+                                     for i in _cpu_items
+                                     if not _is_mobile_soc(i.get("name", ""))
+                                     and any(p.search(i.get("name", "")) for p in _sock_patterns)
+                                     and calculate_cpu_tier(i.get("score")) is not None),
+                                    default=None,
+                                )
+                                if _plat_max:
+                                    _fb = _filter_passmark(
+                                        _cpu_items, calculate_cpu_tier, _plat_max,
+                                        part_budgets.get("CPU"), exchange_rate,
+                                        min_score=None,
+                                        exclude_fn=_is_mobile_soc,
+                                        max_results=30,
+                                    )
+                                    cands_pool = [c for c in _fb
+                                                  if any(p.search(c.get("name", "")) for p in _sock_patterns)]
+
+                    elif current_cpu:
+                        # 소켓 미감지 폴백: 현재 CPU와 같은 제조사만 추천
+                        # (예: AMD B450 보드 사용자에게 Intel LGA1851 CPU 추천 방지)
+                        mfr = _infer_cpu_manufacturer(current_cpu)
+                        if mfr:
+                            cands_pool = [c for c in cands_pool
+                                          if _infer_cpu_manufacturer(c.get("name", "")) == mfr]
+                elif upgrade_motherboard and effective_socket:
+                    # recommend 모드: effective_socket 기준 플랫폼으로 CPU 통일
+                    # (Intel CPU + AMD 메인보드처럼 소켓 혼재 방지)
+                    _tgt_patterns = cpu_patterns_for_socket(effective_socket)
+                    if _tgt_patterns:
+                        cands_pool = [c for c in cands_pool
+                                      if any(p.search(c.get("name", "")) for p in _tgt_patterns)]
 
                 cands = _diversify_cpu_candidates(cands_pool, target_tier)
                 query = cands[0]["name"] if cands else "CPU"
