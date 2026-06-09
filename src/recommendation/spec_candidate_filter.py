@@ -165,43 +165,54 @@ def _filter_passmark(
     exclude_fn=None,
     max_results: int = _MAX_CANDS,
 ) -> list[dict]:
-    tier_min = max(1, target_tier - _TIER_BELOW)
-    tier_max = min(MAX_TIER, target_tier + _TIER_ABOVE)
+    """
+    target_tier 근방의 후보를 반환한다.
+    조건을 모두 충족하는 후보가 없으면 target_tier를 1씩 낮춰 재시도한다.
+    """
+    current_target = target_tier
+    while current_target >= 1:
+        tier_min = max(1, current_target - _TIER_BELOW)
+        tier_max = min(MAX_TIER, current_target + _TIER_ABOVE)
 
-    candidates = []
-    for item in items:
-        tier = calc_tier_fn(item.get("score"))
-        if tier is None or not (tier_min <= tier <= tier_max):
-            continue
+        candidates = []
+        for item in items:
+            tier = calc_tier_fn(item.get("score"))
+            if tier is None or not (tier_min <= tier <= tier_max):
+                continue
 
-        # 현재 하드웨어보다 낮은 점수의 후보 제외 (다운그레이드 방지)
-        if min_score is not None and (item.get("score") or 0) <= min_score:
-            continue
+            # 현재 하드웨어보다 낮은 점수의 후보 제외 (다운그레이드 방지)
+            if min_score is not None and (item.get("score") or 0) <= min_score:
+                continue
 
-        # 워크스테이션/전문가용 부품 제외
-        if exclude_fn is not None and exclude_fn(item.get("name", "")):
-            continue
+            # 워크스테이션/전문가용 부품 제외
+            if exclude_fn is not None and exclude_fn(item.get("name", "")):
+                continue
 
-        price_usd = parse_price_usd(item.get("price_usd", "NA"))
-        price_krw = _krw_from_usd(price_usd, exchange_rate)
+            price_usd = parse_price_usd(item.get("price_usd", "NA"))
+            price_krw = _krw_from_usd(price_usd, exchange_rate)
 
-        if not _within_budget(price_krw, budget):
-            continue
+            if not _within_budget(price_krw, budget):
+                continue
 
-        candidates.append({
-            "name":             item.get("name"),
-            "passmark_score":   item.get("score"),
-            "performance_tier": tier,
-            "price_usd":        price_usd,
-            "price_krw":        price_krw,
-        })
+            candidates.append({
+                "name":             item.get("name"),
+                "passmark_score":   item.get("score"),
+                "performance_tier": tier,
+                "price_usd":        price_usd,
+                "price_krw":        price_krw,
+            })
 
-    # target_tier에 가까운 순 → 같은 tier면 score 높은 순
-    candidates.sort(key=lambda x: (
-        abs(x["performance_tier"] - target_tier),
-        -(x["passmark_score"] or 0),
-    ))
-    return candidates[:max_results]
+        candidates.sort(key=lambda x: (
+            abs(x["performance_tier"] - current_target),
+            -(x["passmark_score"] or 0),
+        ))
+        result = candidates[:max_results]
+        if result:
+            return result
+
+        current_target -= 1
+
+    return []
 
 
 def _diversify_cpu_candidates(candidates: list[dict], target_tier: int) -> list[dict]:
