@@ -256,15 +256,20 @@ def _gb_str(gb: int) -> str:
     return f"{gb // 1024}TB" if gb >= 1024 else f"{gb}GB"
 
 
-def _ram_query(spec: dict, socket: str | None = None) -> str:
+def _color_suffix(color_pref: str) -> str:
+    return {"black": " 블랙", "white": " 화이트"}.get(color_pref, "")
+
+
+def _ram_query(spec: dict, socket: str | None = None, color_pref: str = "none") -> str:
     cap = _gb_str(spec.get("target_gb", 16))
     ddr = socket_to_ram_type(socket)
+    sfx = _color_suffix(color_pref)
     if ddr:
-        return f"{ddr} RAM {cap}"
-    return f"RAM {cap}"
+        return f"{ddr} RAM {cap}{sfx}"
+    return f"RAM {cap}{sfx}"
 
 
-def _ssd_query(spec: dict, socket: str | None = None) -> str:
+def _ssd_query(spec: dict, socket: str | None = None, color_pref: str = "none") -> str:
     cap = _gb_str(spec.get("target_gb", 1024))
     gen = socket_to_pcie_gen(socket)
     if gen:
@@ -272,7 +277,7 @@ def _ssd_query(spec: dict, socket: str | None = None) -> str:
     return f"NVMe SSD {cap}"
 
 
-def _hdd_query(spec: dict, socket: str | None = None) -> str:
+def _hdd_query(spec: dict, socket: str | None = None, color_pref: str = "none") -> str:
     # HDD 교체 목적이므로 SSD 검색
     cap = _gb_str(spec.get("target_gb", 1024))
     return f"SSD {cap}"
@@ -349,6 +354,7 @@ def filter_spec_candidates(
     prefs        = user_preferences or {}
     budget_mode  = prefs.get("budget_mode", "recommended")
     part_budgets: dict[str, int | None] = prefs.get("budgets", {}) if budget_mode == "custom" else {}
+    color_pref   = prefs.get("color_preference", "none")
     if upgrade_motherboard is None:
         upgrade_motherboard = prefs.get("upgrade_motherboard", False)
 
@@ -489,7 +495,7 @@ def filter_spec_candidates(
                             "note":   f"{target_socket} 소켓 호환 메인보드",
                         },
                         "candidates":   board_cands,
-                        "search_query": f"메인보드 {target_socket}",
+                        "search_query": f"메인보드 {target_socket}{_color_suffix(color_pref)}",
                     })
 
         elif part == "GPU" and target_tier is not None:
@@ -508,15 +514,15 @@ def filter_spec_candidates(
             result.append({**target, "candidates": cands, "search_query": query})
 
         elif part == "RAM" and target_spec:
-            query = _ram_query(target_spec, effective_socket)
+            query = _ram_query(target_spec, effective_socket, color_pref)
             result.append({**target, "candidates": [], "search_query": query})
 
         elif part == "SSD" and target_spec:
-            query = _ssd_query(target_spec, effective_socket)
+            query = _ssd_query(target_spec, effective_socket, color_pref)
             result.append({**target, "candidates": [], "search_query": query})
 
         elif part == "HDD" and target_spec:
-            query = _hdd_query(target_spec, effective_socket)
+            query = _hdd_query(target_spec, effective_socket, color_pref)
             result.append({**target, "candidates": [], "search_query": query})
 
         else:

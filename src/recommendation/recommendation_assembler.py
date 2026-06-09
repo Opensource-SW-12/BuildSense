@@ -64,6 +64,7 @@ def _build_psu_item(
     psu_score_data: dict,
     gpu_item: dict,
     cpu_item: dict | None = None,
+    color_suffix: str = "",
 ) -> dict:
     """GPU 업그레이드에 연동되는 PSU 의존성 항목을 생성한다."""
     grade    = psu_score_data.get("grade", "platinum")
@@ -92,7 +93,7 @@ def _build_psu_item(
             "note": f"{min_watt}W 이상, 80+ {label} 등급 권장",
         },
         "candidates":   [],
-        "search_query": f"파워서플라이 {min_watt}W 80PLUS {label}",
+        "search_query": f"파워서플라이 {min_watt}W 80PLUS {label}{color_suffix}",
     }
 
 
@@ -146,10 +147,13 @@ def assemble_recommendations(
 
     # GPU 업그레이드가 추천 목록에 포함된 경우 PSU 의존성 항목을 resolve_prices 전에 추가해
     # 네이버 가격 조회가 함께 실행되도록 한다
+    _color_pref = (user_preferences or {}).get("color_preference", "none")
+    _color_sfx  = {"black": " 블랙", "white": " 화이트"}.get(_color_pref, "")
+
     gpu_item = next((t for t in filtered if t["part"] == "GPU"), None)
     if gpu_item is not None:
         cpu_item = next((t for t in filtered if t["part"] == "CPU"), None)
-        filtered.append(_build_psu_item(scores.get("psu", {}), gpu_item, cpu_item))
+        filtered.append(_build_psu_item(scores.get("psu", {}), gpu_item, cpu_item, color_suffix=_color_sfx))
 
     resolved = resolve_prices(filtered)
 
