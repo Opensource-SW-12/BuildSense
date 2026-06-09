@@ -92,7 +92,7 @@ def main():
 
     print("\nBuildSense를 ANALYZE 상태로 실행합니다.")
     print("'모니터링 기간이 종료되었습니다' 화면 → '추가 정보 입력' 버튼을 눌러")
-    print("예산 / RGB 선호 / 미분류 프로세스(GTA5.exe) 분류에 직접 답변해보세요.\n")
+    print("예산 / RGB 선호 / 색상 선호 / 미분류 프로세스(GTA5.exe) 분류에 직접 답변해보세요.\n")
 
     try:
         app = BuildSenseApp(startup_state=StartupState.ANALYZE)

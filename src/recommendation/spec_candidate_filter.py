@@ -269,7 +269,7 @@ def _ram_query(spec: dict, socket: str | None = None, color_pref: str = "none") 
     return f"RAM {cap}{sfx}"
 
 
-def _ssd_query(spec: dict, socket: str | None = None, color_pref: str = "none") -> str:
+def _ssd_query(spec: dict, socket: str | None = None) -> str:
     cap = _gb_str(spec.get("target_gb", 1024))
     gen = socket_to_pcie_gen(socket)
     if gen:
@@ -277,7 +277,7 @@ def _ssd_query(spec: dict, socket: str | None = None, color_pref: str = "none") 
     return f"NVMe SSD {cap}"
 
 
-def _hdd_query(spec: dict, socket: str | None = None, color_pref: str = "none") -> str:
+def _hdd_query(spec: dict, socket: str | None = None) -> str:
     # HDD 교체 목적이므로 SSD 검색
     cap = _gb_str(spec.get("target_gb", 1024))
     return f"SSD {cap}"
@@ -518,11 +518,11 @@ def filter_spec_candidates(
             result.append({**target, "candidates": [], "search_query": query})
 
         elif part == "SSD" and target_spec:
-            query = _ssd_query(target_spec, effective_socket, color_pref)
+            query = _ssd_query(target_spec, effective_socket)
             result.append({**target, "candidates": [], "search_query": query})
 
         elif part == "HDD" and target_spec:
-            query = _hdd_query(target_spec, effective_socket, color_pref)
+            query = _hdd_query(target_spec, effective_socket)
             result.append({**target, "candidates": [], "search_query": query})
 
         else:
