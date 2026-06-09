@@ -19,6 +19,8 @@ _IMPACT_MIN_MEM   = 50.0  # 평균 메모리 50 MB 이상
 _MAX_UNKNOWN_PROCS = 5    # 최대 질문 개수
 
 _MIN_REASONABLE_BUDGET = 100_000  # 부품 한 개 업그레이드에 필요한 최소 권장 예산(원) — 이보다 낮으면 경고
+_BUDGET_MAX = 999_999_999
+_BUDGET_PLACEHOLDER = "맞춤 설정"
 
 # 예산 모드 정의 (값, 라벨, 설명)
 _BUDGET_MODES = [
@@ -40,6 +42,44 @@ _PROFILE_TO_PIPELINE: dict[str, str] = {
     "메인보드": "Motherboard",
     "파워":   "PSU",
 }
+
+def _rrect(c, x1, y1, x2, y2, r, fill):
+    """Canvas에 둥근 모서리 사각형을 그린다."""
+    kw = dict(fill=fill, outline=fill)
+    c.create_arc(x1,     y1,     x1+2*r, y1+2*r, start=90,  extent=90,  **kw)
+    c.create_arc(x2-2*r, y1,     x2,     y1+2*r, start=0,   extent=90,  **kw)
+    c.create_arc(x2-2*r, y2-2*r, x2,     y2,     start=270, extent=90,  **kw)
+    c.create_arc(x1,     y2-2*r, x1+2*r, y2,     start=180, extent=90,  **kw)
+    c.create_rectangle(x1+r, y1,   x2-r, y2,   **kw)
+    c.create_rectangle(x1,   y1+r, x2,   y2-r, **kw)
+
+
+def _hex_mix(c1: str, c2: str, t: float) -> str:
+    r1, g1, b1 = int(c1[1:3], 16), int(c1[3:5], 16), int(c1[5:7], 16)
+    r2, g2, b2 = int(c2[1:3], 16), int(c2[3:5], 16), int(c2[5:7], 16)
+    return "#{:02x}{:02x}{:02x}".format(
+        int(r1 + (r2-r1)*t), int(g1 + (g2-g1)*t), int(b1 + (b2-b1)*t)
+    )
+
+
+def _make_pill_btn(parent, text, command, bg_color, fg_color, width=140, height=38):
+    """캔버스 기반 알약형 버튼을 생성하고 반환한다."""
+    c = tk.Canvas(parent, width=width, height=height,
+                  bg=parent.cget("bg"), highlightthickness=0, cursor="hand2")
+    r = height // 2
+
+    def _draw(color=None):
+        c.delete("all")
+        _rrect(c, 0, 0, width, height, r, color or bg_color)
+        c.create_text(width // 2, height // 2, text=text,
+                      fill=fg_color, font=("Segoe UI", 10, "bold"))
+
+    c.bind("<Button-1>", lambda e: command())
+    c.bind("<Enter>", lambda e: _draw(_hex_mix(bg_color, "#ffffff", 0.12)))
+    c.bind("<Leave>", lambda e: _draw())
+    _draw()
+    return c
+
 
 _RGB_DESCRIPTIONS = {
     "beginner":     "RGB 선호도란 본체 내부에 화려한 LED 조명 효과가 있는 부품을 선호하는지를 의미합니다. 추천 부품을 고를 때 디자인 취향을 반영하는 데 사용됩니다.",
@@ -313,16 +353,8 @@ class UserPreferenceDialog:
         btn_row = tk.Frame(outer, bg=_BG)
         btn_row.pack(fill=tk.X)
 
-        tk.Button(
-            btn_row, text="취소", width=10, command=self._handle_cancel,
-            bg=_DIVIDER, fg=_GRAY, activebackground=_DIVIDER, activeforeground=_WHITE,
-            relief=tk.FLAT, highlightthickness=0,
-        ).pack(side=tk.RIGHT, padx=(8, 0))
-
-        tk.Button(
-            btn_row, text="확인", width=10, command=self._handle_confirm,
-            bg=_TEAL, fg=_BG, activebackground=_TEAL, activeforeground=_BG,
-            relief=tk.FLAT, highlightthickness=0, font=("Segoe UI", 10, "bold"),
+        _make_pill_btn(
+            btn_row, "분석 시작", self._handle_confirm, _TEAL, _BG, width=140, height=38,
         ).pack(side=tk.RIGHT)
 
     # ------------------------------------------------------------------
@@ -412,7 +444,10 @@ class _BudgetDetailDialog:
 
         tk.Label(
             outer,
-            text="추천 대상 부품의 최대 예산을 입력하세요.\n빈칸으로 두면 해당 부품은 예산 제한 없이 추천됩니다.",
+            text=(
+                f"추천 대상 부품의 최대 예산을 입력하세요. (최대 {_BUDGET_MAX:,}원)\n"
+                "빈칸('맞춤 설정')으로 두면 해당 부품은 예산 제한 없이 추천됩니다."
+            ),
             fg=_GRAY, bg=_BG, font=("Segoe UI", 9), anchor="w",
             justify=tk.LEFT,
         ).pack(fill=tk.X, pady=(0, 12))
@@ -430,33 +465,57 @@ class _BudgetDetailDialog:
             ).pack(side=tk.LEFT)
 
             current_val = self._current_budgets.get(pipeline_key)
-            var = tk.StringVar(value=str(current_val) if current_val else "")
+            has_value = bool(current_val)
+            var = tk.StringVar(value=str(current_val) if has_value else _BUDGET_PLACEHOLDER)
             self._entry_vars[pipeline_key] = var
 
             # 포맷 레이블 (오른쪽 고정, entry보다 먼저 pack해야 fill 공간 계산 올바름)
             fmt_var = tk.StringVar(
-                value=f"{current_val:,}원" if current_val else ""
+                value=f"{min(current_val, _BUDGET_MAX):,}원" if has_value else ""
             )
 
             def _on_write(*_, _v=var, _fv=fmt_var):
-                raw = _v.get().replace(",", "").replace(" ", "")
-                _fv.set(f"{int(raw):,}원" if raw.isdigit() and int(raw) > 0 else "")
+                full = _v.get()
+                if not full or full == _BUDGET_PLACEHOLDER:
+                    _fv.set("")
+                    return
+                raw = full.replace(",", "").replace(" ", "")
+                if raw.isdigit() and int(raw) > 0:
+                    _fv.set(f"{min(int(raw), _BUDGET_MAX):,}원")
+                else:
+                    _fv.set("")
 
             var.trace_add("write", _on_write)
 
+            # 포맷 레이블 (RIGHT에 먼저 pack)
             tk.Label(
                 row, textvariable=fmt_var,
-                fg=_TEAL, bg=_BG, font=("Segoe UI", 9), anchor="e", width=13,
+                fg=_TEAL, bg=_BG, font=("Segoe UI", 9), anchor="e", width=14,
             ).pack(side=tk.RIGHT)
 
-            tk.Entry(
+            entry = tk.Entry(
                 row,
                 textvariable=var,
                 font=("Segoe UI", 10),
-                bg=_CARD, fg=_WHITE, insertbackground=_WHITE,
+                bg=_CARD, fg=_GRAY if not has_value else _WHITE,
+                insertbackground=_WHITE,
                 relief=tk.FLAT, highlightthickness=1,
                 highlightbackground=_DIVIDER, highlightcolor=_TEAL,
-            ).pack(side=tk.LEFT, fill=tk.X, expand=True, ipady=4, ipadx=6, padx=(0, 6))
+            )
+            entry.pack(side=tk.LEFT, fill=tk.X, expand=True, ipady=4, ipadx=6, padx=(0, 6))
+
+            def _on_focus_in(e, w=entry, v=var):
+                if v.get() == _BUDGET_PLACEHOLDER:
+                    v.set("")
+                    w.config(fg=_WHITE)
+
+            def _on_focus_out(e, w=entry, v=var):
+                if not v.get():
+                    v.set(_BUDGET_PLACEHOLDER)
+                    w.config(fg=_GRAY)
+
+            entry.bind("<FocusIn>",  _on_focus_in)
+            entry.bind("<FocusOut>", _on_focus_out)
 
         tk.Frame(outer, height=1, bg=_DIVIDER).pack(fill=tk.X, pady=(8, 10))
 
@@ -470,19 +529,17 @@ class _BudgetDetailDialog:
             relief=tk.FLAT, highlightthickness=0,
         ).pack(side=tk.RIGHT, padx=(8, 0))
 
-        tk.Button(
-            btn_row, text="저장", width=10,
-            command=self._handle_save,
-            bg=_TEAL, fg=_BG, activebackground=_TEAL, activeforeground=_BG,
-            relief=tk.FLAT, highlightthickness=0, font=("Segoe UI", 10, "bold"),
+        _make_pill_btn(
+            btn_row, "저장", self._handle_save, _TEAL, _BG, width=100, height=36,
         ).pack(side=tk.RIGHT)
 
     def _handle_save(self):
         budgets: dict[str, int] = {}
         for pipeline_key, var in self._entry_vars.items():
-            raw = var.get().replace(",", "").replace(" ", "")
-            if not raw:
+            full = var.get()
+            if not full or full == _BUDGET_PLACEHOLDER:
                 continue
+            raw = full.replace(",", "").replace(" ", "")
             try:
                 val = int(raw)
                 if val <= 0:
@@ -492,12 +549,12 @@ class _BudgetDetailDialog:
                         message="예산은 0보다 큰 숫자를 입력하세요.",
                     )
                     return
-                budgets[pipeline_key] = val
+                budgets[pipeline_key] = min(val, _BUDGET_MAX)
             except ValueError:
                 messagebox.showwarning(
                     parent=self._dialog,
                     title="입력 오류",
-                    message="예산은 숫자만 입력 가능합니다.",
+                    message="숫자만 입력 가능합니다. 문자나 기호는 입력할 수 없습니다.",
                 )
                 return
         self._on_save(budgets)
