@@ -155,7 +155,7 @@ def assemble_recommendations(
         cpu_item = next((t for t in filtered if t["part"] == "CPU"), None)
         filtered.append(_build_psu_item(scores.get("psu", {}), gpu_item, cpu_item, color_suffix=_color_sfx))
 
-    resolved = resolve_prices(filtered)
+    resolved = resolve_prices(filtered, color_suffix=_color_sfx)
 
     resolved.sort(key=lambda x: x.get("priority", 0.0), reverse=True)
     return resolved

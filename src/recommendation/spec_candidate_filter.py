@@ -99,7 +99,7 @@ def _infer_cpu_manufacturer(cpu_name: str) -> str:
         return "intel"
     return ""
 
-# 메인보드 칩셋 등급 분류 (0=프리미엄, 2=메인스트림, 4=보급)
+# 메인보드 칩셋 등급 분류 (낮을수록 우선순위 높음)
 # board_specs.json의 칩셋 값은 "AMD X870E" / "Intel Z790" 형식이므로
 # _chipset_rank()에서 제조사 접두사를 제거 후 조회한다.
 _CHIPSET_RANK: dict[str, int] = {
@@ -110,10 +110,14 @@ _CHIPSET_RANK: dict[str, int] = {
     "B840":  3, "B650":  3,          # mid
     "A620":  4,                       # budget
     # ── AM4 ──────────────────────────────────────────────────────
-    "X570":  0, "X470":  0, "X370": 0,  # flagship
-    "B550":  2, "B450":  2,             # mid
-    "B350":  3,                          # mid-budget
-    "A520":  4, "A320":  4,             # budget
+    "X570":  0, "570X":  0,          # flagship (Zen 3 지원)
+    "X470":  1,                       # high-end (Zen 3 지원, BIOS 업데이트 필요)
+    "X370":  2,                       # legacy high-end (Zen 3 미지원)
+    "B550":  3,                       # mid (Zen 3 기본 지원)
+    "B450":  4,                       # mid (Zen 3 지원, BIOS 업데이트 필요)
+    "B350":  5,                       # legacy mid (Zen 3 미지원)
+    "A520":  6,                       # budget (Zen 3 지원)
+    "A320":  7,                       # legacy budget (Zen 3 미지원)
     # ── LGA 1851 ─────────────────────────────────────────────────
     "Z890":  0,
     "B860":  2,
@@ -127,6 +131,12 @@ _CHIPSET_RANK: dict[str, int] = {
     "B560":  2, "B460":  2, "H570": 2,
     "H510":  4, "H470":  4, "H410": 4,
 }
+
+# AM4 소켓에서 Ryzen 5000(Zen 3) 이상과 호환되지 않는 칩셋 (AMD 공식 미지원)
+_AM4_ZEN3_INCOMPATIBLE: frozenset[str] = frozenset({"X370", "B350", "A320"})
+
+# Ryzen 5000 시리즈 감지 패턴 (예: "Ryzen 9 5950X", "AMD Ryzen 5 5600X")
+_ZEN3_CPU_RE = re.compile(r'Ryzen\s+\d+\s+5\d{3}', re.IGNORECASE)
 
 
 def _chipset_rank(chipset: str) -> int:
@@ -269,7 +279,7 @@ def _ram_query(spec: dict, socket: str | None = None, color_pref: str = "none") 
     return f"RAM {cap}{sfx}"
 
 
-def _ssd_query(spec: dict, socket: str | None = None, color_pref: str = "none") -> str:
+def _ssd_query(spec: dict, socket: str | None = None) -> str:
     cap = _gb_str(spec.get("target_gb", 1024))
     gen = socket_to_pcie_gen(socket)
     if gen:
@@ -277,7 +287,7 @@ def _ssd_query(spec: dict, socket: str | None = None, color_pref: str = "none") 
     return f"NVMe SSD {cap}"
 
 
-def _hdd_query(spec: dict, socket: str | None = None, color_pref: str = "none") -> str:
+def _hdd_query(spec: dict, socket: str | None = None) -> str:
     # HDD 교체 목적이므로 SSD 검색
     cap = _gb_str(spec.get("target_gb", 1024))
     return f"SSD {cap}"
@@ -296,11 +306,24 @@ def _load_board_specs() -> list[dict]:
         return []
 
 
-def _get_board_candidates(socket: str) -> list[dict]:
-    """소켓 호환 메인보드를 칩셋 등급별로 최대 3개(상위/중간/보급) 반환한다."""
+def _get_board_candidates(socket: str, target_cpu_name: str | None = None) -> list[dict]:
+    """소켓 호환 메인보드를 칩셋 등급별로 최대 3개(상위/중간/보급) 반환한다.
+
+    target_cpu_name: 추천 대상 CPU 이름. AM4 소켓에서 Ryzen 5000(Zen 3)이면
+                     X370/B350/A320 등 미지원 칩셋을 자동으로 제외한다.
+    """
     boards = [b for b in _load_board_specs() if b.get("socket") == socket]
     if not boards:
         return []
+
+    # AM4 + Ryzen 5000: 공식 미지원 칩셋 제외
+    if socket == "AM4" and target_cpu_name and _ZEN3_CPU_RE.search(target_cpu_name):
+        def _short_chipset(chipset: str) -> str:
+            return chipset.split(" ", 1)[-1] if " " in chipset else chipset
+        boards = [
+            b for b in boards
+            if _short_chipset(b.get("chipset", "")) not in _AM4_ZEN3_INCOMPATIBLE
+        ]
 
     # 칩셋 등급 오름차순(0=프리미엄), 이름 알파벳순으로 정렬
     boards.sort(key=lambda b: (_chipset_rank(b.get("chipset", "")), b.get("name", "")))
@@ -479,7 +502,8 @@ def filter_spec_candidates(
             if upgrade_motherboard:
                 target_socket = effective_socket or socket
                 if target_socket:
-                    board_cands = _get_board_candidates(target_socket)
+                    _top_cpu = cands[0]["name"] if cands else None
+                    board_cands = _get_board_candidates(target_socket, target_cpu_name=_top_cpu)
                     result.append({
                         "part":         "Motherboard",
                         "score":        0.0,
@@ -518,11 +542,11 @@ def filter_spec_candidates(
             result.append({**target, "candidates": [], "search_query": query})
 
         elif part == "SSD" and target_spec:
-            query = _ssd_query(target_spec, effective_socket, color_pref)
+            query = _ssd_query(target_spec, effective_socket)
             result.append({**target, "candidates": [], "search_query": query})
 
         elif part == "HDD" and target_spec:
-            query = _hdd_query(target_spec, effective_socket, color_pref)
+            query = _hdd_query(target_spec, effective_socket)
             result.append({**target, "candidates": [], "search_query": query})
 
         else:

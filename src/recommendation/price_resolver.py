@@ -193,42 +193,69 @@ def _make_price_candidate(item: dict) -> dict:
 
 # ── 부품 유형별 처리 ──────────────────────────────────────────────────
 
-def _enrich_hw_candidate(candidate: dict, part: str) -> dict:
+def _enrich_hw_candidate(candidate: dict, part: str, color_suffix: str = "") -> dict:
     """
     PassMark CPU/GPU 후보 1개에 대해 가격을 보완한다.
     순서: 캐시 → Naver(product_matcher 검증) → eBay(product_matcher 검증)
     Naver에 결과가 있어도 매칭 제품이 없으면 eBay를 별도로 시도한다.
+
+    color_suffix: GPU 검색 시 "블랙"/"화이트" 등을 Naver 쿼리에 추가.
+                  eBay는 한국어 키워드가 무의미하므로 원본 이름만 사용한다.
     """
-    if candidate.get("price_krw") is not None:
+    # GPU에 color_suffix가 있으면 항상 Naver 재검색 (색상 에디션 링크 확보)
+    if candidate.get("price_krw") is not None and not (part == "GPU" and color_suffix):
         return candidate
 
     name = candidate.get("name", "")
     if not name:
         return candidate
 
-    part_dict = _cpu_part_dict(name) if part == "CPU" else _gpu_part_dict(name)
+    part_dict   = _cpu_part_dict(name) if part == "CPU" else _gpu_part_dict(name)
+    search_name = name + color_suffix   # Naver 검색 쿼리 (색상 포함 가능)
 
-    # 1. 캐시 확인
-    naver_items = _cache_load(part, name)
+    # 1. 캐시 확인 (색상 포함 쿼리 기준)
+    naver_items = _cache_load(part, search_name)
     cache_hit   = naver_items is not None
     if not cache_hit:
-        naver_items = _naver_search_safe(name)
+        naver_items = _naver_search_safe(search_name)
 
-    # 2. Naver 결과에서 product_matcher 검증
+    # 2. Naver 결과에서 product_matcher 검증 (원본 칩셋명으로 검증)
+    # GPU + 색상 검색 시: 색상 키워드가 포함된 타이틀을 우선 선택하고,
+    # 없으면 첫 번째 매칭 결과로 폴백 (이 경우 이름 교체는 하지 않음)
+    color_kw        = color_suffix.strip().lower()   # e.g. "블랙" / "화이트"
+    color_item      = None   # 색상 키워드 포함 매칭
+    fallback_item   = None   # 색상 키워드 없는 첫 번째 매칭
+
     for item in naver_items:
         if not is_matching_product(item.get("title", ""), part_dict):
             continue
+        title_lower = (item.get("title") or "").lower()
+        if color_kw and color_kw in title_lower:
+            color_item = item
+            break
+        if fallback_item is None:
+            fallback_item = item
+
+    matched = color_item or fallback_item
+    if matched:
         if not cache_hit and naver_items:
-            _cache_save(part, name, naver_items)
+            _cache_save(part, search_name, naver_items)
+        naver_title = matched.get("title")
+        # 색상 키워드가 타이틀에 실제로 포함된 경우에만 GPU 이름을 Naver 타이틀로 교체
+        use_naver_name = (
+            part == "GPU" and color_kw
+            and naver_title and color_kw in (naver_title or "").lower()
+        )
         return {
             **candidate,
-            "price_krw":    item.get("price_krw"),
-            "price_source": item.get("source", "naver"),
-            "product_url":  item.get("link"),
-            "mall_name":    item.get("mall_name"),
+            "name":         naver_title if use_naver_name else candidate.get("name"),
+            "price_krw":    matched.get("price_krw"),
+            "price_source": matched.get("source", "naver"),
+            "product_url":  matched.get("link"),
+            "mall_name":    matched.get("mall_name"),
         }
 
-    # 3. Naver 매칭 없음 → eBay 별도 시도
+    # 3. Naver 매칭 없음 → eBay 별도 시도 (원본 이름으로, 색상 키워드 제외)
     ebay_items = _ebay_search_safe(name)
     for item in ebay_items:
         if not is_matching_product(item.get("title", ""), part_dict):
@@ -244,7 +271,7 @@ def _enrich_hw_candidate(candidate: dict, part: str) -> dict:
 
     # Naver 결과 캐시 저장 (매칭 없었더라도 다음 요청 재사용)
     if not cache_hit and naver_items:
-        _cache_save(part, name, naver_items)
+        _cache_save(part, search_name, naver_items)
     return candidate
 
 
@@ -285,14 +312,20 @@ def _search_storage_candidates(search_query: str, part: str = "SSD") -> list[dic
     return _dedup_candidates(cands)
 
 
-def _enrich_board_candidate(candidate: dict) -> dict:
-    """메인보드 후보에 캐시·네이버 검색으로 가격을 보완한다."""
-    if candidate.get("price_krw") is not None:
+def _enrich_board_candidate(candidate: dict, color_suffix: str = "") -> dict:
+    """메인보드 후보에 캐시·네이버 검색으로 가격을 보완한다.
+    color_suffix가 있으면 색상 포함 쿼리를 먼저 시도하고, 결과 없으면 원본으로 폴백한다."""
+    if candidate.get("price_krw") is not None and not color_suffix:
         return candidate
     name = candidate.get("name", "")
     if not name:
         return candidate
-    items = _search_safe(name, "Motherboard")
+
+    search_name = name + color_suffix
+    items = _search_safe(search_name, "Motherboard") if color_suffix else []
+    if not items:
+        items = _search_safe(name, "Motherboard")
+
     if items:
         first = items[0]
         return {
@@ -307,11 +340,12 @@ def _enrich_board_candidate(candidate: dict) -> dict:
 
 # ── 진입점 ────────────────────────────────────────────────────────────
 
-def resolve_prices(filtered_targets: list[dict]) -> list[dict]:
+def resolve_prices(filtered_targets: list[dict], color_suffix: str = "") -> list[dict]:
     """
     각 추천 대상의 candidates에 실제 가격 정보를 채워 반환한다.
 
     filtered_targets : filter_spec_candidates() 결과
+    color_suffix     : GPU·메인보드 Naver 검색에 추가할 색상 키워드 ("블랙" / "화이트" / "")
     반환:
         각 target에 가격이 보완된 candidates 목록이 포함된 새 list
     """
@@ -323,7 +357,8 @@ def resolve_prices(filtered_targets: list[dict]) -> list[dict]:
         search_query = target.get("search_query", part)
 
         if part in ("CPU", "GPU"):
-            enriched = [_enrich_hw_candidate(c, part) for c in candidates[:_MAX_ENRICH]]
+            sfx      = color_suffix if part == "GPU" else ""
+            enriched = [_enrich_hw_candidate(c, part, color_suffix=sfx) for c in candidates[:_MAX_ENRICH]]
             result.append({**target, "candidates": enriched})
 
         elif part == "RAM":
@@ -333,7 +368,7 @@ def resolve_prices(filtered_targets: list[dict]) -> list[dict]:
             result.append({**target, "candidates": _search_storage_candidates(search_query, part)})
 
         elif part == "Motherboard":
-            enriched = [_enrich_board_candidate(c) for c in candidates[:_MAX_ENRICH]]
+            enriched = [_enrich_board_candidate(c, color_suffix=color_suffix) for c in candidates[:_MAX_ENRICH]]
             result.append({**target, "candidates": enriched})
 
         elif part == "PSU" and search_query:
