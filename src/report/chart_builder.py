@@ -615,6 +615,7 @@ def build_score_summary_chart(scores: dict) -> str:
                 va="center", fontsize=9,
                 color=_GRADE_COLOR.get(grade, _C_GRAY))
 
+    ax.invert_yaxis()
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)
     ax.tick_params(axis="y", labelsize=10, colors=_TEXT)

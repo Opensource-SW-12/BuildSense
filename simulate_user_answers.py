@@ -98,7 +98,7 @@ def main():
         app = BuildSenseApp(startup_state=StartupState.ANALYZE)
         app.run()
     finally:
-        print("\n시뮬레이션 종료 — 원본 데이터 복원 중...")
+        print("\n시뮬레이션 종료 - 원본 데이터 복원 중...")
         for path in (USER_PROFILE_PATH, USER_PREFERENCES_PATH, USAGE_LOG_PATH):
             _restore_orig(path)
         print("완료.")
