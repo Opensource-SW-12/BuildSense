@@ -10,20 +10,20 @@ import re
 
 from src.pricing.passmark_tiering import MAX_TIER
 
-# 등급별 tier 점프 폭 (29단계 기준)
-# high +6 ≈ 한 세대 이상 점프 (예: tier 12→18, mid → high-end)
-# medium +3 ≈ 체감 가능한 업그레이드
-_TIER_JUMP: dict[str, int] = {
-    "high":    6,
-    "medium":  3,
-    "unknown": 0,
+# 예산 모드별 등급별 tier 점프 폭 (29단계 기준)
+# "recommended" : high +6 ≈ 한 세대 이상 점프, medium +3 ≈ 체감 가능한 업그레이드
+# "max"         : 예산 제한 없음 — 더 공격적인 점프 허용
+_TIER_JUMP: dict[str, dict[str, int]] = {
+    "recommended": {"high": 6, "medium": 3, "unknown": 0},
+    "max":         {"high": 10, "medium": 6, "unknown": 0},
+    "custom":      {"high": 6, "medium": 3, "unknown": 0},
 }
 
 # tier 매칭 실패(None) 시 등급별 고정 목표 tier
-_FALLBACK_TARGET_TIER: dict[str, int] = {
-    "high":    22,
-    "medium":  17,
-    "unknown": 18,
+_FALLBACK_TARGET_TIER: dict[str, dict[str, int]] = {
+    "recommended": {"high": 22, "medium": 17, "unknown": 18},
+    "max":         {"high": 27, "medium": 22, "unknown": 20},
+    "custom":      {"high": 22, "medium": 17, "unknown": 18},
 }
 
 # 표준 RAM 용량 단계 (GB)
@@ -51,8 +51,15 @@ def _next_step(current: int, steps: list[int], min_mult: float) -> int:
 
 # ── CPU / GPU 계산 ────────────────────────────────────────────────────
 
-def _calc_cpu_gpu_tier(current_tier: int | None, grade: str, current_score: int | None = None) -> dict:
-    jump = _TIER_JUMP.get(grade, 0)
+def _calc_cpu_gpu_tier(
+    current_tier: int | None,
+    grade: str,
+    current_score: int | None = None,
+    budget_mode: str = "recommended",
+) -> dict:
+    mode_jumps    = _TIER_JUMP.get(budget_mode) or _TIER_JUMP["recommended"]
+    mode_fallback = _FALLBACK_TARGET_TIER.get(budget_mode) or _FALLBACK_TARGET_TIER["recommended"]
+    jump = mode_jumps.get(grade, 0)
 
     if current_tier is not None:
         target = min(current_tier + jump, MAX_TIER)
@@ -67,7 +74,7 @@ def _calc_cpu_gpu_tier(current_tier: int | None, grade: str, current_score: int 
     return {
         "current_tier":  None,
         "current_score": current_score,
-        "target_tier":   _FALLBACK_TARGET_TIER.get(grade, 15),
+        "target_tier":   mode_fallback.get(grade, 15),
         "target_spec":   None,
     }
 
@@ -146,13 +153,15 @@ def calculate_target_tiers(
     targets: list[dict],
     hw_tiers: dict,
     hw_info: dict,
+    budget_mode: str = "recommended",
 ) -> list[dict]:
     """
     각 추천 대상 부품에 목표 tier / 목표 스펙을 추가해 반환한다.
 
-    targets  : select_upgrade_targets() 결과
-    hw_tiers : map_hardware_to_tiers() 결과  {"cpu": {...}|None, "gpu": {...}|None}
-    hw_info  : get_hardware_info() 결과 (RAM·SSD·HDD 용량 파싱용)
+    targets     : select_upgrade_targets() 결과
+    hw_tiers    : map_hardware_to_tiers() 결과  {"cpu": {...}|None, "gpu": {...}|None}
+    hw_info     : get_hardware_info() 결과 (RAM·SSD·HDD 용량 파싱용)
+    budget_mode : "recommended" | "max" | "custom" — max일 때 더 큰 tier 점프 허용
     """
     enriched = []
 
@@ -162,11 +171,15 @@ def calculate_target_tiers(
 
         if part == "CPU":
             cpu_match = hw_tiers.get("cpu") or {}
-            tier_data = _calc_cpu_gpu_tier(cpu_match.get("tier"), grade, cpu_match.get("passmark_score"))
+            tier_data = _calc_cpu_gpu_tier(
+                cpu_match.get("tier"), grade, cpu_match.get("passmark_score"), budget_mode,
+            )
 
         elif part == "GPU":
             gpu_match = hw_tiers.get("gpu") or {}
-            tier_data = _calc_cpu_gpu_tier(gpu_match.get("tier"), grade, gpu_match.get("passmark_score"))
+            tier_data = _calc_cpu_gpu_tier(
+                gpu_match.get("tier"), grade, gpu_match.get("passmark_score"), budget_mode,
+            )
 
         elif part == "RAM":
             tier_data = _calc_ram(grade, hw_info)

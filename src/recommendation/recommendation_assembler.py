@@ -128,9 +128,10 @@ def assemble_recommendations(
             ...
         ]
     """
-    hw_tiers = map_hardware_to_tiers(hw_info)
-    targets  = select_upgrade_targets(scores, user_profile, user_preferences)
-    enriched = calculate_target_tiers(targets, hw_tiers, hw_info)
+    hw_tiers    = map_hardware_to_tiers(hw_info)
+    targets     = select_upgrade_targets(scores, user_profile, user_preferences)
+    budget_mode = (user_preferences or {}).get("budget_mode", "recommended")
+    enriched    = calculate_target_tiers(targets, hw_tiers, hw_info, budget_mode=budget_mode)
     # 노트북 등 소켓 정보가 없는 경우, 현재 CPU 모델명에서 소켓을 추론한다
     # (PassMark 조회 실패 시에도 메인보드 추천이 누락되지 않도록 하는 폴백)
     socket = hw_info.get("CPU_socket") or infer_socket_from_cpu_name(hw_info.get("CPU"))

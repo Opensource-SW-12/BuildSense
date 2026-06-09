@@ -52,6 +52,26 @@ _GPU_WORKSTATION_RE = re.compile(
 def _is_workstation_gpu(name: str) -> bool:
     return bool(_GPU_WORKSTATION_RE.search(name))
 
+
+# ── 모바일 SoC / 비데스크톱 CPU 런타임 필터 ──────────────────────────────
+# ARM 기반 SoC나 소비자 데스크톱/노트북 CPU가 아닌 제품을 추천 후보에서 제외한다.
+_CPU_MOBILE_SOC_RE = re.compile(
+    r"^Snapdragon"   # Qualcomm Snapdragon (ARM SoC)
+    r"|^Qualcomm"    # Qualcomm 브랜드 전체
+    r"|^Apple M\d"   # Apple Silicon
+    r"|^MediaTek"    # MediaTek (ARM SoC)
+    r"|^Dimensity"   # MediaTek Dimensity
+    r"|^Exynos"      # Samsung Exynos
+    r"|^Kirin"       # Huawei Kirin
+    r"|^Helio"       # MediaTek Helio
+    r"|^Unisoc"      # Unisoc (ARM SoC)
+    r"|\bSoC\b"      # 이름에 SoC가 명시된 경우
+)
+
+
+def _is_mobile_soc(name: str) -> bool:
+    return bool(_CPU_MOBILE_SOC_RE.search(name))
+
 # 메인보드 칩셋 등급 분류 (0=프리미엄, 2=메인스트림, 4=보급)
 # board_specs.json의 칩셋 값은 "AMD X870E" / "Intel Z790" 형식이므로
 # _chipset_rank()에서 제조사 접두사를 제거 후 조회한다.
@@ -318,6 +338,7 @@ def filter_spec_candidates(
                         _cpu_items, calculate_cpu_tier,
                         t["target_tier"], part_budgets.get("CPU"), exchange_rate,
                         min_score=t.get("current_score"),
+                        exclude_fn=_is_mobile_soc,
                         max_results=30,
                     )
                     pre_cands = _diversify_cpu_candidates(pre_cands, t["target_tier"])
@@ -348,6 +369,7 @@ def filter_spec_candidates(
                     _cpu_items, calculate_cpu_tier, target_tier,
                     part_budgets.get("CPU"), exchange_rate,
                     min_score=target.get("current_score"),
+                    exclude_fn=_is_mobile_soc,
                     max_results=30,
                 )
 
