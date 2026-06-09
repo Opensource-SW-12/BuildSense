@@ -61,14 +61,21 @@ def _extract_pattern_series(logs: list[dict]) -> dict:
     }
 
 
-def collect_report_data(logs: list[dict], profile: dict | None = None) -> dict:
+def collect_report_data(
+    logs: list[dict],
+    profile: dict | None = None,
+    user_preferences: dict | None = None,
+) -> dict:
     if not logs:
         return {}
 
     resource = analyze_resource_usage(logs)
     pattern = create_usage_pattern_summary(logs)
     disk = analyze_disk_usage(logs)
-    process = analyze_process_usage(logs)
+
+    # user_preferences의 수동 프로세스 분류를 반영해 카테고리 집계
+    extra_cats = (user_preferences or {}).get("unknown_process_categories") or {}
+    process = analyze_process_usage(logs, extra_categories=extra_cats)
 
     user_type = classify_user_type(
         {"resource_usage": resource, "process_usage": process},

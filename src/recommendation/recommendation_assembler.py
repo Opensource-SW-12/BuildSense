@@ -92,7 +92,7 @@ def _build_psu_item(
             "note": f"{min_watt}W 이상, 80+ {label} 등급 권장",
         },
         "candidates":   [],
-        "search_query": f"파워서플라이 {min_watt}W 80PLUS",
+        "search_query": f"파워서플라이 {min_watt}W 80PLUS {label}",
     }
 
 

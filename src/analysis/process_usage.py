@@ -30,8 +30,10 @@ def _get_categories() -> dict[str, str]:
     return _CATEGORIES
 
 
-def analyze_process_usage(logs, top_n: int = _TOP_N) -> dict:
+def analyze_process_usage(logs, top_n: int = _TOP_N, extra_categories: dict | None = None) -> dict:
+    """extra_categories: {process_name_lower: category} — user_preferences의 수동 분류를 반영한다."""
     name_to_category = _get_categories()
+    _extra = {k.lower(): v for k, v in (extra_categories or {}).items()}
     total_snapshots = len(logs)
 
     appearance: dict[str, int]    = defaultdict(int)
@@ -65,7 +67,7 @@ def analyze_process_usage(logs, top_n: int = _TOP_N) -> dict:
             "appearance_ratio": appearance[name] / total_snapshots if total_snapshots > 0 else 0,
             "avg_cpu_percent":  cpu_sum[name] / cpu_cnt[name] if cpu_cnt[name] > 0 else None,
             "avg_memory_mb":    mem_sum[name] / mem_cnt[name] if mem_cnt[name] > 0 else None,
-            "category":         name_to_category.get(name, "etc"),
+            "category":         _extra.get(name) or name_to_category.get(name, "etc"),
         }
 
     all_stats = {name: _stats(name) for name in appearance}
