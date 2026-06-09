@@ -248,31 +248,41 @@ def _enrich_hw_candidate(candidate: dict, part: str) -> dict:
     return candidate
 
 
+def _dedup_candidates(candidates: list[dict], max_cands: int = _MAX_CANDS) -> list[dict]:
+    """이름이 동일한 후보 중 가장 저렴한 것만 남기고 max_cands 개를 반환한다."""
+    seen: set[str] = set()
+    result = []
+    for c in candidates:
+        key = (c.get("name") or "").strip().lower()
+        if not key or key in seen:
+            continue
+        seen.add(key)
+        result.append(c)
+        if len(result) >= max_cands:
+            break
+    return result
+
+
 def _search_ram_candidates(search_query: str) -> list[dict]:
     """RAM은 스펙 검증 없이 상위 결과를 그대로 사용한다."""
-    cands = []
-    for item in _search_safe(search_query, "RAM"):
-        if item.get("price_krw") is None:
-            continue
-        cands.append(_make_price_candidate(item))
-        if len(cands) >= _MAX_CANDS:
-            break
-    return cands
+    cands = [
+        _make_price_candidate(item)
+        for item in _search_safe(search_query, "RAM")
+        if item.get("price_krw") is not None
+    ]
+    return _dedup_candidates(cands)
 
 
 def _search_storage_candidates(search_query: str, part: str = "SSD") -> list[dict]:
     """SSD/HDD는 product_matcher로 용량·타입을 검증한 결과만 사용한다."""
     part_dict = _storage_part_dict(search_query)
-    cands = []
-    for item in _search_safe(search_query, part):
-        if not is_matching_product(item.get("title", ""), part_dict):
-            continue
-        if item.get("price_krw") is None:
-            continue
-        cands.append(_make_price_candidate(item))
-        if len(cands) >= _MAX_CANDS:
-            break
-    return cands
+    cands = [
+        _make_price_candidate(item)
+        for item in _search_safe(search_query, part)
+        if is_matching_product(item.get("title", ""), part_dict)
+        and item.get("price_krw") is not None
+    ]
+    return _dedup_candidates(cands)
 
 
 def _enrich_board_candidate(candidate: dict) -> dict:
@@ -327,7 +337,10 @@ def resolve_prices(filtered_targets: list[dict]) -> list[dict]:
             result.append({**target, "candidates": enriched})
 
         elif part == "PSU" and search_query:
-            psu_cands = [_make_price_candidate(i) for i in _search_safe(search_query, "PSU")]
+            psu_cands = _dedup_candidates([
+                _make_price_candidate(i) for i in _search_safe(search_query, "PSU")
+                if i.get("price_krw") is not None
+            ])
             result.append({**target, "candidates": psu_cands})
 
         else:
