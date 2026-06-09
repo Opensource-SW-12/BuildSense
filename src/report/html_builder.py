@@ -48,6 +48,12 @@ _PROCESS_CATEGORY_KO = {
     "etc":         "기타",
 }
 
+_BUDGET_MODE_KO = {
+    "recommended": "맞춤 설정 (추천)",
+    "max":         "최고 가격",
+    "custom":      "직접 설정",
+}
+
 _GRADE_KO = {
     "low":      ("낮음",    "#00D4AA", "#0D2B24"),
     "medium":   ("보통",    "#FF8C42", "#2B1A0D"),
@@ -266,12 +272,23 @@ def _section_user_input(data: dict) -> str:
 
     # ── 최종 입력 (분석 종료 후 답변) ─────────────────────────────
     if prefs:
-        budget = prefs.get("budget")
-        budget_text = f"{budget:,} 원" if isinstance(budget, int) else "설정 안 함"
+        budget_mode = prefs.get("budget_mode", "recommended")
+        budgets     = prefs.get("budgets") or {}
+        mode_label  = _BUDGET_MODE_KO.get(budget_mode, "-")
+
+        if budget_mode == "custom" and budgets:
+            parts_str  = " · ".join(
+                f"{_PART_KO.get(k, k)} {v:,}원"
+                for k, v in budgets.items()
+            )
+            budget_text = f"{mode_label} ({parts_str})"
+        else:
+            budget_text = mode_label
+
         rgb_text = _RGB_PREFERENCE_KO.get(prefs.get("rgb_preference"), "-")
 
         final_metas = "".join([
-            _meta("예산", budget_text, small=True),
+            _meta("예산 설정", budget_text, small=True),
             _meta("RGB 선호도", rgb_text, small=True),
         ])
 
@@ -548,7 +565,9 @@ def _rec_candidates_html(item: dict) -> str:
 
 
 def _section_recommendations(items: list[dict], user_preferences: dict | None = None) -> str:
-    user_budget = (user_preferences or {}).get("budget")
+    prefs       = user_preferences or {}
+    budget_mode = prefs.get("budget_mode", "recommended")
+    budgets     = prefs.get("budgets") or {}
 
     if not items:
         return """
@@ -598,8 +617,9 @@ def _section_recommendations(items: list[dict], user_preferences: dict | None = 
                 f"</div>"
             )
 
+        part_budget = budgets.get(part) if budget_mode == "custom" else None
         spec_html   = _rec_spec_html(item)
-        budget_html = _rec_budget_guide_html(item, user_budget)
+        budget_html = _rec_budget_guide_html(item, part_budget)
         cand_html   = _rec_candidates_html(item)
         card_class  = "rec-card rec-psu" if is_psu else "rec-card"
 
