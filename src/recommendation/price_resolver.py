@@ -193,11 +193,14 @@ def _make_price_candidate(item: dict) -> dict:
 
 # ── 부품 유형별 처리 ──────────────────────────────────────────────────
 
-def _enrich_hw_candidate(candidate: dict, part: str) -> dict:
+def _enrich_hw_candidate(candidate: dict, part: str, color_suffix: str = "") -> dict:
     """
     PassMark CPU/GPU 후보 1개에 대해 가격을 보완한다.
     순서: 캐시 → Naver(product_matcher 검증) → eBay(product_matcher 검증)
     Naver에 결과가 있어도 매칭 제품이 없으면 eBay를 별도로 시도한다.
+
+    color_suffix: GPU 검색 시 "블랙"/"화이트" 등을 Naver 쿼리에 추가.
+                  eBay는 한국어 키워드가 무의미하므로 원본 이름만 사용한다.
     """
     if candidate.get("price_krw") is not None:
         return candidate
@@ -206,20 +209,21 @@ def _enrich_hw_candidate(candidate: dict, part: str) -> dict:
     if not name:
         return candidate
 
-    part_dict = _cpu_part_dict(name) if part == "CPU" else _gpu_part_dict(name)
+    part_dict   = _cpu_part_dict(name) if part == "CPU" else _gpu_part_dict(name)
+    search_name = name + color_suffix   # Naver 검색 쿼리 (색상 포함 가능)
 
-    # 1. 캐시 확인
-    naver_items = _cache_load(part, name)
+    # 1. 캐시 확인 (색상 포함 쿼리 기준)
+    naver_items = _cache_load(part, search_name)
     cache_hit   = naver_items is not None
     if not cache_hit:
-        naver_items = _naver_search_safe(name)
+        naver_items = _naver_search_safe(search_name)
 
-    # 2. Naver 결과에서 product_matcher 검증
+    # 2. Naver 결과에서 product_matcher 검증 (원본 칩셋명으로 검증)
     for item in naver_items:
         if not is_matching_product(item.get("title", ""), part_dict):
             continue
         if not cache_hit and naver_items:
-            _cache_save(part, name, naver_items)
+            _cache_save(part, search_name, naver_items)
         return {
             **candidate,
             "price_krw":    item.get("price_krw"),
@@ -228,7 +232,7 @@ def _enrich_hw_candidate(candidate: dict, part: str) -> dict:
             "mall_name":    item.get("mall_name"),
         }
 
-    # 3. Naver 매칭 없음 → eBay 별도 시도
+    # 3. Naver 매칭 없음 → eBay 별도 시도 (원본 이름으로, 색상 키워드 제외)
     ebay_items = _ebay_search_safe(name)
     for item in ebay_items:
         if not is_matching_product(item.get("title", ""), part_dict):
@@ -244,7 +248,7 @@ def _enrich_hw_candidate(candidate: dict, part: str) -> dict:
 
     # Naver 결과 캐시 저장 (매칭 없었더라도 다음 요청 재사용)
     if not cache_hit and naver_items:
-        _cache_save(part, name, naver_items)
+        _cache_save(part, search_name, naver_items)
     return candidate
 
 
@@ -307,11 +311,12 @@ def _enrich_board_candidate(candidate: dict) -> dict:
 
 # ── 진입점 ────────────────────────────────────────────────────────────
 
-def resolve_prices(filtered_targets: list[dict]) -> list[dict]:
+def resolve_prices(filtered_targets: list[dict], color_suffix: str = "") -> list[dict]:
     """
     각 추천 대상의 candidates에 실제 가격 정보를 채워 반환한다.
 
     filtered_targets : filter_spec_candidates() 결과
+    color_suffix     : GPU Naver 검색에 추가할 색상 키워드 ("블랙" / "화이트" / "")
     반환:
         각 target에 가격이 보완된 candidates 목록이 포함된 새 list
     """
@@ -323,7 +328,8 @@ def resolve_prices(filtered_targets: list[dict]) -> list[dict]:
         search_query = target.get("search_query", part)
 
         if part in ("CPU", "GPU"):
-            enriched = [_enrich_hw_candidate(c, part) for c in candidates[:_MAX_ENRICH]]
+            sfx      = color_suffix if part == "GPU" else ""
+            enriched = [_enrich_hw_candidate(c, part, color_suffix=sfx) for c in candidates[:_MAX_ENRICH]]
             result.append({**target, "candidates": enriched})
 
         elif part == "RAM":
