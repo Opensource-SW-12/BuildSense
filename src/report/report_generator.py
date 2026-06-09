@@ -36,12 +36,13 @@ def _build_charts(data: dict) -> dict:
 
 
 def _attach_recommendations(data: dict, hw_info: dict | None) -> None:
-    """data 딕셔너리에 recommendations 키를 추가한다. 실패 시 빈 리스트를 설정한다."""
+    """data 딕셔너리에 recommendations와 hw_info 키를 추가한다. 실패 시 빈 리스트."""
     try:
         from src.recommendation.recommendation_assembler import assemble_recommendations
-        if hw_info is None:
+        if not hw_info:   # None 또는 {} 모두 처리 (앱 초기화 시 빈 dict로 전달될 수 있음)
             from src.hardware import get_hardware_info
             hw_info = get_hardware_info()
+        data["hw_info"] = hw_info or {}
         user_preferences = load_user_preferences()
         scores = {
             **data.get("scores", {}),
@@ -53,7 +54,10 @@ def _attach_recommendations(data: dict, hw_info: dict | None) -> None:
             data.get("profile") or {},
             user_preferences,
         )
-    except Exception:
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        data["hw_info"]         = {}
         data["recommendations"] = []
 
 
@@ -62,9 +66,10 @@ def generate_report(hw_info: dict | None = None) -> Path:
     if not logs:
         raise RuntimeError("분석할 모니터링 데이터가 없습니다. 먼저 모니터링을 실행해주세요.")
 
-    profile = read_user_profile()
-    data    = collect_report_data(logs, profile)
-    data["user_preferences"] = load_user_preferences()
+    profile      = read_user_profile()
+    user_prefs   = load_user_preferences()
+    data         = collect_report_data(logs, profile, user_preferences=user_prefs)
+    data["user_preferences"] = user_prefs
     _attach_recommendations(data, hw_info)
     charts  = _build_charts(data)
     html    = build_html(data, charts)

@@ -1,0 +1,1842 @@
+[
+  {
+    "name": "GeForce RTX 5090 D",
+    "score": 41588,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 5090",
+    "score": 38950,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 4090",
+    "score": 38072,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX PRO 6000 Blackwell Workstation Edition",
+    "score": 37990,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 5080",
+    "score": 35686,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 4080",
+    "score": 34454,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 4080 SUPER",
+    "score": 34257,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX PRO 4500 Blackwell",
+    "score": 33460,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX PRO 5000 Blackwell",
+    "score": 32951,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 5070 Ti",
+    "score": 32397,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 4070 Ti SUPER",
+    "score": 31840,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 4070 Ti",
+    "score": 31566,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 7900 XTX",
+    "score": 31427,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 4090 D",
+    "score": 31056,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX 5000 Ada Generation",
+    "score": 30334,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 4070 SUPER",
+    "score": 29948,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 3090 Ti",
+    "score": 29279,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 7900 XT",
+    "score": 29043,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 5070",
+    "score": 28722,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX 6000 Ada Generation",
+    "score": 28663,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX PRO 4000 Blackwell",
+    "score": 28348,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX 4500 Ada Generation",
+    "score": 28265,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 5090 Laptop GPU",
+    "score": 28235,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 6950 XT",
+    "score": 28082,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon PRO W7900",
+    "score": 27729,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 7900 GRE",
+    "score": 27424,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon PRO W7800",
+    "score": 27300,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon AI PRO R9700",
+    "score": 27248,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 4090 Laptop GPU",
+    "score": 27074,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 9070 XT",
+    "score": 26906,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 4070",
+    "score": 26890,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 3080 Ti",
+    "score": 26759,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 6900 XT",
+    "score": 26689,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 3080 12GB",
+    "score": 26564,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 3090",
+    "score": 26532,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon Pro V620",
+    "score": 26519,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 5080 Laptop GPU",
+    "score": 26346,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 9070",
+    "score": 25397,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX 5880 Ada Generation",
+    "score": 25096,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 6800 XT",
+    "score": 25055,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 3080",
+    "score": 25004,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 4080 Laptop GPU",
+    "score": 24736,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 7800 XT",
+    "score": 24386,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX PRO 5000 Blackwell Generation Laptop GPU",
+    "score": 24359,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX PRO 4000 Blackwell SFF Edition",
+    "score": 24252,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 9070 GRE",
+    "score": 24025,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX 4000 Ada Generation",
+    "score": 23646,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX PRO 4000 Blackwell Generation Laptop GPU",
+    "score": 23263,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX 5000 Ada Generation Laptop GPU",
+    "score": 23246,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 3070 Ti",
+    "score": 23218,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX 3500 Ada Generation Embedded GPU",
+    "score": 22926,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX A5000",
+    "score": 22880,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon PRO W7700",
+    "score": 22868,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 7700 XT",
+    "score": 22702,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX A6000",
+    "score": 22657,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 5060 Ti 16GB",
+    "score": 22636,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 4060 Ti 16GB",
+    "score": 22610,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 4060 Ti",
+    "score": 22609,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 5070 Ti Laptop GPU",
+    "score": 22545,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX 4000 Ada Generation Laptop GPU",
+    "score": 22191,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 5060 Ti 8GB",
+    "score": 22134,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 3070",
+    "score": 22108,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 6800",
+    "score": 22049,
+    "price_usd": "NA"
+  },
+  {
+    "name": "NVIDIA A10",
+    "score": 21687,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 2080 Ti",
+    "score": 21452,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX PRO 3000 Blackwell Generation Laptop GPU",
+    "score": 21277,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX A5500",
+    "score": 21192,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 7700",
+    "score": 21015,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 5060",
+    "score": 20755,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 6750 XT",
+    "score": 20708,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX PRO 5000 72GB Blackwell",
+    "score": 20656,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX A4500",
+    "score": 20634,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX PRO 2000 Blackwell",
+    "score": 20530,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX 4000 SFF Ada Generation",
+    "score": 20509,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 3060 Ti",
+    "score": 20250,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 6750 GRE 12GB",
+    "score": 20155,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon PRO W6800",
+    "score": 20122,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 9060 XT 16GB",
+    "score": 20101,
+    "price_usd": "NA"
+  },
+  {
+    "name": "TITAN RTX",
+    "score": 19922,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Quadro RTX 8000",
+    "score": 19859,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 9060 XT 8GB",
+    "score": 19782,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 6700 XT",
+    "score": 19731,
+    "price_usd": "NA"
+  },
+  {
+    "name": "TITAN V",
+    "score": 19720,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX 3500 Ada Generation Laptop GPU",
+    "score": 19716,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 4070 Laptop GPU",
+    "score": 19505,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 4060",
+    "score": 19502,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 2080 SUPER",
+    "score": 19440,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX A4000",
+    "score": 19362,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 5070 Laptop GPU",
+    "score": 19156,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 6750 GRE 10GB",
+    "score": 18979,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 6700",
+    "score": 18935,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 3080 Ti Laptop GPU",
+    "score": 18908,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Arc Pro B70",
+    "score": 18847,
+    "price_usd": "NA"
+  },
+  {
+    "name": "NVIDIA TITAN Xp",
+    "score": 18754,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 1080 Ti",
+    "score": 18594,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 2080",
+    "score": 18584,
+    "price_usd": "NA"
+  },
+  {
+    "name": "TITAN Xp COLLECTORS EDITION",
+    "score": 18531,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Quadro GV100",
+    "score": 18414,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 2070 SUPER",
+    "score": 18134,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 7650 GRE",
+    "score": 17925,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Quadro RTX 6000",
+    "score": 17789,
+    "price_usd": "NA"
+  },
+  {
+    "name": "NVIDIA A10G",
+    "score": 17660,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 9060",
+    "score": 17640,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon Pro W6900X",
+    "score": 17413,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 3070 Ti Laptop GPU",
+    "score": 17408,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 4060 Laptop GPU",
+    "score": 17376,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 6850M XT",
+    "score": 17311,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 7600 XT",
+    "score": 17308,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX A5500 Laptop GPU",
+    "score": 17231,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX 2000 Ada Generation",
+    "score": 17141,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 6650 XT",
+    "score": 17116,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 5050",
+    "score": 17065,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX 5000 Ada Generation Embedded GPU",
+    "score": 17056,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 3060",
+    "score": 16938,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX A4000H",
+    "score": 16768,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 3060 12GB",
+    "score": 16724,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon Pro W6800X",
+    "score": 16619,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 5700 XT 50th Anniversary",
+    "score": 16528,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 7600",
+    "score": 16481,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 2060 SUPER",
+    "score": 16467,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 6600 XT",
+    "score": 16445,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX A5000 Laptop GPU",
+    "score": 16365,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX PRO 2000 Blackwell Generation Laptop GPU",
+    "score": 16352,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon PRO W7600",
+    "score": 16306,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon VII",
+    "score": 16253,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 3080 Laptop GPU",
+    "score": 16124,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 6650M XT",
+    "score": 16081,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 5700 XT",
+    "score": 16065,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 2070",
+    "score": 16063,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX 3000 Ada Generation Laptop GPU",
+    "score": 16062,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Arc B580",
+    "score": 15991,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 2060 12GB",
+    "score": 15926,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 6800S",
+    "score": 15723,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon Pro Vega II",
+    "score": 15618,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 1080",
+    "score": 15606,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX 2000E Ada Generation",
+    "score": 15503,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 7600S",
+    "score": 15496,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 7700S",
+    "score": 15471,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Quadro P6000",
+    "score": 15390,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Quadro RTX 5000",
+    "score": 15327,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 3060 8GB",
+    "score": 15231,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 6650M",
+    "score": 15194,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon Pro W5700X",
+    "score": 15179,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 3070 Laptop GPU",
+    "score": 15066,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 6600",
+    "score": 15056,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Arc Pro B60",
+    "score": 15049,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 6700S",
+    "score": 15020,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 2080 (Mobile)",
+    "score": 15014,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon PRO W6600",
+    "score": 14980,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Quadro RTX 4000",
+    "score": 14849,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX 2000 Ada Generation Laptop GPU",
+    "score": 14842,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Quadro RTX 5000 (Mobile)",
+    "score": 14832,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX A4000 Laptop GPU",
+    "score": 14824,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX PRO 1000 Blackwell Generation Laptop GPU",
+    "score": 14777,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 1070 Ti",
+    "score": 14672,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 7600M XT",
+    "score": 14549,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 4050 Laptop GPU",
+    "score": 14258,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 5050 Laptop GPU",
+    "score": 14255,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 5700",
+    "score": 14226,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon Pro W5700",
+    "score": 14124,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Arc B570",
+    "score": 14105,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 2060",
+    "score": 14094,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 6600 LE",
+    "score": 14000,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Quadro GP100",
+    "score": 13983,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX Vega 64",
+    "score": 13873,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 6600M",
+    "score": 13866,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX 2000 Ada Generation Embedded GPU",
+    "score": 13842,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX A3000 12GB Laptop GPU",
+    "score": 13841,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX A2000 12GB",
+    "score": 13672,
+    "price_usd": "NA"
+  },
+  {
+    "name": "NVIDIA TITAN X",
+    "score": 13660,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon Pro VII",
+    "score": 13649,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 980 Ti",
+    "score": 13634,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 6700M",
+    "score": 13629,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX 1000 Ada Generation Laptop GPU",
+    "score": 13582,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 6600S",
+    "score": 13569,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 1070",
+    "score": 13514,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX A2000",
+    "score": 13419,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 5600 XT",
+    "score": 13398,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon Pro Vega 64X",
+    "score": 13369,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Arc A770",
+    "score": 13356,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 6800M",
+    "score": 13283,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon PRO W7500",
+    "score": 13220,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 3060 Laptop GPU",
+    "score": 13122,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX PRO 500 Blackwell Generation Laptop GPU",
+    "score": 13115,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon PRO W6600X",
+    "score": 13113,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX Vega 56",
+    "score": 12969,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon Pro Vega 64",
+    "score": 12886,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon Vega Frontier Edition",
+    "score": 12705,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 1660 SUPER",
+    "score": 12677,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Quadro RTX 5000 with Max-Q Design",
+    "score": 12660,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Quadro P5000",
+    "score": 12652,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 2080 with Max-Q Design",
+    "score": 12633,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX A3000 Laptop GPU",
+    "score": 12628,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Arc A750",
+    "score": 12627,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 1660 Ti",
+    "score": 12618,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Arc Pro B50",
+    "score": 12568,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX TITAN X",
+    "score": 12564,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 3050 8GB",
+    "score": 12491,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon Pro WX 8200",
+    "score": 12469,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Quadro P5200 with Max-Q Design",
+    "score": 12464,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon Pro 5700 XT",
+    "score": 12457,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 5600 OEM",
+    "score": 12426,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Quadro RTX 4000 with Max-Q Design",
+    "score": 12207,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon Pro Vega 56",
+    "score": 12065,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Arc A580",
+    "score": 12050,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 3050 Laptop GPU",
+    "score": 12003,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon PRO W6600M",
+    "score": 11998,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 7400",
+    "score": 11909,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Arc A770M",
+    "score": 11882,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 3050 OEM",
+    "score": 11874,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon Pro WX 9100",
+    "score": 11795,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 5600",
+    "score": 11753,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Quadro M6000",
+    "score": 11712,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Quadro RTX 4000 (Mobile)",
+    "score": 11692,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 1080 with Max-Q Design",
+    "score": 11679,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 1660",
+    "score": 11616,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Quadro M6000 24GB",
+    "score": 11500,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Quadro P4200 with Max-Q Design",
+    "score": 11472,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon Pro 5700",
+    "score": 11457,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Quadro P4000",
+    "score": 11418,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 2070 with Max-Q Design",
+    "score": 11401,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 2060 (Mobile)",
+    "score": 11353,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon Pro Vega 48",
+    "score": 11270,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Quadro P5200",
+    "score": 11240,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX 500 Ada Generation Laptop GPU",
+    "score": 11199,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 980",
+    "score": 11080,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 7600M",
+    "score": 10999,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon Pro SSG",
+    "score": 10972,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX A1000",
+    "score": 10747,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 3050 6GB",
+    "score": 10747,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Quadro RTX 3000",
+    "score": 10661,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 1650 SUPER",
+    "score": 10193,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Quadro P4200",
+    "score": 10152,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 3050 6GB Laptop GPU",
+    "score": 10140,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 1660 Ti (Mobile)",
+    "score": 10097,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 3050 Ti Laptop GPU",
+    "score": 10079,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 1060",
+    "score": 10040,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX A1000 6GB Laptop GPU",
+    "score": 10030,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 1060 3GB",
+    "score": 9841,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Arc A730M",
+    "score": 9808,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Arc Pro A60",
+    "score": 9798,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 970",
+    "score": 9638,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 2060 with Max-Q Design",
+    "score": 9629,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 6500 XT",
+    "score": 9625,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon R9 Fury",
+    "score": 9530,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 3050 4GB Laptop GPU",
+    "score": 9503,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX A2000 Laptop GPU",
+    "score": 9474,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 780 Ti",
+    "score": 9451,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX A1000 Laptop GPU",
+    "score": 9433,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Quadro P2200",
+    "score": 9414,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon R9 Fury X",
+    "score": 9391,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Quadro M5000",
+    "score": 9358,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon Pro 5600M",
+    "score": 9304,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 590",
+    "score": 9290,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon R9 390X",
+    "score": 9201,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 5500 XT",
+    "score": 9066,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Arc B390 GPU",
+    "score": 8973,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon Pro W5500",
+    "score": 8952,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Arc B390 GPU RI",
+    "score": 8902,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 5500",
+    "score": 8855,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon R9 295X2",
+    "score": 8816,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon R9 390",
+    "score": 8802,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 5600M",
+    "score": 8797,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 580",
+    "score": 8789,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 1660 Ti with Max-Q Design",
+    "score": 8616,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 480",
+    "score": 8529,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Quadro P3200",
+    "score": 8514,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon R9 290X",
+    "score": 8436,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon PRO W6400",
+    "score": 8392,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon R9 290X / 390X",
+    "score": 8380,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon Pro Duo",
+    "score": 8329,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX590 GME",
+    "score": 8310,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX Titan",
+    "score": 8196,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 1060 (Mobile)",
+    "score": 8160,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon R9 290 / 390",
+    "score": 8150,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon R9 290",
+    "score": 8149,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Quadro RTX 3000 with Max-Q Design",
+    "score": 8139,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Arc B370 GPU",
+    "score": 8106,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Arc A530M",
+    "score": 8045,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 780",
+    "score": 7961,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 470",
+    "score": 7918,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 1650",
+    "score": 7873,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon Pro 5500 XT",
+    "score": 7869,
+    "price_usd": "NA"
+  },
+  {
+    "name": "NVIDIA T1200 Laptop GPU",
+    "score": 7840,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 1060 with Max-Q Design",
+    "score": 7817,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon Pro 580",
+    "score": 7753,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 6400",
+    "score": 7742,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon Pro WX 7100",
+    "score": 7723,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce RTX 2050",
+    "score": 7713,
+    "price_usd": "NA"
+  },
+  {
+    "name": "NVIDIA T1000 8GB",
+    "score": 7678,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 6500",
+    "score": 7676,
+    "price_usd": "NA"
+  },
+  {
+    "name": "NVIDIA T1000",
+    "score": 7653,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 5300",
+    "score": 7603,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 1650 Ti",
+    "score": 7535,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Quadro T2000",
+    "score": 7271,
+    "price_usd": "NA"
+  },
+  {
+    "name": "NVIDIA T600 Laptop GPU",
+    "score": 7059,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Quadro T2000 with Max-Q Design",
+    "score": 7018,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 1650 (Mobile)",
+    "score": 6968,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon R9 285",
+    "score": 6680,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Quadro M4000",
+    "score": 6678,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 1650 Ti with Max-Q Design",
+    "score": 6636,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Quadro T1000 with Max-Q Design",
+    "score": 6628,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Arc 140T GPU",
+    "score": 6617,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Arc Pro 140T GPU",
+    "score": 6612,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Quadro T1000",
+    "score": 6511,
+    "price_usd": "NA"
+  },
+  {
+    "name": "NVIDIA T600",
+    "score": 6370,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 1050 Ti",
+    "score": 6364,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 1650 with Max-Q Design",
+    "score": 6348,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon Pro 570",
+    "score": 6337,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Quadro P3000",
+    "score": 6326,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Arc A380",
+    "score": 6310,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce MX570 A",
+    "score": 6266,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Quadro K5200",
+    "score": 6177,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 960",
+    "score": 6144,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Arc 130T GPU",
+    "score": 6138,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon R9 380X",
+    "score": 6127,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Arc Pro 130T GPU",
+    "score": 6127,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon R9 280X",
+    "score": 6077,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 5500M",
+    "score": 6039,
+    "price_usd": "NA"
+  },
+  {
+    "name": "RTX A400",
+    "score": 5997,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 770",
+    "score": 5961,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon R9 380",
+    "score": 5957,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 1050 Ti (Mobile)",
+    "score": 5918,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Arc Pro A30M",
+    "score": 5862,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce MX570",
+    "score": 5812,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon Pro 5300M",
+    "score": 5803,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Arc Pro A40/A50",
+    "score": 5697,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 680",
+    "score": 5607,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon HD 7990",
+    "score": 5566,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon PRO W6300",
+    "score": 5560,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon Pro WX 5100",
+    "score": 5465,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Arc A310",
+    "score": 5465,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 5300M",
+    "score": 5397,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 670",
+    "score": 5371,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 950",
+    "score": 5353,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Quadro P2000 with Max-Q Design",
+    "score": 5347,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 1050 Ti with Max-Q Design",
+    "score": 5315,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 760 Ti",
+    "score": 5307,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon Pro Vega 20",
+    "score": 5169,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon R9 M295X",
+    "score": 5150,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Arc 140V GPU",
+    "score": 5141,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon R9 M395X",
+    "score": 5126,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Arc A370M",
+    "score": 5115,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 1050 3GB",
+    "score": 5115,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 1050",
+    "score": 5049,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon R9 270X",
+    "score": 4871,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 760",
+    "score": 4825,
+    "price_usd": "NA"
+  },
+  {
+    "name": "T550 Laptop GPU",
+    "score": 4728,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 580",
+    "score": 4629,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Quadro P1000",
+    "score": 4508,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Arc 130V GPU",
+    "score": 4501,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon R9 270",
+    "score": 4306,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 460",
+    "score": 4098,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 480",
+    "score": 4078,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 660",
+    "score": 4050,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Quadro M2000",
+    "score": 4049,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 1050 with Max-Q Design",
+    "score": 3901,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce GTX 750 Ti",
+    "score": 3900,
+    "price_usd": "NA"
+  },
+  {
+    "name": "GeForce MX450",
+    "score": 3718,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Quadro P620",
+    "score": 3710,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon Pro WX 4100",
+    "score": 3688,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon RX 560",
+    "score": 3682,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon Pro 560X",
+    "score": 3678,
+    "price_usd": "NA"
+  },
+  {
+    "name": "NVIDIA T500",
+    "score": 3618,
+    "price_usd": "NA"
+  },
+  {
+    "name": "T400",
+    "score": 3615,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Quadro K2200",
+    "score": 3579,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon Pro W5500M",
+    "score": 3470,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Radeon Pro 460",
+    "score": 3453,
+    "price_usd": "NA"
+  }
+]

@@ -1,0 +1,1472 @@
+[
+  {
+    "name": "AMD Ryzen Threadripper 9980X",
+    "score": 143003,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen Threadripper 7980X",
+    "score": 135642,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen Threadripper 9970X",
+    "score": 107215,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen Threadripper 9960X 24-Cores",
+    "score": 92579,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen Threadripper 7960X",
+    "score": 83410,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 7 270K Plus",
+    "score": 68752,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 9 285K",
+    "score": 67271,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 9 9950X",
+    "score": 65762,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 9 PRO 9965X3D",
+    "score": 64196,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 9 290HX Plus",
+    "score": 63130,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 9 9955HX3D",
+    "score": 62710,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 9 7950X3D",
+    "score": 62321,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 9 7950X",
+    "score": 62180,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-13900KS",
+    "score": 60488,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-14900KS",
+    "score": 60063,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 7 265K",
+    "score": 58664,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 7 265KF",
+    "score": 58560,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-14900K",
+    "score": 58333,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-14900KF",
+    "score": 58200,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-13900K",
+    "score": 58166,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 9 7945HX3D",
+    "score": 57735,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 9 285",
+    "score": 57567,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-13900KF",
+    "score": 57539,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 9 285HX",
+    "score": 57190,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 9 9900X3D",
+    "score": 56196,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 9 9955HX",
+    "score": 56076,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 9 275HX",
+    "score": 55864,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen AI Max+ 395",
+    "score": 55050,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen Threadripper 3960X",
+    "score": 54784,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 9 9900X",
+    "score": 54411,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 9 7945HX",
+    "score": 54080,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 9 7940HX",
+    "score": 53325,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 5 250K Plus",
+    "score": 52188,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i7-14700KF",
+    "score": 52084,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i7-14700K",
+    "score": 51989,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 9 9850HX",
+    "score": 51722,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen AI Max+ Pro 395",
+    "score": 51643,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 9 8945HX",
+    "score": 51518,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 9 7900X",
+    "score": 51262,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 9 8940HX",
+    "score": 50238,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 9 7900X3D",
+    "score": 50213,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 7 265",
+    "score": 49726,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 7 265F",
+    "score": 49494,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-13900F",
+    "score": 48379,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 5 250KF Plus",
+    "score": 46743,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-14900F",
+    "score": 46645,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i7-13700K",
+    "score": 45684,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i7-13700KF",
+    "score": 45565,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Snapdragon X2 Elite Extreme - X2E94100",
+    "score": 45506,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-13980HX",
+    "score": 45501,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 9 5950X",
+    "score": 45292,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-13900",
+    "score": 44873,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-14900",
+    "score": 44806,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 9 7845HX",
+    "score": 44661,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD RYZEN AI MAX+ 392",
+    "score": 44617,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-14900HX",
+    "score": 44031,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 9 5900XT",
+    "score": 43872,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-12900KS",
+    "score": 43409,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 5 245KF",
+    "score": 43171,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 5 245K",
+    "score": 43143,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 8840HX",
+    "score": 43117,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-13900T",
+    "score": 42613,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i7-13790F",
+    "score": 42218,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-13900HX",
+    "score": 41765,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i7-14700F",
+    "score": 41400,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 7840HX",
+    "score": 41365,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 9850X3D",
+    "score": 41339,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Snapdragon X2 Elite - X2E88100",
+    "score": 41265,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-12900K",
+    "score": 41133,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 5 235HX",
+    "score": 40759,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-13950HX",
+    "score": 40681,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-12900KF",
+    "score": 40570,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i7-14700",
+    "score": 40552,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-13900E",
+    "score": 40326,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 5 235",
+    "score": 40031,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 9800X3D",
+    "score": 39966,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 9 285T",
+    "score": 39873,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 9 5900X",
+    "score": 38911,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 5 245",
+    "score": 38495,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i5-14600K",
+    "score": 38452,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 9 3950X",
+    "score": 38435,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 5 235A",
+    "score": 38392,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i5-14600KF",
+    "score": 38354,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i7-14790F",
+    "score": 38351,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 7 265T",
+    "score": 38105,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 PRO 9755",
+    "score": 38100,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i7-13700F",
+    "score": 37863,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i5-13600K",
+    "score": 37519,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen AI 9 HX 470",
+    "score": 37502,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 5 245HX",
+    "score": 37472,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i5-13600KF",
+    "score": 37369,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 PRO 9745",
+    "score": 37082,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 9700X",
+    "score": 37040,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 9700F",
+    "score": 37006,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core 9 273PE",
+    "score": 36810,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i7-14700HX",
+    "score": 36733,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra X9 388H",
+    "score": 36454,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i7-13850HX",
+    "score": 36262,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i7-13700",
+    "score": 36002,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i5-14600",
+    "score": 35970,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-12900F",
+    "score": 35759,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 7700X",
+    "score": 35532,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen AI 9 HX 375",
+    "score": 35361,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 9 386H",
+    "score": 35354,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen AI 9 HX 370",
+    "score": 35059,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen AI 9 HX PRO 470",
+    "score": 34863,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 PRO 7745",
+    "score": 34826,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Snapdragon X2 Elite - X2E90100",
+    "score": 34732,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 7700",
+    "score": 34361,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 7800X3D",
+    "score": 34281,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i7-12700K",
+    "score": 34278,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 9 285H",
+    "score": 34261,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 7 265H",
+    "score": 34145,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 7 356H",
+    "score": 34105,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 9 5900",
+    "score": 33972,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i7-12700KF",
+    "score": 33968,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra X7 358H",
+    "score": 33728,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-12900",
+    "score": 33643,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i7-14650HX",
+    "score": 33617,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen AI 9 HX PRO 375",
+    "score": 33530,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen AI Max 385",
+    "score": 33476,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i7-13700E",
+    "score": 33280,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen AI 9 HX PRO 370",
+    "score": 33250,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-12900HX",
+    "score": 33093,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 7 366H",
+    "score": 33045,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 5 230F",
+    "score": 32916,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD RYZEN AI MAX+ 388",
+    "score": 32709,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 9 3900X",
+    "score": 32490,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 9 3900XT",
+    "score": 32482,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen AI 9 H 465",
+    "score": 32465,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 7700G",
+    "score": 32432,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 7745HX",
+    "score": 32344,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen Threadripper 2990WX",
+    "score": 32058,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen AI Max Pro 385",
+    "score": 32026,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Qualcomm Snapdragon X Elite - X1E001DE",
+    "score": 31863,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i7-13700HX",
+    "score": 31792,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 8700G",
+    "score": 31550,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 8745HX",
+    "score": 31525,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 5 PRO 9645",
+    "score": 31434,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 5 235T",
+    "score": 31417,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i5-13600",
+    "score": 31410,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 9 PRO 3900",
+    "score": 31232,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i7-12800HX",
+    "score": 31221,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-12950HX",
+    "score": 31146,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 PRO 8700G",
+    "score": 31142,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core 5 223PE",
+    "score": 31124,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 5 225F",
+    "score": 31066,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 8700F",
+    "score": 30991,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i5-14500",
+    "score": 30921,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i7-14700T",
+    "score": 30879,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i5-13500",
+    "score": 30873,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 5 245T",
+    "score": 30752,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 7 255H",
+    "score": 30725,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 9 3900",
+    "score": 30587,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i7-12850HX",
+    "score": 30550,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen AI 9 H 365",
+    "score": 30514,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 5 225",
+    "score": 30444,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-14901E",
+    "score": 30298,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i7-12700F",
+    "score": 30209,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 5 9600X",
+    "score": 30087,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core 7 251TE",
+    "score": 30022,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 9 8945H",
+    "score": 29979,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i7-12700",
+    "score": 29904,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 9 7940HS",
+    "score": 29848,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 5 235H",
+    "score": 29846,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-13905H",
+    "score": 29683,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen Threadripper 2950X",
+    "score": 29458,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 9 8945HS",
+    "score": 29367,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 5 9600",
+    "score": 29286,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core 7 253PE",
+    "score": 29271,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen AI 9 465",
+    "score": 29220,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i7-13645HX",
+    "score": 29215,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 8745H",
+    "score": 29185,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 9 270",
+    "score": 29129,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 9 185H",
+    "score": 29104,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 5 338H",
+    "score": 28869,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-12900T",
+    "score": 28852,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 H 255",
+    "score": 28740,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 PRO 8845HS",
+    "score": 28726,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 8745HS",
+    "score": 28677,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core 9 270H",
+    "score": 28628,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 9 7940H",
+    "score": 28449,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i7-12700E",
+    "score": 28437,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 5 9500F",
+    "score": 28424,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 7840HS",
+    "score": 28386,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 8845HS",
+    "score": 28381,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 5 225H",
+    "score": 28348,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 5800X3D",
+    "score": 28302,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 5 7600X",
+    "score": 28293,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 PRO 8700GE",
+    "score": 28288,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 260",
+    "score": 28182,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-12900E",
+    "score": 28170,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 5800XT",
+    "score": 28037,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-9940X @ 3.30GHz",
+    "score": 28007,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 PRO 8840H",
+    "score": 27994,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i5-13600T",
+    "score": 27951,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen Threadripper 1950X",
+    "score": 27766,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 5800X",
+    "score": 27679,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-10940X @ 3.30GHz",
+    "score": 27670,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i5-13500HX",
+    "score": 27646,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i7-13700T",
+    "score": 27599,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-7960X @ 2.80GHz",
+    "score": 27590,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 5 PRO 7645",
+    "score": 27564,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i5-12600K",
+    "score": 27528,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i5-12600KF",
+    "score": 27527,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core 5 213PE",
+    "score": 27488,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i5-13600HX",
+    "score": 27438,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 7840H",
+    "score": 27189,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-13900H",
+    "score": 27154,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 9 PRO 7940HS",
+    "score": 27096,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core 7 250H",
+    "score": 27030,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i5-13400E",
+    "score": 27000,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 5 7600",
+    "score": 26976,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-13900HK",
+    "score": 26829,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 9 6980HX",
+    "score": 26817,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 PRO 7840HS",
+    "score": 26803,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i5-13490F",
+    "score": 26744,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i5-14600T",
+    "score": 26734,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-12900H",
+    "score": 26722,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 8845H",
+    "score": 26682,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 PRO 8840HS",
+    "score": 26654,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 5700X",
+    "score": 26584,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 5 7500F",
+    "score": 26551,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i5-13500E",
+    "score": 26340,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 5700X3D",
+    "score": 26308,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i7-12800HE",
+    "score": 26307,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen AI 7 450",
+    "score": 26262,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen AI 7 H 350",
+    "score": 26253,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i7-13800H",
+    "score": 26227,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 5 7645HX",
+    "score": 26224,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 3 205",
+    "score": 26193,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen AI 7 PRO 450",
+    "score": 26176,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i7-14701E",
+    "score": 26103,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 PRO 5845",
+    "score": 26054,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i7-13700H",
+    "score": 25950,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen Threadripper 2990X",
+    "score": 25874,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 7 165H",
+    "score": 25862,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 5 7600X3D",
+    "score": 25839,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 5800",
+    "score": 25719,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 5 225T",
+    "score": 25621,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i7-13705H",
+    "score": 25544,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i5-14400F",
+    "score": 25525,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 5 7400F",
+    "score": 25514,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 250",
+    "score": 25298,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 5 PRO 8600G",
+    "score": 25277,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-7940X @ 3.10GHz",
+    "score": 25228,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-12900HK",
+    "score": 25217,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen Threadripper 2920X",
+    "score": 25213,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 5 8600G",
+    "score": 25198,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 5 336H",
+    "score": 25187,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i5-14400",
+    "score": 25119,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 5 7500X3D",
+    "score": 25112,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i7-12700H",
+    "score": 25100,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core 7 253PTE",
+    "score": 25031,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-11900K @ 3.50GHz",
+    "score": 24947,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i5-13400F",
+    "score": 24944,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen AI 7 350",
+    "score": 24927,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i7-14701TE",
+    "score": 24821,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Qualcomm Snapdragon X Elite - X1E-84-100",
+    "score": 24809,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-9920X @ 3.50GHz",
+    "score": 24760,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i5-13450HX",
+    "score": 24649,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen Z1 Extreme",
+    "score": 24639,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core Ultra 7 155H",
+    "score": 24577,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-11900KF @ 3.50GHz",
+    "score": 24528,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 H 250",
+    "score": 24508,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen AI Max Pro 380",
+    "score": 24431,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 5 8400F",
+    "score": 24420,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 PRO 7840U",
+    "score": 24391,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 7840U",
+    "score": 24386,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core 7 240H",
+    "score": 24353,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i7-11700K @ 3.60GHz",
+    "score": 24341,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 5700G",
+    "score": 24266,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 5700",
+    "score": 24244,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 9 6900HX",
+    "score": 24115,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen AI 7 PRO 350",
+    "score": 24108,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core 9 273PTE",
+    "score": 24054,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 PRO 8840U",
+    "score": 23992,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core 5 211EF",
+    "score": 23988,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i7-12800H",
+    "score": 23868,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 PRO 5755G",
+    "score": 23858,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i5-13400",
+    "score": 23855,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core 5 211E",
+    "score": 23833,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 9 PRO 6950H",
+    "score": 23832,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i7-11700KF @ 3.60GHz",
+    "score": 23819,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 PRO 5750G",
+    "score": 23784,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i5-14450HX",
+    "score": 23712,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 5 PRO 8600GE",
+    "score": 23710,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen Z2 Extreme",
+    "score": 23649,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i5-12600HL",
+    "score": 23615,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 5 PRO 8645HS",
+    "score": 23569,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i9-7920X @ 2.90GHz",
+    "score": 23557,
+    "price_usd": "NA"
+  },
+  {
+    "name": "Intel Core i5-13600HE",
+    "score": 23483,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 3800XT",
+    "score": 23426,
+    "price_usd": "NA"
+  },
+  {
+    "name": "AMD Ryzen 7 8840U",
+    "score": 23369,
+    "price_usd": "NA"
+  }
+]

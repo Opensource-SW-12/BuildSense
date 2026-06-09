@@ -49,11 +49,13 @@ def _extract_hardware_signals(analysis: dict) -> dict:
 def _apply_hardware_boosts(scores: dict[str, float], signals: dict) -> dict[str, float]:
     boosted = dict(scores)
 
-    if signals["gpu_high_load_ratio"] > _GPU_BOOST_THRESHOLD:
-        boosted["game"] = boosted.get("game", 0.0) + _GAME_GPU_BOOST
+    # 하드웨어 부스트는 해당 카테고리가 이미 base_scores에 존재할 때만 적용한다.
+    # 사용자가 모든 프로세스를 수동 재분류한 경우 하드웨어 신호로 분류가 덮어씌워지지 않도록 하기 위함.
+    if signals["gpu_high_load_ratio"] > _GPU_BOOST_THRESHOLD and "game" in boosted:
+        boosted["game"] = boosted["game"] + _GAME_GPU_BOOST
 
-    if signals["vram_p80"] > _VRAM_P80_BOOST_THRESHOLD:
-        boosted["game"] = boosted.get("game", 0.0) + _GAME_VRAM_BOOST
+    if signals["vram_p80"] > _VRAM_P80_BOOST_THRESHOLD and "game" in boosted:
+        boosted["game"] = boosted["game"] + _GAME_VRAM_BOOST
 
     if signals["cpu_sustained_episodes"] > 0:
         boosted["development"] = boosted.get("development", 0.0) + _DEV_CPU_BOOST

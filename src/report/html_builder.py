@@ -250,6 +250,37 @@ def _section_summary(data: dict) -> str:
 </div>"""
 
 
+_HW_PART_KO = {
+    "CPU":  "CPU",
+    "GPU":  "GPU",
+    "RAM":  "RAM",
+    "SSD":  "SSD",
+    "HDD":  "HDD",
+    "파워": "파워 서플라이",
+}
+
+def _hw_spec_block(hw_info: dict) -> str:
+    """현재 시스템 사양 블록 HTML을 반환한다. hw_info가 비어 있으면 빈 문자열."""
+    if not hw_info:
+        return ""
+    rows = ""
+    for key, label in _HW_PART_KO.items():
+        val = hw_info.get(key) or "확인할 수 없음"
+        val_escaped = html.escape(str(val))
+        color = "#A6AEC8" if val == "확인할 수 없음" else "#E8EAF6"
+        rows += (
+            f'<div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.05)">'
+            f'<span style="width:100px;font-size:12px;color:#A6AEC8;flex-shrink:0">{label}</span>'
+            f'<span style="font-size:13px;color:{color};word-break:break-all">{val_escaped}</span>'
+            f'</div>'
+        )
+    return f"""
+  <div style="margin-top:22px">
+    <div style="font-size:11px;color:#A6AEC8;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.8px">현재 시스템 사양</div>
+    <div style="background:#0F1117;border-radius:8px;padding:8px 12px">{rows}</div>
+  </div>"""
+
+
 def _section_user_input(data: dict) -> str:
     profile = data.get("profile") or {}
     prefs   = data.get("user_preferences") or {}
@@ -316,6 +347,8 @@ def _section_user_input(data: dict) -> str:
     <p style="color:#A6AEC8;font-size:13px">기록된 답변이 없습니다.</p>
   </div>"""
 
+    hw_block = _hw_spec_block(data.get("hw_info") or {})
+
     return f"""
 <div class="card">
   <h2>사용자 입력 정보</h2>
@@ -325,6 +358,7 @@ def _section_user_input(data: dict) -> str:
     <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px">{part_tags}</div>
   </div>
   {final_block}
+  {hw_block}
 </div>"""
 
 

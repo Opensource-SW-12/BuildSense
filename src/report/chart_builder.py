@@ -597,13 +597,14 @@ def build_score_summary_chart(scores: dict) -> str:
 
     bars = ax.barh(_PART_LABELS, values, color=colors, height=0.55, edgecolor=_AX_BG, alpha=0.9)
 
-    ax.set_xlim(0, 1.25)
+    ax.set_xlim(0, 1.10)
+    ax.set_xticks([0, 0.2, 0.4, 0.6, 0.8, 1.0])
     ax.set_xlabel("점수 (0 ~ 1)", fontsize=9, color=_TEXT)
     ax.axvline(0.35, color=_C_ORANGE, linewidth=1.0, linestyle="--", alpha=0.6)
     ax.axvline(0.60, color=_C_RED,    linewidth=1.0, linestyle="--", alpha=0.6)
-    ax.text(0.35 / 1.25, 1.02, "보통", fontsize=7.5, color=_C_ORANGE,
+    ax.text(0.35 / 1.10, 1.02, "보통", fontsize=7.5, color=_C_ORANGE,
             ha="center", va="bottom", transform=ax.transAxes)
-    ax.text(0.60 / 1.25, 1.02, "높음", fontsize=7.5, color=_C_RED,
+    ax.text(0.60 / 1.10, 1.02, "높음", fontsize=7.5, color=_C_RED,
             ha="center", va="bottom", transform=ax.transAxes)
 
     for bar, val, grade in zip(bars, values, grades):

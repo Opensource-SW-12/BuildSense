@@ -15,10 +15,9 @@ reports/*
 !data/specs/
 !data/specs/*.json
 
-!data/prices/
-!data/prices/*.json
-
 open-db/
+results/
+_sim_run.log
 
 !logs/.gitkeep
 !reports/.gitkeep

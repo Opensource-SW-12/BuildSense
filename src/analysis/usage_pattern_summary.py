@@ -150,31 +150,46 @@ def calculate_average_continuous_usage_hours(parsed_times):
     return sum(durations) / len(durations)
 
 
-def analyze_uptime(logs):
-    uptime_values = [
-        log.get("uptime_seconds")
-        for log in logs
-        if log.get("uptime_seconds") is not None
-    ]
+def analyze_uptime(logs, interval_seconds: int = 60):
+    """실제 모니터링 스냅샷 타임스탬프로 일 평균 가동 시간을 계산한다.
 
-    if not uptime_values:
-        return {
-            "average_uptime_hours": 0,
-            "long_usage_ratio": 0
-        }
+    uptime_seconds(부팅 후 경과 시간)는 절전 시간을 포함하므로 사용하지 않는다.
+    대신 스냅샷 간격과 연속 세그먼트 분리(2h 간격)로 실제 사용 시간만 집계한다.
+    """
+    parsed_times = sorted(filter(None, [
+        parse_utc_to_kst(log.get("timestamp")) for log in logs
+    ]))
 
-    average_uptime_hours = sum(uptime_values) / len(uptime_values) / 3600
+    if not parsed_times:
+        return {"average_uptime_hours": 0, "long_usage_ratio": 0}
 
-    long_usage_count = sum(
-        1 for value in uptime_values
-        if value >= 8 * 3600
+    segments = calculate_continuous_usage_segments(parsed_times)
+
+    def _segment_hours(seg):
+        # 세그먼트 지속 시간 = 타임스탬프 차 + 마지막 스냅샷 1 interval
+        if len(seg) < 2:
+            return interval_seconds / 3600
+        return (seg[-1] - seg[0]).total_seconds() / 3600 + interval_seconds / 3600
+
+    durations = [_segment_hours(seg) for seg in segments]
+    total_active_hours = sum(durations)
+
+    # 분석 기간(일) — 최소 1일로 clamp해 단일 세션 0 나눗셈 방지
+    analysis_days = max(
+        (parsed_times[-1] - parsed_times[0]).total_seconds() / 86400,
+        1.0,
     )
+    average_uptime_hours = total_active_hours / analysis_days
 
-    long_usage_ratio = long_usage_count / len(uptime_values)
+    # long_usage_ratio: 8시간 이상 세션에 속한 스냅샷 비율
+    long_snapshots = sum(
+        len(seg) for seg, dur in zip(segments, durations) if dur >= 8.0
+    )
+    long_usage_ratio = long_snapshots / len(parsed_times)
 
     return {
         "average_uptime_hours": average_uptime_hours,
-        "long_usage_ratio": long_usage_ratio
+        "long_usage_ratio": long_usage_ratio,
     }
 
 
