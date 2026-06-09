@@ -220,20 +220,39 @@ def _enrich_hw_candidate(candidate: dict, part: str, color_suffix: str = "") -> 
         naver_items = _naver_search_safe(search_name)
 
     # 2. Naver 결과에서 product_matcher 검증 (원본 칩셋명으로 검증)
+    # GPU + 색상 검색 시: 색상 키워드가 포함된 타이틀을 우선 선택하고,
+    # 없으면 첫 번째 매칭 결과로 폴백 (이 경우 이름 교체는 하지 않음)
+    color_kw        = color_suffix.strip().lower()   # e.g. "블랙" / "화이트"
+    color_item      = None   # 색상 키워드 포함 매칭
+    fallback_item   = None   # 색상 키워드 없는 첫 번째 매칭
+
     for item in naver_items:
         if not is_matching_product(item.get("title", ""), part_dict):
             continue
+        title_lower = (item.get("title") or "").lower()
+        if color_kw and color_kw in title_lower:
+            color_item = item
+            break
+        if fallback_item is None:
+            fallback_item = item
+
+    matched = color_item or fallback_item
+    if matched:
         if not cache_hit and naver_items:
             _cache_save(part, search_name, naver_items)
-        naver_title = item.get("title")
+        naver_title = matched.get("title")
+        # 색상 키워드가 타이틀에 실제로 포함된 경우에만 GPU 이름을 Naver 타이틀로 교체
+        use_naver_name = (
+            part == "GPU" and color_kw
+            and naver_title and color_kw in (naver_title or "").lower()
+        )
         return {
             **candidate,
-            # GPU + 색상 검색 시 Naver 제품명으로 교체해 카드에 색상이 표시되도록 함
-            "name":         naver_title if (part == "GPU" and color_suffix and naver_title) else candidate.get("name"),
-            "price_krw":    item.get("price_krw"),
-            "price_source": item.get("source", "naver"),
-            "product_url":  item.get("link"),
-            "mall_name":    item.get("mall_name"),
+            "name":         naver_title if use_naver_name else candidate.get("name"),
+            "price_krw":    matched.get("price_krw"),
+            "price_source": matched.get("source", "naver"),
+            "product_url":  matched.get("link"),
+            "mall_name":    matched.get("mall_name"),
         }
 
     # 3. Naver 매칭 없음 → eBay 별도 시도 (원본 이름으로, 색상 키워드 제외)
