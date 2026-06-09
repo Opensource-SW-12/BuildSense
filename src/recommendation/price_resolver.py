@@ -225,8 +225,11 @@ def _enrich_hw_candidate(candidate: dict, part: str, color_suffix: str = "") -> 
             continue
         if not cache_hit and naver_items:
             _cache_save(part, search_name, naver_items)
+        naver_title = item.get("title")
         return {
             **candidate,
+            # GPU + 색상 검색 시 Naver 제품명으로 교체해 카드에 색상이 표시되도록 함
+            "name":         naver_title if (part == "GPU" and color_suffix and naver_title) else candidate.get("name"),
             "price_krw":    item.get("price_krw"),
             "price_source": item.get("source", "naver"),
             "product_url":  item.get("link"),
