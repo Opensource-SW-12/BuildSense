@@ -141,6 +141,7 @@ def assemble_recommendations(
     filtered = filter_spec_candidates(
         enriched, user_preferences, socket=socket,
         upgrade_motherboard=upgrade_motherboard,
+        current_cpu=hw_info.get("CPU"),
     )
 
     # GPU 업그레이드가 추천 목록에 포함된 경우 PSU 의존성 항목을 resolve_prices 전에 추가해
