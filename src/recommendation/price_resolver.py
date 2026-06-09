@@ -202,7 +202,8 @@ def _enrich_hw_candidate(candidate: dict, part: str, color_suffix: str = "") -> 
     color_suffix: GPU 검색 시 "블랙"/"화이트" 등을 Naver 쿼리에 추가.
                   eBay는 한국어 키워드가 무의미하므로 원본 이름만 사용한다.
     """
-    if candidate.get("price_krw") is not None:
+    # GPU에 color_suffix가 있으면 항상 Naver 재검색 (색상 에디션 링크 확보)
+    if candidate.get("price_krw") is not None and not (part == "GPU" and color_suffix):
         return candidate
 
     name = candidate.get("name", "")
@@ -289,14 +290,20 @@ def _search_storage_candidates(search_query: str, part: str = "SSD") -> list[dic
     return _dedup_candidates(cands)
 
 
-def _enrich_board_candidate(candidate: dict) -> dict:
-    """메인보드 후보에 캐시·네이버 검색으로 가격을 보완한다."""
-    if candidate.get("price_krw") is not None:
+def _enrich_board_candidate(candidate: dict, color_suffix: str = "") -> dict:
+    """메인보드 후보에 캐시·네이버 검색으로 가격을 보완한다.
+    color_suffix가 있으면 색상 포함 쿼리를 먼저 시도하고, 결과 없으면 원본으로 폴백한다."""
+    if candidate.get("price_krw") is not None and not color_suffix:
         return candidate
     name = candidate.get("name", "")
     if not name:
         return candidate
-    items = _search_safe(name, "Motherboard")
+
+    search_name = name + color_suffix
+    items = _search_safe(search_name, "Motherboard") if color_suffix else []
+    if not items:
+        items = _search_safe(name, "Motherboard")
+
     if items:
         first = items[0]
         return {
@@ -316,7 +323,7 @@ def resolve_prices(filtered_targets: list[dict], color_suffix: str = "") -> list
     각 추천 대상의 candidates에 실제 가격 정보를 채워 반환한다.
 
     filtered_targets : filter_spec_candidates() 결과
-    color_suffix     : GPU Naver 검색에 추가할 색상 키워드 ("블랙" / "화이트" / "")
+    color_suffix     : GPU·메인보드 Naver 검색에 추가할 색상 키워드 ("블랙" / "화이트" / "")
     반환:
         각 target에 가격이 보완된 candidates 목록이 포함된 새 list
     """
@@ -339,7 +346,7 @@ def resolve_prices(filtered_targets: list[dict], color_suffix: str = "") -> list
             result.append({**target, "candidates": _search_storage_candidates(search_query, part)})
 
         elif part == "Motherboard":
-            enriched = [_enrich_board_candidate(c) for c in candidates[:_MAX_ENRICH]]
+            enriched = [_enrich_board_candidate(c, color_suffix=color_suffix) for c in candidates[:_MAX_ENRICH]]
             result.append({**target, "candidates": enriched})
 
         elif part == "PSU" and search_query:
