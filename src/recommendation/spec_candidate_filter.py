@@ -259,25 +259,32 @@ def filter_spec_candidates(
         target_tier  = target.get("target_tier")
         target_spec  = target.get("target_spec")
 
-        if part == "CPU" and target_tier is not None:
-            if _cpu_items is None:
-                try:
-                    _cpu_items = load_cpu_passmark_items()
-                except Exception:
-                    _cpu_items = []
+        if part == "CPU":
+            if target_tier is not None:
+                if _cpu_items is None:
+                    try:
+                        _cpu_items = load_cpu_passmark_items()
+                    except Exception:
+                        _cpu_items = []
 
-            cands = _filter_passmark(_cpu_items, calculate_cpu_tier, target_tier, budget, exchange_rate)
+                cands = _filter_passmark(_cpu_items, calculate_cpu_tier, target_tier, budget, exchange_rate)
 
-            # keep 모드: 현재 소켓 호환 CPU만 남김
-            if not upgrade_motherboard and socket:
-                patterns = cpu_patterns_for_socket(socket)
-                if patterns:
-                    cands = [c for c in cands if any(p.search(c.get("name", "")) for p in patterns)]
+                # keep 모드: 현재 소켓 호환 CPU만 남김
+                if not upgrade_motherboard and socket:
+                    patterns = cpu_patterns_for_socket(socket)
+                    if patterns:
+                        cands = [c for c in cands if any(p.search(c.get("name", "")) for p in patterns)]
 
-            query = cands[0]["name"] if cands else "CPU"
-            result.append({**target, "candidates": cands, "search_query": query})
+                query = cands[0]["name"] if cands else "CPU"
+                result.append({**target, "candidates": cands, "search_query": query})
+            else:
+                # PassMark 조회 실패 등으로 목표 tier를 계산하지 못한 경우에도
+                # CPU 추천 카드 자체는 유지한다 (후보·검색어만 비워둠)
+                result.append({**target, "candidates": [], "search_query": "CPU"})
 
             # recommend 모드: 새 소켓 호환 메인보드 항목 추가
+            # (CPU 목표 tier 계산 성공 여부와 무관하게, 소켓 정보만 있으면 추가한다 —
+            #  PassMark 조회가 실패해도 메인보드 추천이 누락되지 않도록 함)
             if upgrade_motherboard:
                 target_socket = effective_socket or socket
                 if target_socket:

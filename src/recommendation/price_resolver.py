@@ -234,6 +234,10 @@ def resolve_prices(filtered_targets: list[dict]) -> list[dict]:
             enriched = [_enrich_board_candidate(c) for c in candidates[:_MAX_ENRICH]]
             result.append({**target, "candidates": enriched})
 
+        elif part == "PSU" and search_query:
+            psu_cands = [_make_price_candidate(i) for i in _naver_search_safe(search_query)]
+            result.append({**target, "candidates": psu_cands})
+
         else:
             result.append(target)
 

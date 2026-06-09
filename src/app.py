@@ -405,7 +405,7 @@ class BuildSenseApp:
   def _show_analysis_complete_screen(self):
     self._clear_window()
     self.root.title("BuildSense - 분석 완료")
-    self._center_window(440, 320)
+    self._center_window(440, 360)
     self.root.configure(bg=BG)
 
     body = tk.Frame(self.root, bg=BG, padx=36, pady=36)
@@ -424,9 +424,9 @@ class BuildSenseApp:
                font=("Segoe UI", 9)).pack(pady=(0, 22))
 
       def _reopen():
-        import webbrowser
         from pathlib import Path
-        webbrowser.open(Path(self._report_path).as_uri())
+        from src.report.report_generator import _open_in_browser
+        _open_in_browser(Path(self._report_path))
 
       reopen_btn = _pill(body, "보고서 다시 열기", DIVIDER, WHITE, width=180)
       reopen_btn.pack(pady=(0, 10))

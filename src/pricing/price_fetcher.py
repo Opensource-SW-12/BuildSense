@@ -1,5 +1,7 @@
+import html
 import json
 import os
+import re
 import urllib.parse
 import urllib.request
 
@@ -36,6 +38,13 @@ def safe_float(value):
         return float(value) if value is not None else None
     except (ValueError, TypeError):
         return None
+
+
+def _clean_naver_title(title):
+    """네이버 쇼핑 API 제목에 포함된 <b> 강조 태그와 HTML 엔티티를 제거한다."""
+    if not title:
+        return title
+    return html.unescape(re.sub(r"</?b>", "", title))
 
 
 def search_naver_shopping(query, display=10):
@@ -90,7 +99,7 @@ def extract_naver_candidates(api_result):
 
         candidates.append({
             "source": "naver",
-            "title": item.get("title"),
+            "title": _clean_naver_title(item.get("title")),
             "link": item.get("link"),
             "price_krw": price,
             "price_usd": None,
