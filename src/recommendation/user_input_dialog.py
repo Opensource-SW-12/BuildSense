@@ -522,11 +522,8 @@ class _BudgetDetailDialog:
         btn_row = tk.Frame(outer, bg=_BG)
         btn_row.pack(fill=tk.X)
 
-        tk.Button(
-            btn_row, text="취소", width=10,
-            command=self._dialog.destroy,
-            bg=_DIVIDER, fg=_GRAY, activebackground=_DIVIDER, activeforeground=_WHITE,
-            relief=tk.FLAT, highlightthickness=0,
+        _make_pill_btn(
+            btn_row, "취소", self._dialog.destroy, _DIVIDER, _GRAY, width=100, height=36,
         ).pack(side=tk.RIGHT, padx=(8, 0))
 
         _make_pill_btn(
