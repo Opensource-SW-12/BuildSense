@@ -39,8 +39,8 @@ _RGB_PREFERENCE_KO = {
 }
 
 _COLOR_PREFERENCE_KO = {
-    "black": "검정",
-    "white": "흰색",
+    "black": "블랙",
+    "white": "화이트",
     "none":  "상관없음",
 }
 

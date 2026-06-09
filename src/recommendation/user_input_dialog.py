@@ -87,7 +87,7 @@ _RGB_DESCRIPTIONS = {
 }
 
 _COLOR_DESCRIPTIONS = {
-    "beginner":     "부품 색상 선호도입니다. 검정 또는 흰색 계열 부품을 선택하면 RAM·메인보드·파워 검색 시 해당 색상을 우선 반영합니다.",
+    "beginner":     "부품 색상 선호도입니다. 블랙 또는 화이트 계열 부품을 선택하면 RAM·메인보드·파워 검색 시 해당 색상을 우선 반영합니다.",
     "intermediate": "색상 선호도를 설정하면 RAM·메인보드·파워 검색 쿼리에 블랙 또는 화이트 키워드가 추가됩니다.",
 }
 
@@ -323,7 +323,7 @@ class UserPreferenceDialog:
         color_row = tk.Frame(outer, bg=_BG)
         color_row.pack(fill=tk.X, pady=(0, 14))
 
-        for text, value in [("검정", "black"), ("흰색", "white"), ("상관없음", "none")]:
+        for text, value in [("블랙", "black"), ("화이트", "white"), ("상관없음", "none")]:
             tk.Radiobutton(
                 color_row,
                 text=text,
