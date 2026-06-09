@@ -314,6 +314,7 @@ class BuildSenseApp:
       on_confirm=self._on_preferences_confirmed,
       on_cancel=self._show_analyzing_screen,
       knowledge_level=self.settings_state.get("knowledge_level"),
+      parts=self.settings_state.get("parts", {}),
     )
 
   def _on_preferences_confirmed(self, prefs: dict):

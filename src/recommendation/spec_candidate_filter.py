@@ -214,14 +214,15 @@ def filter_spec_candidates(
     socket              : hw_info["CPU_socket"] — 소켓 인식 쿼리·필터링에 사용
     upgrade_motherboard : user_profile parts 설정에서 전달; None 이면 user_preferences 폴백
     """
-    prefs              = user_preferences or {}
-    budget: int | None = prefs.get("budget")
+    prefs        = user_preferences or {}
+    budget_mode  = prefs.get("budget_mode", "recommended")
+    part_budgets: dict[str, int | None] = prefs.get("budgets", {}) if budget_mode == "custom" else {}
     if upgrade_motherboard is None:
         upgrade_motherboard = prefs.get("upgrade_motherboard", False)
 
-    # 예산이 있을 때만 환율 조회 (루프 밖 1회)
+    # custom 모드에서 예산이 하나라도 있을 때만 환율 조회 (루프 밖 1회)
     exchange_rate: float | None = None
-    if budget is not None:
+    if budget_mode == "custom" and any(v for v in part_budgets.values()):
         try:
             from src.pricing.exchange_rate import get_usd_to_krw_rate
             exchange_rate = get_usd_to_krw_rate()
@@ -243,7 +244,7 @@ def filter_spec_candidates(
                         _cpu_items = load_cpu_passmark_items()
                     pre_cands = _filter_passmark(
                         _cpu_items, calculate_cpu_tier,
-                        t["target_tier"], budget, exchange_rate,
+                        t["target_tier"], part_budgets.get("CPU"), exchange_rate,
                     )
                     if pre_cands:
                         inferred = infer_socket_from_cpu_name(pre_cands[0]["name"])
@@ -267,7 +268,10 @@ def filter_spec_candidates(
                     except Exception:
                         _cpu_items = []
 
-                cands = _filter_passmark(_cpu_items, calculate_cpu_tier, target_tier, budget, exchange_rate)
+                cands = _filter_passmark(
+                    _cpu_items, calculate_cpu_tier, target_tier,
+                    part_budgets.get("CPU"), exchange_rate,
+                )
 
                 # keep 모드: 현재 소켓 호환 CPU만 남김
                 if not upgrade_motherboard and socket:
@@ -313,7 +317,10 @@ def filter_spec_candidates(
                     _gpu_items = load_gpu_passmark_items()
                 except Exception:
                     _gpu_items = []
-            cands = _filter_passmark(_gpu_items, calculate_gpu_tier, target_tier, budget, exchange_rate)
+            cands = _filter_passmark(
+                _gpu_items, calculate_gpu_tier, target_tier,
+                part_budgets.get("GPU"), exchange_rate,
+            )
             query = cands[0]["name"] if cands else "GPU"
             result.append({**target, "candidates": cands, "search_query": query})
 
