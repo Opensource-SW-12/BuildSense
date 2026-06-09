@@ -167,7 +167,7 @@ class UserPreferenceDialog:
         px, py = self._parent.winfo_x(), self._parent.winfo_y()
         pw, ph = self._parent.winfo_width(), self._parent.winfo_height()
         dw = 500
-        dh = self._dialog.winfo_reqheight()
+        dh = self._dialog.winfo_reqheight() + 24
         x = px + (pw - dw) // 2
         y = py + (ph - dh) // 2
         self._dialog.geometry(f"{dw}x{dh}+{x}+{y}")
@@ -433,17 +433,30 @@ class _BudgetDetailDialog:
             var = tk.StringVar(value=str(current_val) if current_val else "")
             self._entry_vars[pipeline_key] = var
 
+            # 포맷 레이블 (오른쪽 고정, entry보다 먼저 pack해야 fill 공간 계산 올바름)
+            fmt_var = tk.StringVar(
+                value=f"{current_val:,}원" if current_val else ""
+            )
+
+            def _on_write(*_, _v=var, _fv=fmt_var):
+                raw = _v.get().replace(",", "").replace(" ", "")
+                _fv.set(f"{int(raw):,}원" if raw.isdigit() and int(raw) > 0 else "")
+
+            var.trace_add("write", _on_write)
+
+            tk.Label(
+                row, textvariable=fmt_var,
+                fg=_TEAL, bg=_BG, font=("Segoe UI", 9), anchor="e", width=13,
+            ).pack(side=tk.RIGHT)
+
             tk.Entry(
                 row,
                 textvariable=var,
                 font=("Segoe UI", 10),
-                width=14,
                 bg=_CARD, fg=_WHITE, insertbackground=_WHITE,
                 relief=tk.FLAT, highlightthickness=1,
                 highlightbackground=_DIVIDER, highlightcolor=_TEAL,
-            ).pack(side=tk.LEFT, ipady=4, ipadx=6)
-
-            tk.Label(row, text=" 원", fg=_GRAY, bg=_BG, font=("Segoe UI", 10)).pack(side=tk.LEFT)
+            ).pack(side=tk.LEFT, fill=tk.X, expand=True, ipady=4, ipadx=6, padx=(0, 6))
 
         tk.Frame(outer, height=1, bg=_DIVIDER).pack(fill=tk.X, pady=(8, 10))
 
