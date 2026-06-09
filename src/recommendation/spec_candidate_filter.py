@@ -53,19 +53,34 @@ def _is_workstation_gpu(name: str) -> bool:
     return bool(_GPU_WORKSTATION_RE.search(name))
 
 
-# ── 모바일 SoC / 비데스크톱 CPU 런타임 필터 ──────────────────────────────
-# ARM 기반 SoC나 소비자 데스크톱/노트북 CPU가 아닌 제품을 추천 후보에서 제외한다.
+# ── 모바일 SoC / 노트북 CPU 런타임 필터 ─────────────────────────────────
+# ARM SoC 및 모바일 서픽스(HX/H/HS/HQ/U/V 등)를 가진 노트북 CPU를 제외한다.
+# 이 CPU들은 standalone으로 판매되지 않으므로 검색 시 노트북 제품이 반환된다.
 _CPU_MOBILE_SOC_RE = re.compile(
-    r"^Snapdragon"   # Qualcomm Snapdragon (ARM SoC)
-    r"|^Qualcomm"    # Qualcomm 브랜드 전체
-    r"|^Apple M\d"   # Apple Silicon
-    r"|^MediaTek"    # MediaTek (ARM SoC)
-    r"|^Dimensity"   # MediaTek Dimensity
-    r"|^Exynos"      # Samsung Exynos
-    r"|^Kirin"       # Huawei Kirin
-    r"|^Helio"       # MediaTek Helio
-    r"|^Unisoc"      # Unisoc (ARM SoC)
-    r"|\bSoC\b"      # 이름에 SoC가 명시된 경우
+    r"^Snapdragon"    # Qualcomm Snapdragon (ARM SoC)
+    r"|^Qualcomm"     # Qualcomm 브랜드 전체
+    r"|^Apple M\d"    # Apple Silicon
+    r"|^MediaTek"     # MediaTek (ARM SoC)
+    r"|^Dimensity"    # MediaTek Dimensity
+    r"|^Exynos"       # Samsung Exynos
+    r"|^Kirin"        # Huawei Kirin
+    r"|^Helio"        # MediaTek Helio
+    r"|^Unisoc"       # Unisoc (ARM SoC)
+    r"|\bSoC\b"       # 이름에 SoC가 명시된 경우
+    # ── 노트북/모바일 CPU 서픽스 ──────────────────────────────────────
+    r"|\bLaptop\b"    # "Laptop CPU" 명시
+    r"|\d+HX3D\b"     # AMD HX3D 모바일 (7945HX3D 등)
+    r"|\d+HX\b"       # HX 모바일 서픽스
+    r"| HX\b"         # 독립형 HX (Ryzen AI 9 HX 470 등)
+    r"|\d+HS\b"       # HS 모바일 서픽스
+    r"|\d+HQ\b"       # HQ 모바일 서픽스
+    r"|\d+HK\b"       # HK 모바일 서픽스 (Intel)
+    r"|\d+H\b"        # H 모바일 서픽스 (13900H 등)
+    r"|\d+U\b"        # U 초저전력 서픽스
+    r"|\d+V\b"        # V 서픽스 (Intel Lunar Lake Core Ultra 200V)
+    r"|Ryzen AI Max"  # AMD 모바일 AI APU (Ryzen AI Max+ 395 등, 대소문자 무시)
+    r"|Ryzen AI [0-9]"  # AMD Ryzen AI 모바일 시리즈
+    , re.IGNORECASE   # 대소문자 무시 (RYZEN AI MAX+ 392 등 대문자 변형 대응)
 )
 
 
