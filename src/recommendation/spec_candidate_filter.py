@@ -6,6 +6,7 @@ RAM/SSD/HDD : PassMark tier 없음 → 빈 candidates + search_query 생성 (KAN
 Motherboard : upgrade_motherboard=True 일 때 board_specs.json에서 소켓 호환 보드 선정.
 """
 import json
+import re
 
 from src.pricing.passmark_tiering import (
     load_cpu_passmark_items,
@@ -25,6 +26,31 @@ from src.platform_mapper import (
 _TIER_BELOW    = 1   # target_tier - 1 이상
 _TIER_ABOVE    = 2   # target_tier + 2 이하
 _MAX_CANDS     = 5   # 부품당 최대 후보 수
+
+# ── 워크스테이션/전문가용 GPU 런타임 필터 ─────────────────────────────────
+# PassMark DB에 포함될 수 있는 비소비자용 GPU를 추천 후보에서 제외한다.
+_GPU_WORKSTATION_RE = re.compile(
+    r"^RTX A\d"            # RTX A2000/A4000/A5000/A6000 워크스테이션
+    r"|^Quadro "           # Quadro 시리즈
+    r"|^RTX PRO "          # RTX PRO 워크스테이션 (신형)
+    r"|Embedded GPU"       # 임베디드 변형
+    r"|Embedded"           # 임베디드 (catch-all)
+    r"|^Radeon PRO "       # AMD 워크스테이션 (대문자)
+    r"|^Radeon Pro "       # AMD 워크스테이션 (소문자)
+    r"|^Radeon AI PRO"     # AMD AI 가속기/워크스테이션
+    r"|^Intel Arc Pro"     # Intel 워크스테이션
+    r"|^T\d{3}"            # T400/T600/T1000/T2000 Quadro T 계열
+    r"|Generation Embedded"
+    r"|^RTX \d+ Ada"       # RTX xxxx Ada Generation 워크스테이션 전체
+    r"|^A\d{4} "           # A4500, A5500 등 워크스테이션
+    r"|^NVIDIA RTX A"      # 전체 NVIDIA RTX A 계열
+    r"| SFF Edition"       # SFF 워크스테이션 에디션
+    r"|Workstation Edition"  # 워크스테이션 에디션 명시
+)
+
+
+def _is_workstation_gpu(name: str) -> bool:
+    return bool(_GPU_WORKSTATION_RE.search(name))
 
 # 메인보드 칩셋 등급 분류 (0=프리미엄, 2=메인스트림, 4=보급)
 # board_specs.json의 칩셋 값은 "AMD X870E" / "Intel Z790" 형식이므로
@@ -88,6 +114,9 @@ def _filter_passmark(
     target_tier: int,
     budget: int | None,
     exchange_rate: float | None,
+    min_score: int | None = None,
+    exclude_fn=None,
+    max_results: int = _MAX_CANDS,
 ) -> list[dict]:
     tier_min = max(1, target_tier - _TIER_BELOW)
     tier_max = min(MAX_TIER, target_tier + _TIER_ABOVE)
@@ -96,6 +125,14 @@ def _filter_passmark(
     for item in items:
         tier = calc_tier_fn(item.get("score"))
         if tier is None or not (tier_min <= tier <= tier_max):
+            continue
+
+        # 현재 하드웨어보다 낮은 점수의 후보 제외 (다운그레이드 방지)
+        if min_score is not None and (item.get("score") or 0) <= min_score:
+            continue
+
+        # 워크스테이션/전문가용 부품 제외
+        if exclude_fn is not None and exclude_fn(item.get("name", "")):
             continue
 
         price_usd = parse_price_usd(item.get("price_usd", "NA"))
@@ -117,7 +154,42 @@ def _filter_passmark(
         abs(x["performance_tier"] - target_tier),
         -(x["passmark_score"] or 0),
     ))
-    return candidates[:_MAX_CANDS]
+    return candidates[:max_results]
+
+
+def _diversify_cpu_candidates(candidates: list[dict], target_tier: int) -> list[dict]:
+    """
+    Intel/AMD 후보를 번갈아 배치해 제조사 다양성을 보장한다.
+    AMD를 먼저 배치해 게임용 사용자가 Ryzen 옵션을 볼 수 있도록 한다.
+    """
+    def _is_amd(name: str) -> bool:
+        n = (name or "").lower()
+        return "ryzen" in n or "amd " in n or "threadripper" in n or "athlon" in n
+
+    def _is_intel(name: str) -> bool:
+        n = (name or "").lower()
+        return "intel" in n or "core i" in n or "core ultra" in n
+
+    def _sort_key(x):
+        return (abs(x["performance_tier"] - target_tier), -(x["passmark_score"] or 0))
+
+    amd_pool   = sorted([c for c in candidates if _is_amd(c.get("name", ""))],   key=_sort_key)
+    intel_pool = sorted([c for c in candidates if _is_intel(c.get("name", ""))], key=_sort_key)
+    other_pool = sorted(
+        [c for c in candidates if not _is_amd(c.get("name", "")) and not _is_intel(c.get("name", ""))],
+        key=_sort_key,
+    )
+
+    result: list[dict] = []
+    while amd_pool or intel_pool or other_pool:
+        if amd_pool:
+            result.append(amd_pool.pop(0))
+        if intel_pool:
+            result.append(intel_pool.pop(0))
+        if other_pool:
+            result.append(other_pool.pop(0))
+
+    return result[:_MAX_CANDS]
 
 
 # ── RAM / SSD / HDD 검색 쿼리 생성 ───────────────────────────────────
@@ -245,7 +317,10 @@ def filter_spec_candidates(
                     pre_cands = _filter_passmark(
                         _cpu_items, calculate_cpu_tier,
                         t["target_tier"], part_budgets.get("CPU"), exchange_rate,
+                        min_score=t.get("current_score"),
+                        max_results=30,
                     )
+                    pre_cands = _diversify_cpu_candidates(pre_cands, t["target_tier"])
                     if pre_cands:
                         inferred = infer_socket_from_cpu_name(pre_cands[0]["name"])
                         if inferred:
@@ -268,17 +343,21 @@ def filter_spec_candidates(
                     except Exception:
                         _cpu_items = []
 
-                cands = _filter_passmark(
+                # CPU 다양성 보장을 위해 더 넓은 후보 풀을 모은 뒤 인터리브
+                cands_pool = _filter_passmark(
                     _cpu_items, calculate_cpu_tier, target_tier,
                     part_budgets.get("CPU"), exchange_rate,
+                    min_score=target.get("current_score"),
+                    max_results=30,
                 )
 
                 # keep 모드: 현재 소켓 호환 CPU만 남김
                 if not upgrade_motherboard and socket:
                     patterns = cpu_patterns_for_socket(socket)
                     if patterns:
-                        cands = [c for c in cands if any(p.search(c.get("name", "")) for p in patterns)]
+                        cands_pool = [c for c in cands_pool if any(p.search(c.get("name", "")) for p in patterns)]
 
+                cands = _diversify_cpu_candidates(cands_pool, target_tier)
                 query = cands[0]["name"] if cands else "CPU"
                 result.append({**target, "candidates": cands, "search_query": query})
             else:
@@ -320,6 +399,8 @@ def filter_spec_candidates(
             cands = _filter_passmark(
                 _gpu_items, calculate_gpu_tier, target_tier,
                 part_budgets.get("GPU"), exchange_rate,
+                min_score=target.get("current_score"),
+                exclude_fn=_is_workstation_gpu,
             )
             query = cands[0]["name"] if cands else "GPU"
             result.append({**target, "candidates": cands, "search_query": query})

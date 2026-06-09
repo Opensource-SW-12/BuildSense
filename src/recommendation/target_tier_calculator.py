@@ -10,17 +10,19 @@ import re
 
 from src.pricing.passmark_tiering import MAX_TIER
 
-# 등급별 tier 점프 폭
+# 등급별 tier 점프 폭 (29단계 기준)
+# high +6 ≈ 한 세대 이상 점프 (예: tier 12→18, mid → high-end)
+# medium +3 ≈ 체감 가능한 업그레이드
 _TIER_JUMP: dict[str, int] = {
-    "high":    3,
-    "medium":  2,
+    "high":    6,
+    "medium":  3,
     "unknown": 0,
 }
 
 # tier 매칭 실패(None) 시 등급별 고정 목표 tier
 _FALLBACK_TARGET_TIER: dict[str, int] = {
-    "high":    20,
-    "medium":  15,
+    "high":    22,
+    "medium":  17,
     "unknown": 18,
 }
 
@@ -49,22 +51,24 @@ def _next_step(current: int, steps: list[int], min_mult: float) -> int:
 
 # ── CPU / GPU 계산 ────────────────────────────────────────────────────
 
-def _calc_cpu_gpu_tier(current_tier: int | None, grade: str) -> dict:
+def _calc_cpu_gpu_tier(current_tier: int | None, grade: str, current_score: int | None = None) -> dict:
     jump = _TIER_JUMP.get(grade, 0)
 
     if current_tier is not None:
         target = min(current_tier + jump, MAX_TIER)
         return {
-            "current_tier": current_tier,
-            "target_tier":  target,
-            "target_spec":  None,
+            "current_tier":  current_tier,
+            "current_score": current_score,
+            "target_tier":   target,
+            "target_spec":   None,
         }
 
     # tier 매칭 실패 → 고정 목표
     return {
-        "current_tier": None,
-        "target_tier":  _FALLBACK_TARGET_TIER.get(grade, 15),
-        "target_spec":  None,
+        "current_tier":  None,
+        "current_score": current_score,
+        "target_tier":   _FALLBACK_TARGET_TIER.get(grade, 15),
+        "target_spec":   None,
     }
 
 
@@ -157,12 +161,12 @@ def calculate_target_tiers(
         grade = target["grade"]
 
         if part == "CPU":
-            cpu_tier = (hw_tiers.get("cpu") or {}).get("tier")
-            tier_data = _calc_cpu_gpu_tier(cpu_tier, grade)
+            cpu_match = hw_tiers.get("cpu") or {}
+            tier_data = _calc_cpu_gpu_tier(cpu_match.get("tier"), grade, cpu_match.get("passmark_score"))
 
         elif part == "GPU":
-            gpu_tier = (hw_tiers.get("gpu") or {}).get("tier")
-            tier_data = _calc_cpu_gpu_tier(gpu_tier, grade)
+            gpu_match = hw_tiers.get("gpu") or {}
+            tier_data = _calc_cpu_gpu_tier(gpu_match.get("tier"), grade, gpu_match.get("passmark_score"))
 
         elif part == "RAM":
             tier_data = _calc_ram(grade, hw_info)
