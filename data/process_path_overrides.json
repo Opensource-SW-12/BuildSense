@@ -1,0 +1,26 @@
+{
+  "javaw.exe": [
+    ["minecraft", "game"],
+    ["curseforge", "game"],
+    ["technic", "game"],
+    ["multimc", "game"],
+    ["prismlauncher", "game"],
+    ["lunarclient", "game"],
+    ["badlion", "game"],
+    ["jetbrains", "development"],
+    ["intellij", "development"],
+    ["android", "development"],
+    ["eclipse", "development"]
+  ],
+  "update.exe": [
+    ["discord", "messenger"],
+    ["slack", "messenger"],
+    ["microsoft\\teams", "messenger"],
+    ["telegram", "messenger"],
+    ["whatsapp", "messenger"],
+    ["github desktop", "development"],
+    ["githubdesktop", "development"],
+    ["notion", "document"],
+    ["figma", "creative"]
+  ]
+}

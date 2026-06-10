@@ -8,17 +8,27 @@ def _make_logs(procs_per_snapshot):
     return [{"processes": procs} for procs in procs_per_snapshot]
 
 
-def _proc(name, cpu=0.0, mem=100.0):
-    return {"name": name, "cpu_percent": cpu, "memory_mb": mem}
+def _proc(name, cpu=0.0, mem=100.0, exe=""):
+    return {"name": name, "cpu_percent": cpu, "memory_mb": mem, "exe": exe}
 
 
-MOCK_CATEGORIES = {"game": ["game.exe"], "creative": ["photoshop.exe"], "browser": ["chrome.exe"]}
+MOCK_CATEGORIES = {
+    "game": ["game.exe", "javaw.exe"],
+    "creative": ["photoshop.exe"],
+    "browser": ["chrome.exe"],
+    "messenger": ["update.exe"],
+}
+
+MOCK_PATH_OVERRIDES = {
+    "javaw.exe": [("jetbrains", "development"), ("minecraft", "game")],
+}
 
 
 @pytest.fixture(autouse=True)
 def patch_categories():
     flat = {name: cat for cat, names in MOCK_CATEGORIES.items() for name in names}
-    with patch("src.analysis.process_usage._get_categories", return_value=flat):
+    with patch("src.analysis.process_usage._get_categories", return_value=flat), \
+         patch("src.analysis.process_usage._get_path_overrides", return_value=MOCK_PATH_OVERRIDES):
         yield
 
 
@@ -79,6 +89,36 @@ class TestAnalyzeProcessUsageExtraCategories:
         logs = _make_logs([[_proc("game.exe", cpu=50.0)]] * 5)
         result = analyze_process_usage(logs, extra_categories=None)
         assert "game" in result["category_summary"]
+
+
+class TestAnalyzeProcessUsagePathOverrides:
+    def test_path_override_reclassifies_by_keyword(self):
+        logs = _make_logs([[_proc("javaw.exe", cpu=40.0, exe=r"C:\Program Files\JetBrains\IntelliJ\jbr\bin\javaw.exe")]] * 5)
+        result = analyze_process_usage(logs)
+        assert result["category_summary"].get("development", 0) > 0
+        assert "game" not in result["category_summary"]
+
+    def test_no_matching_keyword_falls_back_to_default_category(self):
+        logs = _make_logs([[_proc("javaw.exe", cpu=40.0, exe=r"C:\Users\me\AppData\Roaming\Unknown\javaw.exe")]] * 5)
+        result = analyze_process_usage(logs)
+        assert result["category_summary"].get("game", 0) > 0
+        assert "development" not in result["category_summary"]
+
+    def test_missing_exe_path_falls_back_to_default_category(self):
+        logs = _make_logs([[_proc("javaw.exe", cpu=40.0)]] * 5)
+        result = analyze_process_usage(logs)
+        assert result["category_summary"].get("game", 0) > 0
+
+    def test_extra_categories_take_priority_over_path_override(self):
+        logs = _make_logs([[_proc("javaw.exe", cpu=40.0, exe=r"C:\JetBrains\bin\javaw.exe")]] * 5)
+        result = analyze_process_usage(logs, extra_categories={"javaw.exe": "creative"})
+        assert result["category_summary"].get("creative", 0) > 0
+        assert "development" not in result["category_summary"]
+
+    def test_process_without_override_rules_unaffected(self):
+        logs = _make_logs([[_proc("update.exe", cpu=10.0, exe=r"C:\Users\me\AppData\Local\Discord\Update.exe")]] * 5)
+        result = analyze_process_usage(logs)
+        assert result["category_summary"].get("messenger", 0) > 0
 
 
 class TestAnalyzeProcessUsageEdgeCases:

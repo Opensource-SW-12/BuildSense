@@ -1,9 +1,10 @@
 import json
 from collections import defaultdict
 
-from src.config import PROCESS_CATEGORIES_PATH
+from src.config import PROCESS_CATEGORIES_PATH, PROCESS_PATH_OVERRIDES_PATH
 
 _CATEGORIES_PATH = PROCESS_CATEGORIES_PATH
+_PATH_OVERRIDES_PATH = PROCESS_PATH_OVERRIDES_PATH
 _TOP_N = 10
 
 
@@ -30,9 +31,41 @@ def _get_categories() -> dict[str, str]:
     return _CATEGORIES
 
 
+def _load_path_overrides() -> dict[str, list[tuple[str, str]]]:
+    """프로세스 이름만으로 분류가 모호한 경우(javaw.exe 등) 실행 경로의
+    키워드로 카테고리를 재지정한다. {process_name: [(path_keyword, category), ...]}"""
+    try:
+        with open(_PATH_OVERRIDES_PATH, "r", encoding="utf-8") as f:
+            raw = json.load(f)
+        return {
+            name.lower(): [(keyword.lower(), category) for keyword, category in rules]
+            for name, rules in raw.items()
+        }
+    except Exception:
+        return {}
+
+
+_PATH_OVERRIDES: dict[str, list[tuple[str, str]]] | None = None
+
+
+def _get_path_overrides() -> dict[str, list[tuple[str, str]]]:
+    global _PATH_OVERRIDES
+    if _PATH_OVERRIDES is None:
+        _PATH_OVERRIDES = _load_path_overrides()
+    return _PATH_OVERRIDES
+
+
+def _resolve_category(name: str, exe: str, name_to_category: dict[str, str], path_overrides: dict[str, list[tuple[str, str]]]) -> str:
+    for keyword, category in path_overrides.get(name, []):
+        if keyword in exe:
+            return category
+    return name_to_category.get(name, "etc")
+
+
 def analyze_process_usage(logs, top_n: int = _TOP_N, extra_categories: dict | None = None) -> dict:
     """extra_categories: {process_name_lower: category} — user_preferences의 수동 분류를 반영한다."""
     name_to_category = _get_categories()
+    path_overrides = _get_path_overrides()
     _extra = {k.lower(): v for k, v in (extra_categories or {}).items()}
     total_snapshots = len(logs)
 
@@ -41,6 +74,7 @@ def analyze_process_usage(logs, top_n: int = _TOP_N, extra_categories: dict | No
     cpu_cnt:    dict[str, int]     = defaultdict(int)
     mem_sum:    dict[str, float]   = defaultdict(float)
     mem_cnt:    dict[str, int]     = defaultdict(int)
+    exe_path:   dict[str, str]     = {}
 
     for log in logs:
         seen = set()
@@ -50,6 +84,9 @@ def analyze_process_usage(logs, top_n: int = _TOP_N, extra_categories: dict | No
                 continue
             seen.add(name)
             appearance[name] += 1
+
+            if name not in exe_path:
+                exe_path[name] = (proc.get("exe") or "").lower()
 
             cpu = proc.get("cpu_percent")
             if cpu is not None:
@@ -67,7 +104,7 @@ def analyze_process_usage(logs, top_n: int = _TOP_N, extra_categories: dict | No
             "appearance_ratio": appearance[name] / total_snapshots if total_snapshots > 0 else 0,
             "avg_cpu_percent":  cpu_sum[name] / cpu_cnt[name] if cpu_cnt[name] > 0 else None,
             "avg_memory_mb":    mem_sum[name] / mem_cnt[name] if mem_cnt[name] > 0 else None,
-            "category":         _extra.get(name) or name_to_category.get(name, "etc"),
+            "category":         _extra.get(name) or _resolve_category(name, exe_path.get(name, ""), name_to_category, path_overrides),
         }
 
     all_stats = {name: _stats(name) for name in appearance}

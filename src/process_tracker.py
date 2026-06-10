@@ -13,11 +13,16 @@ def get_running_processes() -> list[dict]:
       info = proc.info
       memory_mb = round(info["memory_info"].rss / (1024 * 1024), 2) if info["memory_info"] else 0.0
       cpu = info["cpu_percent"] or 0.0
+      try:
+        exe = proc.exe()
+      except (psutil.AccessDenied, psutil.NoSuchProcess, OSError):
+        exe = ""
       processes.append({
         "pid": info["pid"],
         "name": info["name"] or "",
         "cpu_percent": round(cpu, 2),
         "memory_mb": memory_mb,
+        "exe": exe,
       })
     except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
       continue
