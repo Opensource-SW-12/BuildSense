@@ -12,6 +12,8 @@ logs/*
 reports/*
 
 !data/.gitkeep
+!data/process_categories.json
+!data/process_path_overrides.json
 !data/specs/
 !data/specs/*.json
 
