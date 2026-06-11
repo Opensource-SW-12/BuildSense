@@ -27,6 +27,8 @@ _sim_run.log
 dist/
 build/
 *.spec
+!BuildSense.spec
+installer/Output/
 
 .DS_Store
 Thumbs.db
