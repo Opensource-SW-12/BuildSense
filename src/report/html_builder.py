@@ -30,6 +30,7 @@ _KNOWLEDGE_LEVEL_KO = {
 _PART_OPTION_KO = {
     "recommend": "추천",
     "keep":      "유지",
+    "owned":     "보유",
 }
 
 _RGB_PREFERENCE_KO = {
@@ -299,9 +300,18 @@ def _section_user_input(data: dict) -> str:
     ])
 
     parts_config = profile.get("parts") or {}
+
+    def _part_option_label(part_state: dict) -> str:
+        option = part_state.get("option")
+        if option == "owned":
+            owned_name = (part_state.get("owned_product") or {}).get("name")
+            if owned_name:
+                return f"보유 · {html.escape(owned_name)}"
+        return _PART_OPTION_KO.get(option, "-")
+
     part_tags = "".join(
         f'<span class="tag" style="color:#A6AEC8;background:#1E2433;border-color:#2D3748">'
-        f'{html.escape(part)} · {_PART_OPTION_KO.get((parts_config.get(part) or {}).get("option"), "-")}</span>'
+        f'{html.escape(part)} · {_part_option_label(parts_config.get(part) or {})}</span>'
         for part in ["CPU", "GPU", "RAM", "SSD", "HDD", "메인보드", "파워"]
         if part in parts_config
     )

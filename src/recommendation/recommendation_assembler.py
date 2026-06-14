@@ -11,10 +11,11 @@
 """
 
 from src.platform_mapper                        import infer_socket_from_cpu_name
+from src.pricing.passmark_tiering               import calculate_gpu_tier
 from src.recommendation.chipset_tier_mapper     import map_hardware_to_tiers
 from src.recommendation.upgrade_target_selector import select_upgrade_targets
 from src.recommendation.target_tier_calculator  import calculate_target_tiers
-from src.recommendation.spec_candidate_filter   import filter_spec_candidates
+from src.recommendation.spec_candidate_filter   import filter_spec_candidates, get_board_candidates
 from src.recommendation.price_resolver          import resolve_prices
 
 # score_psu grade(gold/platinum/titanium) → 사용자 표시 레이블
@@ -97,6 +98,33 @@ def _build_psu_item(
     }
 
 
+def _build_motherboard_item_for_owned_cpu(
+    socket: str,
+    owned_cpu_name: str,
+    color_suffix: str = "",
+) -> dict:
+    """'보유' CPU의 소켓을 기준으로 메인보드 호환성 체크 항목을 생성한다. (KAN-195)"""
+    board_cands = get_board_candidates(socket, target_cpu_name=owned_cpu_name)
+
+    return {
+        "part":         "Motherboard",
+        "score":        0.0,
+        "grade":        "medium",
+        "priority":     0.3,
+        "reason":       (
+            f"보유 예정인 {owned_cpu_name} 기준 {socket} 소켓 호환 메인보드입니다."
+        ),
+        "current_tier": None,
+        "target_tier":  None,
+        "target_spec": {
+            "socket": socket,
+            "note":   f"{socket} 소켓 호환 메인보드",
+        },
+        "candidates":   board_cands,
+        "search_query": f"메인보드 {socket}{color_suffix}",
+    }
+
+
 def assemble_recommendations(
     scores: dict,
     hw_info: dict,
@@ -150,10 +178,34 @@ def assemble_recommendations(
     _color_pref = (user_preferences or {}).get("color_preference", "none")
     _color_sfx  = {"black": " 블랙", "white": " 화이트"}.get(_color_pref, "")
 
+    parts_config = (user_profile or {}).get("parts", {})
+
+    # KAN-195: CPU '보유' + 메인보드 '추천' → 보유 예정 CPU의 소켓 기준 메인보드 호환성 체크
+    cpu_state = parts_config.get("CPU", {})
+    if cpu_state.get("option") == "owned" and parts_config.get("메인보드", {}).get("option") == "recommend":
+        owned_cpu_name = (cpu_state.get("owned_product") or {}).get("name")
+        owned_socket = infer_socket_from_cpu_name(owned_cpu_name) if owned_cpu_name else None
+        if owned_socket:
+            filtered.append(_build_motherboard_item_for_owned_cpu(owned_socket, owned_cpu_name, color_suffix=_color_sfx))
+
     gpu_item = next((t for t in filtered if t["part"] == "GPU"), None)
     if gpu_item is not None:
         cpu_item = next((t for t in filtered if t["part"] == "CPU"), None)
         filtered.append(_build_psu_item(scores.get("psu", {}), gpu_item, cpu_item, color_suffix=_color_sfx))
+    else:
+        # KAN-195: GPU '보유' → 보유 예정 GPU의 tier 기준 PSU 호환성 체크
+        gpu_state = parts_config.get("GPU", {})
+        if gpu_state.get("option") == "owned":
+            owned_gpu = gpu_state.get("owned_product") or {}
+            owned_gpu_tier = calculate_gpu_tier(owned_gpu.get("score"))
+            if owned_gpu_tier is not None:
+                cpu_item = next((t for t in filtered if t["part"] == "CPU"), None)
+                owned_gpu_item = {"part": "GPU", "target_tier": owned_gpu_tier}
+                psu_item = _build_psu_item(scores.get("psu", {}), owned_gpu_item, cpu_item, color_suffix=_color_sfx)
+                psu_item["reason"] = (
+                    f"보유 예정인 {owned_gpu.get('name', '')} 기준 PSU 용량 호환성을 확인합니다."
+                )
+                filtered.append(psu_item)
 
     resolved = resolve_prices(filtered, color_suffix=_color_sfx)
 

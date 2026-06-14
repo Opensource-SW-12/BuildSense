@@ -306,7 +306,7 @@ def _load_board_specs() -> list[dict]:
         return []
 
 
-def _get_board_candidates(socket: str, target_cpu_name: str | None = None) -> list[dict]:
+def get_board_candidates(socket: str, target_cpu_name: str | None = None) -> list[dict]:
     """소켓 호환 메인보드를 칩셋 등급별로 최대 3개(상위/중간/보급) 반환한다.
 
     target_cpu_name: 추천 대상 CPU 이름. AM4 소켓에서 Ryzen 5000(Zen 3)이면
@@ -503,7 +503,7 @@ def filter_spec_candidates(
                 target_socket = effective_socket or socket
                 if target_socket:
                     _top_cpu = cands[0]["name"] if cands else None
-                    board_cands = _get_board_candidates(target_socket, target_cpu_name=_top_cpu)
+                    board_cands = get_board_candidates(target_socket, target_cpu_name=_top_cpu)
                     result.append({
                         "part":         "Motherboard",
                         "score":        0.0,
