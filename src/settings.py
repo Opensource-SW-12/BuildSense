@@ -13,7 +13,14 @@ PARTS = ["CPU", "GPU", "RAM", "SSD", "HDD", "메인보드", "파워"]
 PART_OPTIONS = [
   ("추천", "recommend"),
   ("유지", "keep"),
+  ("보유", "owned"),
 ]
+
+# CPU/GPU 외 부품은 "보유"(이미 구매한 부품 호환성 체크) 옵션을 제공하지 않음
+PART_OPTIONS_BASIC = PART_OPTIONS[:2]
+
+# "보유" 옵션을 제공하는 부품 (호환성 체크: CPU→메인보드 소켓, GPU→파워 용량)
+OWNED_CAPABLE_PARTS = ["CPU", "GPU"]
 
 KNOWLEDGE_LEVEL_LABELS = {value: label for label, value in KNOWLEDGE_LEVELS}
 PART_OPTION_LABELS = {value: label for label, value in PART_OPTIONS}
@@ -58,7 +65,12 @@ PART_DESCRIPTIONS = {
 
 
 def build_settings_state() -> dict:
-  parts = {part: {"option": "recommend"} for part in PARTS}
+  parts = {}
+  for part in PARTS:
+    state = {"option": "recommend"}
+    if part in OWNED_CAPABLE_PARTS:
+      state["owned_product"] = None
+    parts[part] = state
   return {
     "knowledge_level": "intermediate",
     "analysis_days": ANALYSIS_DAYS_DEFAULT,

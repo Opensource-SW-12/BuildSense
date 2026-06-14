@@ -1,7 +1,13 @@
 from dataclasses import dataclass
 from enum import Enum
 
-from src.settings import ANALYSIS_DAYS_MIN, ANALYSIS_DAYS_MAX, ANALYSIS_DAYS_DEFAULT, PARTS
+from src.settings import (
+  ANALYSIS_DAYS_MIN,
+  ANALYSIS_DAYS_MAX,
+  ANALYSIS_DAYS_DEFAULT,
+  PARTS,
+  OWNED_CAPABLE_PARTS,
+)
 
 
 # ------------------------------------------------------------------
@@ -16,6 +22,7 @@ class ErrorCode(Enum):
   DAYS_ABOVE_MAX  = "E003"
   # 부품 선택
   PARTS_ALL_KEEP  = "E004"
+  PART_OWNED_NOT_SELECTED = "E005"
 
 
 # ------------------------------------------------------------------
@@ -81,4 +88,20 @@ def validate_parts_not_all_keep(parts_state: dict) -> ValidationResult:
       message="분석 항목이 없습니다.\n추천받을 부품을 하나 이상 선택해 주세요.",
       error_code=ErrorCode.PARTS_ALL_KEEP,
     )
+  return ValidationResult(valid=True)
+
+
+def validate_owned_parts_selected(parts_state: dict) -> ValidationResult:
+  """'보유' 옵션을 선택한 CPU/GPU에 대해 '제품 찾기'로 후보를 선택했는지 검증한다."""
+  for part in OWNED_CAPABLE_PARTS:
+    part_state = parts_state.get(part, {})
+    if part_state.get("option") == "owned" and not part_state.get("owned_product"):
+      return ValidationResult(
+        valid=False,
+        message=(
+          f"{part} '보유'를 선택했지만 제품이 선택되지 않았습니다.\n"
+          "'제품 찾기'로 보유 중인 제품을 검색하고 선택해 주세요."
+        ),
+        error_code=ErrorCode.PART_OWNED_NOT_SELECTED,
+      )
   return ValidationResult(valid=True)

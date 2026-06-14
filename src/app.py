@@ -18,13 +18,16 @@ from src.settings import (
   ANALYSIS_DAYS_MAX,
   PARTS,
   PART_OPTIONS,
+  PART_OPTIONS_BASIC,
   PART_OPTION_LABELS,
   PART_DESCRIPTIONS,
+  OWNED_CAPABLE_PARTS,
   build_settings_state,
 )
 from src.hardware import get_hardware_info
 from src.storage import save_user_profile, save_user_preferences, delete_all_monitoring_data, read_user_profile, init_log_line_count, get_log_line_count
-from src.validators import validate_analysis_days, validate_parts_not_all_keep
+from src.validators import validate_analysis_days, validate_parts_not_all_keep, validate_owned_parts_selected
+from src.recommendation.chipset_tier_mapper import search_passmark_candidates
 from src.monitor import start_monitoring_loop, stop_monitoring_loop, is_monitoring_running
 from src.background import join_background_task
 from src.config import USAGE_LOG_PATH, ANALYSIS_DIR
@@ -209,6 +212,11 @@ class BuildSenseApp:
     self._part_hw_frames = {}
     self._part_radio_widgets = {}
     self._part_desc_labels = {}
+    self._part_owned_frames = {}
+    self._owned_query_vars = {}
+    self._owned_results_frames = {}
+    self._owned_selected_labels = {}
+    self._owned_candidate_vars = {}
     self._report_path: str | None = None
 
     if startup_state == StartupState.RESUME:
@@ -786,6 +794,11 @@ class BuildSenseApp:
     self._part_hw_frames = {}
     self._part_radio_widgets = {}
     self._part_desc_labels = {}
+    self._part_owned_frames = {}
+    self._owned_query_vars = {}
+    self._owned_results_frames = {}
+    self._owned_selected_labels = {}
+    self._owned_candidate_vars = {}
 
     # ── 알약형 토글 그룹 헬퍼 (지식 수준 / 부품 옵션 공용) ─────────
     # ── 하단 고정 내비게이션 ───────────────────────────────────────
@@ -924,7 +937,8 @@ class BuildSenseApp:
       var = tk.StringVar(value=part_state["option"])
       self._part_vars[part] = var
 
-      toggle = _make_toggle(top_row, PART_OPTIONS, var,
+      part_options = PART_OPTIONS if part in OWNED_CAPABLE_PARTS else PART_OPTIONS_BASIC
+      toggle = _make_toggle(top_row, part_options, var,
                             on_change=lambda v, p=part: self._on_part_option_change(p),
                             seg_w=64, seg_h=30, gap=6, bg=CARD)
       toggle.pack(side=tk.RIGHT, anchor="n")
@@ -943,8 +957,51 @@ class BuildSenseApp:
       hw_badge = _badge(hw_frame, f"현재 장착 · {hw_text}", bg=BADGE_BG, fg=BADGE_FG)
       hw_badge.pack(anchor="w")
 
+      # 보유 제품 검색 (보유 선택 시, CPU/GPU만)
+      owned_frame = None
+      if part in OWNED_CAPABLE_PARTS:
+        owned_frame = tk.Frame(card, bg=CARD)
+        self._part_owned_frames[part] = owned_frame
+
+        search_row = tk.Frame(owned_frame, bg=CARD)
+        search_row.pack(fill=tk.X)
+
+        query_var = tk.StringVar(value="")
+        self._owned_query_vars[part] = query_var
+
+        entry = tk.Entry(
+          search_row, textvariable=query_var,
+          font=("Segoe UI", 10),
+          bg=BG, fg=WHITE, insertbackground=WHITE,
+          relief=tk.FLAT, highlightthickness=1,
+          highlightbackground=DIVIDER, highlightcolor=TEAL,
+        )
+        entry.pack(side=tk.LEFT, fill=tk.X, expand=True, ipady=4, ipadx=6, padx=(0, 8))
+
+        search_btn = _pill(search_row, "제품 찾기", BLUE, WHITE,
+                           width=92, height=32, font_size=9, bg=CARD)
+        search_btn.pack(side=tk.LEFT)
+        search_btn.bind("<Button-1>", lambda e, p=part: self._on_search_owned_product(p))
+
+        selected_label = tk.Label(
+          owned_frame, text="", fg=TEAL, bg=CARD,
+          font=("Segoe UI", 9, "bold"), anchor="w",
+        )
+        selected_label.pack(anchor="w", pady=(8, 0))
+        self._owned_selected_labels[part] = selected_label
+
+        owned_product = part_state.get("owned_product")
+        if owned_product:
+          selected_label.config(text=f"선택됨 · {owned_product.get('name', '')}")
+
+        results_frame = tk.Frame(owned_frame, bg=CARD)
+        results_frame.pack(fill=tk.X, pady=(8, 0))
+        self._owned_results_frames[part] = results_frame
+
       if part_state["option"] == "keep":
         hw_frame.pack(fill=tk.X, pady=(12, 0))
+      elif part_state["option"] == "owned" and owned_frame is not None:
+        owned_frame.pack(fill=tk.X, pady=(12, 0))
 
     # 초기 지식 수준에 따른 부품 섹션 상태 반영
     self._on_knowledge_change()
@@ -1205,6 +1262,10 @@ class BuildSenseApp:
         hw = self._hardware_info.get(part, "")
         if hw:
           name_text += f"  ({hw})"
+      elif option == "owned":
+        owned_name = (part_state.get("owned_product") or {}).get("name")
+        if owned_name:
+          name_text += f"  ({owned_name})"
       tk.Label(row, text=name_text, fg=WHITE, bg=CARD,
                font=("Segoe UI", 10)).pack(side=tk.LEFT)
 
@@ -1225,6 +1286,11 @@ class BuildSenseApp:
 
     def _on_start():
       result = validate_parts_not_all_keep(self.settings_state["parts"])
+      if not result.valid:
+        messagebox.showwarning(title="BuildSense", message=result.message)
+        return
+
+      result = validate_owned_parts_selected(self.settings_state["parts"])
       if not result.valid:
         messagebox.showwarning(title="BuildSense", message=result.message)
         return
@@ -1301,15 +1367,61 @@ class BuildSenseApp:
         if toggle is not None:
           toggle.redraw()
         self._part_hw_frames[part].pack_forget()
+        owned_frame = self._part_owned_frames.get(part)
+        if owned_frame is not None:
+          owned_frame.pack_forget()
 
   def _on_part_option_change(self, part: str):
     value = self._part_vars[part].get()
     hw_frame = self._part_hw_frames[part]
+    owned_frame = self._part_owned_frames.get(part)
 
     hw_frame.pack_forget()
+    if owned_frame is not None:
+      owned_frame.pack_forget()
 
     if value == "keep":
       hw_frame.pack(fill=tk.X, pady=(12, 0))
+    elif value == "owned" and owned_frame is not None:
+      owned_frame.pack(fill=tk.X, pady=(12, 0))
+
+  def _on_search_owned_product(self, part: str):
+    query = self._owned_query_vars[part].get().strip()
+    category = "cpu" if part == "CPU" else "gpu"
+    candidates = search_passmark_candidates(query, category) if query else []
+    self._render_owned_candidates(part, candidates)
+
+  def _render_owned_candidates(self, part: str, candidates: list[dict]):
+    results_frame = self._owned_results_frames[part]
+    for child in results_frame.winfo_children():
+      child.destroy()
+
+    if not candidates:
+      tk.Label(results_frame, text="검색 결과가 없습니다.", fg=GRAY, bg=CARD,
+               font=("Segoe UI", 9)).pack(anchor="w")
+      return
+
+    current = (self.settings_state["parts"][part].get("owned_product") or {}).get("name")
+    var = tk.StringVar(value=current if any(item.get("name") == current for item in candidates) else "")
+    self._owned_candidate_vars[part] = var
+
+    for item in candidates:
+      tk.Radiobutton(
+        results_frame,
+        text=item.get("name", ""),
+        variable=var,
+        value=item.get("name", ""),
+        font=("Segoe UI", 9),
+        command=lambda p=part, it=item: self._on_select_owned_candidate(p, it),
+        bg=CARD, fg=GRAY, activebackground=CARD, activeforeground=WHITE,
+        selectcolor=BG, highlightthickness=0,
+      ).pack(anchor="w")
+
+  def _on_select_owned_candidate(self, part: str, item: dict):
+    self.settings_state["parts"][part]["owned_product"] = item
+    label = self._owned_selected_labels.get(part)
+    if label is not None:
+      label.config(text=f"선택됨 · {item.get('name', '')}")
 
   # ------------------------------------------------------------------
   # 검증 및 상태 동기화
