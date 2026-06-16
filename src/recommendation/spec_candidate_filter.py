@@ -294,13 +294,14 @@ def _color_suffix(color_pref: str) -> str:
     return {"black": " 블랙", "white": " 화이트"}.get(color_pref, "")
 
 
-def _ram_query(spec: dict, socket: str | None = None, color_pref: str = "none") -> str:
+def _ram_query(spec: dict, socket: str | None = None, color_pref: str = "none", rgb_pref: str = "none") -> str:
     cap = _gb_str(spec.get("target_gb", 16))
     ddr = socket_to_ram_type(socket)
+    rgb_sfx = " RGB" if rgb_pref == "yes" else ""
     sfx = _color_suffix(color_pref)
     if ddr:
-        return f"{ddr} RAM {cap}{sfx}"
-    return f"RAM {cap}{sfx}"
+        return f"{ddr} RAM {cap}{rgb_sfx}{sfx}"
+    return f"RAM {cap}{rgb_sfx}{sfx}"
 
 
 def _ssd_query(spec: dict, socket: str | None = None) -> str:
@@ -403,6 +404,7 @@ def filter_spec_candidates(
     budget_mode  = prefs.get("budget_mode", "recommended")
     part_budgets: dict[str, int | None] = prefs.get("budgets", {}) if budget_mode == "custom" else {}
     color_pref   = prefs.get("color_preference", "none")
+    rgb_pref     = prefs.get("rgb_preference", "none")
     if upgrade_motherboard is None:
         upgrade_motherboard = prefs.get("upgrade_motherboard", False)
 
@@ -564,7 +566,7 @@ def filter_spec_candidates(
             result.append({**target, "candidates": cands, "search_query": query})
 
         elif part == "RAM" and target_spec:
-            query = _ram_query(target_spec, effective_socket, color_pref)
+            query = _ram_query(target_spec, effective_socket, color_pref, rgb_pref)
             result.append({**target, "candidates": [], "search_query": query})
 
         elif part == "SSD" and target_spec:
