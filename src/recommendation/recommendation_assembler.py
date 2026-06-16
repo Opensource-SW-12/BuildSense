@@ -167,10 +167,13 @@ def assemble_recommendations(
     upgrade_motherboard = (
         (user_profile or {}).get("parts", {}).get("메인보드", {}).get("option") == "recommend"
     )
+    user_types = scores.get("user_classification", {}).get("user_type") or []
+    primary_user_type = user_types[0] if user_types else None
     filtered = filter_spec_candidates(
         enriched, user_preferences, socket=socket,
         upgrade_motherboard=upgrade_motherboard,
         current_cpu=hw_info.get("CPU"),
+        user_type=primary_user_type,
     )
 
     # GPU 업그레이드가 추천 목록에 포함된 경우 PSU 의존성 항목을 resolve_prices 전에 추가해

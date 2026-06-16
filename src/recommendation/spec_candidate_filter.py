@@ -27,6 +27,11 @@ _TIER_BELOW    = 1   # target_tier - 1 이상
 _TIER_ABOVE    = 2   # target_tier + 2 이하
 _MAX_CANDS     = 5   # 부품당 최대 후보 수
 
+# ── X3D 게임 성능 보정 ────────────────────────────────────────────────
+# PassMark는 멀티스레드 범용 연산 기준이라 3D V-Cache의 게임 이점을 반영하지 못함.
+# 게임 사용자에게 X3D CPU의 실효 점수를 보정해 추천 후보에 포함되도록 한다.
+_X3D_GAME_BOOST = 1.45
+
 # ── 워크스테이션/전문가용 GPU 런타임 필터 ─────────────────────────────────
 # PassMark DB에 포함될 수 있는 비소비자용 GPU를 추천 후보에서 제외한다.
 _GPU_WORKSTATION_RE = re.compile(
@@ -165,6 +170,18 @@ def _within_budget(price_krw: int | None, budget: int | None) -> bool:
 
 # ── CPU / GPU PassMark 후보 필터링 ────────────────────────────────────
 
+def _apply_x3d_boost(items: list[dict], is_game: bool) -> list[dict]:
+    """게임 사용자에 한해 X3D CPU의 PassMark 점수에 게임 성능 가중치를 적용한다."""
+    if not is_game:
+        return items
+    result = []
+    for item in items:
+        if "X3D" in (item.get("name") or ""):
+            item = {**item, "score": int((item.get("score") or 0) * _X3D_GAME_BOOST)}
+        result.append(item)
+    return result
+
+
 def _filter_passmark(
     items: list[dict],
     calc_tier_fn,
@@ -172,12 +189,16 @@ def _filter_passmark(
     budget: int | None,
     exchange_rate: float | None,
     min_score: int | None = None,
+    current_tier: int | None = None,
     exclude_fn=None,
     max_results: int = _MAX_CANDS,
 ) -> list[dict]:
     """
     target_tier 근방의 후보를 반환한다.
     조건을 모두 충족하는 후보가 없으면 target_tier를 1씩 낮춰 재시도한다.
+
+    다운그레이드 방지: current_tier가 있으면 tier 기반(후보 tier < current_tier - 1 제외),
+    없으면 min_score 기반(score <= min_score 제외)으로 판정한다.
     """
     current_target = target_tier
     while current_target >= 1:
@@ -190,8 +211,11 @@ def _filter_passmark(
             if tier is None or not (tier_min <= tier <= tier_max):
                 continue
 
-            # 현재 하드웨어보다 낮은 점수의 후보 제외 (다운그레이드 방지)
-            if min_score is not None and (item.get("score") or 0) <= min_score:
+            # 다운그레이드 방지: tier 기반(우선) 또는 score 기반(폴백)
+            if current_tier is not None:
+                if tier < current_tier - 1:
+                    continue
+            elif min_score is not None and (item.get("score") or 0) <= min_score:
                 continue
 
             # 워크스테이션/전문가용 부품 제외
@@ -364,6 +388,7 @@ def filter_spec_candidates(
     socket: str | None = None,
     upgrade_motherboard: bool | None = None,
     current_cpu: str | None = None,
+    user_type: str | None = None,
 ) -> list[dict]:
     """
     각 추천 대상에 candidates 목록과 search_query를 추가해 반환한다.
@@ -393,6 +418,7 @@ def filter_spec_candidates(
     # PassMark 데이터는 CPU/GPU 각각 최초 1회만 로드
     _cpu_items: list[dict] | None = None
     _gpu_items: list[dict] | None = None
+    _is_game = (user_type == "game")
 
     # upgrade_motherboard=True 인 경우, CPU 후보를 미리 계산해 새 소켓을 파악한다.
     # (RAM/SSD 쿼리에 새 플랫폼의 DDR/PCIe gen 반영)
@@ -404,9 +430,9 @@ def filter_spec_candidates(
                     if _cpu_items is None:
                         _cpu_items = load_cpu_passmark_items()
                     pre_cands = _filter_passmark(
-                        _cpu_items, calculate_cpu_tier,
+                        _apply_x3d_boost(_cpu_items, _is_game), calculate_cpu_tier,
                         t["target_tier"], part_budgets.get("CPU"), exchange_rate,
-                        min_score=t.get("current_score"),
+                        current_tier=t.get("current_tier"),
                         exclude_fn=_is_mobile_soc,
                         max_results=30,
                     )
@@ -435,9 +461,9 @@ def filter_spec_candidates(
 
                 # CPU 다양성 보장을 위해 더 넓은 후보 풀을 모은 뒤 인터리브
                 cands_pool = _filter_passmark(
-                    _cpu_items, calculate_cpu_tier, target_tier,
+                    _apply_x3d_boost(_cpu_items, _is_game), calculate_cpu_tier, target_tier,
                     part_budgets.get("CPU"), exchange_rate,
-                    min_score=target.get("current_score"),
+                    current_tier=target.get("current_tier"),
                     exclude_fn=_is_mobile_soc,
                     max_results=30,
                 )
@@ -531,7 +557,7 @@ def filter_spec_candidates(
             cands = _filter_passmark(
                 _gpu_items, calculate_gpu_tier, target_tier,
                 part_budgets.get("GPU"), exchange_rate,
-                min_score=target.get("current_score"),
+                current_tier=target.get("current_tier"),
                 exclude_fn=_is_workstation_gpu,
             )
             query = cands[0]["name"] if cands else "GPU"

@@ -21,6 +21,7 @@ def normalize_text(text):
         return ""
     text = str(text).lower()
     text = re.sub(r"[^a-z0-9가-힣]+", " ", text)
+    text = re.sub(r"(\d)(x3d)", r"\1 x3d", text)  # "9800x3d" → "9800 x3d"
     text = re.sub(r"\s+", " ", text)
     return text.strip()
 
