@@ -45,6 +45,7 @@ from src.analysis.score_ssd import score_ssd
 from src.analysis.score_hdd import score_hdd
 from src.analysis.score_psu import score_psu
 from src.startup_registry import register_startup, unregister_startup
+from src.version import __version__
 
 SETTINGS_TITLE = "BuildSense - 사용자 설정"
 
@@ -519,6 +520,8 @@ class BuildSenseApp:
     tk.Label(bc, text="BUILDSENSE", fg=TEAL, bg=BG,
              font=("Segoe UI", 8, "bold")).pack(side=tk.LEFT)
     tk.Label(bc, text="  ·  데이터 수집 동의", fg=GRAY, bg=BG,
+             font=("Segoe UI", 8)).pack(side=tk.LEFT)
+    tk.Label(bc, text=f"  v{__version__}", fg=GRAY, bg=BG,
              font=("Segoe UI", 8)).pack(side=tk.LEFT)
 
     tk.Label(title_col,
