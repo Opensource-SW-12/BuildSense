@@ -768,18 +768,23 @@ class BuildSenseApp:
       fill_w = max(BAR_H, int(BAR_W * pct / 100))
       _rrect(bar_c, 0, 0, fill_w, BAR_H, BAR_H // 2, _hex_mix(BLUE, TEAL, pct / 100))
       pct_lbl.config(text=f"{pct}%")
+
+      if _done[0]:
+        status_lbl.config(text="완료되었습니다.")
+        self.root.after(250, self._show_settings_screen)
+        return
+
       self.root.after(80, _tick)
 
     _tick()
     self.root.update()
 
+    # 백그라운드 스레드에서는 Tk 위젯/after를 직접 호출하지 않고
+    # 플래그만 갱신한다 (메인 스레드의 _tick이 화면 전환을 담당).
     def _load():
       self._hardware_info = get_hardware_info()
-      _done[0] = True
       _progress[0] = 100
-      if self.root.winfo_exists():
-        status_lbl.config(text="완료되었습니다.") if status_lbl.winfo_exists() else None
-        self.root.after(250, self._show_settings_screen)
+      _done[0] = True
 
     threading.Thread(target=_load, daemon=True).start()
 
@@ -901,6 +906,7 @@ class BuildSenseApp:
     _section_label("추천 부품 선택")
 
     level = self.settings_state["knowledge_level"]
+
     cards_col = tk.Frame(body, bg=BG, padx=P)
     cards_col.pack(fill=tk.X, pady=(0, 24))
 
@@ -919,17 +925,22 @@ class BuildSenseApp:
       icon_c.create_text(18, 18, text=_PART_ICONS.get(part, "◈"),
                          fill=TEAL, font=("Segoe UI Symbol", 13))
 
+      part_options = PART_OPTIONS if part in OWNED_CAPABLE_PARTS else PART_OPTIONS_BASIC
+
       name_col = tk.Frame(top_row, bg=CARD)
       name_col.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
       tk.Label(name_col, text=part, fg=WHITE, bg=CARD,
                font=("Segoe UI", 11, "bold")).pack(anchor="w")
+
+      # 옵션이 3개(보유 포함)면 토글이 넓어지므로 설명 줄바꿈 폭을 줄여 겹침 방지
+      desc_wraplength = 260 if len(part_options) == 3 else 340
 
       desc_label = tk.Label(
         name_col,
         text=PART_DESCRIPTIONS[part][level],
         font=("Segoe UI", 9),
         fg=GRAY, bg=CARD,
-        anchor="w", wraplength=340, justify=tk.LEFT,
+        anchor="w", wraplength=desc_wraplength, justify=tk.LEFT,
       )
       desc_label.pack(anchor="w", pady=(2, 0))
       self._part_desc_labels[part] = desc_label
@@ -937,10 +948,10 @@ class BuildSenseApp:
       var = tk.StringVar(value=part_state["option"])
       self._part_vars[part] = var
 
-      part_options = PART_OPTIONS if part in OWNED_CAPABLE_PARTS else PART_OPTIONS_BASIC
+      toggle_seg_w, toggle_gap = (56, 5) if len(part_options) == 3 else (64, 6)
       toggle = _make_toggle(top_row, part_options, var,
                             on_change=lambda v, p=part: self._on_part_option_change(p),
-                            seg_w=64, seg_h=30, gap=6, bg=CARD)
+                            seg_w=toggle_seg_w, seg_h=30, gap=toggle_gap, bg=CARD)
       toggle.pack(side=tk.RIGHT, anchor="n")
       self._part_radio_widgets[part] = toggle
 
@@ -1002,9 +1013,6 @@ class BuildSenseApp:
         hw_frame.pack(fill=tk.X, pady=(12, 0))
       elif part_state["option"] == "owned" and owned_frame is not None:
         owned_frame.pack(fill=tk.X, pady=(12, 0))
-
-    # 초기 지식 수준에 따른 부품 섹션 상태 반영
-    self._on_knowledge_change()
 
   def _show_monitoring_screen(self):
     self._clear_window()
@@ -1349,27 +1357,12 @@ class BuildSenseApp:
 
   def _on_knowledge_change(self):
     level = self._knowledge_var.get()
-    is_beginner = level == "beginner"
+    self.settings_state["knowledge_level"] = level
 
+    # 지식 수준에 따라 부품별 설명 텍스트만 실시간으로 갱신한다.
     for part in PARTS:
-      # 설명 텍스트 실시간 업데이트
       if part in self._part_desc_labels:
         self._part_desc_labels[part].config(text=PART_DESCRIPTIONS[part][level])
-
-      # 토글 그룹 활성화 상태 변경
-      toggle = self._part_radio_widgets.get(part)
-      if toggle is not None:
-        toggle.set_enabled(not is_beginner)
-
-      # 전혀 모름: 모든 부품을 추천으로 초기화하고 하위 프레임 숨김
-      if is_beginner:
-        self._part_vars[part].set("recommend")
-        if toggle is not None:
-          toggle.redraw()
-        self._part_hw_frames[part].pack_forget()
-        owned_frame = self._part_owned_frames.get(part)
-        if owned_frame is not None:
-          owned_frame.pack_forget()
 
   def _on_part_option_change(self, part: str):
     value = self._part_vars[part].get()
