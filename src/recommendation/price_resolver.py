@@ -151,8 +151,8 @@ def _naver_search_safe(query: str) -> list[dict]:
 
 
 def _ebay_search_safe(query: str) -> list[dict]:
-    """eBay 검색 실패 시 빈 리스트 반환한다. 자격증명 미설정이면 즉시 반환."""
-    if not (os.getenv("EBAY_CLIENT_ID") and os.getenv("EBAY_CLIENT_SECRET")):
+    """eBay 검색 실패 시 빈 리스트 반환한다. 프록시 키 미설정이면 즉시 반환."""
+    if not os.getenv("PROXY_API_KEY"):
         return []
     try:
         result = search_ebay(query, limit=_NAVER_FETCH)
