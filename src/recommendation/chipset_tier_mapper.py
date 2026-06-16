@@ -27,6 +27,7 @@ def _clean_hw_name(name: str) -> str:
     name = re.sub(r'cpu\s*@.*', '', name)             # "CPU @ 3.20GHz" 제거
     name = re.sub(r'\d+(\.\d+)?\s*ghz', '', name)    # 클록 속도 제거
     name = re.sub(r'[^a-z0-9]+', ' ', name)          # 특수문자 → 공백
+    name = re.sub(r'(\d)(x3d)', r'\1 x3d', name)     # "9800x3d" → "9800 x3d"
     return re.sub(r'\s+', ' ', name).strip()
 
 
