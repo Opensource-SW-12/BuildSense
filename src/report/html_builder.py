@@ -1,6 +1,8 @@
 import html
 from datetime import datetime
 
+from src.version import __version__
+
 _USER_TYPE_KO = {
     "game":        "게임",
     "development": "개발",
@@ -725,7 +727,7 @@ def build_html(report_data: dict, charts: dict) -> str:
     </div>
     {body}
     <footer>
-      <span>BuildSense</span> &nbsp;·&nbsp; 본 보고서는 모니터링 데이터를 기반으로 자동 생성되었습니다.
+      <span>BuildSense v{__version__}</span> &nbsp;·&nbsp; 본 보고서는 모니터링 데이터를 기반으로 자동 생성되었습니다.
     </footer>
   </div>
 </body>
