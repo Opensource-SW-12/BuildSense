@@ -7,9 +7,9 @@ StartupState.ANALYZE로 띄워 "추가 정보 입력" 다이얼로그(예산·RG
 프로세스 분류)에 직접 답변해보고, 그 답변이 반영된 추천·보고서까지 확인할 수 있다.
 
 원본 데이터 보호 정책:
-  - 최초 실행 시: 원본 파일을 .orig에 복사 (이후 실행에서도 덮어쓰지 않음)
-  - 매 실행 전: .orig이 있으면 원본이 보존된 것이므로 더미 데이터만 새로 씀
-  - 앱 종료 후: 더미 파일을 삭제하고 .orig에서 원본 복원
+- 최초 실행 시: 원본 파일을 .orig에 복사 (이후 실행에서도 덮어쓰지 않음)
+- 매 실행 전: .orig이 있으면 원본이 보존된 것이므로 더미 데이터만 새로 씀
+- 앱 종료 후: 더미 파일을 삭제하고 .orig에서 원본 복원
 
 사용법:
     simulate_user_answers.bat   (권장)
@@ -66,7 +66,7 @@ def _write_dummy_profile() -> None:
         "knowledge_level": "intermediate",
         "analysis_days": 7,
         "parts": {part: {"option": "recommend"}
-                  for part in ["CPU", "GPU", "RAM", "SSD", "HDD", "메인보드", "파워"]},
+                for part in ["CPU", "GPU", "RAM", "SSD", "HDD", "메인보드", "파워"]},
     }
     USER_PROFILE_PATH.write_text(json.dumps(profile, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"  더미 프로필 저장: {USER_PROFILE_PATH.name}")
