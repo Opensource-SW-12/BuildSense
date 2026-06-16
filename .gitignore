@@ -8,8 +8,8 @@ venv/
 env/
 
 data/*
-logs/*
-reports/*
+logs/
+reports/
 
 !data/.gitkeep
 !data/process_categories.json
@@ -20,9 +20,6 @@ reports/*
 open-db/
 results/
 _sim_run.log
-
-!logs/.gitkeep
-!reports/.gitkeep
 
 dist/
 build/
