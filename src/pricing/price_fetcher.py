@@ -1,28 +1,49 @@
-import html
+"""
+가격 조회 클라이언트.
+직접 Naver/eBay API를 호출하지 않고 BuildSense 프록시 서버를 통해 검색한다.
+API 키는 서버에서만 관리되므로 클라이언트(앱/EXE)에 키가 없어도 동작한다.
+
+필요 환경변수 (.env):
+    PROXY_BASE_URL  : 프록시 서버 주소 (기본값: http://localhost:8000)
+    PROXY_API_KEY   : 프록시 서버 인증 키
+"""
 import json
 import os
-import re
 import urllib.parse
 import urllib.request
 
-from src.pricing.ebay_auth import get_ebay_access_token, _is_sandbox
-from src.pricing.exchange_rate import get_usd_to_krw_rate, convert_usd_to_krw
+_PROXY_BASE    = os.getenv("PROXY_BASE_URL", "http://localhost:8000")
+_PROXY_API_KEY = os.getenv("PROXY_API_KEY", "")
 
 
-NAVER_SHOPPING_API_URL = "https://openapi.naver.com/v1/search/shop.json"
-_EBAY_SEARCH_PROD = "https://api.ebay.com/buy/browse/v1/item_summary/search"
-_EBAY_SEARCH_SBX  = "https://api.sandbox.ebay.com/buy/browse/v1/item_summary/search"
+# ── 공통 요청 헬퍼 ────────────────────────────────────────────────────
+
+def _proxy_get(path: str) -> list[dict]:
+    """프록시 서버에 GET 요청을 보내고 JSON 응답(list[dict])을 반환한다."""
+    url = f"{_PROXY_BASE}{path}"
+    req = urllib.request.Request(url)
+    req.add_header("X-API-Key", _PROXY_API_KEY)
+
+    try:
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            return json.loads(resp.read().decode("utf-8"))
+
+    except urllib.error.HTTPError as e:
+        body = e.read().decode("utf-8", errors="replace")
+        raise RuntimeError(f"프록시 서버 요청 실패: HTTP {e.code} - {body}") from e
+
+    except urllib.error.URLError as e:
+        raise RuntimeError(f"프록시 서버 연결 실패: {e}") from e
+
+    except json.JSONDecodeError as e:
+        raise RuntimeError(f"프록시 서버 응답 JSON 해석 실패: {e}") from e
 
 
-def _ebay_search_url() -> str:
-    client_id = os.getenv("EBAY_CLIENT_ID", "")
-    return _EBAY_SEARCH_SBX if _is_sandbox(client_id) else _EBAY_SEARCH_PROD
+# ── 유틸 ─────────────────────────────────────────────────────────────
 
-
-def build_search_query(part):
+def build_search_query(part: dict) -> str:
     manufacturer = part.get("manufacturer", "")
     name = part.get("name", "")
-
     return f"{manufacturer} {name}".strip()
 
 
@@ -40,141 +61,41 @@ def safe_float(value):
         return None
 
 
-def _clean_naver_title(title):
-    """네이버 쇼핑 API 제목에 포함된 <b> 강조 태그와 HTML 엔티티를 제거한다."""
-    if not title:
-        return title
-    return html.unescape(re.sub(r"</?b>", "", title))
+# ── 네이버 ───────────────────────────────────────────────────────────
+
+def search_naver_shopping(query: str, display: int = 10) -> list[dict]:
+    """
+    프록시 서버를 통해 네이버 쇼핑을 검색한다.
+    반환값은 이미 정규화된 list[dict] (기존 extract_naver_candidates 결과와 동일한 형식).
+    """
+    path = f"/api/naver/search?query={urllib.parse.quote(query)}&display={display}"
+    return _proxy_get(path)
 
 
-def search_naver_shopping(query, display=10):
-    client_id = os.getenv("NAVER_CLIENT_ID")
-    client_secret = os.getenv("NAVER_CLIENT_SECRET")
-
-    if not client_id or not client_secret:
-        raise ValueError(
-            "NAVER_CLIENT_ID 또는 NAVER_CLIENT_SECRET 환경변수가 없습니다."
-        )
-
-    encoded_query = urllib.parse.quote(query)
-
-    url = (
-        f"{NAVER_SHOPPING_API_URL}"
-        f"?query={encoded_query}"
-        f"&display={display}"
-        f"&sort=sim"
-    )
-
-    request = urllib.request.Request(url)
-    request.add_header("X-Naver-Client-Id", client_id)
-    request.add_header("X-Naver-Client-Secret", client_secret)
-
-    try:
-        with urllib.request.urlopen(request, timeout=10) as response:
-            response_body = response.read().decode("utf-8")
-
-        return json.loads(response_body)
-
-    except urllib.error.HTTPError as error:
-        raise RuntimeError(
-            f"네이버 쇼핑 API 요청 실패: HTTP 상태 코드 {error.code}"
-        ) from error
-
-    except urllib.error.URLError as error:
-        raise RuntimeError(
-            f"네이버 쇼핑 API 연결 실패: 네트워크 또는 주소 문제 - {error}"
-        ) from error
-
-    except json.JSONDecodeError as error:
-        raise RuntimeError(
-            f"네이버 쇼핑 API 응답 JSON 해석 실패: {error}"
-        ) from error
+def extract_naver_candidates(api_result) -> list[dict]:
+    """
+    하위 호환용. 프록시 전환 후 search_naver_shopping()이 이미 list[dict]를 반환하므로
+    price_resolver.py의 기존 호출 패턴(extract_naver_candidates(search_naver_shopping(...)))이
+    그대로 동작하도록 pass-through 처리한다.
+    """
+    if isinstance(api_result, list):
+        return api_result
+    return []
 
 
-def extract_naver_candidates(api_result):
-    candidates = []
+# ── eBay ─────────────────────────────────────────────────────────────
 
-    for item in api_result.get("items", []):
-        price = safe_int(item.get("lprice"))
-
-        candidates.append({
-            "source": "naver",
-            "title": _clean_naver_title(item.get("title")),
-            "link": item.get("link"),
-            "price_krw": price,
-            "price_usd": None,
-            "currency": "KRW",
-            "mall_name": item.get("mallName"),
-            "brand": item.get("brand"),
-            "maker": item.get("maker")
-        })
-
-    return candidates
+def search_ebay(query: str, limit: int = 10) -> list[dict]:
+    """
+    프록시 서버를 통해 eBay를 검색한다.
+    KRW 환산은 서버에서 처리되어 포함된 채로 반환된다.
+    """
+    path = f"/api/ebay/search?query={urllib.parse.quote(query)}&limit={limit}"
+    return _proxy_get(path)
 
 
-def search_ebay(query, limit=10):
-    ebay_token = get_ebay_access_token()
-
-    encoded_query = urllib.parse.quote(query)
-
-    url = (
-        f"{_ebay_search_url()}"
-        f"?q={encoded_query}"
-        f"&limit={limit}"
-    )
-
-    request = urllib.request.Request(url)
-    request.add_header("Authorization", f"Bearer {ebay_token}")
-    request.add_header("X-EBAY-C-MARKETPLACE-ID", "EBAY_US")
-
-    try:
-        with urllib.request.urlopen(request, timeout=10) as response:
-            response_body = response.read().decode("utf-8")
-
-        return json.loads(response_body)
-
-    except urllib.error.HTTPError as error:
-        raise RuntimeError(
-            f"eBay API 요청 실패: HTTP 상태 코드 {error.code}"
-        ) from error
-
-    except urllib.error.URLError as error:
-        raise RuntimeError(
-            f"eBay API 연결 실패: {error}"
-        ) from error
-
-    except json.JSONDecodeError as error:
-        raise RuntimeError(
-            f"eBay API 응답 JSON 해석 실패: {error}"
-        ) from error
-
-
-def extract_ebay_candidates(api_result):
-    candidates = []
-
-    exchange_rate = get_usd_to_krw_rate()
-
-    for item in api_result.get("itemSummaries", []):
-        price_info = item.get("price", {})
-        value = price_info.get("value")
-        currency = price_info.get("currency")
-
-        price_usd = safe_float(value) if currency == "USD" else None
-
-        price_krw = (
-            convert_usd_to_krw(price_usd, exchange_rate)
-            if price_usd is not None
-            else None
-        )
-
-        candidates.append({
-            "source": "ebay",
-            "title": item.get("title"),
-            "link": item.get("itemWebUrl"),
-            "price_usd": price_usd,
-            "price_krw": price_krw,
-            "currency": currency,
-            "seller": item.get("seller", {}).get("username")
-        })
-
-    return candidates
+def extract_ebay_candidates(api_result) -> list[dict]:
+    """하위 호환용. extract_naver_candidates와 동일한 이유로 pass-through 처리."""
+    if isinstance(api_result, list):
+        return api_result
+    return []

@@ -38,3 +38,4 @@ Thumbs.db
 .claude/
 CLAUDE.md
 .env
+dist.env
