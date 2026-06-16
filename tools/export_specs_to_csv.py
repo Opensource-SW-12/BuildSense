@@ -14,6 +14,7 @@ SPEC_FILES = [
     "psu_specs.json",
     "ssd_specs.json",
     "hdd_specs.json",
+    "board_specs.json",
 ]
 
 
