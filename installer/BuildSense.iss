@@ -6,12 +6,14 @@
 #define MyAppPublisher "BuildSense"
 #define MyAppExeName "BuildSense.exe"
 #define SourceDir "..\dist\BuildSense"
+#define IconFile "..\assets\icon.ico"
 
 [Setup]
 AppId={{FB2A2AF2-B101-4E00-B006-2BBB218EB978}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 AppPublisher={#MyAppPublisher}
+SetupIconFile={#IconFile}
 DefaultDirName={localappdata}\Programs\{#MyAppName}
 DefaultGroupName={#MyAppName}
 DisableProgramGroupPage=yes
