@@ -36,3 +36,8 @@ Thumbs.db
 CLAUDE.md
 .env
 dist.env
+
+demo_report.py
+simulate_user_answers.py
+simulate_user_answers.bat
+main.bat
