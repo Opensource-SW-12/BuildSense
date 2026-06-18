@@ -3,7 +3,7 @@
 결과를 파일 캐시(24h TTL)에 저장·재사용한다.
 
 CPU/GPU : PassMark 후보 이름으로 검색 → product_matcher 검증 → 가격 주입
-RAM     : 검색 쿼리로 검색 → 상위 결과를 candidates로 설정
+RAM     : 검색 쿼리로 검색 → 용량 검증(킷 표기 포함) → candidates로 설정
 SSD/HDD : 검색 쿼리로 검색 → product_matcher 검증 → candidates 설정
 PSU/MB  : 검색 쿼리로 검색 → 상위 결과 반환
 """
@@ -290,13 +290,51 @@ def _dedup_candidates(candidates: list[dict], max_cands: int = _MAX_CANDS) -> li
     return result
 
 
+def _parse_query_capacity_gb(search_query: str) -> int | None:
+    """검색 쿼리(예: "DDR4 RAM 48GB", "DDR5 RAM 1TB")에서 목표 총 용량(GB)을 추출한다."""
+    q = search_query.lower()
+    m_tb = re.search(r'(\d+)\s*tb', q)
+    if m_tb:
+        return int(m_tb.group(1)) * 1000
+    m_gb = re.search(r'(\d+)\s*gb', q)
+    return int(m_gb.group(1)) if m_gb else None
+
+
+def _parse_title_capacity_gb(title: str) -> int | None:
+    """제품명에서 총 용량(GB)을 추출한다. RAM은 "24GB x2"처럼 개당 용량 ×
+    키트 수량으로 표기되는 경우가 많아(낱개 48GB보다 24GBx2/32GBx2 구성이
+    실제로 더 흔함), 킷 표기를 먼저 확인해 개당 용량×수량으로 환산하고,
+    킷 표기가 없으면 총 용량 표기("48GB")를 그대로 사용한다."""
+    t = title.lower()
+
+    m_kit = re.search(r'(\d+)\s*gb?\s*[x×]\s*(\d+)', t) or re.search(r'(\d+)\s*[x×]\s*(\d+)\s*gb', t)
+    if m_kit:
+        a, b = int(m_kit.group(1)), int(m_kit.group(2))
+        return a * b
+
+    m_tb = re.search(r'(\d+)\s*tb', t)
+    if m_tb:
+        return int(m_tb.group(1)) * 1000
+
+    m_gb = re.search(r'(\d+)\s*gb', t)
+    return int(m_gb.group(1)) if m_gb else None
+
+
 def _search_ram_candidates(search_query: str) -> list[dict]:
-    """RAM은 스펙 검증 없이 상위 결과를 그대로 사용한다."""
-    cands = [
-        _make_price_candidate(item)
-        for item in _search_safe(search_query, "RAM")
-        if item.get("price_krw") is not None
-    ]
+    """검색 쿼리의 목표 용량과 실제 제품 용량(킷 표기 포함)이 일치하는 결과만 사용한다.
+    검증 없이 상위 결과를 그대로 쓰면, 목표가 48GB여도 무관한 8GB 단일 모듈이
+    그대로 추천에 노출되는 문제가 있었음."""
+    target_gb = _parse_query_capacity_gb(search_query)
+
+    cands = []
+    for item in _search_safe(search_query, "RAM"):
+        if item.get("price_krw") is None:
+            continue
+        if target_gb is not None:
+            title_gb = _parse_title_capacity_gb(item.get("title", ""))
+            if title_gb != target_gb:
+                continue
+        cands.append(_make_price_candidate(item))
     return _dedup_candidates(cands)
 
 
