@@ -181,9 +181,13 @@ def analyze_uptime(logs, interval_seconds: int = 60):
     )
     average_uptime_hours = total_active_hours / analysis_days
 
-    # long_usage_ratio: 8시간 이상 세션에 속한 스냅샷 비율
+    # long_usage_ratio: 4시간 이상 세션에 속한 스냅샷 비율.
+    # 세그먼트는 2시간 이상 공백에서 끊기므로, 8시간 기준은 "중간에 2시간
+    # 이상 쉬는 일이 전혀 없는 하루"를 요구해 거의 항상 0이 되어버렸다.
+    # 4시간은 끊김 없는 장시간 사용을 의미 있게 포착하면서도 실제로 도달 가능하다.
+    _LONG_SESSION_HOURS = 4.0
     long_snapshots = sum(
-        len(seg) for seg, dur in zip(segments, durations) if dur >= 8.0
+        len(seg) for seg, dur in zip(segments, durations) if dur >= _LONG_SESSION_HOURS
     )
     long_usage_ratio = long_snapshots / len(parsed_times)
 

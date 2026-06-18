@@ -69,10 +69,16 @@ class TestAnalyzeUptimeLongRatio:
         assert result["long_usage_ratio"] == 1.0
 
     def test_short_session_not_long(self):
-        """4시간 세션 → long_usage_ratio = 0."""
-        offsets = list(range(0, 240, 1))
+        """2시간 세션 → long_usage_ratio = 0 (4시간 미만이므로 장시간 아님)."""
+        offsets = list(range(0, 120, 1))
         result = analyze_uptime(_logs(offsets))
         assert result["long_usage_ratio"] == 0.0
+
+    def test_four_hour_session_is_long(self):
+        """정확히 4시간 세션 → long_usage_ratio = 1.0 (경계값은 포함)."""
+        offsets = list(range(0, 240, 1))
+        result = analyze_uptime(_logs(offsets))
+        assert result["long_usage_ratio"] == 1.0
 
     def test_mixed_sessions(self):
         """긴 세션(9h) + 짧은 세션(1h) → long_ratio는 긴 세션 스냅샷 비율."""
