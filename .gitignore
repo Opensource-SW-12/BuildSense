@@ -37,4 +37,8 @@ CLAUDE.md
 dist.env
 
 demo_report.py
+simulate_user_answers.py
+simulate_user_answers.bat
+simulate_user_answers_render.py
+simulate_user_answers_render.bat
 main.bat
