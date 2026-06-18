@@ -1,4 +1,5 @@
-psutil>=5.9.0
-Pillow>=11,<13
-matplotlib>=3.7.0
-python-dotenv>=1.0.0
+# BuildSense 런타임 의존성 (EXE 빌드에도 포함됨)
+psutil>=5.9.0          # CPU/RAM/프로세스 모니터링
+Pillow>=11,<13          # 보고서 차트 이미지 처리
+matplotlib>=3.7.0       # 보고서용 차트 생성
+python-dotenv>=1.0.0    # .env 환경변수 로드 (PROXY_BASE_URL/PROXY_API_KEY 등)

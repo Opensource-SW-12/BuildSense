@@ -2,6 +2,7 @@ import sys
 from pathlib import Path
 from dotenv import load_dotenv
 
+# PyInstaller(frozen) 빌드에서는 EXE 옆 .env를 읽어야 하므로 sys.executable 기준 경로 사용 (KAN-107)
 _base = Path(sys.executable).parent if getattr(sys, "frozen", False) else Path(__file__).parent
 load_dotenv(_base / ".env")
 
