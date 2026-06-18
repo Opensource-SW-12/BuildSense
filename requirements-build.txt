@@ -1,3 +1,2 @@
-# EXE 빌드(build.ps1)에만 필요 — 최종 사용자/배포본에는 불필요
 -r requirements.txt
 pyinstaller>=6.0
