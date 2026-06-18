@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import patch
-from src.analysis.process_usage import analyze_process_usage
+from src.analysis.process_usage import analyze_process_usage, _load_path_overrides, _resolve_category, _load_categories
 
 
 def _make_logs(procs_per_snapshot):
@@ -119,6 +119,47 @@ class TestAnalyzeProcessUsagePathOverrides:
         logs = _make_logs([[_proc("update.exe", cpu=10.0, exe=r"C:\Users\me\AppData\Local\Discord\Update.exe")]] * 5)
         result = analyze_process_usage(logs)
         assert result["category_summary"].get("messenger", 0) > 0
+
+
+@pytest.fixture(scope="module")
+def real_overrides():
+    return _load_path_overrides()
+
+
+@pytest.fixture(scope="module")
+def real_categories():
+    return _load_categories()
+
+
+class TestRealProcessPathOverridesFile:
+    """data/process_path_overrides.json(실 파일) 회귀 테스트.
+    generic 키워드("python")가 구체적 키워드("blender")보다 앞에 있으면
+    먼저 매칭되어버려 뒤의 규칙이 영원히 도달 못 하는 버그가 있었음(KAN-209)."""
+
+    def test_blender_python_resolves_to_creative_not_development(self, real_overrides, real_categories):
+        exe = r"C:\Program Files\Blender Foundation\Blender 4.4\4.4\python\bin\python.exe"
+        category = _resolve_category("python.exe", exe.lower(), real_categories, real_overrides)
+        assert category == "creative"
+
+    def test_plain_python_falls_back_to_default_category(self, real_overrides, real_categories):
+        exe = r"C:\Program Files\Python311\python.exe"
+        category = _resolve_category("python.exe", exe.lower(), real_categories, real_overrides)
+        assert category == "development"
+
+    def test_javaw_jetbrains_resolves_to_development(self, real_overrides, real_categories):
+        exe = r"C:\Program Files\JetBrains\IntelliJ\jbr\bin\javaw.exe"
+        category = _resolve_category("javaw.exe", exe.lower(), real_categories, real_overrides)
+        assert category == "development"
+
+    def test_javaw_minecraft_resolves_to_game(self, real_overrides, real_categories):
+        exe = r"C:\Users\me\AppData\Roaming\PrismLauncher\java\bin\javaw.exe"
+        category = _resolve_category("javaw.exe", exe.lower(), real_categories, real_overrides)
+        assert category == "game"
+
+    def test_update_notion_resolves_to_document_not_messenger(self, real_overrides, real_categories):
+        exe = r"C:\Users\me\AppData\Local\Notion\Update.exe"
+        category = _resolve_category("update.exe", exe.lower(), real_categories, real_overrides)
+        assert category == "document"
 
 
 class TestAnalyzeProcessUsageEdgeCases:
