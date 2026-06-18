@@ -317,11 +317,11 @@ def build_segment_summary_chart(pattern: dict) -> str:
     pct_labels = ["활성 비율", "장시간 사용\n비율"]
     pct_values = [active_r, long_r]
     pct_colors = [_C_BLUE, _C_ORANGE if long_r >= 30 else _C_GREEN]
-    bars = ax_pct.barh(pct_labels, pct_values, color=pct_colors, height=0.5, edgecolor=_AX_BG, alpha=0.85)
-    ax_pct.set_xlim(0, 100)
+    bars = ax_pct.bar(pct_labels, pct_values, color=pct_colors, width=0.5, edgecolor=_AX_BG, alpha=0.85)
+    ax_pct.set_ylim(0, 100)
     for bar, val in zip(bars, pct_values):
-        ax_pct.text(bar.get_width() + 1.5, bar.get_y() + bar.get_height() / 2,
-                    f"{val:.1f}%", va="center", fontsize=9, color=_TEXT)
+        ax_pct.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 1.5,
+                    f"{val:.1f}%", ha="center", fontsize=9, color=_TEXT)
     ax_pct.spines["top"].set_visible(False)
     ax_pct.spines["right"].set_visible(False)
     ax_pct.set_title("사용 패턴 지표 (비율)", fontsize=11, color=_TEXT)
@@ -329,11 +329,11 @@ def build_segment_summary_chart(pattern: dict) -> str:
     ax_hour = fig.add_subplot(gs[1])
     hour_labels = ["평균 연속 사용", "평균 부팅 유지"]
     hour_values = [avg_hours, avg_uptime]
-    bars = ax_hour.barh(hour_labels, hour_values, color=_C_GREEN, height=0.5, edgecolor=_AX_BG, alpha=0.85)
-    ax_hour.set_xlim(0, max(max(hour_values) * 1.25, 1))
+    bars = ax_hour.bar(hour_labels, hour_values, color=_C_GREEN, width=0.5, edgecolor=_AX_BG, alpha=0.85)
+    ax_hour.set_ylim(0, max(max(hour_values) * 1.25, 1))
     for bar, val in zip(bars, hour_values):
-        ax_hour.text(bar.get_width() + max(hour_values) * 0.02, bar.get_y() + bar.get_height() / 2,
-                     f"{val:.1f}시간", va="center", fontsize=9, color=_TEXT)
+        ax_hour.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + max(hour_values) * 0.02,
+                     f"{val:.1f}시간", ha="center", fontsize=9, color=_TEXT)
     ax_hour.spines["top"].set_visible(False)
     ax_hour.spines["right"].set_visible(False)
     ax_hour.set_title("사용 패턴 지표 (시간)", fontsize=11, color=_TEXT)
