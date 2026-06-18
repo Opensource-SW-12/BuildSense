@@ -25,13 +25,13 @@ from src.settings import (
   build_settings_state,
 )
 from src.hardware import get_hardware_info
-from src.storage import save_user_profile, save_user_preferences, delete_all_monitoring_data, read_user_profile, init_log_line_count, get_log_line_count
+from src.storage import save_user_profile, save_user_preferences, delete_all_monitoring_data, read_user_profile, init_log_line_count, get_log_line_count, get_usage_log_first_timestamp
 from src.validators import validate_analysis_days, validate_parts_not_all_keep, validate_owned_parts_selected
 from src.recommendation.chipset_tier_mapper import search_passmark_candidates
 from src.monitor import start_monitoring_loop, stop_monitoring_loop, is_monitoring_running
 from src.background import join_background_task
 from src.config import USAGE_LOG_PATH, ANALYSIS_DIR
-from src.startup_state import StartupState
+from src.startup_state import StartupState, is_analysis_period_elapsed
 from src.normalization.core import read_jsonl
 from src.analysis.resource_usage import analyze_resource_usage
 from src.analysis.usage_pattern_summary import create_usage_pattern_summary, save_normalized_usage
@@ -1110,6 +1110,22 @@ class BuildSenseApp:
       self.root.after(5000, _update_size)
 
     _update_size()
+
+    def _check_analysis_period():
+      if not self.root.winfo_exists():
+        return
+      try:
+        profile = read_user_profile()
+        first_ts = get_usage_log_first_timestamp()
+        if profile and first_ts and is_analysis_period_elapsed(profile, first_ts):
+          stop_monitoring_loop()
+          self._show_analysis_notification_screen()
+          return
+      except Exception:
+        pass
+      self.root.after(30000, _check_analysis_period)
+
+    _check_analysis_period()
 
     # ── 중도 종료 ────────────────────────────────────────────────
     abort_card = tk.Frame(body, bg=CARD, padx=18, pady=16)
