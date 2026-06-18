@@ -25,7 +25,6 @@ dist/
 build/
 *.spec
 !BuildSense.spec
-installer/Output/
 
 .DS_Store
 Thumbs.db
