@@ -21,6 +21,7 @@ New-Item -ItemType Directory -Force -Path $distData | Out-Null
 Copy-Item -Recurse -Force "data\specs" $distData
 Copy-Item -Force "data\process_categories.json" $distData
 Copy-Item -Force "data\process_path_overrides.json" $distData
+Copy-Item -Force "data\system_process_names.json" $distData
 Copy-Item -Force "data\.gitkeep" $distData
 
 Write-Host "[4/5] 환경변수 파일 복사" -ForegroundColor Cyan
