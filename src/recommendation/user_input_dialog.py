@@ -3,7 +3,7 @@ import tkinter as tk
 from tkinter import messagebox
 from collections import defaultdict
 
-from src.config import PROCESS_CATEGORIES_PATH
+from src.config import PROCESS_CATEGORIES_PATH, SYSTEM_PROCESS_NAMES_PATH
 
 # ── 다크 테마 색상 (app.py 화면들과 통일) ─────────────────────────
 _BG     = "#1A1F2E"
@@ -120,11 +120,25 @@ def _load_known_process_names() -> set[str] | None:
         return None
 
 
+def _load_system_process_names() -> set[str]:
+    """Windows 커널/OS/쉘/보안/업데이트 핵심 프로세스 목록.
+    사용자가 "용도"를 선택할 대상이 아니므로 미분류 프로세스 질문에서 제외한다."""
+    try:
+        if not SYSTEM_PROCESS_NAMES_PATH.exists():
+            return set()
+        with open(SYSTEM_PROCESS_NAMES_PATH, "r", encoding="utf-8") as f:
+            names = json.load(f)
+        return {n.lower() for n in names}
+    except Exception:
+        return set()
+
+
 def find_impactful_unknown_processes(logs: list[dict]) -> list[dict]:
     """로그에서 process_categories에 없으면서 영향력 있는 프로세스를 반환한다."""
     known = _load_known_process_names()
     if known is None or not logs:
         return []
+    known = known | _load_system_process_names()
 
     total = len(logs)
     appearance: dict[str, int]   = defaultdict(int)

@@ -4,6 +4,7 @@ from datetime import datetime, timezone
 import psutil
 
 _TOP_PROCESS_COUNT = 15
+_CPU_COUNT = psutil.cpu_count() or 1
 
 
 def get_running_processes() -> list[dict]:
@@ -12,7 +13,10 @@ def get_running_processes() -> list[dict]:
     try:
       info = proc.info
       memory_mb = round(info["memory_info"].rss / (1024 * 1024), 2) if info["memory_info"] else 0.0
-      cpu = info["cpu_percent"] or 0.0
+      # psutil의 프로세스 cpu_percent는 코어 1개 기준이라 멀티코어 프로세스는
+      # 코어 수만큼 100%를 넘길 수 있다 (예: 8코어에서 800%) — 전체 시스템 용량
+      # 기준 0~100% 스케일로 정규화해 다른 cpu_percent 값들과 일관되게 맞춘다.
+      cpu = (info["cpu_percent"] or 0.0) / _CPU_COUNT
       try:
         exe = proc.exe()
       except (psutil.AccessDenied, psutil.NoSuchProcess, OSError):
